@@ -19,9 +19,9 @@ import org.springframework.web.filter.OncePerRequestFilter;
 
 public class TokenAuthFilter extends OncePerRequestFilter {
 
-    private TokenUtils tokenUtils;
+    private final TokenUtils tokenUtils;
 
-    private UserDetailsService userDetailsService;
+    private final UserDetailsService userDetailsService;
 
     protected final Log LOGGER = LogFactory.getLog(getClass());
 

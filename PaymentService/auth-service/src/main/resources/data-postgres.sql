@@ -13,3 +13,4 @@ values (nextval('merchant_payment_method_id_seq'), 1, 'tinaa', '$2a$10$46vcjpM2K
 insert into merchant_payment_method(id, payment_method_id, merchant_id, merchant_password)
 values (nextval('merchant_payment_method_id_seq'), 1, 'tinaa', '$2a$10$46vcjpM2KOvc76hjcNb9NOgXsNKpWXR1b.tEXetZcWV0l4FQc8i5.');
 
+insert into web_shop_payment_method(web_shop_id, merchant_payment_id) values (1, 1);

@@ -1,5 +1,6 @@
 package com.authservice.controller;
 
+import com.authservice.dto.LoginResponseDTO;
 import com.authservice.dto.WebShopDTO;
 import com.authservice.model.WebShop;
 import com.authservice.service.WebShopService;
@@ -31,11 +32,11 @@ public class AuthController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<WebShop> login(@RequestBody WebShopDTO loginDTO) {
-        WebShop webShop = webShopService.login(loginDTO);
-        if (webShop == null) {
+    public ResponseEntity<LoginResponseDTO> login(@RequestBody WebShopDTO loginDTO) {
+        LoginResponseDTO response = webShopService.login(loginDTO);
+        if (response == null) {
             throw new NullPointerException("Invalid username or password");
         }
-        return new ResponseEntity<>(webShop, HttpStatus.OK);
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
 }
