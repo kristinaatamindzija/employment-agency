@@ -1,13 +1,13 @@
 package com.authservice.model;
 
-import jakarta.persistence.*;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.annotations.CascadeType;
 
-import java.util.Set;
+import javax.persistence.*;
+
 
 @Entity
 @Getter

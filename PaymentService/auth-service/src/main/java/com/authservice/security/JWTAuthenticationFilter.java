@@ -1,8 +1,8 @@
 package com.authservice.security;
 
-import com.agent.agent.model.RegisteredUser;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
+import com.authservice.model.WebShop;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -32,8 +32,8 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
     public Authentication attemptAuthentication(HttpServletRequest req,
                                                 HttpServletResponse res) throws AuthenticationException {
         try {
-            RegisteredUser creds = new ObjectMapper()
-                    .readValue(req.getInputStream(), RegisteredUser.class);
+            WebShop creds = new ObjectMapper()
+                    .readValue(req.getInputStream(), WebShop.class);
 
             return authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(
