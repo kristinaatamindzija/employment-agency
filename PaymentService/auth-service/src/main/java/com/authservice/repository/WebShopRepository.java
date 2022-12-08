@@ -2,8 +2,14 @@ package com.authservice.repository;
 
 import com.authservice.model.WebShop;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.security.core.userdetails.UserDetails;
 
 public interface WebShopRepository extends JpaRepository<WebShop, Long> {
-    UserDetails findByUsername(String username);
+    WebShop findByUsername(String username);
+
+    //TODO mzd ne radi
+    @Query("select w from WebShop w where w.username = ?1")
+    UserDetails loadByUsername(String username);
+
 }

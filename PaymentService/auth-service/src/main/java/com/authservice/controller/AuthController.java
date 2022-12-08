@@ -18,14 +18,24 @@ import org.springframework.web.bind.annotation.RestController;
 public class AuthController {
     @Autowired
     private WebShopService webShopService;
-    @PostMapping("/signup")
-    public ResponseEntity<WebShop> registerWebShop(@RequestBody WebShopDTO registrationDTO) {
+
+    @PostMapping("/register")
+    public ResponseEntity<WebShop> register(@RequestBody WebShopDTO registrationDTO) {
         UserDetails existUser = this.webShopService.loadUserByUsername(registrationDTO.getUsername());
         if (existUser != null) {
             throw new NullPointerException("Username already exists: " + registrationDTO.getUsername());
         }
-        WebShop webShop = webShopService.registerUser(registrationDTO.getUsername(), registrationDTO.getPassword(),
+        WebShop webShop = webShopService.register(registrationDTO.getUsername(), registrationDTO.getPassword(),
                 registrationDTO.getCurrency());
         return new ResponseEntity<>(webShop, HttpStatus.CREATED);
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<WebShop> login(@RequestBody WebShopDTO loginDTO) {
+        WebShop webShop = webShopService.login(loginDTO);
+        if (webShop == null) {
+            throw new NullPointerException("Invalid username or password");
+        }
+        return new ResponseEntity<>(webShop, HttpStatus.OK);
     }
 }

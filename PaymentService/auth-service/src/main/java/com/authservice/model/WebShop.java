@@ -32,7 +32,7 @@ public class WebShop {
     @Column(name = "api_token")
     private String apiToken;
 
-    @ManyToMany(cascade = { CascadeType.ALL })
+    @ManyToMany(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER)
     @JoinTable(
             name = "web_shop_payment_method",
             joinColumns = { @JoinColumn(name = "web_shop_id") },
@@ -41,5 +41,8 @@ public class WebShop {
     private Set<MerchantPaymentMethod> merchantPaymentMethods;
 
     public WebShop(String username, String password, String currency) {
+        this.username = username;
+        this.password = password;
+        this.currency = currency;
     }
 }

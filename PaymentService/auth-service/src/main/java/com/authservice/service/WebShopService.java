@@ -1,8 +1,10 @@
 package com.authservice.service;
 
+import com.authservice.dto.WebShopDTO;
 import com.authservice.model.WebShop;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
 public interface WebShopService extends UserDetailsService {
-    WebShop registerUser(String username, String password, String currency);
+    WebShop register(String username, String password, String currency);
+    WebShop login(WebShopDTO webShopDTO);
 }

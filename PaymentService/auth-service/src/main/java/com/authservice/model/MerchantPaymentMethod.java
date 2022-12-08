@@ -21,7 +21,7 @@ public class MerchantPaymentMethod {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "merchant_payment_method_id_gen")
     private Long id;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "payment_method_id", referencedColumnName = "id")
     private PaymentMethod paymentMethod;
 

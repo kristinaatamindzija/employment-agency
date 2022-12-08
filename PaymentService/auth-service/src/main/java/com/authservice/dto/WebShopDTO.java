@@ -10,19 +10,12 @@ import lombok.Setter;
 @Setter
 public class WebShopDTO {
     public Long id;
-
     public String currency;
-
     public String username;
-
     public String password;
-
     public String apiToken;
-
     public String successUrl;
-
     public String errorUrl;
-
     public String failureUrl;
 
 }

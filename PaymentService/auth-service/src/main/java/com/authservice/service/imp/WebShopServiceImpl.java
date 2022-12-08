@@ -1,5 +1,6 @@
 package com.authservice.service.imp;
 
+import com.authservice.dto.WebShopDTO;
 import com.authservice.model.WebShop;
 import com.authservice.repository.WebShopRepository;
 import com.authservice.service.WebShopService;
@@ -17,10 +18,21 @@ public class WebShopServiceImpl implements WebShopService {
 
     protected static SecureRandom random = new SecureRandom();
     @Override
-    public WebShop registerUser(String username, String password, String currency) {
+    public WebShop register(String username, String password, String currency) {
         WebShop webShop = new WebShop(username, password, currency);
         webShop.setApiToken(generateToken(webShop.getUsername()));
         return webShopRepository.save(webShop);
+    }
+
+    @Override
+    public WebShop login(WebShopDTO webShopDTO) {
+        WebShop webShop = webShopRepository.findByUsername(webShopDTO.getUsername());
+        if(webShop!=null) {
+            if (webShopDTO.getPassword().equals(webShop.getPassword())) {
+                return webShop;
+            }
+        }
+        return null;
     }
 
 
@@ -30,8 +42,10 @@ public class WebShopServiceImpl implements WebShopService {
         return ( username + ":" + random );
     }
 
+
+
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return webShopRepository.findByUsername(username);
+        return webShopRepository.loadByUsername(username);
     }
 }
