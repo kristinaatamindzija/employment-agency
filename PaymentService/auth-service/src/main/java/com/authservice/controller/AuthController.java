@@ -1,6 +1,7 @@
 package com.authservice.controller;
 
 import com.authservice.dto.LoginResponseDTO;
+import com.authservice.dto.PaymentMethodDTO;
 import com.authservice.dto.WebShopDTO;
 import com.authservice.model.WebShop;
 import com.authservice.service.WebShopService;
@@ -38,5 +39,11 @@ public class AuthController {
             throw new NullPointerException("Invalid username or password");
         }
         return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+
+    @PostMapping("/addPaymentMethod")
+    public ResponseEntity<?> addPaymentMethod(@RequestBody PaymentMethodDTO paymentMethodDTO) {
+        webShopService.addPaymentMethod(paymentMethodDTO);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 }

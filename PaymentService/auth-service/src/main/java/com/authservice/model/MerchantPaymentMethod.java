@@ -31,4 +31,9 @@ public class MerchantPaymentMethod {
     @Column(name = "merchant_password")
     private String merchantPassword;
 
+    public MerchantPaymentMethod(PaymentMethod paymentMethod, String merchantId, String merchantPassword) {
+        this.paymentMethod = paymentMethod;
+        this.merchantId = merchantId;
+        this.merchantPassword = merchantPassword;
+    }
 }
