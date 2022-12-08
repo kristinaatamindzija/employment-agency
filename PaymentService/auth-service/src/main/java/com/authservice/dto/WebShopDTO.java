@@ -1,9 +1,13 @@
 package com.authservice.dto;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @NoArgsConstructor
 @AllArgsConstructor
+@Getter
+@Setter
 public class WebShopDTO {
     public Long id;
 
@@ -13,9 +17,7 @@ public class WebShopDTO {
 
     public String password;
 
-    public String merchantID;
-
-    public String merchantPassword;
+    public String apiToken;
 
     public String successUrl;
 

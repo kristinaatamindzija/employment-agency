@@ -27,6 +27,9 @@ public class WebShop {
     @Column(name = "password")
     private String password;
 
+    @Column(name = "api_token")
+    private String apiToken;
+
     @ManyToMany(cascade = { CascadeType.ALL })
     @JoinTable(
             name = "web_shop_payment_method",
@@ -34,4 +37,7 @@ public class WebShop {
             inverseJoinColumns = { @JoinColumn(name = "merchant_payment_id") }
     )
     private Set<MerchantPaymentMethod> merchantPaymentMethods;
+
+    public WebShop(String username, String password, String currency) {
+    }
 }
