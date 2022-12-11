@@ -10,4 +10,5 @@ public interface WebShopService extends UserDetailsService {
     WebShop register(String username, String password, String currency);
     LoginResponseDTO login(WebShopDTO webShopDTO);
     void addPaymentMethod(PaymentMethodDTO paymentMethodDTO);
+    void deletePaymentMethod(PaymentMethodDTO paymentMethodDTO);
 }

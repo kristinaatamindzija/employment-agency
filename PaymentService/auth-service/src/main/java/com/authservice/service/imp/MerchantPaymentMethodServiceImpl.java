@@ -16,4 +16,9 @@ public class MerchantPaymentMethodServiceImpl implements MerchantPaymentMethodSe
     public MerchantPaymentMethod save(MerchantPaymentMethod merchantPaymentMethod) {
         return merchantPaymentMethodRepository.save(merchantPaymentMethod);
     }
+
+    @Override
+    public void delete(MerchantPaymentMethod merchantPaymentMethod) {
+        merchantPaymentMethodRepository.delete(merchantPaymentMethod);
+    }
 }

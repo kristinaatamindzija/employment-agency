@@ -31,6 +31,8 @@ import java.util.Set;
 public class WebShopServiceImpl implements WebShopService {
 
     private final int PASSWORD_STRENGTH = 10;
+    private final int TOKEN_LENGTH = 8;
+
     @Autowired
     private WebShopRepository webShopRepository;
     @Autowired
@@ -47,7 +49,7 @@ public class WebShopServiceImpl implements WebShopService {
                 new BCryptPasswordEncoder(PASSWORD_STRENGTH, new SecureRandom());
         String encodedPassword = bCryptPasswordEncoder.encode(password);
         WebShop webShop = new WebShop(username, encodedPassword, currency);
-        webShop.setApiToken(generateToken(webShop.getUsername()));
+        webShop.setApiToken(generateRandomString(TOKEN_LENGTH));
         return webShopRepository.save(webShop);
     }
 
@@ -68,9 +70,9 @@ public class WebShopServiceImpl implements WebShopService {
     @Override
     public void addPaymentMethod(PaymentMethodDTO paymentMethodDTO) {
         WebShop webShop = webShopRepository.findByApiToken(paymentMethodDTO.getApiToken());
-        if(webShop==null) throw new UsernameNotFoundException("WebShop not found");
+        if(webShop == null) throw new UsernameNotFoundException("WebShop not found");
         PaymentMethod paymentMethod = paymentMethodService.findById(paymentMethodDTO.getPaymentMethodId());
-        if(paymentMethod==null) throw new UsernameNotFoundException("Payment method not found");
+        if(paymentMethod == null) throw new UsernameNotFoundException("Payment method not found");
         Set<MerchantPaymentMethod> merchantPaymentMethods = webShop.getMerchantPaymentMethods();
         merchantPaymentMethods.stream().filter(merchantPaymentMethod -> merchantPaymentMethod.getPaymentMethod().getId()
                         .equals(paymentMethod.getId()))
@@ -83,14 +85,22 @@ public class WebShopServiceImpl implements WebShopService {
         webShopRepository.save(webShop);
     }
 
-
-    public synchronized String generateToken( String username ) {
-        long longToken = Math.abs( random.nextLong() );
-        String random = Long.toString( longToken, 16 );
-        return ( username + ":" + random );
+    @Override
+    public void deletePaymentMethod(PaymentMethodDTO paymentMethodDTO) {
+        WebShop webShop = webShopRepository.findByApiToken(paymentMethodDTO.getApiToken());
+        if(webShop == null) throw new UsernameNotFoundException("WebShop not found");
+        PaymentMethod paymentMethod = paymentMethodService.findById(paymentMethodDTO.getPaymentMethodId());
+        if(paymentMethod == null) throw new UsernameNotFoundException("Payment method not found");
+        Set<MerchantPaymentMethod> merchantPaymentMethods = webShop.getMerchantPaymentMethods();
+        merchantPaymentMethods.stream().filter(merchantPaymentMethod -> merchantPaymentMethod.getPaymentMethod().getId()
+                        .equals(paymentMethod.getId()))
+                        .findFirst().ifPresent(merchantPaymentMethod -> {
+            merchantPaymentMethodService.delete(merchantPaymentMethod);
+            merchantPaymentMethods.remove(merchantPaymentMethod);
+            webShopRepository.save(webShop);
+        });
     }
 
-    //generate random string with letters and numbers
     private String generateRandomString(int length) {
         String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
         StringBuilder result = new StringBuilder();
@@ -101,8 +111,6 @@ public class WebShopServiceImpl implements WebShopService {
         }
         return result.toString();
     }
-
-
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
