@@ -12,6 +12,10 @@ spring:
             - Path=/auth/**
           filters:
             - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
+        - id: bankModules
+          uri: http://localhost:7703/
+          predicates:
+            - Path=/bank-service/**
       globalcors:
         corsConfigurations:
           '[/**]':

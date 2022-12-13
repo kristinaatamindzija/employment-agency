@@ -34,13 +34,22 @@ public class WebShop {
     @Column(name = "api_token")
     private String apiToken;
 
+    @Column(name = "merchant_uuid")
+    private String merchantUuid;
+
+    @Column(name = "merchant_id")
+    private String merchantId;
+
+    @Column(name = "merchant_password")
+    private String merchantPassword;
+
     @ManyToMany(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER)
     @JoinTable(
             name = "web_shop_payment_method",
             joinColumns = { @JoinColumn(name = "web_shop_id") },
-            inverseJoinColumns = { @JoinColumn(name = "merchant_payment_id") }
+            inverseJoinColumns = { @JoinColumn(name = "payment_method_id") }
     )
-    private Set<MerchantPaymentMethod> merchantPaymentMethods;
+    private Set<PaymentMethod> paymentMethods;
 
     public WebShop(String username, String password, String currency) {
         this.username = username;

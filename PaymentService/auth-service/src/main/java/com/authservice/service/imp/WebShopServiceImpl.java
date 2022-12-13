@@ -1,29 +1,23 @@
 package com.authservice.service.imp;
 
 import com.authservice.dto.LoginResponseDTO;
+import com.authservice.dto.MerchantDataResponse;
 import com.authservice.dto.PaymentMethodDTO;
 import com.authservice.dto.WebShopDTO;
-import com.authservice.model.MerchantPaymentMethod;
 import com.authservice.model.PaymentMethod;
 import com.authservice.model.WebShop;
 import com.authservice.repository.PaymentMethodRepository;
 import com.authservice.repository.WebShopRepository;
-import com.authservice.service.MerchantPaymentMethodService;
 import com.authservice.service.PaymentMethodService;
 import com.authservice.service.WebShopService;
 import com.authservice.utils.TokenUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.security.SecureRandom;
-import java.util.List;
 import java.util.Random;
 import java.util.Set;
 
@@ -39,8 +33,7 @@ public class WebShopServiceImpl implements WebShopService {
     private TokenUtils tokenUtils;
     @Autowired
     private PaymentMethodService paymentMethodService;
-    @Autowired
-    private MerchantPaymentMethodService merchantPaymentMethodService;
+
 
     protected static SecureRandom random = new SecureRandom();
     @Override
@@ -73,15 +66,12 @@ public class WebShopServiceImpl implements WebShopService {
         if(webShop == null) throw new UsernameNotFoundException("WebShop not found");
         PaymentMethod paymentMethod = paymentMethodService.findById(paymentMethodDTO.getPaymentMethodId());
         if(paymentMethod == null) throw new UsernameNotFoundException("Payment method not found");
-        Set<MerchantPaymentMethod> merchantPaymentMethods = webShop.getMerchantPaymentMethods();
-        merchantPaymentMethods.stream().filter(merchantPaymentMethod -> merchantPaymentMethod.getPaymentMethod().getId()
+        Set<PaymentMethod> paymentMethods = webShop.getPaymentMethods();
+        paymentMethods.stream().filter(method -> method.getId()
                         .equals(paymentMethod.getId()))
-                        .findFirst().ifPresent(merchantPaymentMethod -> {
+                        .findFirst().ifPresent(method -> {
             throw new RuntimeException("Payment method already exists");
         });
-        MerchantPaymentMethod merchantPaymentMethod = new MerchantPaymentMethod(paymentMethod, generateRandomString(30), generateRandomString(100));
-        merchantPaymentMethod = merchantPaymentMethodService.save(merchantPaymentMethod);
-        merchantPaymentMethods.add(merchantPaymentMethod);
         webShopRepository.save(webShop);
     }
 
@@ -91,14 +81,20 @@ public class WebShopServiceImpl implements WebShopService {
         if(webShop == null) throw new UsernameNotFoundException("WebShop not found");
         PaymentMethod paymentMethod = paymentMethodService.findById(paymentMethodDTO.getPaymentMethodId());
         if(paymentMethod == null) throw new UsernameNotFoundException("Payment method not found");
-        Set<MerchantPaymentMethod> merchantPaymentMethods = webShop.getMerchantPaymentMethods();
-        merchantPaymentMethods.stream().filter(merchantPaymentMethod -> merchantPaymentMethod.getPaymentMethod().getId()
+        Set<PaymentMethod> merchantPaymentMethods = webShop.getPaymentMethods();
+        merchantPaymentMethods.stream().filter(method -> method.getId()
                         .equals(paymentMethod.getId()))
-                        .findFirst().ifPresent(merchantPaymentMethod -> {
-            merchantPaymentMethodService.delete(merchantPaymentMethod);
-            merchantPaymentMethods.remove(merchantPaymentMethod);
+                        .findFirst().ifPresent(method -> {
+            merchantPaymentMethods.remove(method);
             webShopRepository.save(webShop);
         });
+    }
+
+    @Override
+    public MerchantDataResponse getMerchantData(String merchantUuid) {
+        WebShop webShop = webShopRepository.findByMerchantUuid(merchantUuid);
+        if(webShop == null) throw new UsernameNotFoundException("WebShop not found");
+        return new MerchantDataResponse(webShop.getMerchantId(), webShop.getMerchantPassword());
     }
 
     private String generateRandomString(int length) {

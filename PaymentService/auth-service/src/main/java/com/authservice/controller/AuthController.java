@@ -1,6 +1,7 @@
 package com.authservice.controller;
 
 import com.authservice.dto.LoginResponseDTO;
+import com.authservice.dto.MerchantDataResponse;
 import com.authservice.dto.PaymentMethodDTO;
 import com.authservice.dto.WebShopDTO;
 import com.authservice.model.WebShop;
@@ -44,8 +45,8 @@ public class AuthController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    @GetMapping("/dupe")
-    public ResponseEntity<?> getPaymentMethods() {
-        return new ResponseEntity<>("Dupe gace zvace", HttpStatus.OK);
+    @GetMapping("/merchantData/{merchantUuid}")
+    public ResponseEntity<MerchantDataResponse> getMerchantData(@PathVariable String merchantUuid) {
+        return new ResponseEntity<>(webShopService.getMerchantData(merchantUuid), HttpStatus.OK);
     }
 }
