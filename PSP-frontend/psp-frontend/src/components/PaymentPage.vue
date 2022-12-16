@@ -49,7 +49,7 @@
 <script>
 
 export default {
-    name: 'PaymentPage',
+    name: "PaymentPage",
     data() {
         return {
             bankCard: false,
@@ -57,16 +57,17 @@ export default {
             payPal: false,
             bitcoin: false,
             saveVisible: false
-        }
+        };
     },
     methods: {
         save() {
             this.saveVisible = false;
         },
-        setSaveVisible(){
+        setSaveVisible() {
             this.saveVisible = true;
         }
-    }
+    },
+    components: {  }
 }
 
 </script>

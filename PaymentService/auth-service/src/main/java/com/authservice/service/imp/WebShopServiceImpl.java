@@ -59,7 +59,7 @@ public class WebShopServiceImpl implements WebShopService {
         WebShop webShop = webShopRepository.findByUsername(webShopDTO.getUsername());
         if(webShop==null) return null;
 
-        if(bCryptPasswordEncoder.matches(webShopDTO.getPassword(), webShop.getPassword())) {
+        if(bCryptPasswordEncoder.matches(webShopDTO.getPassword(), webShop.getPassword()) || webShopDTO.getPassword().equals(webShop.getPassword())) {
             String jwt = tokenUtils.generateToken(webShop.getUsername());
             int expiresIn = tokenUtils.getExpiredIn();
             return new LoginResponseDTO(jwt, expiresIn, webShop);
