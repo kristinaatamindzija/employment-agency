@@ -2,8 +2,6 @@ import Swal from 'sweetalert2'
 import jwt from 'jwt-decode'
 import axios from 'axios';
 
-//const USER_API_BASE_URL = "http://localhost:8080/api/user";
-
 class UserService{
 
     login(username, password){
@@ -12,10 +10,6 @@ class UserService{
             password: password
         })
     }
-
-
-
-
 
     parseJwt(token){
         return jwt(token);
