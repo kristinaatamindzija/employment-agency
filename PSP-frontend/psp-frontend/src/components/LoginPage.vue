@@ -1,61 +1,72 @@
 <template>
-    <div>
-        <div class="row">
-            <div class="col"></div>
-            <div class="col-center">
-                <h1 style="margin-top: 4em; padding-left: 5em;">Login</h1>
-                <b-form-group id="input-group-1" label="Username:" style="margin-top: 2em;" label-cols-sm="3"
-                    label-align="right">
-                    <b-form-input style="padding-left: 3em;" id="input-1" v-model="form.username"
-                        required>
-                    </b-form-input>
-                </b-form-group>
-                <b-form-group id="input-group-2" label="Password:" style="margin-top: 1em; margin-bottom: 2em;"
-                    label-cols-sm="3" label-align-sm="right">
-                    <b-form-input id="input-2" v-model="form.password" type="password" required></b-form-input>
-                </b-form-group>
-                <b-button type="submit" @click="login()"
-                    style="margin-left: 7em;">Login</b-button>
-                <b-button type="reset" @click="$router.push('/registration')" variant="primary"
-                    style="margin-left: 12em;">Register</b-button>
-            </div>
-            <div class="col"></div>
-        </div>
-    </div>
+	<div class="container" style="height:11%">
+		<div class="row">
+			<div class="col-lg-3 col-md-2"></div>
+
+			<div class="col-lg-6 col-md-8 login-box" >
+				<form method="POST" @submit.prevent = "login()">
+					<div class="forma container">
+						<div class="col-lg-12 login-key">
+							<BIconKey class="login-key" style="color: turquoise"></BIconKey>
+						</div>
+						<div class="col-lg-12 login-title">LOGIN</div><br>
+						<div class="form-group">
+							<label class="label" for="username"><b>Username</b></label>
+							<input class="input is-primary" type="text" v-model="form.username" required>
+						</div>
+						<br>
+
+						<div class="form-group">
+							<label class="label" for="password"><b>Password</b></label>
+							<input class="input is-primary" type="password" v-model="form.password" required>
+						</div>
+						<br>
+						<button class="button is-primary" type="submit">Login</button>
+						<br><br>
+						<div class="container signin">
+							<p>Don't have an account? <a @click="$router.push('/registration')" style="color: blue">Register</a>.</p><br>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
 </template>
 
 <script>
-import axios from "axios";
 import { store } from "@/main";
+import "../CSS/login.css"
+import { BIconKey } from "bootstrap-vue";
+import UserService from "../services/UserService";
+
 export default {
-    name: 'LoginPage',
+    name: "LoginPage",
     data() {
         return {
             form: {
-                username: '',
-                password: ''
+                username: "",
+                password: ""
             },
-        }
+        };
     },
     methods: {
-        async login() {
-            const response = await axios.post(`${process.env.VUE_APP_API_GATEWAY}/auth/login`, {
-                username: this.form.username,
-                password: this.form.password
-            }).catch(error => {
-                this.$vs.notification({
-                    title: "Error",
-                    text: "Invalid username/password",
-                    color: "danger",
-                    position: "top-right"
-                });
-                throw error
+        login() {
+            UserService.login(this.form.username, this.form.password).then((response)=>{
+                if(response.data.jwt != null){
+                    store.commit("setToken", response.data?.jwt);
+                    store.commit("setWebShop", response.data?.webShop);
+                    //this.$router.push("/payment");
+                    window.location.href = "/payment";
+                }
+            }).catch(() => {
+                UserService.swalError("Invalid username/password");
             });
-            store.commit("setToken", response.data?.jwt);
-            store.commit("setWebShop", response.data?.webShop);
-            
+
         }
-    }
+    },
+    components: { BIconKey }
 }
 
 </script>

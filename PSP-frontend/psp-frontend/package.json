@@ -10,11 +10,15 @@
   "dependencies": {
     "axios": "^1.2.1",
     "bootstrap": "^4.6.1",
+    "bootstrap-icons-vue": "^1.8.1",
     "bootstrap-vue": "^2.23.1",
+    "bulma": "^0.9.4",
     "core-js": "^3.8.3",
+    "jwt-decode": "^3.1.2",
     "vue": "^2.6.12",
     "vue-axios": "^3.5.2",
     "vue-router": "^3.6.5",
+    "vue-sweetalert2": "^5.0.5",
     "vuelidate": "^0.7.7",
     "vuex": "^4.0.2",
     "vuex-persistedstate": "^4.1.0"

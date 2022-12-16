@@ -1,19 +1,5 @@
 <template>
     <div>
-        <b-navbar toggleable="lg" type="dark" variant="info">
-            <b-navbar-brand @click="$router.push('/payment')">Home</b-navbar-brand>
-
-            <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
-
-            <b-collapse id="nav-collapse" is-nav>
-                <b-navbar-nav>
-                    <b-nav-item @click="$router.push('/payment')">Payment</b-nav-item>
-                </b-navbar-nav>
-                <b-navbar-nav class="ml-auto">
-                    <b-nav-item right @click="$router.push('/')">Sign out</b-nav-item>
-                </b-navbar-nav>
-            </b-collapse>
-        </b-navbar>
         <div class="row" style="margin-top: 3em;">
             <div class="col"></div>
             <div class="col">
@@ -22,7 +8,7 @@
                     img-alt="Card Image" text-variant="white">
                     <b-form-checkbox @change="setSaveVisible()" v-model="bankCard" style="font-weight: bold;" switch size="lg">Bank card</b-form-checkbox>
                 </b-card>
-                <b-card style="margin-top: 2em;" overlay
+                <b-card style="margin-top: 2em; height:20px" overlay
                     img-src="https://www.merchantmaverick.com/wp-content/uploads/2021/06/qr-code.jpg"
                     img-alt="Card Image" text-variant="white">
                     <b-form-checkbox @change="setSaveVisible()" v-model="qrCode" style="font-weight: bold;" switch size="lg">QR code</b-form-checkbox>
@@ -49,7 +35,7 @@
 <script>
 
 export default {
-    name: 'PaymentPage',
+    name: "PaymentPage",
     data() {
         return {
             bankCard: false,
@@ -57,16 +43,17 @@ export default {
             payPal: false,
             bitcoin: false,
             saveVisible: false
-        }
+        };
     },
     methods: {
         save() {
             this.saveVisible = false;
         },
-        setSaveVisible(){
+        setSaveVisible() {
             this.saveVisible = true;
         }
-    }
+    },
+    components: {  }
 }
 
 </script>

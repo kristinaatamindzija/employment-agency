@@ -10,12 +10,16 @@ import VueRouter from 'vue-router'
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+import 'bulma/css/bulma.css'
+import VueSweetalert2 from 'vue-sweetalert2';
 
 import { FormPlugin, FormGroupPlugin, NavPlugin } from 'bootstrap-vue';
+import { BootstrapIconsPlugin } from 'bootstrap-icons-vue';
 
 import LoginPage from "@/components/LoginPage"
 import RegistrationPage from "@/components/RegistrationPage"
 import PaymentPage from "@/components/PaymentPage"
+import Navbar from "@/components/NavbarComponent"
 
 Vue.config.productionTip = false
 Vue.config.devtools
@@ -32,6 +36,8 @@ Vue.use(Vuelidate)
 Vue.use(FormPlugin)
 Vue.use(FormGroupPlugin)
 Vue.use(NavPlugin)
+Vue.use(BootstrapIconsPlugin)
+Vue.use(VueSweetalert2);
 
 export const store = new Vuex.Store({
     plugins: [createPersistedState()],
@@ -78,6 +84,14 @@ export const store = new Vuex.Store({
       path: '/payment',
       name: 'payment-page',
       component: PaymentPage,
+      children:[
+
+      ]
+    },
+    {
+      path: '/navbar',
+      name: 'navbar',
+      component: Navbar,
       children:[
 
       ]
