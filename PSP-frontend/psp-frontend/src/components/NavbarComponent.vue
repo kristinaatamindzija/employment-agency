@@ -18,6 +18,9 @@
                 <a class="navbar-item">
                     Home
                 </a>
+                <a class="navbar-item" v-if="!this.isExpired" @click="$router.push('/paypal')">
+                    Paypal
+                </a>
 
                 </div>
 
@@ -60,7 +63,6 @@ export default {
     },
     mounted() {
         this.isExpired = UserService.isExpired();
-        console.log(this.isExpired);
         if (!this.isExpired) {
             this.username = UserService.getUsername();
         }

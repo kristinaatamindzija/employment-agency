@@ -19,6 +19,7 @@ import { BootstrapIconsPlugin } from 'bootstrap-icons-vue';
 import LoginPage from "@/components/LoginPage"
 import RegistrationPage from "@/components/RegistrationPage"
 import PaymentPage from "@/components/PaymentPage"
+import PaypalPage from "@/components/PaypalPage"
 import Navbar from "@/components/NavbarComponent"
 
 Vue.config.productionTip = false
@@ -87,6 +88,13 @@ export const store = new Vuex.Store({
       children:[
 
       ]
+    },
+    {
+      path: '/paypal',
+      name: 'paypal-page',
+      component: PaypalPage,
+      children:[]
+
     },
     {
       path: '/navbar',

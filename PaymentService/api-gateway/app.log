@@ -1396,3 +1396,68 @@ Original Stack Trace:
 2022-12-16 14:48:54.623  INFO 15000 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
 2022-12-16 14:48:54.623  INFO 15000 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
 2022-12-16 14:48:54.635  INFO 15000 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2022-12-16 15:59:17.142  INFO 10620 --- [main] com.apigateway.ApiGatewayApplication     : Starting ApiGatewayApplication using Java 17.0.5 on DESKTOP-LPEUSC9 with PID 10620 (C:\Users\Brankovic\Desktop\employment-agency\PaymentService\api-gateway\target\classes started by Brankovic in C:\Users\Brankovic\Desktop\employment-agency\PaymentService\api-gateway)
+2022-12-16 15:59:17.151  INFO 10620 --- [main] com.apigateway.ApiGatewayApplication     : No active profile set, falling back to 1 default profile: "default"
+2022-12-16 15:59:19.455  INFO 10620 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=c6d5bbf9-4713-3d99-8b81-57a941ce1882
+2022-12-16 15:59:19.608  INFO 10620 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-12-16 15:59:19.612  INFO 10620 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-12-16 15:59:19.615  INFO 10620 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-12-16 15:59:21.109  INFO 10620 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [After]
+2022-12-16 15:59:21.110  INFO 10620 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Before]
+2022-12-16 15:59:21.110  INFO 10620 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Between]
+2022-12-16 15:59:21.110  INFO 10620 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Cookie]
+2022-12-16 15:59:21.110  INFO 10620 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Header]
+2022-12-16 15:59:21.111  INFO 10620 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Host]
+2022-12-16 15:59:21.111  INFO 10620 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Method]
+2022-12-16 15:59:21.111  INFO 10620 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Path]
+2022-12-16 15:59:21.111  INFO 10620 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Query]
+2022-12-16 15:59:21.111  INFO 10620 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [ReadBody]
+2022-12-16 15:59:21.112  INFO 10620 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [RemoteAddr]
+2022-12-16 15:59:21.112  INFO 10620 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [XForwardedRemoteAddr]
+2022-12-16 15:59:21.112  INFO 10620 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Weight]
+2022-12-16 15:59:21.112  INFO 10620 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [CloudFoundryRouteService]
+2022-12-16 15:59:21.892  INFO 10620 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-12-16 15:59:22.234  INFO 10620 --- [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2022-12-16 15:59:22.385  WARN 10620 --- [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2022-12-16 15:59:22.442  INFO 10620 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2022-12-16 15:59:22.595  INFO 10620 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2022-12-16 15:59:22.609  INFO 10620 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-16 15:59:22.662  INFO 10620 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2022-12-16 15:59:22.663  INFO 10620 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2022-12-16 15:59:22.663  INFO 10620 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2022-12-16 15:59:22.663  INFO 10620 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2022-12-16 15:59:22.664  INFO 10620 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2022-12-16 15:59:22.664  INFO 10620 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2022-12-16 15:59:22.664  INFO 10620 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2022-12-16 15:59:23.475  INFO 10620 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2022-12-16 15:59:23.480  INFO 10620 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2022-12-16 15:59:23.486  INFO 10620 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2022-12-16 15:59:23.496  INFO 10620 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1671202763494 with initial instances count: 0
+2022-12-16 15:59:23.498  INFO 10620 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application API-GATEWAY with eureka with status UP
+2022-12-16 15:59:23.500  INFO 10620 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1671202763500, current=UP, previous=STARTING]
+2022-12-16 15:59:23.504  INFO 10620 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY/DESKTOP-LPEUSC9:api-gateway:7700: registering service...
+2022-12-16 15:59:23.807  INFO 10620 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY/DESKTOP-LPEUSC9:api-gateway:7700 - registration status: 204
+2022-12-16 15:59:23.979  INFO 10620 --- [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 7700
+2022-12-16 15:59:23.981  INFO 10620 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 7700
+2022-12-16 15:59:24.261  INFO 10620 --- [main] com.apigateway.ApiGatewayApplication     : Started ApiGatewayApplication in 8.436 seconds (JVM running for 9.404)
+2022-12-16 15:59:53.484  INFO 10620 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2022-12-16 15:59:53.485  INFO 10620 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2022-12-16 15:59:53.485  INFO 10620 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2022-12-16 15:59:53.485  INFO 10620 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2022-12-16 15:59:53.485  INFO 10620 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2022-12-16 15:59:53.485  INFO 10620 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2022-12-16 15:59:53.485  INFO 10620 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2022-12-16 15:59:53.498  INFO 10620 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2022-12-16 16:00:20.325  INFO 10620 --- [reactor-http-nio-2] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
+2022-12-16 16:00:20.326  INFO 10620 --- [reactor-http-nio-2] com.apigateway.CustomFilter              : REDIRECTING TO  -> Authentication service
+2022-12-16 16:00:20.818  INFO 10620 --- [reactor-http-nio-2] com.apigateway.CustomFilter              : Post Filter = 500 INTERNAL_SERVER_ERROR
+2022-12-16 16:00:42.917  INFO 10620 --- [reactor-http-nio-2] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
+2022-12-16 16:00:42.917  INFO 10620 --- [reactor-http-nio-2] com.apigateway.CustomFilter              : REDIRECTING TO  -> Authentication service
+2022-12-16 16:00:43.039  INFO 10620 --- [reactor-http-nio-2] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-16 16:04:22.677  INFO 10620 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-16 16:09:22.687  INFO 10620 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-16 16:14:22.697  INFO 10620 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-16 16:19:22.706  INFO 10620 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-16 16:24:22.719  INFO 10620 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-16 16:29:22.736  INFO 10620 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-16 16:34:22.748  INFO 10620 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
