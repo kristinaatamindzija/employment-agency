@@ -3508,3 +3508,209 @@ java.lang.NullPointerException: Invalid username or password
 2022-12-16 13:54:23.881 TRACE 20288 --- [http-nio-7702-exec-5] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [BIGINT] - [1]
 2022-12-16 13:54:31.867  INFO 20288 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
 2022-12-16 13:59:31.873  INFO 20288 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-16 14:04:31.887  INFO 20288 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-16 14:09:31.896  INFO 20288 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-16 14:14:31.898  INFO 20288 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-16 14:19:31.906  INFO 20288 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-16 14:20:05.890 DEBUG 20288 --- [http-nio-7702-exec-7] org.hibernate.SQL                        : 
+    select
+        webshop0_.id as id1_3_,
+        webshop0_.api_token as api_toke2_3_,
+        webshop0_.currency as currency3_3_,
+        webshop0_.password as password4_3_,
+        webshop0_.username as username5_3_ 
+    from
+        web_shop webshop0_ 
+    where
+        webshop0_.username=?
+2022-12-16 14:20:05.893 TRACE 20288 --- [http-nio-7702-exec-7] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [EmploymentAgency]
+2022-12-16 14:20:05.899 DEBUG 20288 --- [http-nio-7702-exec-7] org.hibernate.SQL                        : 
+    select
+        merchantpa0_.web_shop_id as web_shop1_2_0_,
+        merchantpa0_.merchant_payment_id as merchant2_2_0_,
+        merchantpa1_.id as id1_0_1_,
+        merchantpa1_.merchant_id as merchant2_0_1_,
+        merchantpa1_.merchant_password as merchant3_0_1_,
+        merchantpa1_.payment_method_id as payment_4_0_1_,
+        paymentmet2_.id as id1_1_2_,
+        paymentmet2_.name as name2_1_2_ 
+    from
+        web_shop_payment_method merchantpa0_ 
+    inner join
+        merchant_payment_method merchantpa1_ 
+            on merchantpa0_.merchant_payment_id=merchantpa1_.id 
+    left outer join
+        payment_method paymentmet2_ 
+            on merchantpa1_.payment_method_id=paymentmet2_.id 
+    where
+        merchantpa0_.web_shop_id=?
+2022-12-16 14:20:05.899 TRACE 20288 --- [http-nio-7702-exec-7] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [BIGINT] - [1]
+2022-12-16 14:23:41.597 DEBUG 20288 --- [http-nio-7702-exec-8] org.hibernate.SQL                        : 
+    select
+        webshop0_.id as id1_3_,
+        webshop0_.api_token as api_toke2_3_,
+        webshop0_.currency as currency3_3_,
+        webshop0_.password as password4_3_,
+        webshop0_.username as username5_3_ 
+    from
+        web_shop webshop0_ 
+    where
+        webshop0_.username=?
+2022-12-16 14:23:41.599 TRACE 20288 --- [http-nio-7702-exec-8] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [hydf]
+2022-12-16 14:23:41.603 ERROR 20288 --- [http-nio-7702-exec-8] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException: Invalid username or password] with root cause
+
+java.lang.NullPointerException: Invalid username or password
+	at com.authservice.controller.AuthController.login(AuthController.java:36) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.22.jar:5.3.22]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.22.jar:5.3.22]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.22.jar:5.3.22]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.22.jar:5.3.22]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.22.jar:5.3.22]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.22.jar:5.3.22]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1070) ~[spring-webmvc-5.3.22.jar:5.3.22]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) ~[spring-webmvc-5.3.22.jar:5.3.22]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.22.jar:5.3.22]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.3.22.jar:5.3.22]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681) ~[tomcat-embed-core-9.0.65.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.22.jar:5.3.22]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) ~[tomcat-embed-core-9.0.65.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:204) ~[spring-security-web-5.7.2.jar:5.7.2]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183) ~[spring-security-web-5.7.2.jar:5.7.2]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:354) ~[spring-web-5.3.22.jar:5.3.22]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267) ~[spring-web-5.3.22.jar:5.3.22]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.22.jar:5.3.22]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.22.jar:5.3.22]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1789) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2022-12-16 14:24:11.576 DEBUG 20288 --- [http-nio-7702-exec-10] org.hibernate.SQL                        : 
+    select
+        webshop0_.id as id1_3_,
+        webshop0_.api_token as api_toke2_3_,
+        webshop0_.currency as currency3_3_,
+        webshop0_.password as password4_3_,
+        webshop0_.username as username5_3_ 
+    from
+        web_shop webshop0_ 
+    where
+        webshop0_.username=?
+2022-12-16 14:24:11.579 TRACE 20288 --- [http-nio-7702-exec-10] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [EmploymentAgency]
+2022-12-16 14:24:11.583 DEBUG 20288 --- [http-nio-7702-exec-10] org.hibernate.SQL                        : 
+    select
+        merchantpa0_.web_shop_id as web_shop1_2_0_,
+        merchantpa0_.merchant_payment_id as merchant2_2_0_,
+        merchantpa1_.id as id1_0_1_,
+        merchantpa1_.merchant_id as merchant2_0_1_,
+        merchantpa1_.merchant_password as merchant3_0_1_,
+        merchantpa1_.payment_method_id as payment_4_0_1_,
+        paymentmet2_.id as id1_1_2_,
+        paymentmet2_.name as name2_1_2_ 
+    from
+        web_shop_payment_method merchantpa0_ 
+    inner join
+        merchant_payment_method merchantpa1_ 
+            on merchantpa0_.merchant_payment_id=merchantpa1_.id 
+    left outer join
+        payment_method paymentmet2_ 
+            on merchantpa1_.payment_method_id=paymentmet2_.id 
+    where
+        merchantpa0_.web_shop_id=?
+2022-12-16 14:24:11.583 TRACE 20288 --- [http-nio-7702-exec-10] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [BIGINT] - [1]
+2022-12-16 14:24:31.921  INFO 20288 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-16 14:28:05.688 DEBUG 20288 --- [http-nio-7702-exec-1] org.hibernate.SQL                        : 
+    select
+        webshop0_.id as id1_3_,
+        webshop0_.api_token as api_toke2_3_,
+        webshop0_.currency as currency3_3_,
+        webshop0_.password as password4_3_,
+        webshop0_.username as username5_3_ 
+    from
+        web_shop webshop0_ 
+    where
+        webshop0_.username=?
+2022-12-16 14:28:05.690 TRACE 20288 --- [http-nio-7702-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [EmploymentAgency]
+2022-12-16 14:28:05.693 DEBUG 20288 --- [http-nio-7702-exec-1] org.hibernate.SQL                        : 
+    select
+        merchantpa0_.web_shop_id as web_shop1_2_0_,
+        merchantpa0_.merchant_payment_id as merchant2_2_0_,
+        merchantpa1_.id as id1_0_1_,
+        merchantpa1_.merchant_id as merchant2_0_1_,
+        merchantpa1_.merchant_password as merchant3_0_1_,
+        merchantpa1_.payment_method_id as payment_4_0_1_,
+        paymentmet2_.id as id1_1_2_,
+        paymentmet2_.name as name2_1_2_ 
+    from
+        web_shop_payment_method merchantpa0_ 
+    inner join
+        merchant_payment_method merchantpa1_ 
+            on merchantpa0_.merchant_payment_id=merchantpa1_.id 
+    left outer join
+        payment_method paymentmet2_ 
+            on merchantpa1_.payment_method_id=paymentmet2_.id 
+    where
+        merchantpa0_.web_shop_id=?
+2022-12-16 14:28:05.693 TRACE 20288 --- [http-nio-7702-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [BIGINT] - [1]
+2022-12-16 14:29:31.933  INFO 20288 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-16 14:34:31.944  INFO 20288 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-16 14:35:51.640 DEBUG 20288 --- [http-nio-7702-exec-4] org.hibernate.SQL                        : 
+    select
+        webshop0_.id as id1_3_,
+        webshop0_.api_token as api_toke2_3_,
+        webshop0_.currency as currency3_3_,
+        webshop0_.password as password4_3_,
+        webshop0_.username as username5_3_ 
+    from
+        web_shop webshop0_ 
+    where
+        webshop0_.username=?
+2022-12-16 14:35:51.644 TRACE 20288 --- [http-nio-7702-exec-4] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [EmploymentAgency]
+2022-12-16 14:35:51.647 DEBUG 20288 --- [http-nio-7702-exec-4] org.hibernate.SQL                        : 
+    select
+        merchantpa0_.web_shop_id as web_shop1_2_0_,
+        merchantpa0_.merchant_payment_id as merchant2_2_0_,
+        merchantpa1_.id as id1_0_1_,
+        merchantpa1_.merchant_id as merchant2_0_1_,
+        merchantpa1_.merchant_password as merchant3_0_1_,
+        merchantpa1_.payment_method_id as payment_4_0_1_,
+        paymentmet2_.id as id1_1_2_,
+        paymentmet2_.name as name2_1_2_ 
+    from
+        web_shop_payment_method merchantpa0_ 
+    inner join
+        merchant_payment_method merchantpa1_ 
+            on merchantpa0_.merchant_payment_id=merchantpa1_.id 
+    left outer join
+        payment_method paymentmet2_ 
+            on merchantpa1_.payment_method_id=paymentmet2_.id 
+    where
+        merchantpa0_.web_shop_id=?
+2022-12-16 14:35:51.647 TRACE 20288 --- [http-nio-7702-exec-4] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [BIGINT] - [1]
+2022-12-16 14:39:31.948  INFO 20288 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-16 14:44:31.957  INFO 20288 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration

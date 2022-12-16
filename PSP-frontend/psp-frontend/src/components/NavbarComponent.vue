@@ -23,13 +23,21 @@
 
                 <div class="navbar-end">
                 <div class="navbar-item">
-                    <div class="buttons">
-                    <a class="button is-primary" @click="$router.push('/registration')">
-                        <strong>Sign up</strong>
-                    </a>
-                    <a class="button is-light" @click="$router.push('/')">
-                        Log in
-                    </a>
+                    <div class="buttons" v-if="this.isExpired">
+                        <button class="button is-primary" @click="$router.push('/registration')">
+                            <strong>Sign up</strong>
+                        </button>
+                        <button class="button is-light" @click="$router.push('/')">
+                            Log in
+                        </button>
+                    </div>
+                    <div class="buttons" v-else>
+                        <a class="navbar-item" @click="logout()">
+                            {{this.username}}
+                        </a>
+                        <button class="button is-light" @click="logout()">
+                            <strong>Logout</strong>
+                        </button>
                     </div>
                 </div>
                 </div>
@@ -40,16 +48,32 @@
 
 <script>
 
+import UserService from "../services/UserService";
+
 export default {
-    name: 'NavbarComponent',
+    name: "NavbarComponent",
     data() {
         return {
-
+            isExpired: false,
+            username: ""
+        };
+    },
+    mounted() {
+        this.isExpired = UserService.isExpired();
+        console.log(this.isExpired);
+        if (!this.isExpired) {
+            this.username = UserService.getUsername();
         }
     },
     methods: {
-
-    }
+        logout() {
+            localStorage.removeItem("vuex");
+            localStorage.clear();
+            this.isExpired = UserService.isExpired();
+            this.$router.push("/");
+        }
+    },
+    components: { }
 }
 
 </script>

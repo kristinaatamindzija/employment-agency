@@ -57,7 +57,8 @@ export default {
                 if(response.data.jwt != null){
                     store.commit("setToken", response.data?.jwt);
                     store.commit("setWebShop", response.data?.webShop);
-                    this.$router.push("/payment");
+                    //this.$router.push("/payment");
+                    window.location.href = "/payment";
                 }
             }).catch(() => {
                 UserService.swalError("Invalid username/password");

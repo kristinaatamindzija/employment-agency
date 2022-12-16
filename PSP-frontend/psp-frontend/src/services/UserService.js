@@ -31,6 +31,17 @@ class UserService{
         }
     }
 
+    getUsername() {
+        let jwt = JSON.parse(localStorage.getItem('vuex')).token
+        try {
+          const content = this.parseJwt(jwt !== null ? jwt : "");
+          return content.sub;
+        } catch {
+          alert("Error getting token, jwt is null");
+          return "";
+        }
+    }
+
     deleteLocalStorageIfExpired(){
         if(JSON.parse(localStorage.getItem('user')) !== null && this.isExpired()){
         Swal.fire('Error!', 'Session expired!', 'error')

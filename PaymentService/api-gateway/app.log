@@ -1321,3 +1321,26 @@ Original Stack Trace:
 2022-12-16 13:54:23.946  INFO 15344 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Post Filter = 200 OK
 2022-12-16 13:55:20.731  INFO 15344 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
 2022-12-16 14:00:20.740  INFO 15344 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-16 14:05:20.757  INFO 15344 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-16 14:10:20.771  INFO 15344 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-16 14:15:20.778  INFO 15344 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-16 14:20:05.879  INFO 15344 --- [reactor-http-nio-5] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
+2022-12-16 14:20:05.880  INFO 15344 --- [reactor-http-nio-5] com.apigateway.CustomFilter              : REDIRECTING TO  -> Authentication service
+2022-12-16 14:20:05.971  INFO 15344 --- [reactor-http-nio-5] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-16 14:20:20.793  INFO 15344 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-16 14:23:41.588  INFO 15344 --- [reactor-http-nio-5] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
+2022-12-16 14:23:41.589  INFO 15344 --- [reactor-http-nio-5] com.apigateway.CustomFilter              : REDIRECTING TO  -> Authentication service
+2022-12-16 14:23:41.606  INFO 15344 --- [reactor-http-nio-5] com.apigateway.CustomFilter              : Post Filter = 500 INTERNAL_SERVER_ERROR
+2022-12-16 14:24:11.570  INFO 15344 --- [reactor-http-nio-5] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
+2022-12-16 14:24:11.570  INFO 15344 --- [reactor-http-nio-5] com.apigateway.CustomFilter              : REDIRECTING TO  -> Authentication service
+2022-12-16 14:24:11.648  INFO 15344 --- [reactor-http-nio-5] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-16 14:25:20.795  INFO 15344 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-16 14:28:05.681  INFO 15344 --- [reactor-http-nio-5] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
+2022-12-16 14:28:05.681  INFO 15344 --- [reactor-http-nio-5] com.apigateway.CustomFilter              : REDIRECTING TO  -> Authentication service
+2022-12-16 14:28:05.759  INFO 15344 --- [reactor-http-nio-5] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-16 14:30:20.800  INFO 15344 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-16 14:35:20.813  INFO 15344 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-16 14:35:51.632  INFO 15344 --- [reactor-http-nio-6] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
+2022-12-16 14:35:51.632  INFO 15344 --- [reactor-http-nio-6] com.apigateway.CustomFilter              : REDIRECTING TO  -> Authentication service
+2022-12-16 14:35:51.713  INFO 15344 --- [reactor-http-nio-6] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-16 14:40:20.827  INFO 15344 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
