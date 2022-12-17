@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -31,9 +32,6 @@ public class WebShop {
     @JsonIgnore
     private String password;
 
-    @Column(name = "api_token")
-    private String apiToken;
-
     @Column(name = "merchant_uuid")
     private String merchantUuid;
 
@@ -49,7 +47,7 @@ public class WebShop {
             joinColumns = { @JoinColumn(name = "web_shop_id") },
             inverseJoinColumns = { @JoinColumn(name = "payment_method_id") }
     )
-    private Set<PaymentMethod> paymentMethods;
+    private Set<PaymentMethod> paymentMethods = new HashSet<>();
 
     public WebShop(String username, String password, String currency) {
         this.username = username;

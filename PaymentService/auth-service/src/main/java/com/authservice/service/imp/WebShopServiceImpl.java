@@ -18,14 +18,13 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.security.SecureRandom;
-import java.util.Random;
 import java.util.Set;
+import java.util.UUID;
 
 @Service
 public class WebShopServiceImpl implements WebShopService {
 
     private final int PASSWORD_STRENGTH = 10;
-    private final int TOKEN_LENGTH = 8;
 
     @Autowired
     private WebShopRepository webShopRepository;
@@ -39,10 +38,10 @@ public class WebShopServiceImpl implements WebShopService {
     @Override
     public WebShop register(String username, String password, String currency) {
         BCryptPasswordEncoder bCryptPasswordEncoder =
-                new BCryptPasswordEncoder(PASSWORD_STRENGTH, new SecureRandom());
+                new BCryptPasswordEncoder(PASSWORD_STRENGTH, random);
         String encodedPassword = bCryptPasswordEncoder.encode(password);
         WebShop webShop = new WebShop(username, encodedPassword, currency);
-        webShop.setApiToken(generateRandomString(TOKEN_LENGTH));
+        webShop.setMerchantUuid(UUID.randomUUID().toString().replace("-", ""));
         return webShopRepository.save(webShop);
     }
 
@@ -52,7 +51,8 @@ public class WebShopServiceImpl implements WebShopService {
         WebShop webShop = webShopRepository.findByUsername(webShopDTO.getUsername());
         if(webShop==null) return null;
 
-        if(bCryptPasswordEncoder.matches(webShopDTO.getPassword(), webShop.getPassword()) || webShopDTO.getPassword().equals(webShop.getPassword())) {
+        if(bCryptPasswordEncoder.matches(webShopDTO.getPassword(), webShop.getPassword()) ||
+                webShopDTO.getPassword().equals(webShop.getPassword())) {
             String jwt = tokenUtils.generateToken(webShop.getUsername());
             int expiresIn = tokenUtils.getExpiredIn();
             return new LoginResponseDTO(jwt, expiresIn, webShop);
@@ -62,7 +62,7 @@ public class WebShopServiceImpl implements WebShopService {
 
     @Override
     public void addPaymentMethod(PaymentMethodDTO paymentMethodDTO) {
-        WebShop webShop = webShopRepository.findByApiToken(paymentMethodDTO.getApiToken());
+        WebShop webShop = webShopRepository.findByMerchantUuid(paymentMethodDTO.getMerchantUuid());
         if(webShop == null) throw new UsernameNotFoundException("WebShop not found");
         PaymentMethod paymentMethod = paymentMethodService.findById(paymentMethodDTO.getPaymentMethodId());
         if(paymentMethod == null) throw new UsernameNotFoundException("Payment method not found");
@@ -72,22 +72,56 @@ public class WebShopServiceImpl implements WebShopService {
                         .findFirst().ifPresent(method -> {
             throw new RuntimeException("Payment method already exists");
         });
+        paymentMethods.add(paymentMethod);
+        switch (Math.toIntExact(paymentMethodDTO.getPaymentMethodId())) {
+            case 1:
+            case 2: {
+                webShop.setMerchantId(paymentMethodDTO.getMerchantId());
+                webShop.setMerchantPassword(paymentMethodDTO.getMerchantPassword());
+                break;
+            }
+//            case 3: {
+//                webShop.setPaypalUsername(paymentMethodDTO.getPaypalUsername());
+//                break;
+//            }
+//            case 4: {
+//                webShop.setBitcoinWalletId(paymentMethodDTO.getBitcoinWalletId());
+//                break;
+//            }
+
+        }
         webShopRepository.save(webShop);
     }
 
     @Override
     public void deletePaymentMethod(PaymentMethodDTO paymentMethodDTO) {
-        WebShop webShop = webShopRepository.findByApiToken(paymentMethodDTO.getApiToken());
+        WebShop webShop = webShopRepository.findByMerchantUuid(paymentMethodDTO.getMerchantUuid());
         if(webShop == null) throw new UsernameNotFoundException("WebShop not found");
         PaymentMethod paymentMethod = paymentMethodService.findById(paymentMethodDTO.getPaymentMethodId());
         if(paymentMethod == null) throw new UsernameNotFoundException("Payment method not found");
         Set<PaymentMethod> merchantPaymentMethods = webShop.getPaymentMethods();
-        merchantPaymentMethods.stream().filter(method -> method.getId()
-                        .equals(paymentMethod.getId()))
-                        .findFirst().ifPresent(method -> {
-            merchantPaymentMethods.remove(method);
-            webShopRepository.save(webShop);
-        });
+        if(merchantPaymentMethods.stream().noneMatch(method -> method.getId().equals(paymentMethod.getId())))
+            throw new RuntimeException("Payment method not found");
+        merchantPaymentMethods.removeIf(method -> method.getId().equals(paymentMethod.getId()));
+        switch (Math.toIntExact(paymentMethodDTO.getPaymentMethodId())) {
+            case 1:
+            case 2: {
+                webShop.setMerchantId(null);
+                webShop.setMerchantPassword(null);
+                break;
+            }
+//            case 3: {
+//                webShop.setPaypalUsername(null);
+//                break;
+//            }
+//            case 4: {
+//                webShop.setBitcoinWalletId(null);
+//                break;
+//            }
+
+        }
+        webShopRepository.save(webShop);
+
     }
 
     @Override
@@ -95,17 +129,6 @@ public class WebShopServiceImpl implements WebShopService {
         WebShop webShop = webShopRepository.findByMerchantUuid(merchantUuid);
         if(webShop == null) throw new UsernameNotFoundException("WebShop not found");
         return new MerchantDataResponse(webShop.getMerchantId(), webShop.getMerchantPassword());
-    }
-
-    private String generateRandomString(int length) {
-        String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-        StringBuilder result = new StringBuilder();
-        while (length > 0) {
-            Random rand = new Random();
-            result.append(characters.charAt(rand.nextInt(characters.length())));
-            length--;
-        }
-        return result.toString();
     }
 
     @Override

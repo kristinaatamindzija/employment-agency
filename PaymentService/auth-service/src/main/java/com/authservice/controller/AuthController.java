@@ -45,6 +45,12 @@ public class AuthController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
+    @PostMapping("/deletePaymentMethod")
+    public ResponseEntity<?> deletePaymentMethod(@RequestBody PaymentMethodDTO paymentMethodDTO) {
+        webShopService.deletePaymentMethod(paymentMethodDTO);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
     @GetMapping("/merchantData/{merchantUuid}")
     public ResponseEntity<MerchantDataResponse> getMerchantData(@PathVariable String merchantUuid) {
         return new ResponseEntity<>(webShopService.getMerchantData(merchantUuid), HttpStatus.OK);
