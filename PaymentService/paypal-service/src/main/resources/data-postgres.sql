@@ -1,0 +1,1 @@
+insert into merchant(merchant_id, merchant_paypal_id, email) values(nextval('merchant_id_seq'), 'SQK683LFHNNTN', 'sb-msi0x23501552@business.example.com');
