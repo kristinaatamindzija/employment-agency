@@ -39,7 +39,7 @@
                             {{this.username}}
                         </a>
                         <button class="button is-light" @click="logout()">
-                            <strong>Logout</strong>
+                            Logout
                         </button>
                     </div>
                 </div>
@@ -51,6 +51,7 @@
 
 <script>
 
+import { store } from "@/main";
 import UserService from "../services/UserService";
 
 export default {
@@ -69,8 +70,8 @@ export default {
     },
     methods: {
         logout() {
-            localStorage.removeItem("vuex");
-            localStorage.clear();
+            store.commit("setToken", null);
+            store.commit("setWebShop", null);
             this.isExpired = UserService.isExpired();
             this.$router.push("/");
         }

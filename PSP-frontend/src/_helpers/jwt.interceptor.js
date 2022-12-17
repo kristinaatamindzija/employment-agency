@@ -8,7 +8,7 @@ export function jwtInterceptor(){
           config.headers.common['Authorization'] = 'Bearer ' + token;
       } else {
         store.commit('setToken', null);
-        store.commit('setUser', null);
+        store.commit('setWebShop', null);
       }
       return config;
   });

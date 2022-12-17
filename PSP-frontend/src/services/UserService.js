@@ -1,10 +1,12 @@
 import Swal from 'sweetalert2'
 import jwt from 'jwt-decode'
 import axios from 'axios';
+import { store } from '@/main';
 
 class UserService{
 
     login(username, password){
+        console.log(`${process.env.VUE_APP_API_GATEWAY}`)
         return axios.post(`${process.env.VUE_APP_API_GATEWAY}/auth/login`, {
             username: username,
             password: password
@@ -16,8 +18,8 @@ class UserService{
     }
 
     isExpired(){
-        if(JSON.parse(localStorage.getItem('vuex')) !== null){
-            let token = JSON.parse(localStorage.getItem('vuex')).token
+        if(store.getters.token !== null){
+            let token = store.getters.token
             let expiration = this.parseJwt(token).exp
             return expiration < Date.now() / 1000
         }else{
@@ -26,7 +28,7 @@ class UserService{
     }
 
     getUsername() {
-        let jwt = JSON.parse(localStorage.getItem('vuex')).token
+        let jwt = store.getters.token
         try {
           const content = this.parseJwt(jwt !== null ? jwt : "");
           return content.sub;
@@ -34,15 +36,6 @@ class UserService{
           alert("Error getting token, jwt is null");
           return "";
         }
-    }
-
-    deleteLocalStorageIfExpired(){
-        if(JSON.parse(localStorage.getItem('user')) !== null && this.isExpired()){
-        Swal.fire('Error!', 'Session expired!', 'error')
-        localStorage.removeItem('vuex')
-        localStorage.clear()
-        return true;
-        }else {return false;}
     }
 
     swalSuccess(text) {

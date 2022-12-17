@@ -1,7 +1,7 @@
 insert into web_shop(id, currency, username, password) values (nextval('web_shop_id_seq'),'rsd','EmploymentAgency',
                                                               '$2a$10$UVn74F/yEiUzKWBSGVyzHe2UfpVJ95zY50Q8bz1RFyrAYVfwFAj4i');
-insert into web_shop(id, currency, username, password) values (nextval('web_shop_id_seq'),'rsd','EmploymentAgency1',
-                                                               '$2a$10$UVn74F/yEiUzKWBSGVyzHe2UfpVJ95zY50Q8bz1RFyrAYVfwFAj4i');
+insert into web_shop(id, currency, username, password) values (nextval('web_shop_id_seq'),'rsd','wasd',
+                                                               '$2a$12$1gl47PZdh4FkOdHq8dPwauildxIqmMo71XHooLwv9tAZKDvHx/1s6');
 
 insert into payment_method(id, name) values (nextval('payment_method_id_seq'), 'bank-card');
 insert into payment_method(id, name) values (nextval('payment_method_id_seq'), 'qr-code');
