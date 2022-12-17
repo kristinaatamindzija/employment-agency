@@ -11,5 +11,9 @@ import java.util.List;
 @Getter
 public class PaymentMethodDTO {
     public Long paymentMethodId;
-    public String apiToken;
+    public String merchantUuid;
+    public String merchantId;
+    public String merchantPassword;
+    //public String PaypalUsername;
+    //public String BitcoinWalletId;
 }

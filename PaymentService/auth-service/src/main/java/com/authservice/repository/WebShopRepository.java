@@ -7,11 +7,9 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 public interface WebShopRepository extends JpaRepository<WebShop, Long> {
     WebShop findByUsername(String username);
-    WebShop findByApiToken(String apiToken);
 
-    //TODO mzd ne radi
     @Query("select w from WebShop w where w.username = ?1")
     UserDetails loadByUsername(String username);
 
-
+    WebShop findByMerchantUuid(String merchantUuid);
 }
