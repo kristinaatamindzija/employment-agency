@@ -1,14 +1,15 @@
 import axios from "axios";
 import {store} from "@/main";
+import jwt from 'jwt-decode'
 
 export function jwtInterceptor(){
   axios.interceptors.request.use(async config => {
       const token = store.getters.token;
       if (token && !isTokenExpired(token)) {
-          config.headers.common['Authorization'] = 'Bearer ' + token;
+          config.headers['Authorization'] = `Bearer ${token}`;
       } else {
         store.commit('setToken', null);
-        store.commit('setUser', null);
+        store.commit('setWebShop', null);
       }
       return config;
   });
@@ -16,9 +17,6 @@ export function jwtInterceptor(){
 
 export function isTokenExpired(token) {
   if(!token) return true;
-  const payloadBase64 = token.split('.')[1];
-  const decodedJson = Buffer.from(payloadBase64, 'base64').toString();
-  const decoded = JSON.parse(decodedJson)
-  const exp = decoded.exp;
+  const exp = jwt(token).exp;
   return (Date.now() >= exp * 1000)
 }

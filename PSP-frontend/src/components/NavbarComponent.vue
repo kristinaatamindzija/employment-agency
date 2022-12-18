@@ -18,6 +18,9 @@
                 <a class="navbar-item">
                     Home
                 </a>
+                <a class="navbar-item" v-if="!this.isExpired" @click="$router.push('/paypal')">
+                    Paypal
+                </a>
 
                 </div>
 
@@ -36,7 +39,7 @@
                             {{this.username}}
                         </a>
                         <button class="button is-light" @click="logout()">
-                            <strong>Logout</strong>
+                            Logout
                         </button>
                     </div>
                 </div>
@@ -48,6 +51,7 @@
 
 <script>
 
+import { store } from "@/main";
 import UserService from "../services/UserService";
 
 export default {
@@ -60,15 +64,14 @@ export default {
     },
     mounted() {
         this.isExpired = UserService.isExpired();
-        console.log(this.isExpired);
         if (!this.isExpired) {
             this.username = UserService.getUsername();
         }
     },
     methods: {
         logout() {
-            localStorage.removeItem("vuex");
-            localStorage.clear();
+            store.commit("setToken", null);
+            store.commit("setWebShop", null);
             this.isExpired = UserService.isExpired();
             this.$router.push("/");
         }
