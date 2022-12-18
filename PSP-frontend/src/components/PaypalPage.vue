@@ -18,7 +18,7 @@ export default {
             isExpired: false,
             username: "",
             order: {
-                currencyCode: "USD",
+                currencyCode: "EUR",
                 value: "100.00",
                 description: "Test"
             },
@@ -34,7 +34,7 @@ export default {
         if (!this.isExpired) {
             this.username = UserService.getUsername();
         }
-        this.createButton();
+        this.createButton();    //pozvati getMerchant() umesto createButton()
     },
     methods: {
         getMerchant(){
@@ -63,6 +63,9 @@ export default {
             console.log(currencyCode, value, description, merchantId, emailAddress)
 
             window.paypal.Buttons({
+                style: {
+                    label: 'buynow'
+                },
                 createOrder: (data, actions) => {
                     return actions.order.create({
                         purchase_units: [
@@ -79,6 +82,11 @@ export default {
                             }
                         ]
                     });
+                },
+                onAuthorize: async (data, actions) => {
+                    alert('The payment dialog will now be displayed.');
+                    const order = await actions.order.capture();
+                    console.log("sada", order);
                 },
                 onApprove: async (data, actions) => {
                     const order = await actions.order.capture();

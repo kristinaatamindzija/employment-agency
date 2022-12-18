@@ -1,30 +1,307 @@
-2022-12-17 23:09:48.573  INFO 7504 --- [main] c.e.p.PaypalServiceApplication           : Starting PaypalServiceApplication using Java 17.0.2 on DESKTOP-4HG5T0S with PID 7504 (C:\Users\Brankovic\Desktop\employment-agency\PaymentService\paypal-service\target\classes started by Brankovic in C:\Users\Brankovic\Desktop\employment-agency\PaymentService\paypal-service)
-2022-12-17 23:09:48.578  INFO 7504 --- [main] c.e.p.PaypalServiceApplication           : No active profile set, falling back to 1 default profile: "default"
-2022-12-17 23:09:50.278  INFO 7504 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-12-17 23:09:50.552  INFO 7504 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 240 ms. Found 2 JPA repository interfaces.
-2022-12-17 23:09:51.240  INFO 7504 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=5887f646-54f9-3094-ac9e-367bd55cc1fd
-2022-12-17 23:09:52.607  INFO 7504 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7706 (http)
-2022-12-17 23:09:52.623  INFO 7504 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-12-17 23:09:52.624  INFO 7504 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.69]
-2022-12-17 23:09:52.884  INFO 7504 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-12-17 23:09:52.884  INFO 7504 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4207 ms
-2022-12-17 23:09:53.423  INFO 7504 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-12-17 23:09:53.532  INFO 7504 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.14.Final
-2022-12-17 23:09:53.848  INFO 7504 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-12-17 23:09:53.994  INFO 7504 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2022-12-17 23:09:54.441  INFO 7504 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2022-12-17 23:09:54.472  INFO 7504 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
-2022-12-17 23:09:55.447 DEBUG 7504 --- [main] org.hibernate.SQL                        : 
+2022-12-18 00:00:35.244  INFO 10264 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 00:05:35.410  INFO 10264 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 00:10:35.416  INFO 10264 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 00:15:35.428  INFO 10264 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 00:20:35.437  INFO 10264 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 00:25:35.453  INFO 10264 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 00:30:35.474  INFO 10264 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 00:35:35.486  INFO 10264 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 00:40:35.493  INFO 10264 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 00:45:35.499  INFO 10264 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 00:47:13.678  INFO 10264 --- [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application PAYPAL-SERVICE with eureka with status DOWN
+2022-12-18 00:47:13.682  INFO 10264 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1671320833681, current=DOWN, previous=UP]
+2022-12-18 00:47:13.685  INFO 10264 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_PAYPAL-SERVICE/DESKTOP-4HG5T0S:paypal-service:7706: registering service...
+2022-12-18 00:47:13.856  INFO 10264 --- [DiscoveryClient-InstanceInfoReplicator-0] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/} exception=java.net.ConnectException: Connection refused: no further information stacktrace=com.sun.jersey.api.client.ClientHandlerException: java.net.ConnectException: Connection refused: no further information
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187)
+	at com.sun.jersey.api.client.filter.GZIPContentEncodingFilter.handle(GZIPContentEncodingFilter.java:123)
+	at com.netflix.discovery.EurekaIdentityHeaderFilter.handle(EurekaIdentityHeaderFilter.java:27)
+	at com.sun.jersey.api.client.Client.handle(Client.java:652)
+	at com.sun.jersey.api.client.WebResource.handle(WebResource.java:682)
+	at com.sun.jersey.api.client.WebResource.access$200(WebResource.java:74)
+	at com.sun.jersey.api.client.WebResource$Builder.post(WebResource.java:570)
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.register(AbstractJerseyEurekaHttpClient.java:57)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.MetricsCollectingEurekaHttpClient.execute(MetricsCollectingEurekaHttpClient.java:73)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:91)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:876)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121)
+	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:121)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:180)
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144)
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:134)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:605)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:440)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:835)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:118)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173)
+	... 28 more
+
+2022-12-18 00:47:13.859  WARN 10264 --- [DiscoveryClient-InstanceInfoReplicator-0] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: java.net.ConnectException: Connection refused: no further information
+2022-12-18 00:47:13.866  INFO 10264 --- [DiscoveryClient-InstanceInfoReplicator-0] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=java.net.ConnectException: Connection refused: no further information stacktrace=com.sun.jersey.api.client.ClientHandlerException: java.net.ConnectException: Connection refused: no further information
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187)
+	at com.sun.jersey.api.client.filter.GZIPContentEncodingFilter.handle(GZIPContentEncodingFilter.java:123)
+	at com.netflix.discovery.EurekaIdentityHeaderFilter.handle(EurekaIdentityHeaderFilter.java:27)
+	at com.sun.jersey.api.client.Client.handle(Client.java:652)
+	at com.sun.jersey.api.client.WebResource.handle(WebResource.java:682)
+	at com.sun.jersey.api.client.WebResource.access$200(WebResource.java:74)
+	at com.sun.jersey.api.client.WebResource$Builder.post(WebResource.java:570)
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.register(AbstractJerseyEurekaHttpClient.java:57)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.MetricsCollectingEurekaHttpClient.execute(MetricsCollectingEurekaHttpClient.java:73)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:876)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121)
+	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:121)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:180)
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144)
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:134)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:605)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:440)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:835)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:118)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173)
+	... 29 more
+
+2022-12-18 00:47:13.867  WARN 10264 --- [DiscoveryClient-InstanceInfoReplicator-0] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: java.net.ConnectException: Connection refused: no further information
+2022-12-18 00:47:13.924  WARN 10264 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_PAYPAL-SERVICE/DESKTOP-4HG5T0S:paypal-service:7706 - registration failed Cannot execute request on any known server
+
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.10.17.jar:1.10.17]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-1.10.17.jar:1.10.17]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59) ~[eureka-client-1.10.17.jar:1.10.17]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.10.17.jar:1.10.17]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-1.10.17.jar:1.10.17]
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:876) ~[eureka-client-1.10.17.jar:1.10.17]
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121) ~[eureka-client-1.10.17.jar:1.10.17]
+	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101) ~[eureka-client-1.10.17.jar:1.10.17]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2022-12-18 00:47:13.926  WARN 10264 --- [DiscoveryClient-InstanceInfoReplicator-0] c.n.discovery.InstanceInfoReplicator     : There was a problem with the instance info replicator
+
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.10.17.jar:1.10.17]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-1.10.17.jar:1.10.17]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59) ~[eureka-client-1.10.17.jar:1.10.17]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.10.17.jar:1.10.17]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-1.10.17.jar:1.10.17]
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:876) ~[eureka-client-1.10.17.jar:1.10.17]
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121) ~[eureka-client-1.10.17.jar:1.10.17]
+	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101) ~[eureka-client-1.10.17.jar:1.10.17]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2022-12-18 00:47:13.999  INFO 10264 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-18 00:47:14.041  INFO 10264 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-12-18 00:47:14.048 DEBUG 10264 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : 
     
     drop table if exists merchant cascade
-2022-12-17 23:09:55.461  WARN 7504 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2022-12-17 23:09:55.461  WARN 7504 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "merchant" does not exist, skipping
-2022-12-17 23:09:55.462 DEBUG 7504 --- [main] org.hibernate.SQL                        : 
+2022-12-18 00:47:14.077 DEBUG 10264 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : 
     
     drop table if exists transaction cascade
-2022-12-17 23:09:55.463  WARN 7504 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2022-12-17 23:09:55.463  WARN 7504 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "transaction" does not exist, skipping
-2022-12-17 23:09:55.466 DEBUG 7504 --- [main] org.hibernate.SQL                        : 
+2022-12-18 00:47:14.086 DEBUG 10264 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : 
+    
+    drop sequence if exists merchant_id_seq
+2022-12-18 00:47:14.104  INFO 10264 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-12-18 00:47:14.163  INFO 10264 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-12-18 00:47:14.175  INFO 10264 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2022-12-18 00:47:17.187  INFO 10264 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2022-12-18 00:47:17.198  INFO 10264 --- [SpringApplicationShutdownHook] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=java.net.ConnectException: Connection refused: no further information stacktrace=com.sun.jersey.api.client.ClientHandlerException: java.net.ConnectException: Connection refused: no further information
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187)
+	at com.sun.jersey.api.client.filter.GZIPContentEncodingFilter.handle(GZIPContentEncodingFilter.java:123)
+	at com.netflix.discovery.EurekaIdentityHeaderFilter.handle(EurekaIdentityHeaderFilter.java:27)
+	at com.sun.jersey.api.client.Client.handle(Client.java:652)
+	at com.sun.jersey.api.client.WebResource.handle(WebResource.java:682)
+	at com.sun.jersey.api.client.WebResource.access$200(WebResource.java:74)
+	at com.sun.jersey.api.client.WebResource$Builder.delete(WebResource.java:591)
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.cancel(AbstractJerseyEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.MetricsCollectingEurekaHttpClient.execute(MetricsCollectingEurekaHttpClient.java:73)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:972)
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:948)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:389)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:347)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:177)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:197)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:190)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:390)
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:136)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:213)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:587)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:559)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1163)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:520)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1156)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1106)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1075)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:174)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1021)
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:121)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:180)
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144)
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:134)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:605)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:440)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:835)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:118)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173)
+	... 47 more
+
+2022-12-18 00:47:17.199  WARN 10264 --- [SpringApplicationShutdownHook] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: java.net.ConnectException: Connection refused: no further information
+2022-12-18 00:47:17.202 ERROR 10264 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_PAYPAL-SERVICE/DESKTOP-4HG5T0S:paypal-service:7706 - de-registration failedCannot execute request on any known server
+
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.10.17.jar:1.10.17]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) ~[eureka-client-1.10.17.jar:1.10.17]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74) ~[eureka-client-1.10.17.jar:1.10.17]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.10.17.jar:1.10.17]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) ~[eureka-client-1.10.17.jar:1.10.17]
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:972) ~[eureka-client-1.10.17.jar:1.10.17]
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:948) ~[eureka-client-1.10.17.jar:1.10.17]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:389) ~[spring-beans-5.3.24.jar:5.3.24]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:347) ~[spring-beans-5.3.24.jar:5.3.24]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:177) ~[spring-beans-5.3.24.jar:5.3.24]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:197) ~[spring-beans-5.3.24.jar:5.3.24]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:190) ~[spring-beans-5.3.24.jar:5.3.24]
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:390) ~[spring-cloud-context-3.1.5.jar:3.1.5]
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:136) ~[spring-cloud-context-3.1.5.jar:3.1.5]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:213) ~[spring-beans-5.3.24.jar:5.3.24]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:587) ~[spring-beans-5.3.24.jar:5.3.24]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:559) ~[spring-beans-5.3.24.jar:5.3.24]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1163) ~[spring-beans-5.3.24.jar:5.3.24]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:520) ~[spring-beans-5.3.24.jar:5.3.24]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1156) ~[spring-beans-5.3.24.jar:5.3.24]
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1106) ~[spring-context-5.3.24.jar:5.3.24]
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1075) ~[spring-context-5.3.24.jar:5.3.24]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:174) ~[spring-boot-2.7.7-20221212.130126-11.jar:2.7.7-SNAPSHOT]
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1021) ~[spring-context-5.3.24.jar:5.3.24]
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145) ~[spring-boot-2.7.7-20221212.130126-11.jar:2.7.7-SNAPSHOT]
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75) ~[na:na]
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114) ~[spring-boot-2.7.7-20221212.130126-11.jar:2.7.7-SNAPSHOT]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2022-12-18 00:47:17.234  INFO 10264 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2022-12-18 12:19:48.247  INFO 5908 --- [main] c.e.p.PaypalServiceApplication           : Starting PaypalServiceApplication using Java 17.0.2 on DESKTOP-4HG5T0S with PID 5908 (C:\Users\Brankovic\Desktop\employment-agency\PaymentService\paypal-service\target\classes started by Brankovic in C:\Users\Brankovic\Desktop\employment-agency\PaymentService\paypal-service)
+2022-12-18 12:19:48.260  INFO 5908 --- [main] c.e.p.PaypalServiceApplication           : No active profile set, falling back to 1 default profile: "default"
+2022-12-18 12:19:49.886  INFO 5908 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-18 12:19:50.154  INFO 5908 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 251 ms. Found 2 JPA repository interfaces.
+2022-12-18 12:19:50.517  INFO 5908 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=91450d2f-e144-394a-9be7-dd80fdfb2f4f
+2022-12-18 12:19:51.207  INFO 5908 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7706 (http)
+2022-12-18 12:19:51.224  INFO 5908 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-18 12:19:51.224  INFO 5908 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.69]
+2022-12-18 12:19:51.510  INFO 5908 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-18 12:19:51.511  INFO 5908 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3182 ms
+2022-12-18 12:19:51.955  INFO 5908 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-18 12:19:52.065  INFO 5908 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.14.Final
+2022-12-18 12:19:52.400  INFO 5908 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-18 12:19:52.574  INFO 5908 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-12-18 12:19:52.878  INFO 5908 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-12-18 12:19:52.909  INFO 5908 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2022-12-18 12:19:54.027 DEBUG 5908 --- [main] org.hibernate.SQL                        : 
+    
+    drop table if exists merchant cascade
+2022-12-18 12:19:54.032  WARN 5908 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-12-18 12:19:54.033  WARN 5908 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "merchant" does not exist, skipping
+2022-12-18 12:19:54.033 DEBUG 5908 --- [main] org.hibernate.SQL                        : 
+    
+    drop table if exists transaction cascade
+2022-12-18 12:19:54.034  WARN 5908 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-12-18 12:19:54.034  WARN 5908 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "transaction" does not exist, skipping
+2022-12-18 12:19:54.034 DEBUG 5908 --- [main] org.hibernate.SQL                        : 
+    
+    drop sequence if exists merchant_id_seq
+2022-12-18 12:19:54.035  WARN 5908 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-12-18 12:19:54.035  WARN 5908 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "merchant_id_seq" does not exist, skipping
+2022-12-18 12:19:54.038 DEBUG 5908 --- [main] org.hibernate.SQL                        : create sequence merchant_id_seq start 1 increment 1
+2022-12-18 12:19:54.049 DEBUG 5908 --- [main] org.hibernate.SQL                        : 
     
     create table merchant (
        merchant_id int8 not null,
@@ -32,7 +309,7 @@
         merchant_paypal_id varchar(255),
         primary key (merchant_id)
     )
-2022-12-17 23:09:55.548 DEBUG 7504 --- [main] org.hibernate.SQL                        : 
+2022-12-18 12:19:54.065 DEBUG 5908 --- [main] org.hibernate.SQL                        : 
     
     create table transaction (
        id int8 not null,
@@ -40,65 +317,103 @@
         timestamp timestamp,
         primary key (id)
     )
-2022-12-17 23:09:55.556  INFO 7504 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-12-17 23:09:55.565  INFO 7504 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-12-17 23:09:56.052  WARN 7504 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'paypalController' defined in file [C:\Users\Brankovic\Desktop\employment-agency\PaymentService\paypal-service\target\classes\com\example\paypalservice\controller\PaypalController.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.example.paypalservice.service.TransactionService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
-2022-12-17 23:09:56.053  INFO 7504 --- [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2022-12-17 23:09:56.053  INFO 7504 --- [main] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
-2022-12-17 23:09:56.054 DEBUG 7504 --- [main] org.hibernate.SQL                        : 
+2022-12-18 12:19:54.073  INFO 5908 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-18 12:19:54.083  INFO 5908 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-18 12:19:55.584  INFO 5908 --- [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses Jersey
+2022-12-18 12:19:55.703  WARN 5908 --- [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2022-12-18 12:19:55.710  INFO 5908 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-12-18 12:19:55.750  INFO 5908 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2022-12-18 12:19:55.897  INFO 5908 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2022-12-18 12:19:56.165  INFO 5908 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2022-12-18 12:19:56.167  INFO 5908 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2022-12-18 12:19:56.401  INFO 5908 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2022-12-18 12:19:56.401  INFO 5908 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2022-12-18 12:19:56.790  INFO 5908 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 12:19:56.825  INFO 5908 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2022-12-18 12:19:56.825  INFO 5908 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2022-12-18 12:19:56.826  INFO 5908 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2022-12-18 12:19:56.827  INFO 5908 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2022-12-18 12:19:56.827  INFO 5908 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2022-12-18 12:19:56.827  INFO 5908 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2022-12-18 12:19:56.827  INFO 5908 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2022-12-18 12:19:57.252  INFO 5908 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2022-12-18 12:19:57.256  INFO 5908 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2022-12-18 12:19:57.261  INFO 5908 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2022-12-18 12:19:57.270  INFO 5908 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1671362397266 with initial instances count: 2
+2022-12-18 12:19:57.274  INFO 5908 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application PAYPAL-SERVICE with eureka with status UP
+2022-12-18 12:19:57.275  INFO 5908 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1671362397275, current=UP, previous=STARTING]
+2022-12-18 12:19:57.279  INFO 5908 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_PAYPAL-SERVICE/DESKTOP-4HG5T0S:paypal-service:7706: registering service...
+2022-12-18 12:19:57.316  INFO 5908 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_PAYPAL-SERVICE/DESKTOP-4HG5T0S:paypal-service:7706 - registration status: 204
+2022-12-18 12:19:57.329  INFO 5908 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7706 (http) with context path ''
+2022-12-18 12:19:57.330  INFO 5908 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 7706
+2022-12-18 12:19:57.426  INFO 5908 --- [main] c.e.p.PaypalServiceApplication           : Started PaypalServiceApplication in 9.967 seconds (JVM running for 19.749)
+2022-12-18 12:24:56.835  INFO 5908 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 12:29:56.839  INFO 5908 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 12:32:43.349  INFO 5908 --- [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application PAYPAL-SERVICE with eureka with status DOWN
+2022-12-18 12:32:43.349  INFO 5908 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1671363163349, current=DOWN, previous=UP]
+2022-12-18 12:32:43.350  INFO 5908 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_PAYPAL-SERVICE/DESKTOP-4HG5T0S:paypal-service:7706: registering service...
+2022-12-18 12:32:43.356  INFO 5908 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_PAYPAL-SERVICE/DESKTOP-4HG5T0S:paypal-service:7706 - registration status: 204
+2022-12-18 12:32:43.382  INFO 5908 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-18 12:32:43.383  INFO 5908 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-12-18 12:32:43.423 DEBUG 5908 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : 
     
     drop table if exists merchant cascade
-2022-12-17 23:09:56.070 DEBUG 7504 --- [main] org.hibernate.SQL                        : 
+2022-12-18 12:32:43.449 DEBUG 5908 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : 
     
     drop table if exists transaction cascade
-2022-12-17 23:09:56.075  INFO 7504 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2022-12-17 23:09:56.088  INFO 7504 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2022-12-17 23:09:56.091  INFO 7504 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2022-12-17 23:09:56.122  INFO 7504 --- [main] ConditionEvaluationReportLoggingListener : 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2022-12-17 23:09:56.163 ERROR 7504 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Parameter 1 of constructor in com.example.paypalservice.controller.PaypalController required a bean of type 'com.example.paypalservice.service.TransactionService' that could not be found.
-
-
-Action:
-
-Consider defining a bean of type 'com.example.paypalservice.service.TransactionService' in your configuration.
-
-2022-12-17 23:10:35.698  INFO 3800 --- [main] c.e.p.PaypalServiceApplication           : Starting PaypalServiceApplication using Java 17.0.2 on DESKTOP-4HG5T0S with PID 3800 (C:\Users\Brankovic\Desktop\employment-agency\PaymentService\paypal-service\target\classes started by Brankovic in C:\Users\Brankovic\Desktop\employment-agency\PaymentService\paypal-service)
-2022-12-17 23:10:35.702  INFO 3800 --- [main] c.e.p.PaypalServiceApplication           : No active profile set, falling back to 1 default profile: "default"
-2022-12-17 23:10:37.126  INFO 3800 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-12-17 23:10:37.385  INFO 3800 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 243 ms. Found 2 JPA repository interfaces.
-2022-12-17 23:10:37.813  INFO 3800 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=91450d2f-e144-394a-9be7-dd80fdfb2f4f
-2022-12-17 23:10:38.522  INFO 3800 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7706 (http)
-2022-12-17 23:10:38.536  INFO 3800 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-12-17 23:10:38.537  INFO 3800 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.69]
-2022-12-17 23:10:38.802  INFO 3800 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-12-17 23:10:38.803  INFO 3800 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3022 ms
-2022-12-17 23:10:39.269  INFO 3800 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-12-17 23:10:39.359  INFO 3800 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.14.Final
-2022-12-17 23:10:39.676  INFO 3800 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-12-17 23:10:39.812  INFO 3800 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2022-12-17 23:10:40.080  INFO 3800 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2022-12-17 23:10:40.112  INFO 3800 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
-2022-12-17 23:10:41.141 DEBUG 3800 --- [main] org.hibernate.SQL                        : 
+2022-12-18 12:32:43.452 DEBUG 5908 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : 
+    
+    drop sequence if exists merchant_id_seq
+2022-12-18 12:32:43.456  INFO 5908 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-12-18 12:32:43.462  INFO 5908 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-12-18 12:32:43.463  INFO 5908 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2022-12-18 12:32:46.475  INFO 5908 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2022-12-18 12:32:46.528  INFO 5908 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_PAYPAL-SERVICE/DESKTOP-4HG5T0S:paypal-service:7706 - deregister  status: 200
+2022-12-18 12:32:46.548  INFO 5908 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2022-12-18 12:32:55.586  INFO 7196 --- [main] c.e.p.PaypalServiceApplication           : Starting PaypalServiceApplication using Java 17.0.2 on DESKTOP-4HG5T0S with PID 7196 (C:\Users\Brankovic\Desktop\employment-agency\PaymentService\paypal-service\target\classes started by Brankovic in C:\Users\Brankovic\Desktop\employment-agency\PaymentService\paypal-service)
+2022-12-18 12:32:55.591  INFO 7196 --- [main] c.e.p.PaypalServiceApplication           : No active profile set, falling back to 1 default profile: "default"
+2022-12-18 12:32:58.035  INFO 7196 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-18 12:32:58.493  INFO 7196 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 443 ms. Found 3 JPA repository interfaces.
+2022-12-18 12:32:59.142  INFO 7196 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=9bc62221-0b81-34a6-9f8f-3317c38b1f6c
+2022-12-18 12:33:01.198  INFO 7196 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7706 (http)
+2022-12-18 12:33:01.213  INFO 7196 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-18 12:33:01.214  INFO 7196 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.69]
+2022-12-18 12:33:01.602  INFO 7196 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-18 12:33:01.602  INFO 7196 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5870 ms
+2022-12-18 12:33:02.543  INFO 7196 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-18 12:33:02.830  INFO 7196 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.14.Final
+2022-12-18 12:33:03.470  INFO 7196 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-18 12:33:03.658  INFO 7196 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-12-18 12:33:03.984  INFO 7196 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-12-18 12:33:04.067  INFO 7196 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2022-12-18 12:33:05.469 DEBUG 7196 --- [main] org.hibernate.SQL                        : 
     
     drop table if exists merchant cascade
-2022-12-17 23:10:41.146  WARN 3800 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2022-12-17 23:10:41.146  WARN 3800 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "merchant" does not exist, skipping
-2022-12-17 23:10:41.146 DEBUG 3800 --- [main] org.hibernate.SQL                        : 
+2022-12-18 12:33:05.474  WARN 7196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-12-18 12:33:05.475  WARN 7196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "merchant" does not exist, skipping
+2022-12-18 12:33:05.475 DEBUG 7196 --- [main] org.hibernate.SQL                        : 
+    
+    drop table if exists subscription_plan cascade
+2022-12-18 12:33:05.476  WARN 7196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-12-18 12:33:05.476  WARN 7196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "subscription_plan" does not exist, skipping
+2022-12-18 12:33:05.476 DEBUG 7196 --- [main] org.hibernate.SQL                        : 
     
     drop table if exists transaction cascade
-2022-12-17 23:10:41.147  WARN 3800 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2022-12-17 23:10:41.147  WARN 3800 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "transaction" does not exist, skipping
-2022-12-17 23:10:41.150 DEBUG 3800 --- [main] org.hibernate.SQL                        : 
+2022-12-18 12:33:05.476  WARN 7196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-12-18 12:33:05.476  WARN 7196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "transaction" does not exist, skipping
+2022-12-18 12:33:05.477 DEBUG 7196 --- [main] org.hibernate.SQL                        : 
+    
+    drop sequence if exists merchant_id_seq
+2022-12-18 12:33:05.477  WARN 7196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-12-18 12:33:05.477  WARN 7196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "merchant_id_seq" does not exist, skipping
+2022-12-18 12:33:05.477 DEBUG 7196 --- [main] org.hibernate.SQL                        : 
+    
+    drop sequence if exists plan_id_gen
+2022-12-18 12:33:05.478  WARN 7196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-12-18 12:33:05.478  WARN 7196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "plan_id_gen" does not exist, skipping
+2022-12-18 12:33:05.481 DEBUG 7196 --- [main] org.hibernate.SQL                        : create sequence merchant_id_seq start 1 increment 1
+2022-12-18 12:33:05.485 DEBUG 7196 --- [main] org.hibernate.SQL                        : create sequence plan_id_gen start 1 increment 1
+2022-12-18 12:33:05.493 DEBUG 7196 --- [main] org.hibernate.SQL                        : 
     
     create table merchant (
        merchant_id int8 not null,
@@ -106,7 +421,16 @@ Consider defining a bean of type 'com.example.paypalservice.service.TransactionS
         merchant_paypal_id varchar(255),
         primary key (merchant_id)
     )
-2022-12-17 23:10:41.162 DEBUG 3800 --- [main] org.hibernate.SQL                        : 
+2022-12-18 12:33:05.506 DEBUG 7196 --- [main] org.hibernate.SQL                        : 
+    
+    create table subscription_plan (
+       id int8 not null,
+        merchant_id int8,
+        plan_paypal_id varchar(255),
+        product_id int8,
+        primary key (id)
+    )
+2022-12-18 12:33:05.515 DEBUG 7196 --- [main] org.hibernate.SQL                        : 
     
     create table transaction (
        id int8 not null,
@@ -114,26 +438,163 @@ Consider defining a bean of type 'com.example.paypalservice.service.TransactionS
         timestamp timestamp,
         primary key (id)
     )
-2022-12-17 23:10:41.172  INFO 3800 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-12-17 23:10:41.182  INFO 3800 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-12-17 23:10:42.526  WARN 3800 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Invocation of init method failed; nested exception is org.springframework.jdbc.datasource.init.UncategorizedScriptException: Failed to execute database script from resource [URL [file:/C:/Users/Brankovic/Desktop/employment-agency/PaymentService/paypal-service/target/classes/data-postgres.sql]]; nested exception is java.lang.IllegalArgumentException: 'script' must not be null or empty
-2022-12-17 23:10:42.529  INFO 3800 --- [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2022-12-17 23:10:42.530  INFO 3800 --- [main] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
-2022-12-17 23:10:42.531 DEBUG 3800 --- [main] org.hibernate.SQL                        : 
+2022-12-18 12:33:05.595  INFO 7196 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-18 12:33:05.613  INFO 7196 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-18 12:33:08.338  INFO 7196 --- [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses Jersey
+2022-12-18 12:33:08.519  WARN 7196 --- [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2022-12-18 12:33:08.528  INFO 7196 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-12-18 12:33:08.585  INFO 7196 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2022-12-18 12:33:08.965  INFO 7196 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2022-12-18 12:33:09.206  INFO 7196 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2022-12-18 12:33:09.206  INFO 7196 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2022-12-18 12:33:09.465  INFO 7196 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2022-12-18 12:33:09.466  INFO 7196 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2022-12-18 12:33:09.719  INFO 7196 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 12:33:09.749  INFO 7196 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2022-12-18 12:33:09.750  INFO 7196 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2022-12-18 12:33:09.752  INFO 7196 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2022-12-18 12:33:09.753  INFO 7196 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2022-12-18 12:33:09.753  INFO 7196 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2022-12-18 12:33:09.754  INFO 7196 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2022-12-18 12:33:09.754  INFO 7196 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2022-12-18 12:33:09.977  INFO 7196 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2022-12-18 12:33:09.982  INFO 7196 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2022-12-18 12:33:09.984  INFO 7196 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2022-12-18 12:33:09.990  INFO 7196 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1671363189989 with initial instances count: 2
+2022-12-18 12:33:09.992  INFO 7196 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application PAYPAL-SERVICE with eureka with status UP
+2022-12-18 12:33:09.993  INFO 7196 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1671363189993, current=UP, previous=STARTING]
+2022-12-18 12:33:09.997  INFO 7196 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_PAYPAL-SERVICE/DESKTOP-4HG5T0S:paypal-service:7706: registering service...
+2022-12-18 12:33:10.041  INFO 7196 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_PAYPAL-SERVICE/DESKTOP-4HG5T0S:paypal-service:7706 - registration status: 204
+2022-12-18 12:33:10.045  INFO 7196 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7706 (http) with context path ''
+2022-12-18 12:33:10.046  INFO 7196 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 7706
+2022-12-18 12:33:10.167  INFO 7196 --- [main] c.e.p.PaypalServiceApplication           : Started PaypalServiceApplication in 15.508 seconds (JVM running for 16.379)
+2022-12-18 12:34:08.036  INFO 7196 --- [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application PAYPAL-SERVICE with eureka with status DOWN
+2022-12-18 12:34:08.037  INFO 7196 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1671363248037, current=DOWN, previous=UP]
+2022-12-18 12:34:08.038  INFO 7196 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_PAYPAL-SERVICE/DESKTOP-4HG5T0S:paypal-service:7706: registering service...
+2022-12-18 12:34:08.043  INFO 7196 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_PAYPAL-SERVICE/DESKTOP-4HG5T0S:paypal-service:7706 - registration status: 204
+2022-12-18 12:34:08.063  INFO 7196 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-18 12:34:08.064  INFO 7196 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-12-18 12:34:08.068 DEBUG 7196 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : 
     
     drop table if exists merchant cascade
-2022-12-17 23:10:42.535 DEBUG 3800 --- [main] org.hibernate.SQL                        : 
+2022-12-18 12:34:08.101 DEBUG 7196 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : 
+    
+    drop table if exists subscription_plan cascade
+2022-12-18 12:34:08.104 DEBUG 7196 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : 
     
     drop table if exists transaction cascade
-2022-12-17 23:10:42.540  INFO 3800 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2022-12-17 23:10:42.561  INFO 3800 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2022-12-17 23:10:42.564  INFO 3800 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2022-12-17 23:10:42.607  INFO 3800 --- [main] ConditionEvaluationReportLoggingListener : 
+2022-12-18 12:34:08.107 DEBUG 7196 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : 
+    
+    drop sequence if exists merchant_id_seq
+2022-12-18 12:34:08.109 DEBUG 7196 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : 
+    
+    drop sequence if exists plan_id_gen
+2022-12-18 12:34:08.117  INFO 7196 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-12-18 12:34:08.132  INFO 7196 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-12-18 12:34:08.133  INFO 7196 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2022-12-18 12:34:11.143  WARN 7196 --- [DiscoveryClient-1] c.netflix.discovery.TimedSupervisorTask  : task supervisor shutting down, can't accept the task
+2022-12-18 12:34:11.144  INFO 7196 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2022-12-18 12:34:11.154  INFO 7196 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_PAYPAL-SERVICE/DESKTOP-4HG5T0S:paypal-service:7706 - deregister  status: 200
+2022-12-18 12:34:11.177  INFO 7196 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2022-12-18 12:34:15.321  INFO 1700 --- [main] c.e.p.PaypalServiceApplication           : Starting PaypalServiceApplication using Java 17.0.2 on DESKTOP-4HG5T0S with PID 1700 (C:\Users\Brankovic\Desktop\employment-agency\PaymentService\paypal-service\target\classes started by Brankovic in C:\Users\Brankovic\Desktop\employment-agency\PaymentService\paypal-service)
+2022-12-18 12:34:15.327  INFO 1700 --- [main] c.e.p.PaypalServiceApplication           : No active profile set, falling back to 1 default profile: "default"
+2022-12-18 12:34:16.729  INFO 1700 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-18 12:34:16.930  INFO 1700 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 186 ms. Found 3 JPA repository interfaces.
+2022-12-18 12:34:17.310  INFO 1700 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=9bc62221-0b81-34a6-9f8f-3317c38b1f6c
+2022-12-18 12:34:17.989  INFO 1700 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7706 (http)
+2022-12-18 12:34:18.004  INFO 1700 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-18 12:34:18.005  INFO 1700 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.69]
+2022-12-18 12:34:18.237  INFO 1700 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-18 12:34:18.237  INFO 1700 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2828 ms
+2022-12-18 12:34:18.675  INFO 1700 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-18 12:34:18.757  INFO 1700 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.14.Final
+2022-12-18 12:34:19.016  INFO 1700 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-18 12:34:19.160  INFO 1700 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-12-18 12:34:19.409  INFO 1700 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-12-18 12:34:19.434  INFO 1700 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2022-12-18 12:34:20.439 DEBUG 1700 --- [main] org.hibernate.SQL                        : 
+    
+    drop table if exists merchant cascade
+2022-12-18 12:34:20.443  WARN 1700 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-12-18 12:34:20.443  WARN 1700 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "merchant" does not exist, skipping
+2022-12-18 12:34:20.443 DEBUG 1700 --- [main] org.hibernate.SQL                        : 
+    
+    drop table if exists subscription_plan cascade
+2022-12-18 12:34:20.444  WARN 1700 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-12-18 12:34:20.444  WARN 1700 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "subscription_plan" does not exist, skipping
+2022-12-18 12:34:20.444 DEBUG 1700 --- [main] org.hibernate.SQL                        : 
+    
+    drop table if exists transaction cascade
+2022-12-18 12:34:20.445  WARN 1700 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-12-18 12:34:20.445  WARN 1700 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "transaction" does not exist, skipping
+2022-12-18 12:34:20.445 DEBUG 1700 --- [main] org.hibernate.SQL                        : 
+    
+    drop sequence if exists merchant_id_seq
+2022-12-18 12:34:20.445  WARN 1700 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-12-18 12:34:20.445  WARN 1700 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "merchant_id_seq" does not exist, skipping
+2022-12-18 12:34:20.446 DEBUG 1700 --- [main] org.hibernate.SQL                        : 
+    
+    drop sequence if exists plan_id_gen
+2022-12-18 12:34:20.446  WARN 1700 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-12-18 12:34:20.446  WARN 1700 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "plan_id_gen" does not exist, skipping
+2022-12-18 12:34:20.448 DEBUG 1700 --- [main] org.hibernate.SQL                        : create sequence merchant_id_seq start 1 increment 1
+2022-12-18 12:34:20.452 DEBUG 1700 --- [main] org.hibernate.SQL                        : create sequence plan_id_gen start 1 increment 1
+2022-12-18 12:34:20.454 DEBUG 1700 --- [main] org.hibernate.SQL                        : 
+    
+    create table merchant (
+       merchant_id int8 not null,
+        email varchar(255),
+        merchant_paypal_id varchar(255),
+        primary key (merchant_id)
+    )
+2022-12-18 12:34:20.465 DEBUG 1700 --- [main] org.hibernate.SQL                        : 
+    
+    create table subscription_plan (
+       id int8 not null,
+        merchant_id int8,
+        plan_paypal_id varchar(255),
+        product_id int8,
+        primary key (id)
+    )
+2022-12-18 12:34:20.473 DEBUG 1700 --- [main] org.hibernate.SQL                        : 
+    
+    create table transaction (
+       id int8 not null,
+        status varchar(255),
+        timestamp timestamp,
+        primary key (id)
+    )
+2022-12-18 12:34:20.481  INFO 1700 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-18 12:34:20.492  INFO 1700 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-18 12:34:22.256  WARN 1700 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Invocation of init method failed; nested exception is org.springframework.jdbc.datasource.init.ScriptStatementFailedException: Failed to execute SQL script statement #2 of URL [file:/C:/Users/Brankovic/Desktop/employment-agency/PaymentService/paypal-service/target/classes/data-postgres.sql]: insert into subscription_plan(id, product_id, merchant_id, plan_paypal_id) values(nextval('subscription_plan_id_seq'), 1, 1, 'P-82T63888Y87914132MOPPK7Y'); nested exception is org.postgresql.util.PSQLException: ERROR: relation "subscription_plan_id_seq" does not exist
+  Position: 91
+2022-12-18 12:34:22.259  INFO 1700 --- [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-18 12:34:22.259  INFO 1700 --- [main] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-12-18 12:34:22.260 DEBUG 1700 --- [main] org.hibernate.SQL                        : 
+    
+    drop table if exists merchant cascade
+2022-12-18 12:34:22.265 DEBUG 1700 --- [main] org.hibernate.SQL                        : 
+    
+    drop table if exists subscription_plan cascade
+2022-12-18 12:34:22.268 DEBUG 1700 --- [main] org.hibernate.SQL                        : 
+    
+    drop table if exists transaction cascade
+2022-12-18 12:34:22.272 DEBUG 1700 --- [main] org.hibernate.SQL                        : 
+    
+    drop sequence if exists merchant_id_seq
+2022-12-18 12:34:22.274 DEBUG 1700 --- [main] org.hibernate.SQL                        : 
+    
+    drop sequence if exists plan_id_gen
+2022-12-18 12:34:22.279  INFO 1700 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-12-18 12:34:22.293  INFO 1700 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-12-18 12:34:22.299  INFO 1700 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-12-18 12:34:22.363  INFO 1700 --- [main] ConditionEvaluationReportLoggingListener : 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2022-12-17 23:10:42.640 ERROR 3800 --- [main] o.s.boot.SpringApplication               : Application run failed
+2022-12-18 12:34:22.410 ERROR 1700 --- [main] o.s.boot.SpringApplication               : Application run failed
 
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Invocation of init method failed; nested exception is org.springframework.jdbc.datasource.init.UncategorizedScriptException: Failed to execute database script from resource [URL [file:/C:/Users/Brankovic/Desktop/employment-agency/PaymentService/paypal-service/target/classes/data-postgres.sql]]; nested exception is java.lang.IllegalArgumentException: 'script' must not be null or empty
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Invocation of init method failed; nested exception is org.springframework.jdbc.datasource.init.ScriptStatementFailedException: Failed to execute SQL script statement #2 of URL [file:/C:/Users/Brankovic/Desktop/employment-agency/PaymentService/paypal-service/target/classes/data-postgres.sql]: insert into subscription_plan(id, product_id, merchant_id, plan_paypal_id) values(nextval('subscription_plan_id_seq'), 1, 1, 'P-82T63888Y87914132MOPPK7Y'); nested exception is org.postgresql.util.PSQLException: ERROR: relation "subscription_plan_id_seq" does not exist
+  Position: 91
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804) ~[spring-beans-5.3.24.jar:5.3.24]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.24.jar:5.3.24]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.24.jar:5.3.24]
@@ -153,8 +614,9 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303) ~[spring-boot-2.7.7-20221212.130126-11.jar:2.7.7-SNAPSHOT]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292) ~[spring-boot-2.7.7-20221212.130126-11.jar:2.7.7-SNAPSHOT]
 	at com.example.paypalservice.PaypalServiceApplication.main(PaypalServiceApplication.java:10) ~[classes/:na]
-Caused by: org.springframework.jdbc.datasource.init.UncategorizedScriptException: Failed to execute database script from resource [URL [file:/C:/Users/Brankovic/Desktop/employment-agency/PaymentService/paypal-service/target/classes/data-postgres.sql]]; nested exception is java.lang.IllegalArgumentException: 'script' must not be null or empty
-	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:305) ~[spring-jdbc-5.3.24.jar:5.3.24]
+Caused by: org.springframework.jdbc.datasource.init.ScriptStatementFailedException: Failed to execute SQL script statement #2 of URL [file:/C:/Users/Brankovic/Desktop/employment-agency/PaymentService/paypal-service/target/classes/data-postgres.sql]: insert into subscription_plan(id, product_id, merchant_id, plan_paypal_id) values(nextval('subscription_plan_id_seq'), 1, 1, 'P-82T63888Y87914132MOPPK7Y'); nested exception is org.postgresql.util.PSQLException: ERROR: relation "subscription_plan_id_seq" does not exist
+  Position: 91
+	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:282) ~[spring-jdbc-5.3.24.jar:5.3.24]
 	at org.springframework.jdbc.datasource.init.ResourceDatabasePopulator.populate(ResourceDatabasePopulator.java:254) ~[spring-jdbc-5.3.24.jar:5.3.24]
 	at org.springframework.jdbc.datasource.init.DatabasePopulatorUtils.execute(DatabasePopulatorUtils.java:54) ~[spring-jdbc-5.3.24.jar:5.3.24]
 	at org.springframework.boot.jdbc.init.DataSourceScriptDatabaseInitializer.runScripts(DataSourceScriptDatabaseInitializer.java:90) ~[spring-boot-2.7.7-20221212.130126-11.jar:2.7.7-SNAPSHOT]
@@ -166,45 +628,66 @@ Caused by: org.springframework.jdbc.datasource.init.UncategorizedScriptException
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.24.jar:5.3.24]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.24.jar:5.3.24]
 	... 18 common frames omitted
-Caused by: java.lang.IllegalArgumentException: 'script' must not be null or empty
-	at org.springframework.util.Assert.hasText(Assert.java:289) ~[spring-core-5.3.24.jar:5.3.24]
-	at org.springframework.jdbc.datasource.init.ScriptUtils.splitSqlScript(ScriptUtils.java:636) ~[spring-jdbc-5.3.24.jar:5.3.24]
-	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:252) ~[spring-jdbc-5.3.24.jar:5.3.24]
+Caused by: org.postgresql.util.PSQLException: ERROR: relation "subscription_plan_id_seq" does not exist
+  Position: 91
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2675) ~[postgresql-42.3.8.jar:42.3.8]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2365) ~[postgresql-42.3.8.jar:42.3.8]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:355) ~[postgresql-42.3.8.jar:42.3.8]
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:490) ~[postgresql-42.3.8.jar:42.3.8]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:408) ~[postgresql-42.3.8.jar:42.3.8]
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:329) ~[postgresql-42.3.8.jar:42.3.8]
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:315) ~[postgresql-42.3.8.jar:42.3.8]
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:291) ~[postgresql-42.3.8.jar:42.3.8]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:286) ~[postgresql-42.3.8.jar:42.3.8]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94) ~[HikariCP-4.0.3.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-4.0.3.jar:na]
+	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:261) ~[spring-jdbc-5.3.24.jar:5.3.24]
 	... 28 common frames omitted
 
-2022-12-17 23:15:25.527  INFO 10264 --- [main] c.e.p.PaypalServiceApplication           : Starting PaypalServiceApplication using Java 17.0.2 on DESKTOP-4HG5T0S with PID 10264 (C:\Users\Brankovic\Desktop\employment-agency\PaymentService\paypal-service\target\classes started by Brankovic in C:\Users\Brankovic\Desktop\employment-agency\PaymentService\paypal-service)
-2022-12-17 23:15:25.531  INFO 10264 --- [main] c.e.p.PaypalServiceApplication           : No active profile set, falling back to 1 default profile: "default"
-2022-12-17 23:15:27.535  INFO 10264 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-12-17 23:15:27.893  INFO 10264 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 338 ms. Found 2 JPA repository interfaces.
-2022-12-17 23:15:28.265  INFO 10264 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=91450d2f-e144-394a-9be7-dd80fdfb2f4f
-2022-12-17 23:15:29.192  INFO 10264 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7706 (http)
-2022-12-17 23:15:29.206  INFO 10264 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-12-17 23:15:29.206  INFO 10264 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.69]
-2022-12-17 23:15:29.450  INFO 10264 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-12-17 23:15:29.450  INFO 10264 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3830 ms
-2022-12-17 23:15:30.146  INFO 10264 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-12-17 23:15:30.280  INFO 10264 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.14.Final
-2022-12-17 23:15:30.609  INFO 10264 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-12-17 23:15:30.775  INFO 10264 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2022-12-17 23:15:31.168  INFO 10264 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2022-12-17 23:15:31.201  INFO 10264 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
-2022-12-17 23:15:32.276 DEBUG 10264 --- [main] org.hibernate.SQL                        : 
+2022-12-18 12:34:42.049  INFO 9844 --- [main] c.e.p.PaypalServiceApplication           : Starting PaypalServiceApplication using Java 17.0.2 on DESKTOP-4HG5T0S with PID 9844 (C:\Users\Brankovic\Desktop\employment-agency\PaymentService\paypal-service\target\classes started by Brankovic in C:\Users\Brankovic\Desktop\employment-agency\PaymentService\paypal-service)
+2022-12-18 12:34:42.052  INFO 9844 --- [main] c.e.p.PaypalServiceApplication           : No active profile set, falling back to 1 default profile: "default"
+2022-12-18 12:34:43.473  INFO 9844 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-18 12:34:43.781  INFO 9844 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 291 ms. Found 3 JPA repository interfaces.
+2022-12-18 12:34:44.206  INFO 9844 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=9bc62221-0b81-34a6-9f8f-3317c38b1f6c
+2022-12-18 12:34:44.947  INFO 9844 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7706 (http)
+2022-12-18 12:34:44.960  INFO 9844 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-18 12:34:44.960  INFO 9844 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.69]
+2022-12-18 12:34:45.184  INFO 9844 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-18 12:34:45.185  INFO 9844 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3061 ms
+2022-12-18 12:34:45.619  INFO 9844 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-18 12:34:45.701  INFO 9844 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.14.Final
+2022-12-18 12:34:45.970  INFO 9844 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-18 12:34:46.116  INFO 9844 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-12-18 12:34:46.418  INFO 9844 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-12-18 12:34:46.440  INFO 9844 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2022-12-18 12:34:47.387 DEBUG 9844 --- [main] org.hibernate.SQL                        : 
     
     drop table if exists merchant cascade
-2022-12-17 23:15:32.288  WARN 10264 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2022-12-17 23:15:32.288  WARN 10264 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "merchant" does not exist, skipping
-2022-12-17 23:15:32.289 DEBUG 10264 --- [main] org.hibernate.SQL                        : 
+2022-12-18 12:34:47.392  WARN 9844 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-12-18 12:34:47.393  WARN 9844 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "merchant" does not exist, skipping
+2022-12-18 12:34:47.393 DEBUG 9844 --- [main] org.hibernate.SQL                        : 
+    
+    drop table if exists subscription_plan cascade
+2022-12-18 12:34:47.393  WARN 9844 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-12-18 12:34:47.393  WARN 9844 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "subscription_plan" does not exist, skipping
+2022-12-18 12:34:47.394 DEBUG 9844 --- [main] org.hibernate.SQL                        : 
     
     drop table if exists transaction cascade
-2022-12-17 23:15:32.290  WARN 10264 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2022-12-17 23:15:32.290  WARN 10264 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "transaction" does not exist, skipping
-2022-12-17 23:15:32.290 DEBUG 10264 --- [main] org.hibernate.SQL                        : 
+2022-12-18 12:34:47.394  WARN 9844 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-12-18 12:34:47.394  WARN 9844 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "transaction" does not exist, skipping
+2022-12-18 12:34:47.394 DEBUG 9844 --- [main] org.hibernate.SQL                        : 
     
     drop sequence if exists merchant_id_seq
-2022-12-17 23:15:32.290  WARN 10264 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2022-12-17 23:15:32.291  WARN 10264 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "merchant_id_seq" does not exist, skipping
-2022-12-17 23:15:32.294 DEBUG 10264 --- [main] org.hibernate.SQL                        : create sequence merchant_id_seq start 1 increment 1
-2022-12-17 23:15:32.319 DEBUG 10264 --- [main] org.hibernate.SQL                        : 
+2022-12-18 12:34:47.395  WARN 9844 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-12-18 12:34:47.395  WARN 9844 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "merchant_id_seq" does not exist, skipping
+2022-12-18 12:34:47.395 DEBUG 9844 --- [main] org.hibernate.SQL                        : 
+    
+    drop sequence if exists plan_id_gen
+2022-12-18 12:34:47.395  WARN 9844 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-12-18 12:34:47.396  WARN 9844 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "plan_id_gen" does not exist, skipping
+2022-12-18 12:34:47.398 DEBUG 9844 --- [main] org.hibernate.SQL                        : create sequence merchant_id_seq start 1 increment 1
+2022-12-18 12:34:47.405 DEBUG 9844 --- [main] org.hibernate.SQL                        : create sequence plan_id_gen start 1 increment 1
+2022-12-18 12:34:47.408 DEBUG 9844 --- [main] org.hibernate.SQL                        : 
     
     create table merchant (
        merchant_id int8 not null,
@@ -212,7 +695,16 @@ Caused by: java.lang.IllegalArgumentException: 'script' must not be null or empt
         merchant_paypal_id varchar(255),
         primary key (merchant_id)
     )
-2022-12-17 23:15:32.346 DEBUG 10264 --- [main] org.hibernate.SQL                        : 
+2022-12-18 12:34:47.417 DEBUG 9844 --- [main] org.hibernate.SQL                        : 
+    
+    create table subscription_plan (
+       id int8 not null,
+        merchant_id int8,
+        plan_paypal_id varchar(255),
+        product_id int8,
+        primary key (id)
+    )
+2022-12-18 12:34:47.422 DEBUG 9844 --- [main] org.hibernate.SQL                        : 
     
     create table transaction (
        id int8 not null,
@@ -220,33 +712,43 @@ Caused by: java.lang.IllegalArgumentException: 'script' must not be null or empt
         timestamp timestamp,
         primary key (id)
     )
-2022-12-17 23:15:32.359  INFO 10264 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-12-17 23:15:32.373  INFO 10264 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-12-17 23:15:33.926  INFO 10264 --- [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses Jersey
-2022-12-17 23:15:34.074  WARN 10264 --- [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2022-12-17 23:15:34.083  INFO 10264 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
-2022-12-17 23:15:34.126  INFO 10264 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2022-12-17 23:15:34.297  INFO 10264 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2022-12-17 23:15:34.613  INFO 10264 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
-2022-12-17 23:15:34.614  INFO 10264 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
-2022-12-17 23:15:34.851  INFO 10264 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
-2022-12-17 23:15:34.851  INFO 10264 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
-2022-12-17 23:15:35.110  INFO 10264 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 23:15:35.135  INFO 10264 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2022-12-17 23:15:35.136  INFO 10264 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2022-12-17 23:15:35.136  INFO 10264 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2022-12-17 23:15:35.136  INFO 10264 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2022-12-17 23:15:35.136  INFO 10264 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2022-12-17 23:15:35.136  INFO 10264 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
-2022-12-17 23:15:35.136  INFO 10264 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2022-12-17 23:15:35.364  INFO 10264 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2022-12-17 23:15:35.368  INFO 10264 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
-2022-12-17 23:15:35.372  INFO 10264 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
-2022-12-17 23:15:35.380  INFO 10264 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1671315335378 with initial instances count: 2
-2022-12-17 23:15:35.385  INFO 10264 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application PAYPAL-SERVICE with eureka with status UP
-2022-12-17 23:15:35.386  INFO 10264 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1671315335386, current=UP, previous=STARTING]
-2022-12-17 23:15:35.389  INFO 10264 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_PAYPAL-SERVICE/DESKTOP-4HG5T0S:paypal-service:7706: registering service...
-2022-12-17 23:15:35.423  INFO 10264 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7706 (http) with context path ''
-2022-12-17 23:15:35.424  INFO 10264 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 7706
-2022-12-17 23:15:35.513  INFO 10264 --- [main] c.e.p.PaypalServiceApplication           : Started PaypalServiceApplication in 10.948 seconds (JVM running for 11.632)
-2022-12-17 23:15:35.526  INFO 10264 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_PAYPAL-SERVICE/DESKTOP-4HG5T0S:paypal-service:7706 - registration status: 204
+2022-12-18 12:34:47.430  INFO 9844 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-18 12:34:47.440  INFO 9844 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-18 12:34:49.211  INFO 9844 --- [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses Jersey
+2022-12-18 12:34:49.338  WARN 9844 --- [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2022-12-18 12:34:49.346  INFO 9844 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-12-18 12:34:49.388  INFO 9844 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2022-12-18 12:34:49.589  INFO 9844 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2022-12-18 12:34:49.830  INFO 9844 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2022-12-18 12:34:49.830  INFO 9844 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2022-12-18 12:34:50.065  INFO 9844 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2022-12-18 12:34:50.065  INFO 9844 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2022-12-18 12:34:50.365  INFO 9844 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 12:34:50.389  INFO 9844 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2022-12-18 12:34:50.389  INFO 9844 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2022-12-18 12:34:50.390  INFO 9844 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2022-12-18 12:34:50.390  INFO 9844 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2022-12-18 12:34:50.390  INFO 9844 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2022-12-18 12:34:50.391  INFO 9844 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2022-12-18 12:34:50.391  INFO 9844 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2022-12-18 12:34:50.747  INFO 9844 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2022-12-18 12:34:50.750  INFO 9844 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2022-12-18 12:34:50.754  INFO 9844 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2022-12-18 12:34:50.758  INFO 9844 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1671363290757 with initial instances count: 2
+2022-12-18 12:34:50.760  INFO 9844 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application PAYPAL-SERVICE with eureka with status UP
+2022-12-18 12:34:50.761  INFO 9844 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1671363290761, current=UP, previous=STARTING]
+2022-12-18 12:34:50.763  INFO 9844 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_PAYPAL-SERVICE/DESKTOP-4HG5T0S:paypal-service:7706: registering service...
+2022-12-18 12:34:50.803  INFO 9844 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_PAYPAL-SERVICE/DESKTOP-4HG5T0S:paypal-service:7706 - registration status: 204
+2022-12-18 12:34:50.811  INFO 9844 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7706 (http) with context path ''
+2022-12-18 12:34:50.813  INFO 9844 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 7706
+2022-12-18 12:34:50.895  INFO 9844 --- [main] c.e.p.PaypalServiceApplication           : Started PaypalServiceApplication in 9.602 seconds (JVM running for 10.266)
+2022-12-18 12:39:50.410  INFO 9844 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 12:44:50.426  INFO 9844 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 12:49:50.442  INFO 9844 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 12:54:50.448  INFO 9844 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 12:59:50.462  INFO 9844 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 13:04:50.467  INFO 9844 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 13:09:50.480  INFO 9844 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 13:14:50.493  INFO 9844 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 13:19:50.509  INFO 9844 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 13:24:50.534  INFO 9844 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration

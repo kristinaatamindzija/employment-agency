@@ -19,6 +19,7 @@ import { BootstrapIconsPlugin } from 'bootstrap-icons-vue';
 import LoginPage from "@/components/LoginPage"
 import RegistrationPage from "@/components/RegistrationPage"
 import PaymentPage from "@/components/PaymentPage"
+import PaypalSubscriptionPage from "@/components/PaypalSubscriptionPage"
 import PaypalPage from "@/components/PaypalPage"
 import Navbar from "@/components/NavbarComponent"
 
@@ -88,6 +89,13 @@ export const store = new Vuex.Store({
       children:[
 
       ]
+    },
+    {
+      path: '/subscription',
+      name: 'paypal-subscription-page',
+      component: PaypalSubscriptionPage,
+      children:[]
+
     },
     {
       path: '/paypal',

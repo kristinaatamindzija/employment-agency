@@ -1,83 +1,59 @@
-2022-12-17 15:46:18.160  INFO 1072 --- [main] com.apigateway.ApiGatewayApplication     : Starting ApiGatewayApplication using Java 17.0.2 on DESKTOP-4HG5T0S with PID 1072 (C:\Users\Brankovic\Desktop\employment-agency\PaymentService\api-gateway\target\classes started by Brankovic in C:\Users\Brankovic\Desktop\employment-agency\PaymentService\api-gateway)
-2022-12-17 15:46:18.165  INFO 1072 --- [main] com.apigateway.ApiGatewayApplication     : No active profile set, falling back to 1 default profile: "default"
-2022-12-17 15:46:21.600  INFO 1072 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=c6d5bbf9-4713-3d99-8b81-57a941ce1882
-2022-12-17 15:46:21.810  INFO 1072 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2022-12-17 15:46:21.965  INFO 1072 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2022-12-17 15:46:21.974  INFO 1072 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2022-12-17 15:46:23.876  INFO 1072 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [After]
-2022-12-17 15:46:23.877  INFO 1072 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Before]
-2022-12-17 15:46:23.878  INFO 1072 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Between]
-2022-12-17 15:46:23.879  INFO 1072 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Cookie]
-2022-12-17 15:46:23.880  INFO 1072 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Header]
-2022-12-17 15:46:23.881  INFO 1072 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Host]
-2022-12-17 15:46:23.883  INFO 1072 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Method]
-2022-12-17 15:46:23.883  INFO 1072 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Path]
-2022-12-17 15:46:23.884  INFO 1072 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Query]
-2022-12-17 15:46:23.884  INFO 1072 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [ReadBody]
-2022-12-17 15:46:23.885  INFO 1072 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [RemoteAddr]
-2022-12-17 15:46:23.885  INFO 1072 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [XForwardedRemoteAddr]
-2022-12-17 15:46:23.886  INFO 1072 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Weight]
-2022-12-17 15:46:23.886  INFO 1072 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [CloudFoundryRouteService]
-2022-12-17 15:46:24.846  INFO 1072 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
-2022-12-17 15:46:25.066  INFO 1072 --- [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
-2022-12-17 15:46:25.169  WARN 1072 --- [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2022-12-17 15:46:25.200  INFO 1072 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2022-12-17 15:46:25.358  INFO 1072 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2022-12-17 15:46:25.368  INFO 1072 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 15:46:25.413  INFO 1072 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2022-12-17 15:46:25.414  INFO 1072 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2022-12-17 15:46:25.414  INFO 1072 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2022-12-17 15:46:25.414  INFO 1072 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2022-12-17 15:46:25.414  INFO 1072 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2022-12-17 15:46:25.414  INFO 1072 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
-2022-12-17 15:46:25.414  INFO 1072 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2022-12-17 15:46:26.150  INFO 1072 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2022-12-17 15:46:26.156  INFO 1072 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
-2022-12-17 15:46:26.163  INFO 1072 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
-2022-12-17 15:46:26.170  INFO 1072 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1671288386168 with initial instances count: 0
-2022-12-17 15:46:26.173  INFO 1072 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application API-GATEWAY with eureka with status UP
-2022-12-17 15:46:26.174  INFO 1072 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1671288386174, current=UP, previous=STARTING]
-2022-12-17 15:46:26.178  INFO 1072 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY/DESKTOP-4HG5T0S:api-gateway:7700: registering service...
-2022-12-17 15:46:26.574  INFO 1072 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY/DESKTOP-4HG5T0S:api-gateway:7700 - registration status: 204
-2022-12-17 15:46:26.777  INFO 1072 --- [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 7700
-2022-12-17 15:46:26.778  INFO 1072 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 7700
-2022-12-17 15:46:26.997  INFO 1072 --- [main] com.apigateway.ApiGatewayApplication     : Started ApiGatewayApplication in 11.004 seconds (JVM running for 16.64)
-2022-12-17 15:46:56.158  INFO 1072 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2022-12-17 15:46:56.159  INFO 1072 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2022-12-17 15:46:56.159  INFO 1072 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2022-12-17 15:46:56.159  INFO 1072 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2022-12-17 15:46:56.160  INFO 1072 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2022-12-17 15:46:56.160  INFO 1072 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
-2022-12-17 15:46:56.160  INFO 1072 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2022-12-17 15:46:56.177  INFO 1072 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2022-12-17 15:51:25.432  INFO 1072 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 15:56:25.437  INFO 1072 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 16:01:25.463  INFO 1072 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 16:03:48.456  INFO 1072 --- [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application API-GATEWAY with eureka with status DOWN
-2022-12-17 16:03:48.457  INFO 1072 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1671289428457, current=DOWN, previous=UP]
-2022-12-17 16:03:48.458  INFO 1072 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY/DESKTOP-4HG5T0S:api-gateway:7700: registering service...
-2022-12-17 16:03:48.600  INFO 1072 --- [DiscoveryClient-InstanceInfoReplicator-0] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/} exception=I/O error on POST request for "http://localhost:8761/eureka/apps/API-GATEWAY": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:8761/eureka/apps/API-GATEWAY": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+2022-12-18 00:01:48.156  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 00:06:48.266  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 00:11:48.279  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 00:16:48.292  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 00:21:48.302  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 00:26:48.317  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 00:31:48.320  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 00:36:48.329  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 00:41:48.339  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 00:46:48.358  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 00:47:11.424  INFO 9388 --- [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application API-GATEWAY with eureka with status DOWN
+2022-12-18 00:47:11.426  INFO 9388 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1671320831426, current=DOWN, previous=UP]
+2022-12-18 00:47:11.433  INFO 9388 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY/DESKTOP-4HG5T0S:api-gateway:7700: registering service...
+2022-12-18 00:47:11.509  INFO 9388 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY/DESKTOP-4HG5T0S:api-gateway:7700 - registration status: 204
+2022-12-18 00:47:13.849  INFO 9388 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2022-12-18 00:47:16.863  INFO 9388 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2022-12-18 00:47:16.881  INFO 9388 --- [SpringApplicationShutdownHook] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/} exception=I/O error on DELETE request for "http://localhost:8761/eureka/apps/API-GATEWAY/DESKTOP-4HG5T0S:api-gateway:7700": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/eureka/apps/API-GATEWAY/DESKTOP-4HG5T0S:api-gateway:7700": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
 	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:785)
 	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:711)
 	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:602)
-	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.register(RestTemplateEurekaHttpClient.java:77)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.cancel(RestTemplateEurekaHttpClient.java:87)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
 	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:91)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
 	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
 	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
-	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:876)
-	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121)
-	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:972)
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:948)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:389)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:347)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:177)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:197)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:190)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:390)
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:136)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:213)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:587)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:559)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1163)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:520)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1156)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1106)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1075)
+	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.doClose(ReactiveWebServerApplicationContext.java:149)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1021)
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114)
 	at java.base/java.lang.Thread.run(Thread.java:833)
 Caused by: org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
 	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
@@ -94,7 +70,7 @@ Caused by: org.apache.http.conn.HttpHostConnectException: Connect to localhost:8
 	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
 	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
 	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:776)
-	... 21 more
+	... 39 more
 Caused by: java.net.ConnectException: Connection refused: connect
 	at java.base/sun.nio.ch.Net.connect0(Native Method)
 	at java.base/sun.nio.ch.Net.connect(Net.java:579)
@@ -104,100 +80,10 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at java.base/java.net.Socket.connect(Socket.java:633)
 	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
 	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
-	... 34 more
+	... 52 more
 
-2022-12-17 16:03:48.602  WARN 1072 --- [DiscoveryClient-InstanceInfoReplicator-0] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on POST request for "http://localhost:8761/eureka/apps/API-GATEWAY": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
-2022-12-17 16:03:48.619  INFO 1072 --- [DiscoveryClient-InstanceInfoReplicator-0] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on POST request for "http://localhost:8761/eureka/apps/API-GATEWAY": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:8761/eureka/apps/API-GATEWAY": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
-	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:785)
-	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:711)
-	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:602)
-	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.register(RestTemplateEurekaHttpClient.java:77)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
-	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
-	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
-	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:876)
-	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121)
-	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-Caused by: org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
-	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
-	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
-	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
-	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
-	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
-	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
-	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
-	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
-	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:87)
-	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
-	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
-	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:776)
-	... 22 more
-Caused by: java.net.ConnectException: Connection refused: connect
-	at java.base/sun.nio.ch.Net.connect0(Native Method)
-	at java.base/sun.nio.ch.Net.connect(Net.java:579)
-	at java.base/sun.nio.ch.Net.connect(Net.java:568)
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:588)
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
-	at java.base/java.net.Socket.connect(Socket.java:633)
-	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
-	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
-	... 35 more
-
-2022-12-17 16:03:48.620  WARN 1072 --- [DiscoveryClient-InstanceInfoReplicator-0] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on POST request for "http://localhost:8761/eureka/apps/API-GATEWAY": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
-2022-12-17 16:03:48.648  WARN 1072 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY/DESKTOP-4HG5T0S:api-gateway:7700 - registration failed Cannot execute request on any known server
-
-com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:876) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101) ~[eureka-client-1.10.17.jar:1.10.17]
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) ~[na:na]
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
-	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
-
-2022-12-17 16:03:48.650  WARN 1072 --- [DiscoveryClient-InstanceInfoReplicator-0] c.n.discovery.InstanceInfoReplicator     : There was a problem with the instance info replicator
-
-com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:876) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101) ~[eureka-client-1.10.17.jar:1.10.17]
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) ~[na:na]
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
-	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
-
-2022-12-17 16:03:50.734  INFO 1072 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
-2022-12-17 16:03:53.802  INFO 1072 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
-2022-12-17 16:03:53.823  INFO 1072 --- [SpringApplicationShutdownHook] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on DELETE request for "http://localhost:8761/eureka/apps/API-GATEWAY/DESKTOP-4HG5T0S:api-gateway:7700": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/eureka/apps/API-GATEWAY/DESKTOP-4HG5T0S:api-gateway:7700": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+2022-12-18 00:47:16.883  WARN 9388 --- [SpringApplicationShutdownHook] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/API-GATEWAY/DESKTOP-4HG5T0S:api-gateway:7700": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+2022-12-18 00:47:16.899  INFO 9388 --- [SpringApplicationShutdownHook] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on DELETE request for "http://localhost:8761/eureka/apps/API-GATEWAY/DESKTOP-4HG5T0S:api-gateway:7700": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/eureka/apps/API-GATEWAY/DESKTOP-4HG5T0S:api-gateway:7700": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
 	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:785)
 	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:711)
 	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:602)
@@ -266,8 +152,8 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
 	... 53 more
 
-2022-12-17 16:03:53.824  WARN 1072 --- [SpringApplicationShutdownHook] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/API-GATEWAY/DESKTOP-4HG5T0S:api-gateway:7700": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
-2022-12-17 16:03:53.825 ERROR 1072 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY/DESKTOP-4HG5T0S:api-gateway:7700 - de-registration failedCannot execute request on any known server
+2022-12-18 00:47:16.908  WARN 9388 --- [SpringApplicationShutdownHook] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/API-GATEWAY/DESKTOP-4HG5T0S:api-gateway:7700": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+2022-12-18 00:47:16.915 ERROR 9388 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY/DESKTOP-4HG5T0S:api-gateway:7700 - de-registration failedCannot execute request on any known server
 
 com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
 	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.10.17.jar:1.10.17]
@@ -303,854 +189,69 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114) ~[spring-boot-2.7.2.jar:2.7.2]
 	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
 
-2022-12-17 16:03:53.840  INFO 1072 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
-2022-12-17 16:04:16.530  INFO 14232 --- [main] com.apigateway.ApiGatewayApplication     : Starting ApiGatewayApplication using Java 17.0.2 on DESKTOP-4HG5T0S with PID 14232 (C:\Users\Brankovic\Desktop\employment-agency\PaymentService\api-gateway\target\classes started by Brankovic in C:\Users\Brankovic\Desktop\employment-agency\PaymentService\api-gateway)
-2022-12-17 16:04:16.543  INFO 14232 --- [main] com.apigateway.ApiGatewayApplication     : No active profile set, falling back to 1 default profile: "default"
-2022-12-17 16:04:21.201  INFO 14232 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=c6d5bbf9-4713-3d99-8b81-57a941ce1882
-2022-12-17 16:04:21.472  INFO 14232 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2022-12-17 16:04:21.485  INFO 14232 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2022-12-17 16:04:21.491  INFO 14232 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2022-12-17 16:04:24.139  INFO 14232 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [After]
-2022-12-17 16:04:24.140  INFO 14232 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Before]
-2022-12-17 16:04:24.140  INFO 14232 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Between]
-2022-12-17 16:04:24.140  INFO 14232 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Cookie]
-2022-12-17 16:04:24.141  INFO 14232 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Header]
-2022-12-17 16:04:24.141  INFO 14232 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Host]
-2022-12-17 16:04:24.142  INFO 14232 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Method]
-2022-12-17 16:04:24.142  INFO 14232 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Path]
-2022-12-17 16:04:24.143  INFO 14232 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Query]
-2022-12-17 16:04:24.143  INFO 14232 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [ReadBody]
-2022-12-17 16:04:24.144  INFO 14232 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [RemoteAddr]
-2022-12-17 16:04:24.144  INFO 14232 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [XForwardedRemoteAddr]
-2022-12-17 16:04:24.144  INFO 14232 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Weight]
-2022-12-17 16:04:24.144  INFO 14232 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [CloudFoundryRouteService]
-2022-12-17 16:04:25.994  INFO 14232 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
-2022-12-17 16:04:26.984  INFO 14232 --- [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
-2022-12-17 16:04:27.301  WARN 14232 --- [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2022-12-17 16:04:27.429  INFO 14232 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2022-12-17 16:04:27.869  INFO 14232 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2022-12-17 16:04:27.888  INFO 14232 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 16:04:27.945  INFO 14232 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2022-12-17 16:04:27.945  INFO 14232 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2022-12-17 16:04:27.962  INFO 14232 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2022-12-17 16:04:27.962  INFO 14232 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2022-12-17 16:04:27.962  INFO 14232 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2022-12-17 16:04:27.963  INFO 14232 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
-2022-12-17 16:04:27.985  INFO 14232 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2022-12-17 16:04:29.592  INFO 14232 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2022-12-17 16:04:29.623  INFO 14232 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
-2022-12-17 16:04:29.670  INFO 14232 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
-2022-12-17 16:04:29.693  INFO 14232 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1671289469691 with initial instances count: 0
-2022-12-17 16:04:29.710  INFO 14232 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application API-GATEWAY with eureka with status UP
-2022-12-17 16:04:29.714  INFO 14232 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1671289469714, current=UP, previous=STARTING]
-2022-12-17 16:04:29.804  INFO 14232 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY/DESKTOP-4HG5T0S:api-gateway:7700: registering service...
-2022-12-17 16:04:30.368  INFO 14232 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY/DESKTOP-4HG5T0S:api-gateway:7700 - registration status: 204
-2022-12-17 16:04:30.691  INFO 14232 --- [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 7700
-2022-12-17 16:04:30.718  INFO 14232 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 7700
-2022-12-17 16:04:31.113  INFO 14232 --- [main] com.apigateway.ApiGatewayApplication     : Started ApiGatewayApplication in 15.969 seconds (JVM running for 16.905)
-2022-12-17 16:04:59.638  INFO 14232 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2022-12-17 16:04:59.639  INFO 14232 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2022-12-17 16:04:59.639  INFO 14232 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2022-12-17 16:04:59.639  INFO 14232 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2022-12-17 16:04:59.640  INFO 14232 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2022-12-17 16:04:59.640  INFO 14232 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
-2022-12-17 16:04:59.640  INFO 14232 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2022-12-17 16:04:59.654  INFO 14232 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2022-12-17 16:05:29.673  INFO 14232 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2022-12-17 16:05:29.674  INFO 14232 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2022-12-17 16:05:29.674  INFO 14232 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2022-12-17 16:05:29.674  INFO 14232 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2022-12-17 16:05:29.675  INFO 14232 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2022-12-17 16:05:29.675  INFO 14232 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
-2022-12-17 16:05:29.675  INFO 14232 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2022-12-17 16:05:29.691  INFO 14232 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2022-12-17 16:09:28.000  INFO 14232 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 16:10:50.314  INFO 14232 --- [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application API-GATEWAY with eureka with status DOWN
-2022-12-17 16:10:50.315  INFO 14232 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1671289850315, current=DOWN, previous=UP]
-2022-12-17 16:10:50.315  INFO 14232 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY/DESKTOP-4HG5T0S:api-gateway:7700: registering service...
-2022-12-17 16:10:50.465  INFO 14232 --- [DiscoveryClient-InstanceInfoReplicator-0] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/} exception=I/O error on POST request for "http://localhost:8761/eureka/apps/API-GATEWAY": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:8761/eureka/apps/API-GATEWAY": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
-	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:785)
-	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:711)
-	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:602)
-	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.register(RestTemplateEurekaHttpClient.java:77)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
-	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:91)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
-	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:876)
-	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121)
-	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-Caused by: org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
-	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
-	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
-	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
-	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
-	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
-	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
-	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
-	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
-	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:87)
-	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
-	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
-	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:776)
-	... 21 more
-Caused by: java.net.ConnectException: Connection refused: connect
-	at java.base/sun.nio.ch.Net.connect0(Native Method)
-	at java.base/sun.nio.ch.Net.connect(Net.java:579)
-	at java.base/sun.nio.ch.Net.connect(Net.java:568)
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:588)
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
-	at java.base/java.net.Socket.connect(Socket.java:633)
-	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
-	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
-	... 34 more
-
-2022-12-17 16:10:50.466  WARN 14232 --- [DiscoveryClient-InstanceInfoReplicator-0] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on POST request for "http://localhost:8761/eureka/apps/API-GATEWAY": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
-2022-12-17 16:10:50.623  INFO 14232 --- [DiscoveryClient-InstanceInfoReplicator-0] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on POST request for "http://localhost:8761/eureka/apps/API-GATEWAY": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:8761/eureka/apps/API-GATEWAY": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
-	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:785)
-	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:711)
-	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:602)
-	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.register(RestTemplateEurekaHttpClient.java:77)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
-	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
-	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
-	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:876)
-	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121)
-	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-Caused by: org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
-	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
-	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
-	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
-	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
-	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
-	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
-	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
-	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
-	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:87)
-	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
-	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
-	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:776)
-	... 22 more
-Caused by: java.net.ConnectException: Connection refused: connect
-	at java.base/sun.nio.ch.Net.connect0(Native Method)
-	at java.base/sun.nio.ch.Net.connect(Net.java:579)
-	at java.base/sun.nio.ch.Net.connect(Net.java:568)
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:588)
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
-	at java.base/java.net.Socket.connect(Socket.java:633)
-	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
-	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
-	... 35 more
-
-2022-12-17 16:10:50.623  WARN 14232 --- [DiscoveryClient-InstanceInfoReplicator-0] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on POST request for "http://localhost:8761/eureka/apps/API-GATEWAY": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
-2022-12-17 16:10:50.632  WARN 14232 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY/DESKTOP-4HG5T0S:api-gateway:7700 - registration failed Cannot execute request on any known server
-
-com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:876) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101) ~[eureka-client-1.10.17.jar:1.10.17]
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) ~[na:na]
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
-	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
-
-2022-12-17 16:10:50.633  WARN 14232 --- [DiscoveryClient-InstanceInfoReplicator-0] c.n.discovery.InstanceInfoReplicator     : There was a problem with the instance info replicator
-
-com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:876) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101) ~[eureka-client-1.10.17.jar:1.10.17]
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) ~[na:na]
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
-	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
-
-2022-12-17 16:10:52.872  INFO 14232 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
-2022-12-17 16:10:55.875  INFO 14232 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
-2022-12-17 16:10:55.885  INFO 14232 --- [SpringApplicationShutdownHook] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on DELETE request for "http://localhost:8761/eureka/apps/API-GATEWAY/DESKTOP-4HG5T0S:api-gateway:7700": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/eureka/apps/API-GATEWAY/DESKTOP-4HG5T0S:api-gateway:7700": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
-	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:785)
-	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:711)
-	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:602)
-	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.cancel(RestTemplateEurekaHttpClient.java:87)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
-	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
-	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
-	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:972)
-	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:948)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:389)
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:347)
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:177)
-	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:197)
-	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:190)
-	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:390)
-	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:136)
-	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:213)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:587)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:559)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1163)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:520)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1156)
-	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1106)
-	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1075)
-	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.doClose(ReactiveWebServerApplicationContext.java:149)
-	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1021)
-	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145)
-	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
-	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-Caused by: org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
-	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
-	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
-	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
-	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
-	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
-	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
-	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
-	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
-	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:87)
-	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
-	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
-	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:776)
-	... 40 more
-Caused by: java.net.ConnectException: Connection refused: connect
-	at java.base/sun.nio.ch.Net.connect0(Native Method)
-	at java.base/sun.nio.ch.Net.connect(Net.java:579)
-	at java.base/sun.nio.ch.Net.connect(Net.java:568)
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:588)
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
-	at java.base/java.net.Socket.connect(Socket.java:633)
-	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
-	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
-	... 53 more
-
-2022-12-17 16:10:55.886  WARN 14232 --- [SpringApplicationShutdownHook] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/API-GATEWAY/DESKTOP-4HG5T0S:api-gateway:7700": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
-2022-12-17 16:10:55.888 ERROR 14232 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY/DESKTOP-4HG5T0S:api-gateway:7700 - de-registration failedCannot execute request on any known server
-
-com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:972) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:948) ~[eureka-client-1.10.17.jar:1.10.17]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:389) ~[spring-beans-5.3.22.jar:5.3.22]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:347) ~[spring-beans-5.3.22.jar:5.3.22]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:177) ~[spring-beans-5.3.22.jar:5.3.22]
-	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:197) ~[spring-beans-5.3.22.jar:5.3.22]
-	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:190) ~[spring-beans-5.3.22.jar:5.3.22]
-	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:390) ~[spring-cloud-context-3.1.5.jar:3.1.5]
-	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:136) ~[spring-cloud-context-3.1.5.jar:3.1.5]
-	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:213) ~[spring-beans-5.3.22.jar:5.3.22]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:587) ~[spring-beans-5.3.22.jar:5.3.22]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:559) ~[spring-beans-5.3.22.jar:5.3.22]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1163) ~[spring-beans-5.3.22.jar:5.3.22]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:520) ~[spring-beans-5.3.22.jar:5.3.22]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1156) ~[spring-beans-5.3.22.jar:5.3.22]
-	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1106) ~[spring-context-5.3.22.jar:5.3.22]
-	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1075) ~[spring-context-5.3.22.jar:5.3.22]
-	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.doClose(ReactiveWebServerApplicationContext.java:149) ~[spring-boot-2.7.2.jar:2.7.2]
-	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1021) ~[spring-context-5.3.22.jar:5.3.22]
-	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145) ~[spring-boot-2.7.2.jar:2.7.2]
-	at java.base/java.lang.Iterable.forEach(Iterable.java:75) ~[na:na]
-	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114) ~[spring-boot-2.7.2.jar:2.7.2]
-	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
-
-2022-12-17 16:10:55.894  INFO 14232 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
-2022-12-17 16:11:21.780  INFO 4720 --- [main] com.apigateway.ApiGatewayApplication     : Starting ApiGatewayApplication using Java 17.0.2 on DESKTOP-4HG5T0S with PID 4720 (C:\Users\Brankovic\Desktop\employment-agency\PaymentService\api-gateway\target\classes started by Brankovic in C:\Users\Brankovic\Desktop\employment-agency\PaymentService\api-gateway)
-2022-12-17 16:11:21.785  INFO 4720 --- [main] com.apigateway.ApiGatewayApplication     : No active profile set, falling back to 1 default profile: "default"
-2022-12-17 16:11:23.782  INFO 4720 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=c6d5bbf9-4713-3d99-8b81-57a941ce1882
-2022-12-17 16:11:23.901  INFO 4720 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2022-12-17 16:11:23.903  INFO 4720 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2022-12-17 16:11:23.906  INFO 4720 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2022-12-17 16:11:25.396  INFO 4720 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [After]
-2022-12-17 16:11:25.397  INFO 4720 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Before]
-2022-12-17 16:11:25.397  INFO 4720 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Between]
-2022-12-17 16:11:25.397  INFO 4720 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Cookie]
-2022-12-17 16:11:25.398  INFO 4720 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Header]
-2022-12-17 16:11:25.398  INFO 4720 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Host]
-2022-12-17 16:11:25.398  INFO 4720 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Method]
-2022-12-17 16:11:25.398  INFO 4720 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Path]
-2022-12-17 16:11:25.398  INFO 4720 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Query]
-2022-12-17 16:11:25.398  INFO 4720 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [ReadBody]
-2022-12-17 16:11:25.400  INFO 4720 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [RemoteAddr]
-2022-12-17 16:11:25.400  INFO 4720 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [XForwardedRemoteAddr]
-2022-12-17 16:11:25.400  INFO 4720 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Weight]
-2022-12-17 16:11:25.400  INFO 4720 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [CloudFoundryRouteService]
-2022-12-17 16:11:26.179  INFO 4720 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
-2022-12-17 16:11:26.425  INFO 4720 --- [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
-2022-12-17 16:11:26.550  WARN 4720 --- [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2022-12-17 16:11:26.587  INFO 4720 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2022-12-17 16:11:26.798  INFO 4720 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2022-12-17 16:11:26.819  INFO 4720 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 16:11:26.861  INFO 4720 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2022-12-17 16:11:26.861  INFO 4720 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2022-12-17 16:11:26.861  INFO 4720 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2022-12-17 16:11:26.862  INFO 4720 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2022-12-17 16:11:26.862  INFO 4720 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2022-12-17 16:11:26.862  INFO 4720 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
-2022-12-17 16:11:26.862  INFO 4720 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2022-12-17 16:11:27.700  INFO 4720 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2022-12-17 16:11:27.705  INFO 4720 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
-2022-12-17 16:11:27.712  INFO 4720 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
-2022-12-17 16:11:27.729  INFO 4720 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1671289887726 with initial instances count: 0
-2022-12-17 16:11:27.734  INFO 4720 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application API-GATEWAY with eureka with status UP
-2022-12-17 16:11:27.737  INFO 4720 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1671289887737, current=UP, previous=STARTING]
-2022-12-17 16:11:27.764  INFO 4720 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY/DESKTOP-4HG5T0S:api-gateway:7700: registering service...
-2022-12-17 16:11:28.089  INFO 4720 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY/DESKTOP-4HG5T0S:api-gateway:7700 - registration status: 204
-2022-12-17 16:11:28.176  INFO 4720 --- [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 7700
-2022-12-17 16:11:28.178  INFO 4720 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 7700
-2022-12-17 16:11:28.340  INFO 4720 --- [main] com.apigateway.ApiGatewayApplication     : Started ApiGatewayApplication in 7.771 seconds (JVM running for 8.706)
-2022-12-17 16:11:57.714  INFO 4720 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2022-12-17 16:11:57.715  INFO 4720 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2022-12-17 16:11:57.715  INFO 4720 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2022-12-17 16:11:57.715  INFO 4720 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2022-12-17 16:11:57.716  INFO 4720 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2022-12-17 16:11:57.716  INFO 4720 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
-2022-12-17 16:11:57.716  INFO 4720 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2022-12-17 16:11:57.756  INFO 4720 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2022-12-17 16:16:26.867  INFO 4720 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 16:24:53.061  INFO 9388 --- [main] com.apigateway.ApiGatewayApplication     : Starting ApiGatewayApplication using Java 17.0.2 on DESKTOP-4HG5T0S with PID 9388 (C:\Users\Brankovic\Desktop\employment-agency\PaymentService\api-gateway\target\classes started by Brankovic in C:\Users\Brankovic\Desktop\employment-agency\PaymentService\api-gateway)
-2022-12-17 16:24:53.073  INFO 9388 --- [main] com.apigateway.ApiGatewayApplication     : No active profile set, falling back to 1 default profile: "default"
-2022-12-17 16:24:56.654  INFO 9388 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=c6d5bbf9-4713-3d99-8b81-57a941ce1882
-2022-12-17 16:24:56.807  INFO 9388 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2022-12-17 16:24:56.844  INFO 9388 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2022-12-17 16:24:56.848  INFO 9388 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2022-12-17 16:24:59.532  INFO 9388 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [After]
-2022-12-17 16:24:59.668  INFO 9388 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Before]
-2022-12-17 16:24:59.682  INFO 9388 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Between]
-2022-12-17 16:24:59.684  INFO 9388 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Cookie]
-2022-12-17 16:24:59.684  INFO 9388 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Header]
-2022-12-17 16:24:59.685  INFO 9388 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Host]
-2022-12-17 16:24:59.687  INFO 9388 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Method]
-2022-12-17 16:24:59.688  INFO 9388 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Path]
-2022-12-17 16:24:59.689  INFO 9388 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Query]
-2022-12-17 16:24:59.689  INFO 9388 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [ReadBody]
-2022-12-17 16:24:59.691  INFO 9388 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [RemoteAddr]
-2022-12-17 16:24:59.691  INFO 9388 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [XForwardedRemoteAddr]
-2022-12-17 16:24:59.692  INFO 9388 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Weight]
-2022-12-17 16:24:59.694  INFO 9388 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [CloudFoundryRouteService]
-2022-12-17 16:25:01.984  INFO 9388 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
-2022-12-17 16:25:03.029  INFO 9388 --- [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
-2022-12-17 16:25:03.410  WARN 9388 --- [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2022-12-17 16:25:03.607  INFO 9388 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2022-12-17 16:25:04.359  INFO 9388 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2022-12-17 16:25:04.384  INFO 9388 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 16:25:04.447  INFO 9388 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2022-12-17 16:25:04.447  INFO 9388 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2022-12-17 16:25:04.447  INFO 9388 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2022-12-17 16:25:04.447  INFO 9388 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2022-12-17 16:25:04.447  INFO 9388 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2022-12-17 16:25:04.447  INFO 9388 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
-2022-12-17 16:25:04.448  INFO 9388 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2022-12-17 16:25:06.108  INFO 9388 --- [main] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on GET request for "http://localhost:8761/eureka/apps/": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8761/eureka/apps/": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
-	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:785)
-	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:711)
-	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:602)
-	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.getApplicationsInternal(RestTemplateEurekaHttpClient.java:145)
-	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.getApplications(RestTemplateEurekaHttpClient.java:135)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137)
-	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
-	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137)
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137)
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
-	at com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry(DiscoveryClient.java:1101)
-	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:1014)
-	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:441)
-	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:283)
-	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:279)
-	at org.springframework.cloud.netflix.eureka.CloudEurekaClient.<init>(CloudEurekaClient.java:66)
-	at org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration$RefreshableEurekaClientConfiguration.eurekaClient(EurekaClientAutoConfiguration.java:295)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$1(AbstractBeanFactory.java:374)
-	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.getBean(GenericScope.java:376)
-	at org.springframework.cloud.context.scope.GenericScope.get(GenericScope.java:179)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:371)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
-	at org.springframework.aop.target.SimpleBeanTargetSource.getTarget(SimpleBeanTargetSource.java:35)
-	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaRegistration.getTargetObject(EurekaRegistration.java:127)
-	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaRegistration.getEurekaClient(EurekaRegistration.java:115)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:282)
-	at org.springframework.cloud.context.scope.GenericScope$LockedScopedProxyFactoryBean.invoke(GenericScope.java:485)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
-	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
-	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaRegistration$$EnhancerBySpringCGLIB$$3109083a.getEurekaClient(<generated>)
-	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.maybeInitializeClient(EurekaServiceRegistry.java:54)
-	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.register(EurekaServiceRegistry.java:38)
-	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaAutoServiceRegistration.start(EurekaAutoServiceRegistration.java:83)
-	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:178)
-	at org.springframework.context.support.DefaultLifecycleProcessor.access$200(DefaultLifecycleProcessor.java:54)
-	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:356)
-	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
-	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:155)
-	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:123)
-	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:935)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:586)
-	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.refresh(ReactiveWebServerApplicationContext.java:66)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
-	at com.apigateway.ApiGatewayApplication.main(ApiGatewayApplication.java:12)
-Caused by: org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
-	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
-	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
-	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
-	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
-	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
-	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
-	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
-	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
-	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:87)
-	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
-	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
-	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:776)
-	... 68 more
-Caused by: java.net.ConnectException: Connection refused: connect
-	at java.base/sun.nio.ch.Net.connect0(Native Method)
-	at java.base/sun.nio.ch.Net.connect(Net.java:579)
-	at java.base/sun.nio.ch.Net.connect(Net.java:568)
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:588)
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
-	at java.base/java.net.Socket.connect(Socket.java:633)
-	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
-	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
-	... 81 more
-
-2022-12-17 16:25:06.109  WARN 9388 --- [main] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on GET request for "http://localhost:8761/eureka/apps/": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
-2022-12-17 16:25:06.112  INFO 9388 --- [main] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY/DESKTOP-4HG5T0S:api-gateway:7700 - was unable to refresh its cache! This periodic background refresh will be retried in 30 seconds. status = Cannot execute request on any known server stacktrace = com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137)
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
-	at com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry(DiscoveryClient.java:1101)
-	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:1014)
-	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:441)
-	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:283)
-	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:279)
-	at org.springframework.cloud.netflix.eureka.CloudEurekaClient.<init>(CloudEurekaClient.java:66)
-	at org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration$RefreshableEurekaClientConfiguration.eurekaClient(EurekaClientAutoConfiguration.java:295)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$1(AbstractBeanFactory.java:374)
-	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.getBean(GenericScope.java:376)
-	at org.springframework.cloud.context.scope.GenericScope.get(GenericScope.java:179)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:371)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
-	at org.springframework.aop.target.SimpleBeanTargetSource.getTarget(SimpleBeanTargetSource.java:35)
-	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaRegistration.getTargetObject(EurekaRegistration.java:127)
-	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaRegistration.getEurekaClient(EurekaRegistration.java:115)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:282)
-	at org.springframework.cloud.context.scope.GenericScope$LockedScopedProxyFactoryBean.invoke(GenericScope.java:485)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
-	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
-	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaRegistration$$EnhancerBySpringCGLIB$$3109083a.getEurekaClient(<generated>)
-	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.maybeInitializeClient(EurekaServiceRegistry.java:54)
-	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.register(EurekaServiceRegistry.java:38)
-	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaAutoServiceRegistration.start(EurekaAutoServiceRegistration.java:83)
-	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:178)
-	at org.springframework.context.support.DefaultLifecycleProcessor.access$200(DefaultLifecycleProcessor.java:54)
-	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:356)
-	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
-	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:155)
-	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:123)
-	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:935)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:586)
-	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.refresh(ReactiveWebServerApplicationContext.java:66)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
-	at com.apigateway.ApiGatewayApplication.main(ApiGatewayApplication.java:12)
-
-2022-12-17 16:25:06.143  INFO 9388 --- [main] com.netflix.discovery.DiscoveryClient    : Initial registry fetch from primary servers failed
-2022-12-17 16:25:06.148  WARN 9388 --- [main] com.netflix.discovery.DiscoveryClient    : Using default backup registry implementation which does not do anything.
-2022-12-17 16:25:06.149  INFO 9388 --- [main] com.netflix.discovery.DiscoveryClient    : Initial registry fetch from backup servers failed
-2022-12-17 16:25:06.154  INFO 9388 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
-2022-12-17 16:25:06.180  INFO 9388 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
-2022-12-17 16:25:06.209  INFO 9388 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1671290706204 with initial instances count: 0
-2022-12-17 16:25:06.219  INFO 9388 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application API-GATEWAY with eureka with status UP
-2022-12-17 16:25:06.223  INFO 9388 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1671290706223, current=UP, previous=STARTING]
-2022-12-17 16:25:06.226  INFO 9388 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY/DESKTOP-4HG5T0S:api-gateway:7700: registering service...
-2022-12-17 16:25:06.451  INFO 9388 --- [DiscoveryClient-InstanceInfoReplicator-0] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on POST request for "http://localhost:8761/eureka/apps/API-GATEWAY": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:8761/eureka/apps/API-GATEWAY": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
-	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:785)
-	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:711)
-	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:602)
-	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.register(RestTemplateEurekaHttpClient.java:77)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
-	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
-	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
-	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:876)
-	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121)
-	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-Caused by: org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
-	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
-	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
-	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
-	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
-	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
-	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
-	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
-	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
-	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:87)
-	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
-	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
-	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:776)
-	... 22 more
-Caused by: java.net.ConnectException: Connection refused: connect
-	at java.base/sun.nio.ch.Net.connect0(Native Method)
-	at java.base/sun.nio.ch.Net.connect(Net.java:579)
-	at java.base/sun.nio.ch.Net.connect(Net.java:568)
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:588)
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
-	at java.base/java.net.Socket.connect(Socket.java:633)
-	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
-	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
-	... 35 more
-
-2022-12-17 16:25:06.452  WARN 9388 --- [DiscoveryClient-InstanceInfoReplicator-0] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on POST request for "http://localhost:8761/eureka/apps/API-GATEWAY": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
-2022-12-17 16:25:06.458  WARN 9388 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY/DESKTOP-4HG5T0S:api-gateway:7700 - registration failed Cannot execute request on any known server
-
-com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:876) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101) ~[eureka-client-1.10.17.jar:1.10.17]
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) ~[na:na]
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
-	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
-
-2022-12-17 16:25:06.459  WARN 9388 --- [DiscoveryClient-InstanceInfoReplicator-0] c.n.discovery.InstanceInfoReplicator     : There was a problem with the instance info replicator
-
-com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:876) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101) ~[eureka-client-1.10.17.jar:1.10.17]
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) ~[na:na]
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
-	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
-
-2022-12-17 16:25:07.839  INFO 9388 --- [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 7700
-2022-12-17 16:25:07.841  INFO 9388 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 7700
-2022-12-17 16:25:08.892  INFO 9388 --- [main] com.apigateway.ApiGatewayApplication     : Started ApiGatewayApplication in 17.918 seconds (JVM running for 19.288)
-2022-12-17 16:25:36.156  INFO 9388 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2022-12-17 16:25:36.156  INFO 9388 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2022-12-17 16:25:36.157  INFO 9388 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2022-12-17 16:25:36.157  INFO 9388 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2022-12-17 16:25:36.157  INFO 9388 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2022-12-17 16:25:36.157  INFO 9388 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
-2022-12-17 16:25:36.157  INFO 9388 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2022-12-17 16:25:36.335  INFO 9388 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY/DESKTOP-4HG5T0S:api-gateway:7700 - Re-registering apps/API-GATEWAY
-2022-12-17 16:25:36.335  INFO 9388 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY/DESKTOP-4HG5T0S:api-gateway:7700: registering service...
-2022-12-17 16:25:36.350  INFO 9388 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2022-12-17 16:25:36.478  INFO 9388 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY/DESKTOP-4HG5T0S:api-gateway:7700: registering service...
-2022-12-17 16:25:36.515  INFO 9388 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY/DESKTOP-4HG5T0S:api-gateway:7700 - registration status: 204
-2022-12-17 16:25:36.521  INFO 9388 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY/DESKTOP-4HG5T0S:api-gateway:7700 - registration status: 204
-2022-12-17 16:26:06.363  INFO 9388 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2022-12-17 16:26:06.365  INFO 9388 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2022-12-17 16:26:06.365  INFO 9388 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2022-12-17 16:26:06.365  INFO 9388 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2022-12-17 16:26:06.365  INFO 9388 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2022-12-17 16:26:06.366  INFO 9388 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
-2022-12-17 16:26:06.366  INFO 9388 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2022-12-17 16:26:06.384  INFO 9388 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2022-12-17 16:30:04.458  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 16:35:04.472  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 16:40:04.475  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 16:41:04.618  INFO 9388 --- [reactor-http-nio-2] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
-2022-12-17 16:41:04.619  INFO 9388 --- [reactor-http-nio-2] com.apigateway.CustomFilter              : REDIRECTING TO  -> Authentication service
-2022-12-17 16:41:05.321  INFO 9388 --- [reactor-http-nio-2] com.apigateway.CustomFilter              : Post Filter = 500 INTERNAL_SERVER_ERROR
-2022-12-17 16:42:00.674  INFO 9388 --- [reactor-http-nio-2] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
-2022-12-17 16:42:00.675  INFO 9388 --- [reactor-http-nio-2] com.apigateway.CustomFilter              : REDIRECTING TO  -> Authentication service
-2022-12-17 16:42:00.693  INFO 9388 --- [reactor-http-nio-2] com.apigateway.CustomFilter              : Post Filter = 500 INTERNAL_SERVER_ERROR
-2022-12-17 16:45:04.484  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 16:46:56.523  INFO 9388 --- [reactor-http-nio-3] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
-2022-12-17 16:46:56.523  INFO 9388 --- [reactor-http-nio-3] com.apigateway.CustomFilter              : REDIRECTING TO  -> Authentication service
-2022-12-17 16:47:13.775  INFO 9388 --- [reactor-http-nio-3] com.apigateway.CustomFilter              : Post Filter = 200 OK
-2022-12-17 16:47:21.586  INFO 9388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
-2022-12-17 16:47:21.587  INFO 9388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : REDIRECTING TO  -> Authentication service
-2022-12-17 16:47:21.965  INFO 9388 --- [reactor-http-nio-3] com.apigateway.CustomFilter              : Post Filter = 200 OK
-2022-12-17 16:50:04.487  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 16:50:05.703  INFO 9388 --- [reactor-http-nio-1] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
-2022-12-17 16:50:05.703  INFO 9388 --- [reactor-http-nio-1] com.apigateway.CustomFilter              : REDIRECTING TO  -> Authentication service
-2022-12-17 16:50:06.076  INFO 9388 --- [reactor-http-nio-1] com.apigateway.CustomFilter              : Post Filter = 200 OK
-2022-12-17 16:51:04.878  INFO 9388 --- [reactor-http-nio-2] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
-2022-12-17 16:51:04.878  INFO 9388 --- [reactor-http-nio-2] com.apigateway.CustomFilter              : REDIRECTING TO  -> Authentication service
-2022-12-17 16:51:04.920  INFO 9388 --- [reactor-http-nio-1] com.apigateway.CustomFilter              : Post Filter = 500 INTERNAL_SERVER_ERROR
-2022-12-17 16:51:12.040  INFO 9388 --- [reactor-http-nio-2] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
-2022-12-17 16:51:12.040  INFO 9388 --- [reactor-http-nio-2] com.apigateway.CustomFilter              : REDIRECTING TO  -> Authentication service
-2022-12-17 16:51:12.055  INFO 9388 --- [reactor-http-nio-2] com.apigateway.CustomFilter              : Post Filter = 500 INTERNAL_SERVER_ERROR
-2022-12-17 16:51:30.047  INFO 9388 --- [reactor-http-nio-2] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
-2022-12-17 16:51:30.047  INFO 9388 --- [reactor-http-nio-2] com.apigateway.CustomFilter              : REDIRECTING TO  -> Authentication service
-2022-12-17 16:51:30.060  INFO 9388 --- [reactor-http-nio-2] com.apigateway.CustomFilter              : Post Filter = 500 INTERNAL_SERVER_ERROR
-2022-12-17 16:51:52.125  INFO 9388 --- [reactor-http-nio-2] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
-2022-12-17 16:51:52.126  INFO 9388 --- [reactor-http-nio-2] com.apigateway.CustomFilter              : REDIRECTING TO  -> Authentication service
-2022-12-17 16:51:52.142  INFO 9388 --- [reactor-http-nio-2] com.apigateway.CustomFilter              : Post Filter = 500 INTERNAL_SERVER_ERROR
-2022-12-17 16:52:01.047  INFO 9388 --- [reactor-http-nio-2] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
-2022-12-17 16:52:01.048  INFO 9388 --- [reactor-http-nio-2] com.apigateway.CustomFilter              : REDIRECTING TO  -> Authentication service
-2022-12-17 16:52:01.064  INFO 9388 --- [reactor-http-nio-2] com.apigateway.CustomFilter              : Post Filter = 500 INTERNAL_SERVER_ERROR
-2022-12-17 16:52:58.497  INFO 9388 --- [reactor-http-nio-3] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
-2022-12-17 16:52:58.497  INFO 9388 --- [reactor-http-nio-3] com.apigateway.CustomFilter              : REDIRECTING TO  -> Authentication service
-2022-12-17 16:52:58.513  INFO 9388 --- [reactor-http-nio-3] com.apigateway.CustomFilter              : Post Filter = 500 INTERNAL_SERVER_ERROR
-2022-12-17 16:55:04.495  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 16:56:08.522  INFO 9388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
-2022-12-17 16:56:08.523  INFO 9388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : REDIRECTING TO  -> Authentication service
-2022-12-17 16:56:08.542  INFO 9388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Post Filter = 500 INTERNAL_SERVER_ERROR
-2022-12-17 16:57:38.427  INFO 9388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
-2022-12-17 16:57:38.428  INFO 9388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : REDIRECTING TO  -> Authentication service
-2022-12-17 16:57:38.444  INFO 9388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Post Filter = 500 INTERNAL_SERVER_ERROR
-2022-12-17 16:57:42.778  INFO 9388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
-2022-12-17 16:57:42.778  INFO 9388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : REDIRECTING TO  -> Authentication service
-2022-12-17 16:57:42.793  INFO 9388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Post Filter = 500 INTERNAL_SERVER_ERROR
-2022-12-17 16:59:36.520  INFO 9388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
-2022-12-17 16:59:36.520  INFO 9388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : REDIRECTING TO  -> Authentication service
-2022-12-17 16:59:36.534  INFO 9388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Post Filter = 500 INTERNAL_SERVER_ERROR
-2022-12-17 17:00:04.511  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 17:02:37.469  INFO 9388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
-2022-12-17 17:02:37.470  INFO 9388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : REDIRECTING TO  -> Authentication service
-2022-12-17 17:02:37.489  INFO 9388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Post Filter = 500 INTERNAL_SERVER_ERROR
-2022-12-17 17:03:35.419  INFO 9388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
-2022-12-17 17:03:35.419  INFO 9388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : REDIRECTING TO  -> Authentication service
-2022-12-17 17:03:35.432  INFO 9388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Post Filter = 500 INTERNAL_SERVER_ERROR
-2022-12-17 17:04:01.862  INFO 9388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
-2022-12-17 17:04:01.863  INFO 9388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : REDIRECTING TO  -> Authentication service
-2022-12-17 17:04:01.875  INFO 9388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Post Filter = 500 INTERNAL_SERVER_ERROR
-2022-12-17 17:04:06.317  INFO 9388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
-2022-12-17 17:04:06.317  INFO 9388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : REDIRECTING TO  -> Authentication service
-2022-12-17 17:04:06.660  INFO 9388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Post Filter = 200 OK
-2022-12-17 17:04:17.859  INFO 9388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
-2022-12-17 17:04:17.859  INFO 9388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : REDIRECTING TO  -> Authentication service
-2022-12-17 17:04:17.873  INFO 9388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Post Filter = 500 INTERNAL_SERVER_ERROR
-2022-12-17 17:04:19.063  INFO 9388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
-2022-12-17 17:04:19.064  INFO 9388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : REDIRECTING TO  -> Authentication service
-2022-12-17 17:04:19.102  INFO 9388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Post Filter = 500 INTERNAL_SERVER_ERROR
-2022-12-17 17:04:29.968  INFO 9388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
-2022-12-17 17:04:29.968  INFO 9388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : REDIRECTING TO  -> Authentication service
-2022-12-17 17:04:30.077  INFO 9388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Post Filter = 500 INTERNAL_SERVER_ERROR
-2022-12-17 17:04:35.111  INFO 9388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
-2022-12-17 17:04:35.117  INFO 9388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : REDIRECTING TO  -> Authentication service
-2022-12-17 17:04:35.210  INFO 9388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Post Filter = 500 INTERNAL_SERVER_ERROR
-2022-12-17 17:04:35.719  INFO 9388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
-2022-12-17 17:04:35.720  INFO 9388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : REDIRECTING TO  -> Authentication service
-2022-12-17 17:04:35.827  INFO 9388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Post Filter = 500 INTERNAL_SERVER_ERROR
-2022-12-17 17:04:36.206  INFO 9388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
-2022-12-17 17:04:36.206  INFO 9388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : REDIRECTING TO  -> Authentication service
-2022-12-17 17:04:36.318  INFO 9388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Post Filter = 500 INTERNAL_SERVER_ERROR
-2022-12-17 17:04:39.336  INFO 9388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
-2022-12-17 17:04:39.337  INFO 9388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : REDIRECTING TO  -> Authentication service
-2022-12-17 17:04:39.445  INFO 9388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Post Filter = 500 INTERNAL_SERVER_ERROR
-2022-12-17 17:04:45.092  INFO 9388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
-2022-12-17 17:04:45.092  INFO 9388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : REDIRECTING TO  -> Authentication service
-2022-12-17 17:04:45.479  INFO 9388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Post Filter = 200 OK
-2022-12-17 17:05:04.529  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 17:06:05.545  INFO 9388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
-2022-12-17 17:06:05.546  INFO 9388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : REDIRECTING TO  -> Authentication service
-2022-12-17 17:06:05.881  INFO 9388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Post Filter = 200 OK
-2022-12-17 17:06:38.824  INFO 9388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
-2022-12-17 17:06:38.825  INFO 9388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : REDIRECTING TO  -> Authentication service
-2022-12-17 17:06:39.172  INFO 9388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Post Filter = 200 OK
-2022-12-17 17:09:34.584  INFO 9388 --- [reactor-http-nio-1] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
-2022-12-17 17:09:34.584  INFO 9388 --- [reactor-http-nio-1] com.apigateway.CustomFilter              : REDIRECTING TO  -> Authentication service
-2022-12-17 17:09:34.930  INFO 9388 --- [reactor-http-nio-1] com.apigateway.CustomFilter              : Post Filter = 200 OK
-2022-12-17 17:10:04.534  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 17:10:20.111  INFO 9388 --- [reactor-http-nio-2] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
-2022-12-17 17:10:20.112  INFO 9388 --- [reactor-http-nio-2] com.apigateway.CustomFilter              : REDIRECTING TO  -> Authentication service
-2022-12-17 17:10:20.508  INFO 9388 --- [reactor-http-nio-1] com.apigateway.CustomFilter              : Post Filter = 200 OK
-2022-12-17 17:10:26.422  INFO 9388 --- [reactor-http-nio-3] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
-2022-12-17 17:10:26.422  INFO 9388 --- [reactor-http-nio-3] com.apigateway.CustomFilter              : REDIRECTING TO  -> Authentication service
-2022-12-17 17:10:26.786  INFO 9388 --- [reactor-http-nio-1] com.apigateway.CustomFilter              : Post Filter = 200 OK
-2022-12-17 17:15:04.548  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 17:20:04.558  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 17:25:04.566  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 17:30:04.586  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 17:35:04.588  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 17:40:04.607  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 17:45:04.660  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 17:50:04.676  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 17:55:04.680  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 18:00:04.697  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 18:05:04.708  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 18:10:04.725  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 18:15:04.738  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 18:20:04.754  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 18:25:04.762  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 18:30:04.768  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 18:35:04.772  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 18:40:04.774  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 18:45:04.776  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 18:50:04.791  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 18:55:04.799  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 19:00:04.807  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 19:05:04.817  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 19:10:04.825  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 19:15:04.841  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 19:20:04.847  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 19:25:04.860  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 19:30:04.872  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 19:35:04.887  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 19:40:04.898  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 19:45:04.904  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 19:50:04.916  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 19:55:04.927  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 20:00:04.930  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 20:05:04.941  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 20:10:04.944  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 20:15:03.681  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 20:20:03.689  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 20:25:03.691  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 20:30:03.696  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 20:35:03.705  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 20:40:03.721  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 20:45:03.730  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 21:21:47.811  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 21:26:47.816  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 21:31:47.832  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 21:36:47.841  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 21:41:47.855  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 21:46:47.867  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 21:51:47.868  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 21:56:47.880  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 22:01:47.894  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 22:06:47.908  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 22:11:47.921  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 22:16:47.924  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 22:21:47.936  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 22:26:47.947  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 22:31:47.963  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 22:36:47.976  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 22:41:47.987  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 22:46:47.990  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 22:51:48.004  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 22:56:48.021  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 23:01:48.034  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 23:06:48.050  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 23:11:48.066  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-17 23:16:48.076  INFO 9388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 00:47:16.971  INFO 9388 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2022-12-18 12:18:39.965  INFO 14892 --- [main] com.apigateway.ApiGatewayApplication     : Starting ApiGatewayApplication using Java 17.0.2 on DESKTOP-4HG5T0S with PID 14892 (C:\Users\Brankovic\Desktop\employment-agency\PaymentService\api-gateway\target\classes started by Brankovic in C:\Users\Brankovic\Desktop\employment-agency\PaymentService\api-gateway)
+2022-12-18 12:18:39.971  INFO 14892 --- [main] com.apigateway.ApiGatewayApplication     : No active profile set, falling back to 1 default profile: "default"
+2022-12-18 12:18:41.949  INFO 14892 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=c6d5bbf9-4713-3d99-8b81-57a941ce1882
+2022-12-18 12:18:42.062  INFO 14892 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-12-18 12:18:42.067  INFO 14892 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-12-18 12:18:42.069  INFO 14892 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-12-18 12:18:43.430  INFO 14892 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [After]
+2022-12-18 12:18:43.430  INFO 14892 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Before]
+2022-12-18 12:18:43.430  INFO 14892 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Between]
+2022-12-18 12:18:43.431  INFO 14892 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Cookie]
+2022-12-18 12:18:43.431  INFO 14892 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Header]
+2022-12-18 12:18:43.431  INFO 14892 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Host]
+2022-12-18 12:18:43.431  INFO 14892 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Method]
+2022-12-18 12:18:43.431  INFO 14892 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Path]
+2022-12-18 12:18:43.432  INFO 14892 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Query]
+2022-12-18 12:18:43.432  INFO 14892 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [ReadBody]
+2022-12-18 12:18:43.432  INFO 14892 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [RemoteAddr]
+2022-12-18 12:18:43.432  INFO 14892 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [XForwardedRemoteAddr]
+2022-12-18 12:18:43.432  INFO 14892 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Weight]
+2022-12-18 12:18:43.433  INFO 14892 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [CloudFoundryRouteService]
+2022-12-18 12:18:44.402  INFO 14892 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-12-18 12:18:44.663  INFO 14892 --- [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2022-12-18 12:18:44.939  WARN 14892 --- [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2022-12-18 12:18:44.984  INFO 14892 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2022-12-18 12:18:45.292  INFO 14892 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2022-12-18 12:18:45.312  INFO 14892 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 12:18:45.370  INFO 14892 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2022-12-18 12:18:45.370  INFO 14892 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2022-12-18 12:18:45.370  INFO 14892 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2022-12-18 12:18:45.370  INFO 14892 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2022-12-18 12:18:45.370  INFO 14892 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2022-12-18 12:18:45.370  INFO 14892 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2022-12-18 12:18:45.372  INFO 14892 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2022-12-18 12:18:46.381  INFO 14892 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2022-12-18 12:18:46.384  INFO 14892 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2022-12-18 12:18:46.391  INFO 14892 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2022-12-18 12:18:46.416  INFO 14892 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1671362326414 with initial instances count: 0
+2022-12-18 12:18:46.421  INFO 14892 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application API-GATEWAY with eureka with status UP
+2022-12-18 12:18:46.422  INFO 14892 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1671362326422, current=UP, previous=STARTING]
+2022-12-18 12:18:46.425  INFO 14892 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY/DESKTOP-4HG5T0S:api-gateway:7700: registering service...
+2022-12-18 12:18:46.911  INFO 14892 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY/DESKTOP-4HG5T0S:api-gateway:7700 - registration status: 204
+2022-12-18 12:18:47.049  INFO 14892 --- [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 7700
+2022-12-18 12:18:47.050  INFO 14892 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 7700
+2022-12-18 12:18:47.253  INFO 14892 --- [main] com.apigateway.ApiGatewayApplication     : Started ApiGatewayApplication in 8.081 seconds (JVM running for 12.512)
+2022-12-18 12:19:16.639  INFO 14892 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2022-12-18 12:19:16.640  INFO 14892 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2022-12-18 12:19:16.641  INFO 14892 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2022-12-18 12:19:16.641  INFO 14892 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2022-12-18 12:19:16.641  INFO 14892 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2022-12-18 12:19:16.641  INFO 14892 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2022-12-18 12:19:16.641  INFO 14892 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2022-12-18 12:19:16.657  INFO 14892 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2022-12-18 12:23:45.385  INFO 14892 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 12:28:45.388  INFO 14892 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 12:33:45.391  INFO 14892 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 12:38:45.398  INFO 14892 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 12:43:45.417  INFO 14892 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 12:48:45.434  INFO 14892 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 12:53:45.436  INFO 14892 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 12:58:45.438  INFO 14892 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 13:03:45.450  INFO 14892 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 13:08:45.460  INFO 14892 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 13:13:45.469  INFO 14892 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 13:18:45.473  INFO 14892 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 13:23:45.483  INFO 14892 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
