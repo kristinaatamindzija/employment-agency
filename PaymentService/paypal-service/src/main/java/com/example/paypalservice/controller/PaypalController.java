@@ -32,7 +32,7 @@ public class PaypalController {
         return ResponseEntity.ok(paypalService.getMerchant(merchantId));
     }
 
-    @PostMapping("/transaction/{status}/{timestamp}")
+    @PostMapping("/transaction")
     public void createTransaction(@RequestBody TransactionRequestDTO transaction) {
         transactionService.createTransaction(transaction);
     }

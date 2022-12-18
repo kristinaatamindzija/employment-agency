@@ -27,6 +27,7 @@ public class TransactionServiceImpl implements TransactionService {
 
     @Override
     public void updateTransaction(TransactionRequestDTO transactionDto) {
+        //promeniti ovaj find da bude unikatan. npr neki id
         Transaction transaction = transactionRepository.findByMerchantUuidAndProductUuid(transactionDto.getMerchantUuid(), transactionDto.getProductUuid());
         assert transaction != null;
         transaction.setStatus(transactionDto.getStatus());

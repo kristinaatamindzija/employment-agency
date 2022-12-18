@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <br><br><br>
-        <div id="AAA" ref="paypal"></div>
+        <div ref="paypal"></div>
     </div>
 </template>
 
@@ -26,24 +26,25 @@ export default {
             },
             merchant: {
                 merchantId: "SQK683LFHNNTN",
-                emailAddress: "sb-msi0x23501552@business.example.com"
+                email: "sb-msi0x23501552@business.example.com"
             },
         };
     },
     mounted() {
         this.isExpired = UserService.isExpired();
-        console.log(this.isExpired);
         if (!this.isExpired) {
             this.username = UserService.getUsername();
         }
         this.getMerchant();
         //this.getOrder(); //ovo ce dobaviti sa beka kad dobijemo id iz bonite
+        this.merchantId = 1;
+        this.orderId = 1;  
     },
     methods: {
         getMerchant(){
             PaypalService.getMerchant(1).then(response => {
-                console.log(response.data);
-                this.merchant = response.data;
+                this.merchant.merchantId = response.data.merchantPaypalId;
+                this.merchant.email = response.data.email;
                 this.createButton();
             }).catch(error => {
                 console.log(error);
@@ -62,8 +63,11 @@ export default {
             const value = this.order.value
             const description = this.order.description
             const merchantId = this.merchant.merchantId
-            const emailAddress = this.merchant.emailAddress
-            console.log(currencyCode, value, description, merchantId, emailAddress)
+            const email = this.merchant.email
+
+            const productUuid = this.orderId
+            const payerId = this.username
+            const merchantUuid = this.merchantId
 
             window.paypal.Buttons({
                 style: {
@@ -78,22 +82,21 @@ export default {
                                     currency_code: currencyCode,
                                     value: value
                                 },
-                                ... merchantId!=null || emailAddress!=null? 'payee':{
+                                ... merchantId!=null || email!=null? 'payee':{
                                 ... merchantId!=null? 'merchant_id': merchantId,
-                                ... emailAddress!=null? 'email_address':emailAddress
+                                ... email!=null? 'email_address':email
                                 },
                             }
                         ]
                     });
                 },
                 onClick() {
-                    console.log("BBBBB")
                     let transaction = {
                         status: "PENDING",
                         timestamp: new Date(),
-                        merchantUuid: this.merchantId,
-                        productUuid: this.orderId,
-                        payerId: this.username,
+                        merchantUuid: merchantUuid,
+                        productUuid: productUuid,
+                        payerId: payerId,
                     }
                     PaypalService.createTransaction(transaction).then(response => {
                         console.log(response.data);
@@ -107,11 +110,11 @@ export default {
                     let transaction = {
                         status: "SUCCESS",
                         timestamp: new Date(),
-                        merchantUuid: this.merchantId,
-                        productUuid: this.orderId,
-                        payerId: this.username,
+                        merchantUuid: merchantUuid,
+                        productUuid: productUuid,
+                        payerId: payerId,
                     }
-                    PaypalService.createTransaction(transaction).then(response => {
+                    PaypalService.updateTransaction(transaction).then(response => {
                         console.log(response.data);
                     }).catch(error => {
                         console.log(error);
@@ -123,9 +126,9 @@ export default {
                     let transaction = {
                         status: "FAILED",
                         timestamp: new Date(),
-                        merchantUuid: this.merchantId,
-                        productUuid: this.orderId,
-                        payerId: this.username,
+                        merchantUuid: merchantUuid,
+                        productUuid: productUuid,
+                        payerId: payerId,
                     }
                     PaypalService.createTransaction(transaction).then(response => {
                         console.log(response.data);

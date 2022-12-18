@@ -651,3 +651,76 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 2022-12-18 15:04:59.942  INFO 14068 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
 2022-12-18 15:27:40.779  WARN 14068 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=19m14s335ms874µs200ns).
 2022-12-18 15:28:43.993  INFO 14068 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 15:33:44.008  INFO 14068 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 15:38:44.024  INFO 14068 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 19:59:18.869  WARN 14068 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4h20m37s957ms902µs300ns).
+2022-12-18 20:03:51.702  INFO 14068 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 20:08:51.719  INFO 14068 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 20:13:51.729  INFO 14068 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 20:18:51.737  INFO 14068 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 20:23:51.751  INFO 14068 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 20:28:51.761  INFO 14068 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 20:33:51.766  INFO 14068 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 20:38:51.776  INFO 14068 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 20:43:51.782  INFO 14068 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 20:48:51.798  INFO 14068 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 20:53:51.800  INFO 14068 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 20:57:58.508 DEBUG 14068 --- [http-nio-7702-exec-7] org.hibernate.SQL                        : 
+    select
+        webshop0_.id as id1_2_,
+        webshop0_.currency as currency2_2_,
+        webshop0_.merchant_id as merchant3_2_,
+        webshop0_.merchant_password as merchant4_2_,
+        webshop0_.merchant_uuid as merchant5_2_,
+        webshop0_.password as password6_2_,
+        webshop0_.username as username7_2_ 
+    from
+        web_shop webshop0_ 
+    where
+        webshop0_.username=?
+2022-12-18 20:57:58.522 TRACE 14068 --- [http-nio-7702-exec-7] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [wasd]
+2022-12-18 20:57:58.555 DEBUG 14068 --- [http-nio-7702-exec-7] org.hibernate.SQL                        : 
+    select
+        paymentmet0_.web_shop_id as web_shop1_1_0_,
+        paymentmet0_.payment_method_id as payment_2_1_0_,
+        paymentmet1_.id as id1_0_1_,
+        paymentmet1_.name as name2_0_1_ 
+    from
+        web_shop_payment_method paymentmet0_ 
+    inner join
+        payment_method paymentmet1_ 
+            on paymentmet0_.payment_method_id=paymentmet1_.id 
+    where
+        paymentmet0_.web_shop_id=?
+2022-12-18 20:57:58.556 TRACE 14068 --- [http-nio-7702-exec-7] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [BIGINT] - [4]
+2022-12-18 20:58:23.319 DEBUG 14068 --- [http-nio-7702-exec-8] org.hibernate.SQL                        : 
+    select
+        webshop0_.id as id1_2_,
+        webshop0_.currency as currency2_2_,
+        webshop0_.merchant_id as merchant3_2_,
+        webshop0_.merchant_password as merchant4_2_,
+        webshop0_.merchant_uuid as merchant5_2_,
+        webshop0_.password as password6_2_,
+        webshop0_.username as username7_2_ 
+    from
+        web_shop webshop0_ 
+    where
+        webshop0_.username=?
+2022-12-18 20:58:23.322 TRACE 14068 --- [http-nio-7702-exec-8] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [wasd]
+2022-12-18 20:58:23.325 DEBUG 14068 --- [http-nio-7702-exec-8] org.hibernate.SQL                        : 
+    select
+        paymentmet0_.web_shop_id as web_shop1_1_0_,
+        paymentmet0_.payment_method_id as payment_2_1_0_,
+        paymentmet1_.id as id1_0_1_,
+        paymentmet1_.name as name2_0_1_ 
+    from
+        web_shop_payment_method paymentmet0_ 
+    inner join
+        payment_method paymentmet1_ 
+            on paymentmet0_.payment_method_id=paymentmet1_.id 
+    where
+        paymentmet0_.web_shop_id=?
+2022-12-18 20:58:23.326 TRACE 14068 --- [http-nio-7702-exec-8] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [BIGINT] - [4]
+2022-12-18 20:58:51.816  INFO 14068 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 21:03:51.819  INFO 14068 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 21:08:51.836  INFO 14068 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration

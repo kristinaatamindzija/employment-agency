@@ -13,7 +13,7 @@ import javax.persistence.*;
 public class SubscriptionPlan {
 
     @Id
-    @SequenceGenerator(name = "plan_id_gen", sequenceName = "plan_id_gen", initialValue = 1, allocationSize = 1)
+    @SequenceGenerator(name = "plan_id_gen", sequenceName = "plan_id_seq", initialValue = 1, allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "plan_id_gen")
     private Long id;
 

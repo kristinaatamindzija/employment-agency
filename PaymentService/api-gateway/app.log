@@ -447,3 +447,196 @@ Caused by: java.net.ConnectException: Connection refused: no further information
 2022-12-18 15:32:04.819  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Pre Filter -> Authorization = Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJkaXNsaW5rdC1hZ2VudCIsInN1YiI6Indhc2QiLCJhdWQiOiJ3ZWIiLCJpYXQiOjE2NzEzNzIxOTQsImV4cCI6MTY3MTM3Mzk5NH0.yzwzqNRp32nKSpff48bx76hpKzjoA5MvNBTR3HLZ67w
 2022-12-18 15:32:04.819  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
 2022-12-18 15:32:04.835  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Post Filter = 405 METHOD_NOT_ALLOWED
+2022-12-18 15:33:47.696  INFO 14388 --- [reactor-http-nio-1] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
+2022-12-18 15:33:47.696  INFO 14388 --- [reactor-http-nio-1] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 15:33:48.088  INFO 14388 --- [reactor-http-nio-1] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 15:33:53.012  INFO 14388 --- [reactor-http-nio-1] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
+2022-12-18 15:33:53.012  INFO 14388 --- [reactor-http-nio-1] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 15:33:53.122  INFO 14388 --- [reactor-http-nio-1] com.apigateway.CustomFilter              : Post Filter = 500 INTERNAL_SERVER_ERROR
+2022-12-18 15:35:11.264  INFO 14388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 15:36:10.434  INFO 14388 --- [reactor-http-nio-2] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
+2022-12-18 15:36:10.440  INFO 14388 --- [reactor-http-nio-2] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 15:36:10.909  INFO 14388 --- [reactor-http-nio-2] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 15:36:13.615  INFO 14388 --- [reactor-http-nio-2] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
+2022-12-18 15:36:13.615  INFO 14388 --- [reactor-http-nio-2] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 15:36:13.750  INFO 14388 --- [reactor-http-nio-2] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 15:36:56.019  INFO 14388 --- [reactor-http-nio-3] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
+2022-12-18 15:36:56.020  INFO 14388 --- [reactor-http-nio-3] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 15:36:56.033  INFO 14388 --- [reactor-http-nio-2] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 20:00:18.949  INFO 14388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 20:05:18.961  INFO 14388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 20:10:18.977  INFO 14388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 20:15:18.985  INFO 14388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 20:20:18.996  INFO 14388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 20:25:19.011  INFO 14388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 20:29:36.085  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
+2022-12-18 20:29:36.086  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 20:29:36.273  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 20:30:10.964  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
+2022-12-18 20:30:10.964  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 20:30:10.978  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 20:30:19.025  INFO 14388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 20:33:28.988  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
+2022-12-18 20:33:28.989  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 20:33:29.004  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 20:33:52.044  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
+2022-12-18 20:33:52.044  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 20:33:52.054  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 20:34:18.434  INFO 14388 --- [reactor-http-nio-1] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
+2022-12-18 20:34:18.435  INFO 14388 --- [reactor-http-nio-1] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 20:34:18.462  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 20:34:46.544  INFO 14388 --- [reactor-http-nio-2] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
+2022-12-18 20:34:46.544  INFO 14388 --- [reactor-http-nio-2] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 20:34:46.566  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 20:35:19.028  INFO 14388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 20:36:48.698  INFO 14388 --- [reactor-http-nio-3] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
+2022-12-18 20:36:48.698  INFO 14388 --- [reactor-http-nio-3] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 20:36:48.715  INFO 14388 --- [reactor-http-nio-3] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 20:38:02.969  INFO 14388 --- [reactor-http-nio-3] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
+2022-12-18 20:38:02.970  INFO 14388 --- [reactor-http-nio-3] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 20:38:02.983  INFO 14388 --- [reactor-http-nio-3] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 20:38:22.365  INFO 14388 --- [reactor-http-nio-3] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
+2022-12-18 20:38:22.365  INFO 14388 --- [reactor-http-nio-3] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 20:38:22.379  INFO 14388 --- [reactor-http-nio-3] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 20:38:46.800  INFO 14388 --- [reactor-http-nio-3] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
+2022-12-18 20:38:46.800  INFO 14388 --- [reactor-http-nio-3] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 20:38:46.809  INFO 14388 --- [reactor-http-nio-3] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 20:40:19.036  INFO 14388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 20:40:22.640  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
+2022-12-18 20:40:22.640  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 20:40:22.655  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 20:40:44.308  INFO 14388 --- [reactor-http-nio-1] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
+2022-12-18 20:40:44.308  INFO 14388 --- [reactor-http-nio-1] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 20:40:44.338  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 20:40:46.644  INFO 14388 --- [reactor-http-nio-1] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
+2022-12-18 20:40:46.645  INFO 14388 --- [reactor-http-nio-1] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 20:40:46.799  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 20:40:50.166  INFO 14388 --- [reactor-http-nio-1] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
+2022-12-18 20:40:50.167  INFO 14388 --- [reactor-http-nio-1] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 20:40:50.194  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 20:40:57.182  INFO 14388 --- [reactor-http-nio-1] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
+2022-12-18 20:40:57.183  INFO 14388 --- [reactor-http-nio-1] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 20:40:57.195  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 20:41:02.157  INFO 14388 --- [reactor-http-nio-1] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
+2022-12-18 20:41:02.157  INFO 14388 --- [reactor-http-nio-1] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 20:41:02.180  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 20:44:44.354  INFO 14388 --- [reactor-http-nio-2] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
+2022-12-18 20:44:44.354  INFO 14388 --- [reactor-http-nio-2] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 20:44:59.465  INFO 14388 --- [reactor-http-nio-2] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 20:45:19.047  INFO 14388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 20:45:41.454  INFO 14388 --- [reactor-http-nio-3] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
+2022-12-18 20:45:41.455  INFO 14388 --- [reactor-http-nio-3] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 20:45:41.800  INFO 14388 --- [reactor-http-nio-3] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 20:48:33.097  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
+2022-12-18 20:48:33.098  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 20:48:33.112  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 20:49:29.365  INFO 14388 --- [reactor-http-nio-1] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
+2022-12-18 20:49:29.365  INFO 14388 --- [reactor-http-nio-1] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 20:49:29.380  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 20:50:14.599  INFO 14388 --- [reactor-http-nio-2] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
+2022-12-18 20:50:14.599  INFO 14388 --- [reactor-http-nio-2] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 20:50:14.611  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 20:50:19.059  INFO 14388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 20:50:44.182  INFO 14388 --- [reactor-http-nio-3] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
+2022-12-18 20:50:44.182  INFO 14388 --- [reactor-http-nio-3] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 20:50:44.191  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 20:51:23.355  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
+2022-12-18 20:51:23.355  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 20:51:23.366  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 20:52:17.150  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
+2022-12-18 20:52:17.151  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 20:52:17.160  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 20:53:09.082  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
+2022-12-18 20:53:09.082  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 20:53:09.093  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 20:54:18.124  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
+2022-12-18 20:54:18.124  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 20:54:18.135  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 20:54:38.616  INFO 14388 --- [reactor-http-nio-1] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
+2022-12-18 20:54:38.616  INFO 14388 --- [reactor-http-nio-1] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 20:54:38.625  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 20:54:55.579  INFO 14388 --- [reactor-http-nio-2] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
+2022-12-18 20:54:55.580  INFO 14388 --- [reactor-http-nio-2] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 20:54:55.800  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 20:55:19.073  INFO 14388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 20:55:31.065  INFO 14388 --- [reactor-http-nio-3] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
+2022-12-18 20:55:31.066  INFO 14388 --- [reactor-http-nio-3] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 20:55:31.074  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 20:55:57.084  INFO 14388 --- [reactor-http-nio-3] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
+2022-12-18 20:55:57.084  INFO 14388 --- [reactor-http-nio-3] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 20:55:57.096  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 20:56:44.510  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
+2022-12-18 20:56:44.511  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 20:56:44.531  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 20:57:30.727  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
+2022-12-18 20:57:30.727  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 20:57:30.780  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 20:57:34.667  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
+2022-12-18 20:57:34.667  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 20:57:34.674  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 20:57:45.343  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
+2022-12-18 20:57:45.343  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 20:57:45.351  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 20:57:58.235  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
+2022-12-18 20:57:58.235  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : REDIRECTING TO  -> Authentication service
+2022-12-18 20:57:58.964  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 20:58:23.308  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Pre Filter -> Authorization = Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJkaXNsaW5rdC1hZ2VudCIsInN1YiI6Indhc2QiLCJhdWQiOiJ3ZWIiLCJpYXQiOjE2NzEzOTM0NzgsImV4cCI6MTY3MTM5NTI3OH0.7VF-gYvOaCv8204ofVeXhBlJCO8QgK-9SHl5DuBFP_M
+2022-12-18 20:58:23.309  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : REDIRECTING TO  -> Authentication service
+2022-12-18 20:58:23.800  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 20:58:28.329  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Pre Filter -> Authorization = Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJkaXNsaW5rdC1hZ2VudCIsInN1YiI6Indhc2QiLCJhdWQiOiJ3ZWIiLCJpYXQiOjE2NzEzOTM1MDMsImV4cCI6MTY3MTM5NTMwM30.m79MsxTpSQrGAXP14Zj4IQw-95rMCXl6v17IugM8-Cc
+2022-12-18 20:58:28.329  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 20:58:28.338  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 20:59:14.493  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Pre Filter -> Authorization = Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJkaXNsaW5rdC1hZ2VudCIsInN1YiI6Indhc2QiLCJhdWQiOiJ3ZWIiLCJpYXQiOjE2NzEzOTM1MDMsImV4cCI6MTY3MTM5NTMwM30.m79MsxTpSQrGAXP14Zj4IQw-95rMCXl6v17IugM8-Cc
+2022-12-18 20:59:14.493  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 20:59:14.501  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 21:00:19.219  INFO 14388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 21:01:39.327  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Pre Filter -> Authorization = Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJkaXNsaW5rdC1hZ2VudCIsInN1YiI6Indhc2QiLCJhdWQiOiJ3ZWIiLCJpYXQiOjE2NzEzOTM1MDMsImV4cCI6MTY3MTM5NTMwM30.m79MsxTpSQrGAXP14Zj4IQw-95rMCXl6v17IugM8-Cc
+2022-12-18 21:01:39.327  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 21:01:39.336  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 21:03:11.580  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Pre Filter -> Authorization = Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJkaXNsaW5rdC1hZ2VudCIsInN1YiI6Indhc2QiLCJhdWQiOiJ3ZWIiLCJpYXQiOjE2NzEzOTM1MDMsImV4cCI6MTY3MTM5NTMwM30.m79MsxTpSQrGAXP14Zj4IQw-95rMCXl6v17IugM8-Cc
+2022-12-18 21:03:11.581  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 21:03:11.589  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 21:03:51.440  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Pre Filter -> Authorization = Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJkaXNsaW5rdC1hZ2VudCIsInN1YiI6Indhc2QiLCJhdWQiOiJ3ZWIiLCJpYXQiOjE2NzEzOTM1MDMsImV4cCI6MTY3MTM5NTMwM30.m79MsxTpSQrGAXP14Zj4IQw-95rMCXl6v17IugM8-Cc
+2022-12-18 21:03:51.440  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 21:03:51.479  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 21:04:15.394  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Pre Filter -> Authorization = Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJkaXNsaW5rdC1hZ2VudCIsInN1YiI6Indhc2QiLCJhdWQiOiJ3ZWIiLCJpYXQiOjE2NzEzOTM1MDMsImV4cCI6MTY3MTM5NTMwM30.m79MsxTpSQrGAXP14Zj4IQw-95rMCXl6v17IugM8-Cc
+2022-12-18 21:04:15.395  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 21:04:15.426  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 21:04:49.831  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Pre Filter -> Authorization = Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJkaXNsaW5rdC1hZ2VudCIsInN1YiI6Indhc2QiLCJhdWQiOiJ3ZWIiLCJpYXQiOjE2NzEzOTM1MDMsImV4cCI6MTY3MTM5NTMwM30.m79MsxTpSQrGAXP14Zj4IQw-95rMCXl6v17IugM8-Cc
+2022-12-18 21:04:49.832  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 21:04:49.848  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 21:05:19.234  INFO 14388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 21:08:05.149  INFO 14388 --- [reactor-http-nio-1] com.apigateway.CustomFilter              : Pre Filter -> Authorization = Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJkaXNsaW5rdC1hZ2VudCIsInN1YiI6Indhc2QiLCJhdWQiOiJ3ZWIiLCJpYXQiOjE2NzEzOTM1MDMsImV4cCI6MTY3MTM5NTMwM30.m79MsxTpSQrGAXP14Zj4IQw-95rMCXl6v17IugM8-Cc
+2022-12-18 21:08:05.150  INFO 14388 --- [reactor-http-nio-1] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 21:08:05.547  INFO 14388 --- [reactor-http-nio-1] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 21:08:08.237  INFO 14388 --- [reactor-http-nio-1] com.apigateway.CustomFilter              : Pre Filter -> Authorization = Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJkaXNsaW5rdC1hZ2VudCIsInN1YiI6Indhc2QiLCJhdWQiOiJ3ZWIiLCJpYXQiOjE2NzEzOTM1MDMsImV4cCI6MTY3MTM5NTMwM30.m79MsxTpSQrGAXP14Zj4IQw-95rMCXl6v17IugM8-Cc
+2022-12-18 21:08:08.237  INFO 14388 --- [reactor-http-nio-1] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 21:08:08.364  INFO 14388 --- [reactor-http-nio-1] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 21:08:18.382  INFO 14388 --- [reactor-http-nio-2] com.apigateway.CustomFilter              : Pre Filter -> Authorization = Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJkaXNsaW5rdC1hZ2VudCIsInN1YiI6Indhc2QiLCJhdWQiOiJ3ZWIiLCJpYXQiOjE2NzEzOTM1MDMsImV4cCI6MTY3MTM5NTMwM30.m79MsxTpSQrGAXP14Zj4IQw-95rMCXl6v17IugM8-Cc
+2022-12-18 21:08:18.383  INFO 14388 --- [reactor-http-nio-2] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 21:08:18.401  INFO 14388 --- [reactor-http-nio-1] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 21:09:08.760  INFO 14388 --- [reactor-http-nio-3] com.apigateway.CustomFilter              : Pre Filter -> Authorization = Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJkaXNsaW5rdC1hZ2VudCIsInN1YiI6Indhc2QiLCJhdWQiOiJ3ZWIiLCJpYXQiOjE2NzEzOTM1MDMsImV4cCI6MTY3MTM5NTMwM30.m79MsxTpSQrGAXP14Zj4IQw-95rMCXl6v17IugM8-Cc
+2022-12-18 21:09:08.760  INFO 14388 --- [reactor-http-nio-3] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 21:09:08.772  INFO 14388 --- [reactor-http-nio-1] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 21:09:17.630  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Pre Filter -> Authorization = Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJkaXNsaW5rdC1hZ2VudCIsInN1YiI6Indhc2QiLCJhdWQiOiJ3ZWIiLCJpYXQiOjE2NzEzOTM1MDMsImV4cCI6MTY3MTM5NTMwM30.m79MsxTpSQrGAXP14Zj4IQw-95rMCXl6v17IugM8-Cc
+2022-12-18 21:09:17.631  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 21:09:17.648  INFO 14388 --- [reactor-http-nio-1] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 21:09:40.872  INFO 14388 --- [reactor-http-nio-1] com.apigateway.CustomFilter              : Pre Filter -> Authorization = Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJkaXNsaW5rdC1hZ2VudCIsInN1YiI6Indhc2QiLCJhdWQiOiJ3ZWIiLCJpYXQiOjE2NzEzOTM1MDMsImV4cCI6MTY3MTM5NTMwM30.m79MsxTpSQrGAXP14Zj4IQw-95rMCXl6v17IugM8-Cc
+2022-12-18 21:09:40.873  INFO 14388 --- [reactor-http-nio-1] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 21:09:40.881  INFO 14388 --- [reactor-http-nio-1] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 21:09:43.890  INFO 14388 --- [reactor-http-nio-1] com.apigateway.CustomFilter              : Pre Filter -> Authorization = Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJkaXNsaW5rdC1hZ2VudCIsInN1YiI6Indhc2QiLCJhdWQiOiJ3ZWIiLCJpYXQiOjE2NzEzOTM1MDMsImV4cCI6MTY3MTM5NTMwM30.m79MsxTpSQrGAXP14Zj4IQw-95rMCXl6v17IugM8-Cc
+2022-12-18 21:09:43.890  INFO 14388 --- [reactor-http-nio-1] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 21:09:43.904  INFO 14388 --- [reactor-http-nio-1] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 21:09:54.042  INFO 14388 --- [reactor-http-nio-2] com.apigateway.CustomFilter              : Pre Filter -> Authorization = Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJkaXNsaW5rdC1hZ2VudCIsInN1YiI6Indhc2QiLCJhdWQiOiJ3ZWIiLCJpYXQiOjE2NzEzOTM1MDMsImV4cCI6MTY3MTM5NTMwM30.m79MsxTpSQrGAXP14Zj4IQw-95rMCXl6v17IugM8-Cc
+2022-12-18 21:09:54.042  INFO 14388 --- [reactor-http-nio-2] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 21:10:10.897  INFO 14388 --- [reactor-http-nio-1] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 21:10:19.247  INFO 14388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 21:10:37.787  INFO 14388 --- [reactor-http-nio-3] com.apigateway.CustomFilter              : Pre Filter -> Authorization = Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJkaXNsaW5rdC1hZ2VudCIsInN1YiI6Indhc2QiLCJhdWQiOiJ3ZWIiLCJpYXQiOjE2NzEzOTM1MDMsImV4cCI6MTY3MTM5NTMwM30.m79MsxTpSQrGAXP14Zj4IQw-95rMCXl6v17IugM8-Cc
+2022-12-18 21:10:37.787  INFO 14388 --- [reactor-http-nio-3] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 21:10:38.965  INFO 14388 --- [reactor-http-nio-3] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 21:10:49.527  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Pre Filter -> Authorization = Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJkaXNsaW5rdC1hZ2VudCIsInN1YiI6Indhc2QiLCJhdWQiOiJ3ZWIiLCJpYXQiOjE2NzEzOTM1MDMsImV4cCI6MTY3MTM5NTMwM30.m79MsxTpSQrGAXP14Zj4IQw-95rMCXl6v17IugM8-Cc
+2022-12-18 21:10:49.527  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 21:10:49.616  INFO 14388 --- [reactor-http-nio-3] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 21:10:58.502  INFO 14388 --- [reactor-http-nio-1] com.apigateway.CustomFilter              : Pre Filter -> Authorization = Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJkaXNsaW5rdC1hZ2VudCIsInN1YiI6Indhc2QiLCJhdWQiOiJ3ZWIiLCJpYXQiOjE2NzEzOTM1MDMsImV4cCI6MTY3MTM5NTMwM30.m79MsxTpSQrGAXP14Zj4IQw-95rMCXl6v17IugM8-Cc
+2022-12-18 21:10:58.502  INFO 14388 --- [reactor-http-nio-1] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 21:10:58.758  INFO 14388 --- [reactor-http-nio-3] com.apigateway.CustomFilter              : Post Filter = 200 OK

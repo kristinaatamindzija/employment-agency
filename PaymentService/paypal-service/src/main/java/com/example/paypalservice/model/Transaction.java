@@ -17,6 +17,8 @@ import java.util.Date;
 public class Transaction {
 
     @Id
+    @SequenceGenerator(name = "transaction_id_gen", sequenceName = "transaction_id_seq", initialValue = 1, allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "transaction_id_gen")
     private Long id;
 
     @Column
