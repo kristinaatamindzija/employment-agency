@@ -16,6 +16,10 @@ spring:
           uri: http://localhost:7703/
           predicates:
             - Path=/bank-service/**
+        - id: paypalModules
+          uri: http://localhost:7706/
+          predicates:
+            - Path=/paypal/**
       globalcors:
         corsConfigurations:
           '[/**]':

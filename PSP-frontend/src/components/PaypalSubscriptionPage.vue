@@ -8,6 +8,7 @@
 <script>
 
 import UserService from "../services/UserService";
+import PaypalService from "@/services/PaypalService";
 import Swal from 'sweetalert2'
 
 export default {
@@ -17,6 +18,8 @@ export default {
             isExpired: false,
             username: "",
             planId: "P-82T63888Y87914132MOPPK7Y",
+            merchantId: 1,  //hardkodovano, ovo ce se dobavljati sa bonite, kao i productId
+            productId: 1
         };
     },
     mounted() {
@@ -25,9 +28,18 @@ export default {
         if (!this.isExpired) {
             this.username = UserService.getUsername();
         }
-        this.createButton();    //pozvati getMerchant() umesto createButton()
+        this.getPlanId();
     },
     methods: {
+        getPlanId(){
+            PaypalService.getPlanId(this.merchantId, this.productId).then(response => {
+                console.log(response.data);
+                this.planId = response.data;
+                this.createButton();
+            }).catch(error => {
+                console.log(error);
+            })
+        },
         createButton() {
             const script = document.createElement("script");
             script.src =

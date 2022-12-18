@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <br><br><br>
-        <div ref="paypal"></div>
+        <div id="AAA" ref="paypal"></div>
     </div>
 </template>
 
@@ -18,7 +18,7 @@ export default {
             isExpired: false,
             username: "",
             order: {
-                currencyCode: "EUR",
+                currencyCode: "USD",
                 value: "100.00",
                 description: "Test"
             },
@@ -34,11 +34,11 @@ export default {
         if (!this.isExpired) {
             this.username = UserService.getUsername();
         }
-        this.createButton();    //pozvati getMerchant() umesto createButton()
+        this.getMerchant();
     },
     methods: {
         getMerchant(){
-            PaypalService.getMerchant().then(response => {
+            PaypalService.getMerchant(1).then(response => {
                 console.log(response.data);
                 this.merchant = response.data;
                 this.createButton();
@@ -83,10 +83,8 @@ export default {
                         ]
                     });
                 },
-                onAuthorize: async (data, actions) => {
-                    alert('The payment dialog will now be displayed.');
-                    const order = await actions.order.capture();
-                    console.log("sada", order);
+                onClick() {
+                    console.log("BBBBB")
                 },
                 onApprove: async (data, actions) => {
                     const order = await actions.order.capture();

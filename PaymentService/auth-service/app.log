@@ -368,3 +368,251 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 2022-12-18 13:14:20.957  INFO 11644 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
 2022-12-18 13:19:20.967  INFO 11644 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
 2022-12-18 13:24:20.972  INFO 11644 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 13:29:20.975  INFO 11644 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 13:29:40.409  INFO 11644 --- [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application AUTH-SERVICE with eureka with status DOWN
+2022-12-18 13:29:40.411  INFO 11644 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1671366580411, current=DOWN, previous=UP]
+2022-12-18 13:29:40.412  INFO 11644 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-SERVICE/DESKTOP-4HG5T0S:auth-service:7702: registering service...
+2022-12-18 13:29:40.562  INFO 11644 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-SERVICE/DESKTOP-4HG5T0S:auth-service:7702 - registration status: 204
+2022-12-18 13:29:41.141  INFO 11644 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-18 13:29:41.195  INFO 11644 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-12-18 13:29:41.222 DEBUG 11644 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : 
+    
+    alter table if exists web_shop_payment_method 
+       drop constraint if exists FKl5ppvd04166bexq5dwf2ybt4t
+2022-12-18 13:29:41.253 DEBUG 11644 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : 
+    
+    alter table if exists web_shop_payment_method 
+       drop constraint if exists FKbi0o4ykh2bn0twbmkhqyp2t4s
+2022-12-18 13:29:41.254 DEBUG 11644 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : 
+    
+    drop table if exists payment_method cascade
+2022-12-18 13:29:41.267 DEBUG 11644 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : 
+    
+    drop table if exists web_shop_payment_method cascade
+2022-12-18 13:29:41.271 DEBUG 11644 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : 
+    
+    drop table if exists web_shop cascade
+2022-12-18 13:29:41.279 DEBUG 11644 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : 
+    
+    drop sequence if exists payment_method_id_seq
+2022-12-18 13:29:41.282 DEBUG 11644 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : 
+    
+    drop sequence if exists web_shop_id_seq
+2022-12-18 13:29:41.316  INFO 11644 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-12-18 13:29:41.343  INFO 11644 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-12-18 13:29:41.349  INFO 11644 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2022-12-18 13:29:44.364  INFO 11644 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2022-12-18 13:29:44.392  INFO 11644 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-SERVICE/DESKTOP-4HG5T0S:auth-service:7702 - deregister  status: 200
+2022-12-18 13:29:44.410  INFO 11644 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2022-12-18 13:29:50.006  INFO 14068 --- [main] com.authservice.AuthServiceApplication   : Starting AuthServiceApplication using Java 17.0.2 on DESKTOP-4HG5T0S with PID 14068 (C:\Users\Brankovic\Desktop\employment-agency\PaymentService\auth-service\target\classes started by Brankovic in C:\Users\Brankovic\Desktop\employment-agency\PaymentService\auth-service)
+2022-12-18 13:29:50.012 DEBUG 14068 --- [main] com.authservice.AuthServiceApplication   : Running with Spring Boot v2.7.2, Spring v5.3.22
+2022-12-18 13:29:50.014  INFO 14068 --- [main] com.authservice.AuthServiceApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-12-18 13:29:51.202  INFO 14068 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-18 13:29:51.497  INFO 14068 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 285 ms. Found 2 JPA repository interfaces.
+2022-12-18 13:29:51.844  INFO 14068 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=8192f8d7-84c6-32e7-86a6-fc1dfdc51d58
+2022-12-18 13:29:52.041  INFO 14068 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@3c3c4a71' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-12-18 13:29:52.047  INFO 14068 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-12-18 13:29:52.694  INFO 14068 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7702 (http)
+2022-12-18 13:29:52.741  INFO 14068 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-18 13:29:52.741  INFO 14068 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-12-18 13:29:53.169  INFO 14068 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-18 13:29:53.170  INFO 14068 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3065 ms
+2022-12-18 13:29:53.575  INFO 14068 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-18 13:29:53.703  INFO 14068 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-12-18 13:29:53.997  INFO 14068 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-18 13:29:54.172  INFO 14068 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-12-18 13:29:54.435  INFO 14068 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-12-18 13:29:54.466  INFO 14068 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2022-12-18 13:29:57.231 DEBUG 14068 --- [main] org.hibernate.SQL                        : 
+    
+    alter table if exists web_shop_payment_method 
+       drop constraint if exists FKl5ppvd04166bexq5dwf2ybt4t
+2022-12-18 13:29:57.238  WARN 14068 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-12-18 13:29:57.238  WARN 14068 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "web_shop_payment_method" does not exist, skipping
+2022-12-18 13:29:57.238 DEBUG 14068 --- [main] org.hibernate.SQL                        : 
+    
+    alter table if exists web_shop_payment_method 
+       drop constraint if exists FKbi0o4ykh2bn0twbmkhqyp2t4s
+2022-12-18 13:29:57.239  WARN 14068 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-12-18 13:29:57.239  WARN 14068 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "web_shop_payment_method" does not exist, skipping
+2022-12-18 13:29:57.239 DEBUG 14068 --- [main] org.hibernate.SQL                        : 
+    
+    drop table if exists payment_method cascade
+2022-12-18 13:29:57.240  WARN 14068 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-12-18 13:29:57.240  WARN 14068 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "payment_method" does not exist, skipping
+2022-12-18 13:29:57.240 DEBUG 14068 --- [main] org.hibernate.SQL                        : 
+    
+    drop table if exists web_shop_payment_method cascade
+2022-12-18 13:29:57.240  WARN 14068 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-12-18 13:29:57.240  WARN 14068 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "web_shop_payment_method" does not exist, skipping
+2022-12-18 13:29:57.240 DEBUG 14068 --- [main] org.hibernate.SQL                        : 
+    
+    drop table if exists web_shop cascade
+2022-12-18 13:29:57.241  WARN 14068 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-12-18 13:29:57.241  WARN 14068 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "web_shop" does not exist, skipping
+2022-12-18 13:29:57.241 DEBUG 14068 --- [main] org.hibernate.SQL                        : 
+    
+    drop sequence if exists payment_method_id_seq
+2022-12-18 13:29:57.242  WARN 14068 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-12-18 13:29:57.242  WARN 14068 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "payment_method_id_seq" does not exist, skipping
+2022-12-18 13:29:57.242 DEBUG 14068 --- [main] org.hibernate.SQL                        : 
+    
+    drop sequence if exists web_shop_id_seq
+2022-12-18 13:29:57.242  WARN 14068 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-12-18 13:29:57.243  WARN 14068 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "web_shop_id_seq" does not exist, skipping
+2022-12-18 13:29:57.245 DEBUG 14068 --- [main] org.hibernate.SQL                        : create sequence payment_method_id_seq start 1 increment 1
+2022-12-18 13:29:57.257 DEBUG 14068 --- [main] org.hibernate.SQL                        : create sequence web_shop_id_seq start 1 increment 1
+2022-12-18 13:29:57.262 DEBUG 14068 --- [main] org.hibernate.SQL                        : 
+    
+    create table payment_method (
+       id int8 not null,
+        name varchar(255),
+        primary key (id)
+    )
+2022-12-18 13:29:57.272 DEBUG 14068 --- [main] org.hibernate.SQL                        : 
+    
+    create table web_shop_payment_method (
+       web_shop_id int8 not null,
+        payment_method_id int8 not null,
+        primary key (web_shop_id, payment_method_id)
+    )
+2022-12-18 13:29:57.279 DEBUG 14068 --- [main] org.hibernate.SQL                        : 
+    
+    create table web_shop (
+       id int8 not null,
+        currency varchar(255),
+        merchant_id varchar(255),
+        merchant_password varchar(255),
+        merchant_uuid varchar(255),
+        password varchar(255),
+        username varchar(255),
+        primary key (id)
+    )
+2022-12-18 13:29:57.287 DEBUG 14068 --- [main] org.hibernate.SQL                        : 
+    
+    alter table if exists payment_method 
+       add constraint UK_ai10u6l9urufl9pidfuhnmmcj unique (name)
+2022-12-18 13:29:57.291 DEBUG 14068 --- [main] org.hibernate.SQL                        : 
+    
+    alter table if exists web_shop 
+       add constraint UK_6lhpfrii9qxuyys8u4a05aokw unique (username)
+2022-12-18 13:29:57.295 DEBUG 14068 --- [main] org.hibernate.SQL                        : 
+    
+    alter table if exists web_shop_payment_method 
+       add constraint FKl5ppvd04166bexq5dwf2ybt4t 
+       foreign key (payment_method_id) 
+       references payment_method
+2022-12-18 13:29:57.304 DEBUG 14068 --- [main] org.hibernate.SQL                        : 
+    
+    alter table if exists web_shop_payment_method 
+       add constraint FKbi0o4ykh2bn0twbmkhqyp2t4s 
+       foreign key (web_shop_id) 
+       references web_shop
+2022-12-18 13:29:57.308  INFO 14068 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-18 13:29:57.321  INFO 14068 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-18 13:29:59.003  INFO 14068 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will not secure Ant [pattern='/auth/login', POST]
+2022-12-18 13:29:59.004  INFO 14068 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will not secure Ant [pattern='/auth/dupe', POST]
+2022-12-18 13:29:59.004  INFO 14068 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will not secure Ant [pattern='/', GET]
+2022-12-18 13:29:59.004  INFO 14068 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will not secure Ant [pattern='/webjars/**', GET]
+2022-12-18 13:29:59.004  INFO 14068 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will not secure Ant [pattern='/*.html', GET]
+2022-12-18 13:29:59.005  INFO 14068 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will not secure Ant [pattern='favicon.ico', GET]
+2022-12-18 13:29:59.005  INFO 14068 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will not secure Ant [pattern='/**/*.html', GET]
+2022-12-18 13:29:59.005  INFO 14068 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will not secure Ant [pattern='/**/*.css', GET]
+2022-12-18 13:29:59.005  INFO 14068 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will not secure Ant [pattern='/**/*.js', GET]
+2022-12-18 13:29:59.044  INFO 14068 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7cc842b0, org.springframework.security.web.context.SecurityContextPersistenceFilter@2c3d0ff8, org.springframework.security.web.header.HeaderWriterFilter@20fdaf3e, org.springframework.web.filter.CorsFilter@53dd29e0, org.springframework.security.web.authentication.logout.LogoutFilter@2e60d4f4, com.authservice.security.TokenAuthFilter@3733b1f4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7d3faf1d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6afb240d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@70f0c352, org.springframework.security.web.session.SessionManagementFilter@7712df76, org.springframework.security.web.access.ExceptionTranslationFilter@677d4cea, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@23adbd6b]
+2022-12-18 13:29:59.212  INFO 14068 --- [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2022-12-18 13:29:59.477  WARN 14068 --- [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2022-12-18 13:29:59.500  INFO 14068 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2022-12-18 13:29:59.663  INFO 14068 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2022-12-18 13:29:59.669  INFO 14068 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 13:29:59.727  INFO 14068 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2022-12-18 13:29:59.727  INFO 14068 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2022-12-18 13:29:59.727  INFO 14068 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2022-12-18 13:29:59.727  INFO 14068 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2022-12-18 13:29:59.727  INFO 14068 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2022-12-18 13:29:59.728  INFO 14068 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2022-12-18 13:29:59.728  INFO 14068 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2022-12-18 13:30:00.223  INFO 14068 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2022-12-18 13:30:00.230  INFO 14068 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2022-12-18 13:30:00.238  INFO 14068 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2022-12-18 13:30:00.252  INFO 14068 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1671366600251 with initial instances count: 3
+2022-12-18 13:30:00.256  INFO 14068 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application AUTH-SERVICE with eureka with status UP
+2022-12-18 13:30:00.257  INFO 14068 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1671366600257, current=UP, previous=STARTING]
+2022-12-18 13:30:00.259  INFO 14068 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-SERVICE/DESKTOP-4HG5T0S:auth-service:7702: registering service...
+2022-12-18 13:30:00.317  INFO 14068 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7702 (http) with context path ''
+2022-12-18 13:30:00.318  INFO 14068 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 7702
+2022-12-18 13:30:00.326  INFO 14068 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-SERVICE/DESKTOP-4HG5T0S:auth-service:7702 - registration status: 204
+2022-12-18 13:30:00.414  INFO 14068 --- [main] com.authservice.AuthServiceApplication   : Started AuthServiceApplication in 11.277 seconds (JVM running for 12.08)
+2022-12-18 13:30:55.340  INFO 14068 --- [http-nio-7702-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-18 13:30:55.340  INFO 14068 --- [http-nio-7702-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-12-18 13:30:55.341  INFO 14068 --- [http-nio-7702-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-12-18 13:30:55.543 DEBUG 14068 --- [http-nio-7702-exec-1] org.hibernate.SQL                        : 
+    select
+        webshop0_.id as id1_2_,
+        webshop0_.currency as currency2_2_,
+        webshop0_.merchant_id as merchant3_2_,
+        webshop0_.merchant_password as merchant4_2_,
+        webshop0_.merchant_uuid as merchant5_2_,
+        webshop0_.password as password6_2_,
+        webshop0_.username as username7_2_ 
+    from
+        web_shop webshop0_ 
+    where
+        webshop0_.username=?
+2022-12-18 13:30:55.555 TRACE 14068 --- [http-nio-7702-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [wasd]
+2022-12-18 13:30:55.596 DEBUG 14068 --- [http-nio-7702-exec-1] org.hibernate.SQL                        : 
+    select
+        paymentmet0_.web_shop_id as web_shop1_1_0_,
+        paymentmet0_.payment_method_id as payment_2_1_0_,
+        paymentmet1_.id as id1_0_1_,
+        paymentmet1_.name as name2_0_1_ 
+    from
+        web_shop_payment_method paymentmet0_ 
+    inner join
+        payment_method paymentmet1_ 
+            on paymentmet0_.payment_method_id=paymentmet1_.id 
+    where
+        paymentmet0_.web_shop_id=?
+2022-12-18 13:30:55.596 TRACE 14068 --- [http-nio-7702-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [BIGINT] - [4]
+2022-12-18 13:34:59.735  INFO 14068 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 13:39:59.751  INFO 14068 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 13:44:59.755  INFO 14068 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 13:49:59.767  INFO 14068 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 13:51:44.044 DEBUG 14068 --- [http-nio-7702-exec-3] org.hibernate.SQL                        : 
+    select
+        webshop0_.id as id1_2_,
+        webshop0_.currency as currency2_2_,
+        webshop0_.merchant_id as merchant3_2_,
+        webshop0_.merchant_password as merchant4_2_,
+        webshop0_.merchant_uuid as merchant5_2_,
+        webshop0_.password as password6_2_,
+        webshop0_.username as username7_2_ 
+    from
+        web_shop webshop0_ 
+    where
+        webshop0_.username=?
+2022-12-18 13:51:44.079 TRACE 14068 --- [http-nio-7702-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [wasd]
+2022-12-18 13:51:44.104 DEBUG 14068 --- [http-nio-7702-exec-3] org.hibernate.SQL                        : 
+    select
+        paymentmet0_.web_shop_id as web_shop1_1_0_,
+        paymentmet0_.payment_method_id as payment_2_1_0_,
+        paymentmet1_.id as id1_0_1_,
+        paymentmet1_.name as name2_0_1_ 
+    from
+        web_shop_payment_method paymentmet0_ 
+    inner join
+        payment_method paymentmet1_ 
+            on paymentmet0_.payment_method_id=paymentmet1_.id 
+    where
+        paymentmet0_.web_shop_id=?
+2022-12-18 13:51:44.104 TRACE 14068 --- [http-nio-7702-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [BIGINT] - [4]
+2022-12-18 13:54:59.776  INFO 14068 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 13:59:59.792  INFO 14068 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 14:04:59.799  INFO 14068 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 14:09:59.808  INFO 14068 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 14:14:59.815  INFO 14068 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 14:19:59.822  INFO 14068 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 14:24:59.834  INFO 14068 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 14:29:59.844  INFO 14068 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 14:34:59.854  INFO 14068 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 14:39:59.874  INFO 14068 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration

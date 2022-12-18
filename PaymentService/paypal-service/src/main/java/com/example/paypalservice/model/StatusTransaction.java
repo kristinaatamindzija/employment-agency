@@ -1,7 +1,7 @@
 package com.example.paypalservice.model;
 
 public enum StatusTransaction {
-    CREATED,
+    PENDING,
     SUCCESS,
     FAILED
 }

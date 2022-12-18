@@ -255,3 +255,127 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 2022-12-18 13:13:45.469  INFO 14892 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
 2022-12-18 13:18:45.473  INFO 14892 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
 2022-12-18 13:23:45.483  INFO 14892 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 13:28:45.497  INFO 14892 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 13:30:54.934  INFO 14892 --- [reactor-http-nio-2] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
+2022-12-18 13:30:54.934  INFO 14892 --- [reactor-http-nio-2] com.apigateway.CustomFilter              : REDIRECTING TO  -> Authentication service
+2022-12-18 13:30:56.035  INFO 14892 --- [reactor-http-nio-2] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 13:33:45.514  INFO 14892 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 13:38:45.516  INFO 14892 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 13:43:45.532  INFO 14892 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 13:48:45.538  INFO 14892 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 13:51:43.667  INFO 14892 --- [reactor-http-nio-3] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
+2022-12-18 13:51:43.668  INFO 14892 --- [reactor-http-nio-3] com.apigateway.CustomFilter              : REDIRECTING TO  -> Authentication service
+2022-12-18 13:51:44.508  INFO 14892 --- [reactor-http-nio-3] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 13:53:45.553  INFO 14892 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 13:58:45.568  INFO 14892 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 14:03:45.577  INFO 14892 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 14:08:45.592  INFO 14892 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 14:13:45.602  INFO 14892 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 14:18:45.610  INFO 14892 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 14:21:14.573  INFO 14892 --- [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application API-GATEWAY with eureka with status DOWN
+2022-12-18 14:21:14.575  INFO 14892 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1671369674575, current=DOWN, previous=UP]
+2022-12-18 14:21:14.579  INFO 14892 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY/DESKTOP-4HG5T0S:api-gateway:7700: registering service...
+2022-12-18 14:21:14.636  INFO 14892 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY/DESKTOP-4HG5T0S:api-gateway:7700 - registration status: 204
+2022-12-18 14:21:16.931  INFO 14892 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2022-12-18 14:21:22.368  INFO 14388 --- [main] com.apigateway.ApiGatewayApplication     : Starting ApiGatewayApplication using Java 17.0.2 on DESKTOP-4HG5T0S with PID 14388 (C:\Users\Brankovic\Desktop\employment-agency\PaymentService\api-gateway\target\classes started by Brankovic in C:\Users\Brankovic\Desktop\employment-agency\PaymentService\api-gateway)
+2022-12-18 14:21:22.375  INFO 14388 --- [main] com.apigateway.ApiGatewayApplication     : No active profile set, falling back to 1 default profile: "default"
+2022-12-18 14:21:24.173  INFO 14388 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=c6d5bbf9-4713-3d99-8b81-57a941ce1882
+2022-12-18 14:21:24.288  INFO 14388 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-12-18 14:21:24.291  INFO 14388 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-12-18 14:21:24.293  INFO 14388 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-12-18 14:21:25.675  INFO 14388 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [After]
+2022-12-18 14:21:25.675  INFO 14388 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Before]
+2022-12-18 14:21:25.676  INFO 14388 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Between]
+2022-12-18 14:21:25.676  INFO 14388 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Cookie]
+2022-12-18 14:21:25.676  INFO 14388 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Header]
+2022-12-18 14:21:25.676  INFO 14388 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Host]
+2022-12-18 14:21:25.676  INFO 14388 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Method]
+2022-12-18 14:21:25.677  INFO 14388 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Path]
+2022-12-18 14:21:25.677  INFO 14388 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Query]
+2022-12-18 14:21:25.677  INFO 14388 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [ReadBody]
+2022-12-18 14:21:25.678  INFO 14388 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [RemoteAddr]
+2022-12-18 14:21:25.678  INFO 14388 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [XForwardedRemoteAddr]
+2022-12-18 14:21:25.679  INFO 14388 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Weight]
+2022-12-18 14:21:25.679  INFO 14388 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [CloudFoundryRouteService]
+2022-12-18 14:21:26.442  INFO 14388 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-12-18 14:21:26.691  INFO 14388 --- [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2022-12-18 14:21:26.820  WARN 14388 --- [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2022-12-18 14:21:26.857  INFO 14388 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2022-12-18 14:21:27.033  INFO 14388 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2022-12-18 14:21:27.043  INFO 14388 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 14:21:27.088  INFO 14388 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2022-12-18 14:21:27.089  INFO 14388 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2022-12-18 14:21:27.089  INFO 14388 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2022-12-18 14:21:27.089  INFO 14388 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2022-12-18 14:21:27.090  INFO 14388 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2022-12-18 14:21:27.090  INFO 14388 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2022-12-18 14:21:27.092  INFO 14388 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2022-12-18 14:21:27.723  INFO 14388 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2022-12-18 14:21:27.733  INFO 14388 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2022-12-18 14:21:27.741  INFO 14388 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2022-12-18 14:21:27.758  INFO 14388 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1671369687756 with initial instances count: 3
+2022-12-18 14:21:27.760  INFO 14388 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application API-GATEWAY with eureka with status UP
+2022-12-18 14:21:27.760  INFO 14388 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1671369687760, current=UP, previous=STARTING]
+2022-12-18 14:21:27.766  INFO 14388 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY/DESKTOP-4HG5T0S:api-gateway:7700: registering service...
+2022-12-18 14:21:27.855  INFO 14388 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY/DESKTOP-4HG5T0S:api-gateway:7700 - registration status: 204
+2022-12-18 14:21:28.150  INFO 14388 --- [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 7700
+2022-12-18 14:21:28.152  INFO 14388 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 7700
+2022-12-18 14:21:28.308  INFO 14388 --- [main] com.apigateway.ApiGatewayApplication     : Started ApiGatewayApplication in 6.892 seconds (JVM running for 7.797)
+2022-12-18 14:21:35.809  INFO 14388 --- [reactor-http-nio-2] com.apigateway.CustomFilter              : Pre Filter -> Authorization = Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJkaXNsaW5rdC1hZ2VudCIsInN1YiI6Indhc2QiLCJhdWQiOiJ3ZWIiLCJpYXQiOjE2NzEzNjc5MDQsImV4cCI6MTY3MTM2OTcwNH0.1cRMSKBAtDstKPuBDdeaDKtqX4IPixOWfoBi5Q43Tck
+2022-12-18 14:21:35.810  INFO 14388 --- [reactor-http-nio-2] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 14:21:38.986  INFO 14388 --- [reactor-http-nio-2] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 14:22:37.577  INFO 14388 --- [reactor-http-nio-3] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
+2022-12-18 14:22:37.578  INFO 14388 --- [reactor-http-nio-3] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 14:22:37.806  INFO 14388 --- [reactor-http-nio-2] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 14:24:08.328  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
+2022-12-18 14:24:08.328  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 14:24:08.349  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 14:25:05.876  INFO 14388 --- [reactor-http-nio-1] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
+2022-12-18 14:25:05.876  INFO 14388 --- [reactor-http-nio-1] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 14:25:05.938  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 14:26:27.107  INFO 14388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 14:27:48.397  INFO 14388 --- [reactor-http-nio-2] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
+2022-12-18 14:27:48.398  INFO 14388 --- [reactor-http-nio-2] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 14:27:48.416  INFO 14388 --- [reactor-http-nio-2] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 14:28:29.138  INFO 14388 --- [reactor-http-nio-2] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
+2022-12-18 14:28:29.139  INFO 14388 --- [reactor-http-nio-2] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 14:28:29.152  INFO 14388 --- [reactor-http-nio-2] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 14:30:05.080  INFO 14388 --- [reactor-http-nio-3] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
+2022-12-18 14:30:05.080  INFO 14388 --- [reactor-http-nio-3] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 14:30:05.096  INFO 14388 --- [reactor-http-nio-3] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 14:30:17.205  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
+2022-12-18 14:30:17.206  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 14:30:17.216  INFO 14388 --- [reactor-http-nio-3] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 14:30:39.468  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
+2022-12-18 14:30:39.468  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 14:30:39.477  INFO 14388 --- [reactor-http-nio-3] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 14:30:52.041  INFO 14388 --- [reactor-http-nio-1] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
+2022-12-18 14:30:52.041  INFO 14388 --- [reactor-http-nio-1] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 14:30:52.055  INFO 14388 --- [reactor-http-nio-3] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 14:31:27.113  INFO 14388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 14:31:45.880  INFO 14388 --- [reactor-http-nio-2] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
+2022-12-18 14:31:45.881  INFO 14388 --- [reactor-http-nio-2] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 14:31:45.894  INFO 14388 --- [reactor-http-nio-3] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 14:33:01.036  INFO 14388 --- [reactor-http-nio-3] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
+2022-12-18 14:33:01.036  INFO 14388 --- [reactor-http-nio-3] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 14:33:01.055  INFO 14388 --- [reactor-http-nio-3] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 14:33:44.988  INFO 14388 --- [reactor-http-nio-3] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
+2022-12-18 14:33:44.988  INFO 14388 --- [reactor-http-nio-3] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 14:33:45.007  INFO 14388 --- [reactor-http-nio-3] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 14:34:23.594  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
+2022-12-18 14:34:23.595  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 14:34:23.608  INFO 14388 --- [reactor-http-nio-3] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 14:35:01.783  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
+2022-12-18 14:35:01.784  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 14:35:01.794  INFO 14388 --- [reactor-http-nio-3] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 14:36:00.679  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
+2022-12-18 14:36:00.680  INFO 14388 --- [reactor-http-nio-4] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 14:36:00.698  INFO 14388 --- [reactor-http-nio-3] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 14:36:27.120  INFO 14388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 14:38:04.686  INFO 14388 --- [reactor-http-nio-1] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
+2022-12-18 14:38:04.687  INFO 14388 --- [reactor-http-nio-1] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 14:38:04.718  INFO 14388 --- [reactor-http-nio-1] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 14:38:28.534  INFO 14388 --- [reactor-http-nio-1] com.apigateway.CustomFilter              : Pre Filter -> Authorization = null
+2022-12-18 14:38:28.537  INFO 14388 --- [reactor-http-nio-1] com.apigateway.CustomFilter              : REDIRECTING TO  -> PayPal service
+2022-12-18 14:38:28.551  INFO 14388 --- [reactor-http-nio-1] com.apigateway.CustomFilter              : Post Filter = 200 OK
+2022-12-18 14:41:27.136  INFO 14388 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration

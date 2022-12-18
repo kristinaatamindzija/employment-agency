@@ -19,6 +19,9 @@ public class Merchant {
     private Long merchantId;
 
     @Column
+    private String merchantUuid;
+
+    @Column
     private String merchantPaypalId;
 
     @Column
