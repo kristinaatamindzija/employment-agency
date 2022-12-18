@@ -17,6 +17,8 @@ export default {
         return {
             isExpired: false,
             username: "",
+            orderId: 1, //ovo ce se dobavljati sa bonite
+            merchantId: 1, //ovo ce se dobavljati sa bonite
             order: {
                 currencyCode: "USD",
                 value: "100.00",
@@ -35,6 +37,7 @@ export default {
             this.username = UserService.getUsername();
         }
         this.getMerchant();
+        //this.getOrder(); //ovo ce dobaviti sa beka kad dobijemo id iz bonite
     },
     methods: {
         getMerchant(){
@@ -85,14 +88,50 @@ export default {
                 },
                 onClick() {
                     console.log("BBBBB")
+                    let transaction = {
+                        status: "PENDING",
+                        timestamp: new Date(),
+                        merchantUuid: this.merchantId,
+                        productUuid: this.orderId,
+                        payerId: this.username,
+                    }
+                    PaypalService.createTransaction(transaction).then(response => {
+                        console.log(response.data);
+                    }).catch(error => {
+                        console.log(error);
+                    })
                 },
                 onApprove: async (data, actions) => {
                     const order = await actions.order.capture();
                     console.log(order);
+                    let transaction = {
+                        status: "SUCCESS",
+                        timestamp: new Date(),
+                        merchantUuid: this.merchantId,
+                        productUuid: this.orderId,
+                        payerId: this.username,
+                    }
+                    PaypalService.createTransaction(transaction).then(response => {
+                        console.log(response.data);
+                    }).catch(error => {
+                        console.log(error);
+                    })
                     Swal.fire( 'Success!', 'Transaction completed!', 'success' )
                 },
                 onError: err => {
                     console.log(err);
+                    let transaction = {
+                        status: "FAILED",
+                        timestamp: new Date(),
+                        merchantUuid: this.merchantId,
+                        productUuid: this.orderId,
+                        payerId: this.username,
+                    }
+                    PaypalService.createTransaction(transaction).then(response => {
+                        console.log(response.data);
+                    }).catch(error => {
+                        console.log(error);
+                    })
                     Swal.fire( 'Error!', 'Transaction not completed!', 'error' )
                 }
             }).render(this.$refs.paypal);

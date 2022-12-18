@@ -1,7 +1,9 @@
 package com.example.paypalservice.controller;
 
 import com.example.paypalservice.dto.MerchantResponseDTO;
+import com.example.paypalservice.dto.TransactionRequestDTO;
 import com.example.paypalservice.model.StatusTransaction;
+import com.example.paypalservice.model.Transaction;
 import com.example.paypalservice.service.PaypalService;
 import com.example.paypalservice.service.SubscriptionPlanService;
 import com.example.paypalservice.service.TransactionService;
@@ -31,13 +33,13 @@ public class PaypalController {
     }
 
     @PostMapping("/transaction/{status}/{timestamp}")
-    public void createTransaction(@PathVariable StatusTransaction status, @PathVariable Date timestamp) {
-        transactionService.createTransaction(status, timestamp);
+    public void createTransaction(@RequestBody TransactionRequestDTO transaction) {
+        transactionService.createTransaction(transaction);
     }
 
-    @PutMapping("/transaction/{id}/{status}/{timestamp}")
-    public void updateTransaction(@PathVariable Long id, @PathVariable StatusTransaction status, @PathVariable Date timestamp) {
-        transactionService.updateTransaction(id, status, timestamp);
+    @PutMapping("/transaction")
+    public void updateTransaction(@RequestBody TransactionRequestDTO transaction) {
+        transactionService.updateTransaction(transaction);
     }
 
     @PostMapping("/plan/{merchantId}/{productId}/{planPaypalId}")

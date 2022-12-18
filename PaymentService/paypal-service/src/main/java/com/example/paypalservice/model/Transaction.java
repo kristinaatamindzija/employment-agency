@@ -26,8 +26,20 @@ public class Transaction {
     @Column
     private Date timestamp;
 
-    public Transaction(StatusTransaction status, Date timestamp) {
+    @Column
+    private String merchantUuid;
+
+    @Column
+    private String productUuid;
+
+    @Column
+    private String payerId;
+
+    public Transaction(StatusTransaction status, Date timestamp, String merchantUuid, String productUuid, String payerId) {
         this.status = status;
         this.timestamp = timestamp;
+        this.merchantUuid = merchantUuid;
+        this.productUuid = productUuid;
+        this.payerId = payerId;
     }
 }

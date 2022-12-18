@@ -1,5 +1,6 @@
 package com.example.paypalservice.service.implementations;
 
+import com.example.paypalservice.dto.TransactionRequestDTO;
 import com.example.paypalservice.model.StatusTransaction;
 import com.example.paypalservice.model.Transaction;
 import com.example.paypalservice.repository.TransactionRepository;
@@ -18,16 +19,18 @@ public class TransactionServiceImpl implements TransactionService {
     }
 
     @Override
-    public void createTransaction(StatusTransaction statusTransaction, Date timestamp) {
-        transactionRepository.save(new Transaction(statusTransaction, timestamp));
+    public void createTransaction(TransactionRequestDTO transactionDto) {
+        Transaction transaction = new Transaction(transactionDto.getStatus(), transactionDto.getTimestamp(),
+                transactionDto.getMerchantUuid(), transactionDto.getProductUuid(), transactionDto.getPayerId());
+        transactionRepository.save(transaction);
     }
 
     @Override
-    public void updateTransaction(Long id, StatusTransaction statusTransaction, Date timestamp) {
-        Transaction transaction = transactionRepository.findById(id).orElse(null);
+    public void updateTransaction(TransactionRequestDTO transactionDto) {
+        Transaction transaction = transactionRepository.findByMerchantUuidAndProductUuid(transactionDto.getMerchantUuid(), transactionDto.getProductUuid());
         assert transaction != null;
-        transaction.setStatus(statusTransaction);
-        transaction.setTimestamp(timestamp);
+        transaction.setStatus(transactionDto.getStatus());
+        transaction.setTimestamp(transactionDto.getTimestamp());
         transactionRepository.save(transaction);
     }
 }

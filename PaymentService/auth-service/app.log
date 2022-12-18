@@ -616,3 +616,38 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 2022-12-18 14:29:59.844  INFO 14068 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
 2022-12-18 14:34:59.854  INFO 14068 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
 2022-12-18 14:39:59.874  INFO 14068 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 14:44:59.894  INFO 14068 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 14:49:59.910  INFO 14068 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 14:54:59.921  INFO 14068 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 14:59:59.936  INFO 14068 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 15:03:13.673 DEBUG 14068 --- [http-nio-7702-exec-5] org.hibernate.SQL                        : 
+    select
+        webshop0_.id as id1_2_,
+        webshop0_.currency as currency2_2_,
+        webshop0_.merchant_id as merchant3_2_,
+        webshop0_.merchant_password as merchant4_2_,
+        webshop0_.merchant_uuid as merchant5_2_,
+        webshop0_.password as password6_2_,
+        webshop0_.username as username7_2_ 
+    from
+        web_shop webshop0_ 
+    where
+        webshop0_.username=?
+2022-12-18 15:03:13.680 TRACE 14068 --- [http-nio-7702-exec-5] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [wasd]
+2022-12-18 15:03:13.708 DEBUG 14068 --- [http-nio-7702-exec-5] org.hibernate.SQL                        : 
+    select
+        paymentmet0_.web_shop_id as web_shop1_1_0_,
+        paymentmet0_.payment_method_id as payment_2_1_0_,
+        paymentmet1_.id as id1_0_1_,
+        paymentmet1_.name as name2_0_1_ 
+    from
+        web_shop_payment_method paymentmet0_ 
+    inner join
+        payment_method paymentmet1_ 
+            on paymentmet0_.payment_method_id=paymentmet1_.id 
+    where
+        paymentmet0_.web_shop_id=?
+2022-12-18 15:03:13.709 TRACE 14068 --- [http-nio-7702-exec-5] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [BIGINT] - [4]
+2022-12-18 15:04:59.942  INFO 14068 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-12-18 15:27:40.779  WARN 14068 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=19m14s335ms874µs200ns).
+2022-12-18 15:28:43.993  INFO 14068 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
