@@ -1,42 +1,55 @@
 <template>
-    <div>
-        <div class="row" style="margin-top: 3em;">
-            <div class="col"></div>
-            <div class="col">
-                <h1 style="padding-left: 3em;">Registration</h1>
-                <br>
-                <b-form-group id="input-group-1" label="Username:" style="margin-top: 1em; margin-bottom: 2em;"
-                    label-cols-sm="3" label-align-sm="right">
-                    <b-form-input id="input-1" v-model="form.username" type="text" required></b-form-input>
-                </b-form-group>
-                <b-form-group id="input-group-2" label="Password:" style="margin-top: 1em; margin-bottom: 2em;"
-                    label-cols-sm="3" label-align-sm="right">
-                    <b-form-input id="input-2" v-model="form.password" type="password" required></b-form-input>
-                </b-form-group>
-                <b-form-group id="input-group-3" label="Currency:" style="margin-top: 1em; margin-bottom: 2em;"
-                    label-cols-sm="3" label-align-sm="right">
-                    <b-form-input id="input-3" v-model="form.currency" type="text" required></b-form-input>
-                </b-form-group>
-                <b-form-group id="input-group-4" label="ApiToken:" style="margin-top: 1em; margin-bottom: 2em;"
-                    label-cols-sm="3" label-align-sm="right">
-                    <b-form-input id="input-4" v-model="form.apiToken" type="text" required></b-form-input>
-                </b-form-group>
-                <b-form-group id="input-group-5" label="SuccessUrl:" style="margin-top: 1em; margin-bottom: 2em;"
-                    label-cols-sm="3" label-align-sm="right">
-                    <b-form-input id="input-5" v-model="form.successUrl" type="text" required></b-form-input>
-                </b-form-group>
-                <b-form-group id="input-group-6" label="ErrorUrl:" style="margin-top: 1em; margin-bottom: 2em;"
-                    label-cols-sm="3" label-align-sm="right">
-                    <b-form-input id="input-6" v-model="form.errorUrl" type="text" required></b-form-input>
-                </b-form-group>
-                <b-form-group id="input-group-7" label="FailureUrl:" style="margin-top: 1em; margin-bottom: 2em;"
-                    label-cols-sm="3" label-align-sm="right">
-                    <b-form-input id="input-7" v-model="form.failureUrl" type="text" required></b-form-input>
-                </b-form-group>
-                <b-button type="reset" @click="$router.push('/')" variant="primary" style="margin-left: 7em;">Back</b-button>
-                <b-button type="submit" variant="primary" style="margin-left: 12em;">Register</b-button>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-2"></div>
+            <div class="col-lg-6 col-md-8 login-box">
+                <form id="registrationForm" method="POST" @submit.prevent="submitForm">
+                    <div class="container">
+                        <div class="col-lg-12 login-key">
+                            <i class="bi bi-file-person" aria-hidden="true"></i>
+                        </div>
+                        <div class="col-lg-12 login-title">REGISTRACIJA</div><br>
+
+                        <label class="col-sm-4 col-form-label" for="name"><b>Name</b></label>
+                        <input name="nameInput" pattern="[a-zA-Z]+[a-zA-Z ]+" title="Enter letters only."
+                            class="col-sm-4 col-form-control" type="text" v-model="form.currency" required>
+                        <br>
+
+                        <label class="col-sm-4 col-form-label" for="surname"><b>Surname</b></label>
+                        <input pattern="[a-zA-Z]+[a-zA-Z ]+" title="Enter letters only."
+                            class="col-sm-4 col-form-control" type="text" v-model="form.username" required>
+                        <br>
+
+                        <label class="col-sm-4 col-form-label" for="email"><b>Email</b></label>
+                        <input class="col-sm-4 col-form-control" type="email" v-model="form.password" required>
+                        <br>
+
+                        <label class="col-sm-4 col-form-label" for="password"><b>Password</b></label>
+                        <input id="password" class="col-sm-4 col-form-control" type="password" v-model="form.apiToken"
+                            @change='check_pass()' required>
+                        <br>
+
+                        <label class="col-sm-4 col-form-label" for="address"><b>Address</b></label>
+                        <input class="col-sm-4 col-form-control" type="text" v-model="form.successUrl" required>
+                        <br>
+
+                        <label class="col-sm-4 col-form-label" for="city"><b>City</b></label>
+                        <input pattern="[a-zA-Z]+[a-zA-Z ]+" class="col-sm-4 col-form-control" type="text"
+                            v-model="form.errorUrl" required>
+                        <br>
+
+                        <label class="col-sm-4 col-form-label" for="country"><b>Country</b></label>
+                        <input pattern="[a-zA-Z]+[a-zA-Z ]+" title="Enter letters only."
+                            class="col-sm-4 col-form-control" type="text" v-model="form.failureUrl" required>
+                        <br>
+
+                        <button id="submit" class="button" type="submit" disabled>Register</button>
+                        <div class="container signin">
+                            <p>Vec imate nalog? <a href="#/login">Sign in</a>.</p>
+                        </div>
+                    </div>
+                </form>
             </div>
-            <div class="col"></div>
         </div>
     </div>
 </template>

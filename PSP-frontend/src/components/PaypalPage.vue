@@ -1,7 +1,18 @@
 <template>
     <div class="container">
-        <br><br><br>
-        <div ref="paypal"></div>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col">
+                <br><br><br>
+                <div ref="paypal"></div>
+                <b-card v-if="bankCard" style="margin-top: 2em" overlay
+                    img-src="https://cdn0.erstegroup.com/gemlip/v1/dam/3C6faUk1iFLX1inEfBjsiW3UZuVA/rs/ebs/www_erstebank_rs/stanovnistvo/kartice/w1200_0_0_0_0_0_m_1475164656805.kreditne_kartice_crna.jpg"
+                    img-alt="Card Image" text-variant="white">
+                    <b-button @click="payWithBankCard()" variant="primary">Bank card</b-button>
+                </b-card>
+            </div>
+            <div class="col"></div>
+        </div>
     </div>
 </template>
 
@@ -10,6 +21,7 @@
 import UserService from "../services/UserService";
 import Swal from 'sweetalert2'
 import PaypalService from "@/services/PaypalService";
+import PaymentService from "@/services/PaymentService";
 
 export default {
     name: "PaypalPage",
@@ -28,6 +40,7 @@ export default {
                 merchantId: "SQK683LFHNNTN",
                 email: "sb-msi0x23501552@business.example.com"
             },
+            bankCard: true
         };
     },
     mounted() {
@@ -38,10 +51,10 @@ export default {
         this.getMerchant();
         //this.getOrder(); //ovo ce dobaviti sa beka kad dobijemo id iz bonite
         this.merchantId = 1;
-        this.orderId = 1;  
+        this.orderId = 1;
     },
     methods: {
-        getMerchant(){
+        getMerchant() {
             PaypalService.getMerchant(1).then(response => {
                 this.merchant.merchantId = response.data.merchantPaypalId;
                 this.merchant.email = response.data.email;
@@ -53,12 +66,12 @@ export default {
         createButton() {
             const script = document.createElement("script");
             script.src =
-                "https://www.paypal.com/sdk/js?client-id="+`${process.env.VUE_APP_PAYPAL_CLIENT_ID}`+"&disable-funding=credit,card";
+                "https://www.paypal.com/sdk/js?client-id=" + `${process.env.VUE_APP_PAYPAL_CLIENT_ID}` + "&disable-funding=credit,card";
             script.addEventListener("load", this.initPaypal);
             document.body.appendChild(script);
         },
 
-        initPaypal(){
+        initPaypal() {
             const currencyCode = this.order.currencyCode
             const value = this.order.value
             const description = this.order.description
@@ -77,14 +90,14 @@ export default {
                     return actions.order.create({
                         purchase_units: [
                             {
-                                ... description!=null? 'description': description,
+                                ...description != null ? 'description' : description,
                                 amount: {
                                     currency_code: currencyCode,
                                     value: value
                                 },
-                                ... merchantId!=null || email!=null? 'payee':{
-                                ... merchantId!=null? 'merchant_id': merchantId,
-                                ... email!=null? 'email_address':email
+                                ...merchantId != null || email != null ? 'payee' : {
+                                    ...merchantId != null ? 'merchant_id' : merchantId,
+                                    ...email != null ? 'email_address' : email
                                 },
                             }
                         ]
@@ -119,7 +132,7 @@ export default {
                     }).catch(error => {
                         console.log(error);
                     })
-                    Swal.fire( 'Success!', 'Transaction completed!', 'success' )
+                    Swal.fire('Success!', 'Transaction completed!', 'success')
                 },
                 onError: err => {
                     console.log(err);
@@ -135,12 +148,16 @@ export default {
                     }).catch(error => {
                         console.log(error);
                     })
-                    Swal.fire( 'Error!', 'Transaction not completed!', 'error' )
+                    Swal.fire('Error!', 'Transaction not completed!', 'error')
                 }
             }).render(this.$refs.paypal);
+        },
+
+        payWithBankCard(){
+            PaymentService.startPayment()
         }
     },
-    components: { }
+    components: {}
 }
 
 </script>

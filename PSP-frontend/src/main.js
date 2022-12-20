@@ -13,7 +13,7 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 import 'bulma/css/bulma.css'
 import VueSweetalert2 from 'vue-sweetalert2';
 
-import { FormPlugin, FormGroupPlugin, NavPlugin } from 'bootstrap-vue';
+import { FormPlugin, FormGroupPlugin, NavPlugin, ModalPlugin } from 'bootstrap-vue';
 import { BootstrapIconsPlugin } from 'bootstrap-icons-vue';
 
 import LoginPage from "@/components/LoginPage"
@@ -32,14 +32,15 @@ Vue.use(Vuex)
 Vue.use(VueRouter)
 Vue.use(VueAxios, axios)
 Vue.use(BootstrapVue)
-Vue.use(IconsPlugin)
 Vue.use(Vuelidate)
+Vue.use(VueSweetalert2);
 
 Vue.use(FormPlugin)
 Vue.use(FormGroupPlugin)
 Vue.use(NavPlugin)
 Vue.use(BootstrapIconsPlugin)
-Vue.use(VueSweetalert2);
+Vue.use(IconsPlugin)
+Vue.use(ModalPlugin)
 
 export const store = new Vuex.Store({
     plugins: [createPersistedState()],
