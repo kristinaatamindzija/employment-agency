@@ -1,4 +1,4 @@
-package com.bankservice.model;
+package com.bank.model;
 
 public enum PaymentStatus {
     PENDING,

@@ -1,4 +1,4 @@
-package com.authservice.config;
+package com.bankservice.config;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
@@ -12,6 +12,7 @@ public class WebConfig implements WebMvcConfigurer {
 
     @Autowired
     private RequestLoggingInterceptor requestLoggingInterceptor;
+
 
     @Override
     public void addCorsMappings(CorsRegistry registry) {
@@ -29,6 +30,6 @@ public class WebConfig implements WebMvcConfigurer {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(requestLoggingInterceptor).addPathPatterns("/payment/**");
+        registry.addInterceptor(requestLoggingInterceptor).addPathPatterns("/bank-service/payment/**");
     }
 }

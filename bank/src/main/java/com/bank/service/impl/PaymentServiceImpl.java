@@ -6,10 +6,12 @@ import com.bank.feign.PccFeignClient;
 import com.bank.model.Account;
 import com.bank.model.CreditCard;
 import com.bank.model.Payment;
+import com.bank.model.PaymentStatus;
 import com.bank.repository.AccountRepository;
 import com.bank.repository.CreditCardRepository;
 import com.bank.repository.PaymentRepository;
 import com.bank.service.PaymentService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -20,6 +22,7 @@ import java.util.Date;
 import java.util.concurrent.ThreadLocalRandom;
 
 @Service
+@Slf4j
 public class PaymentServiceImpl implements PaymentService {
 
     private final PaymentRepository paymentRepository;
@@ -56,10 +59,12 @@ public class PaymentServiceImpl implements PaymentService {
 //            throw new MerchantNotFoundException("Merchant with id " + paymentStartRequest.merchantId + " not found.");
 //        }
         if(!paymentStartRequest.merchantPassword.equals(merchant.getPassword())) {
+            log.error("Merchant with id " + paymentStartRequest.merchantId + " not found.");
             throw new MerchantNotFoundException("Merchant with id " + paymentStartRequest.merchantId + " not found.");
         }
         var payment = new Payment(merchant.getCreditCard().pan, paymentStartRequest.amount, generateId());
         paymentRepository.save(payment);
+        log.info("Payment with id " + payment.getId() + " started.");
         var paymentStartResponse = new PaymentStartResponse();
         paymentStartResponse.paymentId = payment.getPaymentId();
         var method = "/card/";
@@ -78,26 +83,42 @@ public class PaymentServiceImpl implements PaymentService {
         }
         var payment = paymentRepository.findByPaymentId(paymentExecutionRequest.paymentId);
         if (payment == null) {
+            log.error("Payment with id " + paymentExecutionRequest.paymentId + " not found.");
             throw new PaymentNotFoundException("Payment with id " + paymentExecutionRequest.paymentId + " not found.");
         }
         var merchantCreditCard = creditCardRepository.findByPan(payment.getMerchantPan());
         if (merchantCreditCard == null) {
+            log.error("Merchant with provided pan not found.");
+            payment.setStatus(PaymentStatus.FAILED);
+            paymentRepository.save(payment);
             throw new CreditCardNotFoundException("Credit card with provided pan not found.");
         }
         if (!validateCreditCard(paymentExecutionRequest, buyerCreditCard)) {
+            log.error("Credit card with provided pan not found.");
+            payment.setStatus(PaymentStatus.FAILED);
+            paymentRepository.save(payment);
             throw new CreditCardNotValidException("Credit card with provided pan not valid.");
         }
-        if (buyerCreditCard.amountOfMoney < payment.getAmount())
+        if (buyerCreditCard.amountOfMoney < payment.getAmount()) {
+            log.error("Not enough money on credit card.");
+            payment.setStatus(PaymentStatus.FAILED);
+            paymentRepository.save(payment);
             return new PaymentExecutionResponse(payment.getFailedUrl());
+        }
         payment.setBuyerPan(buyerCreditCard.pan);
         paymentRepository.save(payment);
 
         buyerCreditCard.amountOfMoney -= payment.getAmount();
         merchantCreditCard.amountOfMoney += payment.getAmount();
         creditCardRepository.save(buyerCreditCard);
+        log.info("Money withdrawn from credit card with pan " + buyerCreditCard.pan + ".");
         creditCardRepository.save(merchantCreditCard);
+        log.info("Money deposited to credit card with pan " + merchantCreditCard.pan + ".");
+        payment.setStatus(PaymentStatus.SUCCESSFUL);
+        paymentRepository.save(payment);
         bankServiceFeignClient.updatePayment(new ProcessedPaymentRequest(payment.getPaymentId(),
-                generateId(), new Date()));
+                generateId(), new Date(), payment.getStatus()));
+        log.info("Payment with id " + payment.getId() + " executed.");
         return new PaymentExecutionResponse(payment.getSuccessUrl());
     }
 
@@ -105,10 +126,12 @@ public class PaymentServiceImpl implements PaymentService {
     public PaymentInfoResponse getPaymentInfo(Long id) {
         var payment = paymentRepository.findByPaymentId(id);
         if (payment == null) {
+            log.error("Payment with id " + id + " not found.");
             throw new PaymentNotFoundException("Payment with id " + id + " not found.");
         }
         var creditCard = creditCardRepository.findByPan(payment.getBuyerPan());
         if (creditCard == null) {
+            log.error("Credit card with pan " + payment.getBuyerPan() + " not found.");
             throw new CreditCardNotFoundException("Credit card with provided pan not found.");
         }
         var account = creditCard.getAccount();
@@ -122,26 +145,32 @@ public class PaymentServiceImpl implements PaymentService {
     public PaymentExecutionResponse sendPccRequest(PaymentExecutionRequest paymentExecutionRequest) {
         Payment payment = paymentRepository.findByPaymentId(paymentExecutionRequest.paymentId);
         if(payment == null){
+            log.error("Payment with id " + paymentExecutionRequest.paymentId + " not found.");
             throw new PaymentNotFoundException("Payment with id" + paymentExecutionRequest.paymentId + " not found.");
         }
         CreditCard merchantCreditCard = creditCardRepository.findByPan(payment.getMerchantPan());
         if(merchantCreditCard == null){
+            log.error("Merchant with provided pan not found.");
+            payment.setStatus(PaymentStatus.FAILED);
+            paymentRepository.save(payment);
             throw new CreditCardNotFoundException("Credit card is not found.");
         }
         payment.setBuyerPan(paymentExecutionRequest.pan);
         paymentRepository.save(payment);
+
         PccRequest pccRequest =  new PccRequest(paymentExecutionRequest.pan, paymentExecutionRequest.securityCode,
                 paymentExecutionRequest.cardHolderName, paymentExecutionRequest.validThru, payment.getPaymentId(),
                 generateId(), new Date(), payment.getAmount());
-        System.out.println(pccRequest);
         //Pozvati pcc koji redirektuje na banku kupca, gdje se vrsi skidanje iznosa sa racuna kupca(processPccRequest-metoda)
         //tek nakon sto se to uspjesno zavrsi, vracam se na banku prodavca i dodajem novac na njegov racun
         PccResponse result = pccFeignClient.payment(pccRequest);
         try {
             pccFeignClient.sendPaymentResult(result);
+            log.info("Result of payment with id " + payment.getPaymentId() + " sent to pcc.");
         } catch (Exception e) {
-            System.out.println("PCC nije uspio da posalje rezultat");
-            e.printStackTrace();
+            log.error("Error while sending payment result to pcc.");
+            payment.setStatus(PaymentStatus.FAILED);
+            paymentRepository.save(payment);
             return new PaymentExecutionResponse(payment.getErrorUrl());
         }
         return new PaymentExecutionResponse(payment.getSuccessUrl());
@@ -151,35 +180,47 @@ public class PaymentServiceImpl implements PaymentService {
     public void paymentResult(PccResponse pccResponse) {
         Payment payment = paymentRepository.findByPaymentId(pccResponse.paymentId);
         if(payment == null){
+            log.error("Payment with id " + pccResponse.paymentId + " not found.");
             throw new PaymentNotFoundException("Payment with id" + pccResponse.paymentId + " not found.");
         }
         CreditCard merchantCreditCard = creditCardRepository.findByPan(payment.getMerchantPan());
         if(merchantCreditCard == null){
+            payment.setStatus(PaymentStatus.FAILED);
+            paymentRepository.save(payment);
+            log.error("Merchant with provided pan not found.");
             throw new CreditCardNotFoundException("Credit card is not found.");
         }
         //if (!pccResponse.isAuthenticationSuccessful || !pccResponse.isAuthorizationSuccessful) return;
         merchantCreditCard.amountOfMoney += payment.getAmount();
         creditCardRepository.save(merchantCreditCard);
+        log.info("Money deposited to credit card with pan " + merchantCreditCard.pan + ".");
+        payment.setStatus(PaymentStatus.SUCCESSFUL);
+        paymentRepository.save(payment);
         bankServiceFeignClient.updatePayment(new ProcessedPaymentRequest(payment.getPaymentId(),
-                generateId(), new Date()));
+                generateId(), new Date(), payment.getStatus()));
+        log.info("Update request for payment with id " + payment.getPaymentId() + " sent to bank service.");
     }
 
     @Override
     public PccResponse processPccRequest(PccRequest pccRequest) {
         Payment payment = new Payment(pccRequest.paymentId, pccRequest.amount, pccRequest.pan);
         paymentRepository.save(payment);
-
+        log.info("Payment with id " + payment.getId() + " created.");
         PccResponse pccResponse = new PccResponse(payment.getPaymentId(), true, true,
                 pccRequest.acquirerOrderId, pccRequest.acquirerTimestamp, generateId(),
                 new Date());
         CreditCard buyerCreditCard = creditCardRepository.findByPan(pccRequest.pan);
         if (buyerCreditCard == null || buyerCreditCard.amountOfMoney < payment.getAmount()) {
+            log.error("Credit card with provided pan not found or not enough money to withdraw.");
+            payment.setStatus(PaymentStatus.FAILED);
+            paymentRepository.save(payment);
             pccResponse.isAuthenticationSuccessful = false;
             pccResponse.isAuthorizationSuccessful = false;
             return pccResponse;
         }
         buyerCreditCard.amountOfMoney -= payment.getAmount();
         creditCardRepository.save(buyerCreditCard);
+        log.info("Money withdrawn from credit card with pan " + buyerCreditCard.pan + ".");
         return pccResponse;
     }
 
