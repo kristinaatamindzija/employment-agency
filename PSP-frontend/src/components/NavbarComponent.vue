@@ -54,7 +54,7 @@
 <script>
 
 import UserService from "../services/UserService";
-
+import { store } from "@/main";
 export default {
     name: "NavbarComponent",
     data() {
@@ -71,8 +71,8 @@ export default {
     },
     methods: {
         logout() {
-            localStorage.commit("setToken", null);
-            localStorage.commit("setWebShop", null);
+            store.commit("setToken", null);
+            store.commit("setWebShop", null);
             this.isExpired = UserService.isExpired();
             this.$router.push("/");
         }

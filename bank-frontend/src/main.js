@@ -12,7 +12,7 @@ import VueRouter from 'vue-router'
 
 import CardPage from '@/components/CardPage'
 
-import { BootstrapVue, IconsPlugin, FormPlugin, FormDatepickerPlugin  } from 'bootstrap-vue'
+import { BootstrapVue, IconsPlugin, FormPlugin, FormDatepickerPlugin, ToastPlugin } from 'bootstrap-vue'
 
 
 Vue.config.productionTip = false
@@ -26,7 +26,8 @@ Vue.use(Vuelidate)
 
 Vue.use(IconsPlugin)
 Vue.use(FormPlugin)
-Vue.use(FormDatepickerPlugin )
+Vue.use(FormDatepickerPlugin)
+Vue.use(ToastPlugin)
 
 const routes = [
   {

@@ -16,10 +16,14 @@ spring:
           uri: http://localhost:7703/
           predicates:
             - Path=/bank-service/**
+          filters:
+            - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
         - id: paypalModules
           uri: http://localhost:7706/
           predicates:
             - Path=/paypal/**
+          filters:
+            - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
       globalcors:
         corsConfigurations:
           '[/**]':
