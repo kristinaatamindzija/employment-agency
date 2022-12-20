@@ -6,6 +6,7 @@ import com.bankservice.feign.BankFeignClient;
 import com.bankservice.model.Payment;
 import com.bankservice.repository.PaymentRepository;
 import com.bankservice.service.PaymentService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -14,6 +15,7 @@ import java.util.Date;
 import java.util.concurrent.ThreadLocalRandom;
 
 @Service
+@Slf4j
 public class PaymentServiceImpl implements PaymentService {
 
     private final PaymentRepository paymentRepository;
@@ -33,15 +35,21 @@ public class PaymentServiceImpl implements PaymentService {
     public StartPaymentResponse startPayment(StartPaymentRequest startPaymentRequest) {
         Payment payment = new Payment(startPaymentRequest.merchantUuid, generateMerchantOrderId(), startPaymentRequest.amount);
         paymentRepository.save(payment);
+        log.info("Payment started | Merchant UUID: {}, Merchant Order ID: {}", payment.merchantUuid, payment.merchantOrderId);
         AuthServiceResponse authServiceResponse = authServiceFeignClient.getMerchantData(payment.merchantUuid);
+        log.info("Merchant with id {} found on Auth Service", authServiceResponse.merchantId);
         PaymentRequest paymentStartRequest = new PaymentRequest(authServiceResponse.merchantId,
                 authServiceResponse.merchantPassword, payment.getAmount(), generateMerchantOrderId(), new Date(),
                 authServiceResponse.successUrl + "/" + payment.merchantOrderId,
                 authServiceResponse.failUrl  + "/" +  payment.merchantOrderId,
                 authServiceResponse.failUrl + "/" + payment.merchantOrderId, startPaymentRequest.qr);
         StartPaymentResponse paymentResponse = bankFeignClient.startPayment(paymentStartRequest);
+        log.info("Payment response received from Bank Service | Payment ID: {}, Payment URL: {}",
+                paymentResponse.paymentId, paymentResponse.paymentUrl);
         payment.setPaymentId(paymentResponse.paymentId);
         paymentRepository.save(payment);
+        log.info("Payment with database ID {} updated with generated PaymentID {}",
+                payment.getId(), payment.getPaymentId());
         return paymentResponse;
     }
 
@@ -50,7 +58,10 @@ public class PaymentServiceImpl implements PaymentService {
         Payment payment = paymentRepository.findByPaymentId(processedPaymentRequest.paymentId);
         payment.setAcquirerOrderId(processedPaymentRequest.acquirerOrderId);
         payment.setAcquirerTimestamp(processedPaymentRequest.acquirerOrderTimeStamp);
+        payment.setStatus(processedPaymentRequest.status);
         paymentRepository.save(payment);
+        log.info("Payment with database ID {} updated with Acquirer Order ID {}, Acquirer Timestamp {} and Status {}",
+                payment.getId(), payment.getAcquirerOrderId(), payment.getAcquirerTimestamp(), payment.getStatus());
     }
 
     private String generateMerchantOrderId() {
@@ -61,6 +72,4 @@ public class PaymentServiceImpl implements PaymentService {
         }
         return paymentId.toString();
     }
-
-
 }

@@ -34,6 +34,9 @@ public class Payment {
     private Long paymentId;
 
     @Column
+    private PaymentStatus status;
+
+    @Column
     private String successUrl;
 
     @Column
@@ -48,6 +51,7 @@ public class Payment {
         this.merchantPan = merchantPan;
         this.amount = amount;
         this.paymentId = paymentId;
+        this.status = PaymentStatus.PENDING;
     }
 
     public Payment(Long paymentId, Double amount, String pan) {
