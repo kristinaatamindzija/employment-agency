@@ -28,18 +28,6 @@ public class PaymentController {
     @PostMapping("")
     public ResponseEntity<StartPaymentResponse> startPayment(@RequestBody StartPaymentRequest request) {
         return ResponseEntity.ok(paymentService.startPayment(request));
-//        val result = paymentService.processPayment(map(request), request.qr)
-//        ResponseEntity(map(result), HttpStatus.OK)
-//    } catch (e: MerchantAccountDoesNotExistException) {
-//        pspLogger.log(e.message, level = LogLevel.ERROR)
-//        ResponseEntity(HttpStatus.BAD_REQUEST)
-//    } catch (e: PaymentInvalidException) {
-//        pspLogger.log("From ${request.merchantUuid} " + e.message, level = LogLevel.ERROR)
-//        ResponseEntity(HttpStatus.BAD_REQUEST)
-//    } catch (e: Exception) {
-//        pspLogger.logException(e)
-//        ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR)
-//    }
     }
 
     @PostMapping("/process-payment")
