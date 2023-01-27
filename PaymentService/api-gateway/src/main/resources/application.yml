@@ -1,5 +1,13 @@
 server:
   port: 7700
+  ssl:
+    enabled: true
+    key-alias: localhost
+    key-store: classpath:keystores/springboot.jks
+    key-store-type: jks
+    key-store-password: jabuka123
+    key-password: jabuka123
+    client-auth: none
 spring:
   application:
     name: api-gateway

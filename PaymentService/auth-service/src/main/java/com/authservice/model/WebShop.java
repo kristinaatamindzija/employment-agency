@@ -49,6 +49,15 @@ public class WebShop {
     )
     private Set<PaymentMethod> paymentMethods = new HashSet<>();
 
+    @Column(name = "success_url")
+    private String successUrl;
+
+    @Column(name = "fail_url")
+    private String failUrl;
+
+    @Column(name = "error_url")
+    private String errorUrl;
+
     public WebShop(String username, String password, String currency) {
         this.username = username;
         this.password = password;

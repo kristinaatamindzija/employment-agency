@@ -154,7 +154,7 @@ export default {
         },
 
         payWithBankCard(){
-            PaymentService.startPayment()
+            PaymentService.startPayment(this.$route.query.merchantUuid, this.$route.query.merchantOrderId, this.$route.query.amount)
         }
     },
     components: {}

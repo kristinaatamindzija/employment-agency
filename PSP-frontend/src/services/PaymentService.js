@@ -17,11 +17,12 @@ class PaymentService {
             merchantPassword: payment?.merchantPassword
         })
     }
-    startPayment() {
+    startPayment(merchantUuid, merchantOrderId, amount) {
         axios.post(`${process.env.VUE_APP_API_GATEWAY}/bank-service/payment`, {
-            amount: 300,
+            amount,
             qr: false,
-            merchantUuid: '12345678-1234-1234-1234-123456789012'
+            merchantUuid,
+            merchantOrderId
         })
             .then((response) => {
                 console.log(response)

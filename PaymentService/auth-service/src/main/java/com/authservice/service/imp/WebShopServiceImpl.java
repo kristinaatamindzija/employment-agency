@@ -128,7 +128,8 @@ public class WebShopServiceImpl implements WebShopService {
     public MerchantDataResponse getMerchantData(String merchantUuid) {
         WebShop webShop = webShopRepository.findByMerchantUuid(merchantUuid);
         if(webShop == null) throw new UsernameNotFoundException("WebShop not found");
-        return new MerchantDataResponse(webShop.getMerchantId(), webShop.getMerchantPassword());
+        return new MerchantDataResponse(webShop.getMerchantId(), webShop.getMerchantPassword(),
+                webShop.getSuccessUrl(), webShop.getFailUrl(), webShop.getErrorUrl());
     }
 
     @Override

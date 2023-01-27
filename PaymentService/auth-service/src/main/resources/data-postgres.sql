@@ -1,5 +1,5 @@
-insert into web_shop(id, currency, username, password, merchant_id, merchant_password, merchant_uuid) values (nextval('web_shop_id_seq'),'rsd','EmploymentAgency',
-                                                              '$2a$10$UVn74F/yEiUzKWBSGVyzHe2UfpVJ95zY50Q8bz1RFyrAYVfwFAj4i', '12345678912345678912345678912345', 'pilence', '12345678-1234-1234-1234-123456789012');
+insert into web_shop(id, currency, username, password, merchant_id, merchant_password, merchant_uuid, success_url, fail_url, error_url) values (nextval('web_shop_id_seq'),'rsd','EmploymentAgency',
+                                                              '$2a$10$UVn74F/yEiUzKWBSGVyzHe2UfpVJ95zY50Q8bz1RFyrAYVfwFAj4i', '12345678912345678912345678912345', 'pilence', '12345678-1234-1234-1234-123456789012', 'http://localhost:7000/order-success', 'http://localhost:7000/order-fail', 'http://localhost:7000/order-error');
 insert into web_shop(id, currency, username, password, merchant_id, merchant_password, merchant_uuid) values (nextval('web_shop_id_seq'),'rsd','EmploymentAgency1',
                                                                '$2a$10$UVn74F/yEiUzKWBSGVyzHe2UfpVJ95zY50Q8bz1RFyrAYVfwFAj4i', '12345678912345678912345678912346', 'pilence123', '12345678-1234-1234-1234-123456789013');
 insert into web_shop(id, currency, username, password, merchant_id, merchant_password, merchant_uuid) values (nextval('web_shop_id_seq'),'rsd','EmploymentAgency2',

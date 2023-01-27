@@ -10,6 +10,8 @@ import com.bank.model.PaymentStatus;
 import com.bank.repository.AccountRepository;
 import com.bank.repository.CreditCardRepository;
 import com.bank.repository.PaymentRepository;
+import com.bank.security.Encryptor;
+import com.bank.security.Hasher;
 import com.bank.service.PaymentService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,9 +47,6 @@ public class PaymentServiceImpl implements PaymentService {
     @Value("${CREDIT_CARD_INPUT_URI}")
     private String creditCardInputUri = "";
 
-    @Value("${PCC_URI}")
-    private String pccUri = "";
-
     @Override
     public PaymentStartResponse startPayment(PaymentStartRequest paymentStartRequest) {
         Account merchant = accountRepository.findByMerchantId(paymentStartRequest.merchantId);
@@ -63,6 +62,9 @@ public class PaymentServiceImpl implements PaymentService {
             throw new MerchantNotFoundException("Merchant with id " + paymentStartRequest.merchantId + " not found.");
         }
         var payment = new Payment(merchant.getCreditCard().pan, paymentStartRequest.amount, generateId());
+        payment.setSuccessUrl(paymentStartRequest.successUrl);
+        payment.setFailedUrl(paymentStartRequest.failUrl);
+        payment.setErrorUrl(paymentStartRequest.errorUrl);
         paymentRepository.save(payment);
         log.info("Payment with id " + payment.getId() + " started.");
         var paymentStartResponse = new PaymentStartResponse();
@@ -77,30 +79,33 @@ public class PaymentServiceImpl implements PaymentService {
 
     @Override
     public PaymentExecutionResponse executePayment(PaymentExecutionRequest paymentExecutionRequest) {
-        var buyerCreditCard = creditCardRepository.findByPan(paymentExecutionRequest.pan);
-        if (buyerCreditCard == null) {
-            return sendPccRequest(paymentExecutionRequest);
-        }
         var payment = paymentRepository.findByPaymentId(paymentExecutionRequest.paymentId);
         if (payment == null) {
             log.error("Payment with id " + paymentExecutionRequest.paymentId + " not found.");
             throw new PaymentNotFoundException("Payment with id " + paymentExecutionRequest.paymentId + " not found.");
         }
-        var merchantCreditCard = creditCardRepository.findByPan(payment.getMerchantPan());
+        String encryptedIssuerPan = Encryptor.encrypt(paymentExecutionRequest.pan);
+        String encryptedAcquirerPan = Encryptor.encrypt(payment.getMerchantPan());
+        var buyerCreditCard = creditCardRepository.findByPan(Hasher.hashPAN(paymentExecutionRequest.pan));
+        if (buyerCreditCard == null) {
+            log.info("Buyer credit card with pan " + encryptedIssuerPan + " not found.");
+            return sendPccRequest(paymentExecutionRequest);
+        }
+        var merchantCreditCard = creditCardRepository.findByPan(Hasher.hashPAN(payment.getMerchantPan()));
         if (merchantCreditCard == null) {
-            log.error("Merchant with provided pan not found.");
+            log.error("Merchant credit card with pan " + encryptedAcquirerPan + " not found.");
             payment.setStatus(PaymentStatus.FAILED);
             paymentRepository.save(payment);
             throw new CreditCardNotFoundException("Credit card with provided pan not found.");
         }
         if (!validateCreditCard(paymentExecutionRequest, buyerCreditCard)) {
-            log.error("Credit card with provided pan not found.");
+            log.error("Credit card with pan " + encryptedIssuerPan + " is not valid.");
             payment.setStatus(PaymentStatus.FAILED);
             paymentRepository.save(payment);
             throw new CreditCardNotValidException("Credit card with provided pan not valid.");
         }
         if (buyerCreditCard.amountOfMoney < payment.getAmount()) {
-            log.error("Not enough money on credit card.");
+            log.error("Not enough money on credit card with pan " + encryptedIssuerPan + ".");
             payment.setStatus(PaymentStatus.FAILED);
             paymentRepository.save(payment);
             return new PaymentExecutionResponse(payment.getFailedUrl());
@@ -111,9 +116,9 @@ public class PaymentServiceImpl implements PaymentService {
         buyerCreditCard.amountOfMoney -= payment.getAmount();
         merchantCreditCard.amountOfMoney += payment.getAmount();
         creditCardRepository.save(buyerCreditCard);
-        log.info("Money withdrawn from credit card with pan " + buyerCreditCard.pan + ".");
+        log.info("Money withdrawn from credit card with pan " + encryptedIssuerPan + ".");
         creditCardRepository.save(merchantCreditCard);
-        log.info("Money deposited to credit card with pan " + merchantCreditCard.pan + ".");
+        log.info("Money deposited to credit card with pan " + encryptedAcquirerPan + ".");
         payment.setStatus(PaymentStatus.SUCCESSFUL);
         paymentRepository.save(payment);
         bankServiceFeignClient.updatePayment(new ProcessedPaymentRequest(payment.getPaymentId(),
@@ -131,11 +136,10 @@ public class PaymentServiceImpl implements PaymentService {
         }
         var creditCard = creditCardRepository.findByPan(payment.getBuyerPan());
         if (creditCard == null) {
-            log.error("Credit card with pan " + payment.getBuyerPan() + " not found.");
+            log.error("Credit card with pan " + Encryptor.encrypt(payment.getBuyerPan()) + " not found.");
             throw new CreditCardNotFoundException("Credit card with provided pan not found.");
         }
         var account = creditCard.getAccount();
-
         return new PaymentInfoResponse(account.getName(), account.getSurname(),
                                        creditCard.getPan(), payment.getAmount());
     }
@@ -155,7 +159,7 @@ public class PaymentServiceImpl implements PaymentService {
             paymentRepository.save(payment);
             throw new CreditCardNotFoundException("Credit card is not found.");
         }
-        payment.setBuyerPan(paymentExecutionRequest.pan);
+        payment.setBuyerPan(Hasher.hashPAN(paymentExecutionRequest.pan));
         paymentRepository.save(payment);
 
         PccRequest pccRequest =  new PccRequest(paymentExecutionRequest.pan, paymentExecutionRequest.securityCode,
@@ -193,7 +197,7 @@ public class PaymentServiceImpl implements PaymentService {
         //if (!pccResponse.isAuthenticationSuccessful || !pccResponse.isAuthorizationSuccessful) return;
         merchantCreditCard.amountOfMoney += payment.getAmount();
         creditCardRepository.save(merchantCreditCard);
-        log.info("Money deposited to credit card with pan " + merchantCreditCard.pan + ".");
+        log.info("Money deposited to credit card with pan " + Encryptor.encrypt(merchantCreditCard.pan) + ".");
         payment.setStatus(PaymentStatus.SUCCESSFUL);
         paymentRepository.save(payment);
         bankServiceFeignClient.updatePayment(new ProcessedPaymentRequest(payment.getPaymentId(),
@@ -209,9 +213,9 @@ public class PaymentServiceImpl implements PaymentService {
         PccResponse pccResponse = new PccResponse(payment.getPaymentId(), true, true,
                 pccRequest.acquirerOrderId, pccRequest.acquirerTimestamp, generateId(),
                 new Date());
-        CreditCard buyerCreditCard = creditCardRepository.findByPan(pccRequest.pan);
+        CreditCard buyerCreditCard = creditCardRepository.findByPan(Hasher.hashPAN(pccRequest.pan));
         if (buyerCreditCard == null || buyerCreditCard.amountOfMoney < payment.getAmount()) {
-            log.error("Credit card with provided pan not found or not enough money to withdraw.");
+            log.error("Credit card with provided pan " + Encryptor.encrypt(pccRequest.pan) + " not found or not enough money to withdraw.");
             payment.setStatus(PaymentStatus.FAILED);
             paymentRepository.save(payment);
             pccResponse.isAuthenticationSuccessful = false;
@@ -220,7 +224,7 @@ public class PaymentServiceImpl implements PaymentService {
         }
         buyerCreditCard.amountOfMoney -= payment.getAmount();
         creditCardRepository.save(buyerCreditCard);
-        log.info("Money withdrawn from credit card with pan " + buyerCreditCard.pan + ".");
+        log.info("Money withdrawn from credit card with pan " + Encryptor.encrypt(buyerCreditCard.pan) + ".");
         return pccResponse;
     }
 
@@ -234,7 +238,7 @@ public class PaymentServiceImpl implements PaymentService {
     }
 
     private Boolean validateCreditCard(PaymentExecutionRequest paymentExecutionRequest, CreditCard creditCard) {
-        var isSecurityCodeValid = paymentExecutionRequest.securityCode.equals(creditCard.securityCode);
+        var isSecurityCodeValid = paymentExecutionRequest.securityCode.equals(Hasher.hashPAN(creditCard.securityCode));
         var isCardExpired = creditCard.validThru.before(new Date());
         return isSecurityCodeValid && !isCardExpired;
     }

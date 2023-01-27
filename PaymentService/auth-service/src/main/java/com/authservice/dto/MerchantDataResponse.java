@@ -8,4 +8,7 @@ import lombok.NoArgsConstructor;
 public class MerchantDataResponse {
     public String merchantId;
     public String merchantPassword;
+    public String successUrl;
+    public String failUrl;
+    public String errorUrl;
 }

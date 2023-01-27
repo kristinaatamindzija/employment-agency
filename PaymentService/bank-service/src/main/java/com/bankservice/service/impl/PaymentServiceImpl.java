@@ -33,16 +33,16 @@ public class PaymentServiceImpl implements PaymentService {
 
     @Override
     public StartPaymentResponse startPayment(StartPaymentRequest startPaymentRequest) {
-        Payment payment = new Payment(startPaymentRequest.merchantUuid, generateMerchantOrderId(), startPaymentRequest.amount);
+        Payment payment = new Payment(startPaymentRequest.merchantUuid, startPaymentRequest.merchantOrderId, startPaymentRequest.amount);
         paymentRepository.save(payment);
         log.info("Payment started | Merchant UUID: {}, Merchant Order ID: {}", payment.merchantUuid, payment.merchantOrderId);
         AuthServiceResponse authServiceResponse = authServiceFeignClient.getMerchantData(payment.merchantUuid);
         log.info("Merchant with id {} found on Auth Service", authServiceResponse.merchantId);
         PaymentRequest paymentStartRequest = new PaymentRequest(authServiceResponse.merchantId,
-                authServiceResponse.merchantPassword, payment.getAmount(), generateMerchantOrderId(), new Date(),
+                authServiceResponse.merchantPassword, payment.getAmount(), payment.merchantOrderId, new Date(),
                 authServiceResponse.successUrl + "/" + payment.merchantOrderId,
                 authServiceResponse.failUrl  + "/" +  payment.merchantOrderId,
-                authServiceResponse.failUrl + "/" + payment.merchantOrderId, startPaymentRequest.qr);
+                authServiceResponse.errorUrl + "/" + payment.merchantOrderId, startPaymentRequest.qr);
         StartPaymentResponse paymentResponse = bankFeignClient.startPayment(paymentStartRequest);
         log.info("Payment response received from Bank Service | Payment ID: {}, Payment URL: {}",
                 paymentResponse.paymentId, paymentResponse.paymentUrl);

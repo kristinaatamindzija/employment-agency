@@ -49,7 +49,7 @@ export default {
         },
         async executePayment() {
             console.log(process.env.VUE_APP_BANK)
-            await axios.post(`http://localhost:8001/payment/execute`, {
+            const {data} = await axios.post(`http://localhost:8001/payment/execute`, {
                 pan: this.form.pan,
                 securityCode: this.form.securityCode,
                 cardHolderName: this.form.cardHolderName,
@@ -61,16 +61,19 @@ export default {
                     autoHideDelay: 5000,
                     position: 'top-right'
                 })
+                window.open(data.redirectionUrl)
                 throw error
             })
         
             this.$bvToast.toast('Payment successfully completed :D', {
-            title: 'SUCCESS',
-            autoHideDelay: 5000,
-            position: 'top-right'
-        })
+                title: 'SUCCESS',
+                autoHideDelay: 5000,
+                position: 'top-right'
+            })
+
+            window.open(data.redirectionUrl)
+        }
     }
-}
 }
 
 </script>

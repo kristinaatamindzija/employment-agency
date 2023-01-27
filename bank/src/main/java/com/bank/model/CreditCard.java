@@ -24,10 +24,10 @@ public class CreditCard {
     @Column
     public Long id;
 
-    @Column(unique = true, columnDefinition = "VARCHAR(16) DEFAULT '0000000000000000'")
+    @Column(unique = true, columnDefinition = "VARCHAR(64)")
     public String pan;
 
-    @Column(columnDefinition = "VARCHAR(3) DEFAULT '000'")
+    @Column(columnDefinition = "VARCHAR(64)")
     public String securityCode;
 
     @Column
