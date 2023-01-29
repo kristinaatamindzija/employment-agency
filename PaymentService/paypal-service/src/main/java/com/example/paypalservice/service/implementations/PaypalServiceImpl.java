@@ -15,7 +15,7 @@ public class PaypalServiceImpl implements PaypalService {
     }
 
     @Override
-    public MerchantResponseDTO getMerchant(Long merchantId) {
-        return merchantRepository.findById(merchantId).map(merchant -> new MerchantResponseDTO(merchant.getMerchantPaypalId(), merchant.getEmail())).orElse(null);
+    public MerchantResponseDTO getMerchant(String merchantUuid) {
+        return merchantRepository.findByMerchantUuid(merchantUuid).map(merchant -> new MerchantResponseDTO(merchant.getMerchantPaypalId(), merchant.getEmail())).orElse(null);
     }
 }

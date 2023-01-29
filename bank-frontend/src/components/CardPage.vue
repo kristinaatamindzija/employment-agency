@@ -61,7 +61,7 @@ export default {
                     autoHideDelay: 5000,
                     position: 'top-right'
                 })
-                window.open(data.redirectionUrl)
+                window.location.replace(data.redirectionUrl)
                 throw error
             })
         
@@ -70,8 +70,7 @@ export default {
                 autoHideDelay: 5000,
                 position: 'top-right'
             })
-
-            window.open(data.redirectionUrl)
+            window.location.replace(data.redirectionUrl)
         }
     }
 }

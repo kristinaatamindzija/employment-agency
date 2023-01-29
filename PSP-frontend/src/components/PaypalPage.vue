@@ -18,7 +18,6 @@
 
 <script>
 
-import UserService from "../services/UserService";
 import Swal from 'sweetalert2'
 import PaypalService from "@/services/PaypalService";
 import PaymentService from "@/services/PaymentService";
@@ -27,13 +26,12 @@ export default {
     name: "PaypalPage",
     data() {
         return {
-            isExpired: false,
             username: "",
-            orderId: 1, //ovo ce se dobavljati sa bonite
-            merchantId: 1, //ovo ce se dobavljati sa bonite
+            orderUuid: this.$route.query.merchantOrderId,
+            merchantUuid: this.$route.query.merchantUuid,
             order: {
                 currencyCode: "USD",
-                value: "100.00",
+                value: this.$route.query.amount,
                 description: "Test"
             },
             merchant: {
@@ -44,18 +42,11 @@ export default {
         };
     },
     mounted() {
-        this.isExpired = UserService.isExpired();
-        if (!this.isExpired) {
-            this.username = UserService.getUsername();
-        }
         this.getMerchant();
-        //this.getOrder(); //ovo ce dobaviti sa beka kad dobijemo id iz bonite
-        this.merchantId = 1;
-        this.orderId = 1;
     },
     methods: {
         getMerchant() {
-            PaypalService.getMerchant(1).then(response => {
+            PaypalService.getMerchant(this.merchantUuid).then(response => {
                 this.merchant.merchantId = response.data.merchantPaypalId;
                 this.merchant.email = response.data.email;
                 this.createButton();
@@ -78,9 +69,9 @@ export default {
             const merchantId = this.merchant.merchantId
             const email = this.merchant.email
 
-            const productUuid = this.orderId
-            const payerId = this.username
-            const merchantUuid = this.merchantId
+            const payerId = ""
+            const merchantUuid = this.merchantUuid
+            const productUuid = this.orderUuid
 
             window.paypal.Buttons({
                 style: {
@@ -125,14 +116,16 @@ export default {
                         timestamp: new Date(),
                         merchantUuid: merchantUuid,
                         productUuid: productUuid,
-                        payerId: payerId,
+                        payerId: order.payer.payer_id,
                     }
+                    Swal.fire('Success!', 'Transaction completed!', 'success')
                     PaypalService.updateTransaction(transaction).then(response => {
                         console.log(response.data);
+                        window.location.replace(response.data)
                     }).catch(error => {
                         console.log(error);
                     })
-                    Swal.fire('Success!', 'Transaction completed!', 'success')
+
                 },
                 onError: err => {
                     console.log(err);

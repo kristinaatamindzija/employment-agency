@@ -1,334 +1,696 @@
-2022-12-20 00:04:42.998  INFO 1764 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-20 00:09:43.385  INFO 1764 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-20 00:14:43.400  INFO 1764 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-20 00:19:43.407  INFO 1764 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-20 00:24:43.425  INFO 1764 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-20 00:29:43.444  INFO 1764 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-20 00:34:43.454  INFO 1764 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-20 00:39:43.461  INFO 1764 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-20 00:44:43.465  INFO 1764 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-20 00:49:43.473  INFO 1764 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-20 00:54:43.478  INFO 1764 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-20 00:59:43.485  INFO 1764 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-20 01:04:43.489  INFO 1764 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-20 01:09:43.501  INFO 1764 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-20 01:14:43.517  INFO 1764 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-20 01:18:21.127  INFO 1764 --- [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application PAYPAL-SERVICE with eureka with status DOWN
-2022-12-20 01:18:21.133  INFO 1764 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1671495501132, current=DOWN, previous=UP]
-2022-12-20 01:18:21.140  INFO 1764 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_PAYPAL-SERVICE/DESKTOP-0AUJCS8:paypal-service:7706: registering service...
-2022-12-20 01:18:21.431  INFO 1764 --- [DiscoveryClient-InstanceInfoReplicator-0] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/} exception=java.net.ConnectException: Connection refused: no further information stacktrace=com.sun.jersey.api.client.ClientHandlerException: java.net.ConnectException: Connection refused: no further information
-	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187)
-	at com.sun.jersey.api.client.filter.GZIPContentEncodingFilter.handle(GZIPContentEncodingFilter.java:123)
-	at com.netflix.discovery.EurekaIdentityHeaderFilter.handle(EurekaIdentityHeaderFilter.java:27)
-	at com.sun.jersey.api.client.Client.handle(Client.java:652)
-	at com.sun.jersey.api.client.WebResource.handle(WebResource.java:682)
-	at com.sun.jersey.api.client.WebResource.access$200(WebResource.java:74)
-	at com.sun.jersey.api.client.WebResource$Builder.post(WebResource.java:570)
-	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.register(AbstractJerseyEurekaHttpClient.java:57)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
-	at com.netflix.discovery.shared.transport.decorator.MetricsCollectingEurekaHttpClient.execute(MetricsCollectingEurekaHttpClient.java:73)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
-	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:91)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
-	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:876)
-	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121)
-	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:577)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1589)
-Caused by: java.net.ConnectException: Connection refused: no further information
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
-	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:535)
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:585)
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
-	at java.base/java.net.Socket.connect(Socket.java:666)
-	at org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:121)
-	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:180)
-	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144)
-	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:134)
-	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:605)
-	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:440)
-	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:835)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:118)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
-	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173)
-	... 28 more
+2023-01-30 00:02:54.458  INFO 19668 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 00:06:05.227 DEBUG 19668 --- [http-nio-7706-exec-4] org.hibernate.SQL                        : 
+    select
+        merchant0_.merchant_id as merchant1_0_,
+        merchant0_.email as email2_0_,
+        merchant0_.merchant_paypal_id as merchant3_0_,
+        merchant0_.merchant_uuid as merchant4_0_ 
+    from
+        merchant merchant0_ 
+    where
+        merchant0_.merchant_uuid=?
+2023-01-30 00:06:05.233 TRACE 19668 --- [http-nio-7706-exec-4] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [undefined]
+2023-01-30 00:06:20.886 DEBUG 19668 --- [http-nio-7706-exec-5] org.hibernate.SQL                        : 
+    select
+        nextval ('transaction_id_seq')
+2023-01-30 00:06:20.897 DEBUG 19668 --- [http-nio-7706-exec-5] org.hibernate.SQL                        : 
+    insert 
+    into
+        transaction
+        (merchant_uuid, payer_id, product_uuid, status, timestamp, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2023-01-30 00:06:20.897 TRACE 19668 --- [http-nio-7706-exec-5] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [null]
+2023-01-30 00:06:20.898 TRACE 19668 --- [http-nio-7706-exec-5] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [wasd]
+2023-01-30 00:06:20.898 TRACE 19668 --- [http-nio-7706-exec-5] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [null]
+2023-01-30 00:06:20.899 TRACE 19668 --- [http-nio-7706-exec-5] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [PENDING]
+2023-01-30 00:06:20.899 TRACE 19668 --- [http-nio-7706-exec-5] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [TIMESTAMP] - [Mon Jan 30 00:06:20 CET 2023]
+2023-01-30 00:06:20.900 TRACE 19668 --- [http-nio-7706-exec-5] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [BIGINT] - [3]
+2023-01-30 00:06:21.681 DEBUG 19668 --- [http-nio-7706-exec-6] org.hibernate.SQL                        : 
+    select
+        nextval ('transaction_id_seq')
+2023-01-30 00:06:21.711 DEBUG 19668 --- [http-nio-7706-exec-6] org.hibernate.SQL                        : 
+    insert 
+    into
+        transaction
+        (merchant_uuid, payer_id, product_uuid, status, timestamp, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2023-01-30 00:06:21.712 TRACE 19668 --- [http-nio-7706-exec-6] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [null]
+2023-01-30 00:06:21.712 TRACE 19668 --- [http-nio-7706-exec-6] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [wasd]
+2023-01-30 00:06:21.712 TRACE 19668 --- [http-nio-7706-exec-6] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [null]
+2023-01-30 00:06:21.712 TRACE 19668 --- [http-nio-7706-exec-6] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [PENDING]
+2023-01-30 00:06:21.713 TRACE 19668 --- [http-nio-7706-exec-6] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [TIMESTAMP] - [Mon Jan 30 00:06:21 CET 2023]
+2023-01-30 00:06:21.713 TRACE 19668 --- [http-nio-7706-exec-6] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [BIGINT] - [4]
+2023-01-30 00:06:46.925 DEBUG 19668 --- [http-nio-7706-exec-7] org.hibernate.SQL                        : 
+    select
+        transactio0_.id as id1_2_,
+        transactio0_.merchant_uuid as merchant2_2_,
+        transactio0_.payer_id as payer_id3_2_,
+        transactio0_.product_uuid as product_4_2_,
+        transactio0_.status as status5_2_,
+        transactio0_.timestamp as timestam6_2_ 
+    from
+        transaction transactio0_ 
+    where
+        (
+            transactio0_.merchant_uuid is null
+        ) 
+        and (
+            transactio0_.product_uuid is null
+        )
+2023-01-30 00:06:47.469 ERROR 19668 --- [http-nio-7706-exec-7] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.IncorrectResultSizeDataAccessException: query did not return a unique result: 4; nested exception is javax.persistence.NonUniqueResultException: query did not return a unique result: 4] with root cause
 
-2022-12-20 01:18:21.435  WARN 1764 --- [DiscoveryClient-InstanceInfoReplicator-0] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: java.net.ConnectException: Connection refused: no further information
-2022-12-20 01:18:21.447  INFO 1764 --- [DiscoveryClient-InstanceInfoReplicator-0] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=java.net.ConnectException: Connection refused: no further information stacktrace=com.sun.jersey.api.client.ClientHandlerException: java.net.ConnectException: Connection refused: no further information
-	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187)
-	at com.sun.jersey.api.client.filter.GZIPContentEncodingFilter.handle(GZIPContentEncodingFilter.java:123)
-	at com.netflix.discovery.EurekaIdentityHeaderFilter.handle(EurekaIdentityHeaderFilter.java:27)
-	at com.sun.jersey.api.client.Client.handle(Client.java:652)
-	at com.sun.jersey.api.client.WebResource.handle(WebResource.java:682)
-	at com.sun.jersey.api.client.WebResource.access$200(WebResource.java:74)
-	at com.sun.jersey.api.client.WebResource$Builder.post(WebResource.java:570)
-	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.register(AbstractJerseyEurekaHttpClient.java:57)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
-	at com.netflix.discovery.shared.transport.decorator.MetricsCollectingEurekaHttpClient.execute(MetricsCollectingEurekaHttpClient.java:73)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
-	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
-	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
-	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:876)
-	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121)
-	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:577)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1589)
-Caused by: java.net.ConnectException: Connection refused: no further information
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
-	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:535)
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:585)
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
-	at java.base/java.net.Socket.connect(Socket.java:666)
-	at org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:121)
-	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:180)
-	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144)
-	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:134)
-	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:605)
-	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:440)
-	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:835)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:118)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
-	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173)
-	... 29 more
+javax.persistence.NonUniqueResultException: query did not return a unique result: 4
+	at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:128) ~[hibernate-core-5.6.14.Final.jar:5.6.14.Final]
+	at org.hibernate.query.internal.AbstractProducedQuery.getSingleResult(AbstractProducedQuery.java:1672) ~[hibernate-core-5.6.14.Final.jar:5.6.14.Final]
+	at org.hibernate.query.criteria.internal.compile.CriteriaQueryTypeQueryAdapter.getSingleResult(CriteriaQueryTypeQueryAdapter.java:111) ~[hibernate-core-5.6.14.Final.jar:5.6.14.Final]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$DeferredQueryInvocationHandler.invoke(SharedEntityManagerCreator.java:406) ~[spring-orm-5.3.24.jar:5.3.24]
+	at jdk.proxy2/jdk.proxy2.$Proxy178.getSingleResult(Unknown Source) ~[na:na]
+	at org.springframework.data.jpa.repository.query.JpaQueryExecution$SingleEntityExecution.doExecute(JpaQueryExecution.java:198) ~[spring-data-jpa-2.7.6.jar:2.7.6]
+	at org.springframework.data.jpa.repository.query.JpaQueryExecution.execute(JpaQueryExecution.java:90) ~[spring-data-jpa-2.7.6.jar:2.7.6]
+	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.doExecute(AbstractJpaQuery.java:156) ~[spring-data-jpa-2.7.6.jar:2.7.6]
+	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.execute(AbstractJpaQuery.java:144) ~[spring-data-jpa-2.7.6.jar:2.7.6]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:137) ~[spring-data-commons-2.7.6.jar:2.7.6]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:121) ~[spring-data-commons-2.7.6.jar:2.7.6]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:160) ~[spring-data-commons-2.7.6.jar:2.7.6]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:139) ~[spring-data-commons-2.7.6.jar:2.7.6]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.24.jar:5.3.24]
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:81) ~[spring-data-commons-2.7.6.jar:2.7.6]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.24.jar:5.3.24]
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123) ~[spring-tx-5.3.24.jar:5.3.24]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388) ~[spring-tx-5.3.24.jar:5.3.24]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-5.3.24.jar:5.3.24]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.24.jar:5.3.24]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137) ~[spring-tx-5.3.24.jar:5.3.24]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.24.jar:5.3.24]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:145) ~[spring-data-jpa-2.7.6.jar:2.7.6]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.24.jar:5.3.24]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-5.3.24.jar:5.3.24]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.24.jar:5.3.24]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215) ~[spring-aop-5.3.24.jar:5.3.24]
+	at jdk.proxy2/jdk.proxy2.$Proxy135.findByMerchantUuidAndProductUuid(Unknown Source) ~[na:na]
+	at com.example.paypalservice.service.implementations.TransactionServiceImpl.updateTransaction(TransactionServiceImpl.java:31) ~[classes/:na]
+	at com.example.paypalservice.controller.PaypalController.updateTransaction(PaypalController.java:42) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.24.jar:5.3.24]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.24.jar:5.3.24]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.24.jar:5.3.24]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.24.jar:5.3.24]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.24.jar:5.3.24]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.24.jar:5.3.24]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1071) ~[spring-webmvc-5.3.24.jar:5.3.24]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:964) ~[spring-webmvc-5.3.24.jar:5.3.24]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.24.jar:5.3.24]
+	at org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:920) ~[spring-webmvc-5.3.24.jar:5.3.24]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:699) ~[tomcat-embed-core-9.0.70.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.24.jar:5.3.24]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:779) ~[tomcat-embed-core-9.0.70.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.70.jar:9.0.70]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.24.jar:5.3.24]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.24.jar:5.3.24]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.24.jar:5.3.24]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.24.jar:5.3.24]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96) ~[spring-boot-actuator-2.7.7-20221222.092404-18.jar:2.7.7-SNAPSHOT]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.24.jar:5.3.24]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.24.jar:5.3.24]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.24.jar:5.3.24]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:177) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:891) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1784) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
 
-2022-12-20 01:18:21.449  WARN 1764 --- [DiscoveryClient-InstanceInfoReplicator-0] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: java.net.ConnectException: Connection refused: no further information
-2022-12-20 01:18:21.542  WARN 1764 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_PAYPAL-SERVICE/DESKTOP-0AUJCS8:paypal-service:7706 - registration failed Cannot execute request on any known server
+2023-01-30 00:07:54.586  INFO 19668 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 00:09:31.204 DEBUG 19668 --- [http-nio-7706-exec-8] org.hibernate.SQL                        : 
+    select
+        merchant0_.merchant_id as merchant1_0_,
+        merchant0_.email as email2_0_,
+        merchant0_.merchant_paypal_id as merchant3_0_,
+        merchant0_.merchant_uuid as merchant4_0_ 
+    from
+        merchant merchant0_ 
+    where
+        merchant0_.merchant_uuid=?
+2023-01-30 00:09:31.217 TRACE 19668 --- [http-nio-7706-exec-8] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [undefined]
+2023-01-30 00:09:33.832 DEBUG 19668 --- [http-nio-7706-exec-9] org.hibernate.SQL                        : 
+    select
+        nextval ('transaction_id_seq')
+2023-01-30 00:09:33.834 DEBUG 19668 --- [http-nio-7706-exec-9] org.hibernate.SQL                        : 
+    insert 
+    into
+        transaction
+        (merchant_uuid, payer_id, product_uuid, status, timestamp, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2023-01-30 00:09:33.836 TRACE 19668 --- [http-nio-7706-exec-9] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [null]
+2023-01-30 00:09:33.837 TRACE 19668 --- [http-nio-7706-exec-9] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [wasd]
+2023-01-30 00:09:33.838 TRACE 19668 --- [http-nio-7706-exec-9] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [null]
+2023-01-30 00:09:33.838 TRACE 19668 --- [http-nio-7706-exec-9] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [PENDING]
+2023-01-30 00:09:33.839 TRACE 19668 --- [http-nio-7706-exec-9] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [TIMESTAMP] - [Mon Jan 30 00:09:33 CET 2023]
+2023-01-30 00:09:33.839 TRACE 19668 --- [http-nio-7706-exec-9] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [BIGINT] - [5]
+2023-01-30 00:09:54.580 DEBUG 19668 --- [http-nio-7706-exec-10] org.hibernate.SQL                        : 
+    select
+        nextval ('transaction_id_seq')
+2023-01-30 00:09:54.583 DEBUG 19668 --- [http-nio-7706-exec-10] org.hibernate.SQL                        : 
+    insert 
+    into
+        transaction
+        (merchant_uuid, payer_id, product_uuid, status, timestamp, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2023-01-30 00:09:54.585 TRACE 19668 --- [http-nio-7706-exec-10] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [null]
+2023-01-30 00:09:54.585 TRACE 19668 --- [http-nio-7706-exec-10] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [wasd]
+2023-01-30 00:09:54.585 TRACE 19668 --- [http-nio-7706-exec-10] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [null]
+2023-01-30 00:09:54.586 TRACE 19668 --- [http-nio-7706-exec-10] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [PENDING]
+2023-01-30 00:09:54.586 TRACE 19668 --- [http-nio-7706-exec-10] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [TIMESTAMP] - [Mon Jan 30 00:09:54 CET 2023]
+2023-01-30 00:09:54.586 TRACE 19668 --- [http-nio-7706-exec-10] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [BIGINT] - [6]
+2023-01-30 00:09:55.687 DEBUG 19668 --- [http-nio-7706-exec-2] org.hibernate.SQL                        : 
+    select
+        nextval ('transaction_id_seq')
+2023-01-30 00:09:55.690 DEBUG 19668 --- [http-nio-7706-exec-2] org.hibernate.SQL                        : 
+    insert 
+    into
+        transaction
+        (merchant_uuid, payer_id, product_uuid, status, timestamp, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2023-01-30 00:09:55.690 TRACE 19668 --- [http-nio-7706-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [null]
+2023-01-30 00:09:55.690 TRACE 19668 --- [http-nio-7706-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [wasd]
+2023-01-30 00:09:55.691 TRACE 19668 --- [http-nio-7706-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [null]
+2023-01-30 00:09:55.691 TRACE 19668 --- [http-nio-7706-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [FAILED]
+2023-01-30 00:09:55.691 TRACE 19668 --- [http-nio-7706-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [TIMESTAMP] - [Mon Jan 30 00:09:55 CET 2023]
+2023-01-30 00:09:55.691 TRACE 19668 --- [http-nio-7706-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [BIGINT] - [7]
+2023-01-30 00:10:58.455 DEBUG 19668 --- [http-nio-7706-exec-3] org.hibernate.SQL                        : 
+    select
+        merchant0_.merchant_id as merchant1_0_,
+        merchant0_.email as email2_0_,
+        merchant0_.merchant_paypal_id as merchant3_0_,
+        merchant0_.merchant_uuid as merchant4_0_ 
+    from
+        merchant merchant0_ 
+    where
+        merchant0_.merchant_uuid=?
+2023-01-30 00:10:58.456 TRACE 19668 --- [http-nio-7706-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [undefined]
+2023-01-30 00:11:01.000 DEBUG 19668 --- [http-nio-7706-exec-4] org.hibernate.SQL                        : 
+    select
+        nextval ('transaction_id_seq')
+2023-01-30 00:11:01.005 DEBUG 19668 --- [http-nio-7706-exec-4] org.hibernate.SQL                        : 
+    insert 
+    into
+        transaction
+        (merchant_uuid, payer_id, product_uuid, status, timestamp, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2023-01-30 00:11:01.006 TRACE 19668 --- [http-nio-7706-exec-4] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [null]
+2023-01-30 00:11:01.006 TRACE 19668 --- [http-nio-7706-exec-4] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [wasd]
+2023-01-30 00:11:01.006 TRACE 19668 --- [http-nio-7706-exec-4] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [null]
+2023-01-30 00:11:01.007 TRACE 19668 --- [http-nio-7706-exec-4] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [PENDING]
+2023-01-30 00:11:01.009 TRACE 19668 --- [http-nio-7706-exec-4] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [TIMESTAMP] - [Mon Jan 30 00:11:00 CET 2023]
+2023-01-30 00:11:01.010 TRACE 19668 --- [http-nio-7706-exec-4] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [BIGINT] - [8]
+2023-01-30 00:11:15.702 DEBUG 19668 --- [http-nio-7706-exec-5] org.hibernate.SQL                        : 
+    select
+        nextval ('transaction_id_seq')
+2023-01-30 00:11:15.704 DEBUG 19668 --- [http-nio-7706-exec-5] org.hibernate.SQL                        : 
+    insert 
+    into
+        transaction
+        (merchant_uuid, payer_id, product_uuid, status, timestamp, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2023-01-30 00:11:15.705 TRACE 19668 --- [http-nio-7706-exec-5] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [null]
+2023-01-30 00:11:15.707 TRACE 19668 --- [http-nio-7706-exec-5] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [wasd]
+2023-01-30 00:11:15.708 TRACE 19668 --- [http-nio-7706-exec-5] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [null]
+2023-01-30 00:11:15.708 TRACE 19668 --- [http-nio-7706-exec-5] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [FAILED]
+2023-01-30 00:11:15.708 TRACE 19668 --- [http-nio-7706-exec-5] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [TIMESTAMP] - [Mon Jan 30 00:11:15 CET 2023]
+2023-01-30 00:11:15.709 TRACE 19668 --- [http-nio-7706-exec-5] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [BIGINT] - [9]
+2023-01-30 00:12:54.594  INFO 19668 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 00:15:23.655 DEBUG 19668 --- [http-nio-7706-exec-7] org.hibernate.SQL                        : 
+    select
+        merchant0_.merchant_id as merchant1_0_,
+        merchant0_.email as email2_0_,
+        merchant0_.merchant_paypal_id as merchant3_0_,
+        merchant0_.merchant_uuid as merchant4_0_ 
+    from
+        merchant merchant0_ 
+    where
+        merchant0_.merchant_uuid=?
+2023-01-30 00:15:23.657 TRACE 19668 --- [http-nio-7706-exec-7] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [12345678-1234-1234-1234-123456789012]
+2023-01-30 00:15:41.827 DEBUG 19668 --- [http-nio-7706-exec-8] org.hibernate.SQL                        : 
+    select
+        nextval ('transaction_id_seq')
+2023-01-30 00:15:41.829 DEBUG 19668 --- [http-nio-7706-exec-8] org.hibernate.SQL                        : 
+    insert 
+    into
+        transaction
+        (merchant_uuid, payer_id, product_uuid, status, timestamp, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2023-01-30 00:15:41.830 TRACE 19668 --- [http-nio-7706-exec-8] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [12345678-1234-1234-1234-123456789012]
+2023-01-30 00:15:41.830 TRACE 19668 --- [http-nio-7706-exec-8] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - []
+2023-01-30 00:15:41.830 TRACE 19668 --- [http-nio-7706-exec-8] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [4806831433]
+2023-01-30 00:15:41.830 TRACE 19668 --- [http-nio-7706-exec-8] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [PENDING]
+2023-01-30 00:15:41.830 TRACE 19668 --- [http-nio-7706-exec-8] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [TIMESTAMP] - [Mon Jan 30 00:15:41 CET 2023]
+2023-01-30 00:15:41.830 TRACE 19668 --- [http-nio-7706-exec-8] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [BIGINT] - [10]
+2023-01-30 00:15:53.839 DEBUG 19668 --- [http-nio-7706-exec-9] org.hibernate.SQL                        : 
+    select
+        merchant0_.merchant_id as merchant1_0_,
+        merchant0_.email as email2_0_,
+        merchant0_.merchant_paypal_id as merchant3_0_,
+        merchant0_.merchant_uuid as merchant4_0_ 
+    from
+        merchant merchant0_ 
+    where
+        merchant0_.merchant_uuid=?
+2023-01-30 00:15:53.840 TRACE 19668 --- [http-nio-7706-exec-9] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [12345678-1234-1234-1234-123456789012]
+2023-01-30 00:15:57.645 DEBUG 19668 --- [http-nio-7706-exec-10] org.hibernate.SQL                        : 
+    select
+        nextval ('transaction_id_seq')
+2023-01-30 00:15:57.647 DEBUG 19668 --- [http-nio-7706-exec-10] org.hibernate.SQL                        : 
+    insert 
+    into
+        transaction
+        (merchant_uuid, payer_id, product_uuid, status, timestamp, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2023-01-30 00:15:57.647 TRACE 19668 --- [http-nio-7706-exec-10] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [12345678-1234-1234-1234-123456789012]
+2023-01-30 00:15:57.647 TRACE 19668 --- [http-nio-7706-exec-10] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - []
+2023-01-30 00:15:57.647 TRACE 19668 --- [http-nio-7706-exec-10] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [4806831433]
+2023-01-30 00:15:57.650 TRACE 19668 --- [http-nio-7706-exec-10] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [PENDING]
+2023-01-30 00:15:57.650 TRACE 19668 --- [http-nio-7706-exec-10] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [TIMESTAMP] - [Mon Jan 30 00:15:57 CET 2023]
+2023-01-30 00:15:57.650 TRACE 19668 --- [http-nio-7706-exec-10] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [BIGINT] - [11]
+2023-01-30 00:15:57.794 DEBUG 19668 --- [http-nio-7706-exec-2] org.hibernate.SQL                        : 
+    select
+        nextval ('transaction_id_seq')
+2023-01-30 00:15:57.795 DEBUG 19668 --- [http-nio-7706-exec-2] org.hibernate.SQL                        : 
+    insert 
+    into
+        transaction
+        (merchant_uuid, payer_id, product_uuid, status, timestamp, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2023-01-30 00:15:57.796 TRACE 19668 --- [http-nio-7706-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [12345678-1234-1234-1234-123456789012]
+2023-01-30 00:15:57.796 TRACE 19668 --- [http-nio-7706-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - []
+2023-01-30 00:15:57.797 TRACE 19668 --- [http-nio-7706-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [4806831433]
+2023-01-30 00:15:57.797 TRACE 19668 --- [http-nio-7706-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [FAILED]
+2023-01-30 00:15:57.797 TRACE 19668 --- [http-nio-7706-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [TIMESTAMP] - [Mon Jan 30 00:15:57 CET 2023]
+2023-01-30 00:15:57.797 TRACE 19668 --- [http-nio-7706-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [BIGINT] - [12]
+2023-01-30 00:15:59.553 DEBUG 19668 --- [http-nio-7706-exec-1] org.hibernate.SQL                        : 
+    select
+        nextval ('transaction_id_seq')
+2023-01-30 00:15:59.555 DEBUG 19668 --- [http-nio-7706-exec-1] org.hibernate.SQL                        : 
+    insert 
+    into
+        transaction
+        (merchant_uuid, payer_id, product_uuid, status, timestamp, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2023-01-30 00:15:59.556 TRACE 19668 --- [http-nio-7706-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [12345678-1234-1234-1234-123456789012]
+2023-01-30 00:15:59.556 TRACE 19668 --- [http-nio-7706-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - []
+2023-01-30 00:15:59.556 TRACE 19668 --- [http-nio-7706-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [4806831433]
+2023-01-30 00:15:59.556 TRACE 19668 --- [http-nio-7706-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [PENDING]
+2023-01-30 00:15:59.556 TRACE 19668 --- [http-nio-7706-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [TIMESTAMP] - [Mon Jan 30 00:15:59 CET 2023]
+2023-01-30 00:15:59.557 TRACE 19668 --- [http-nio-7706-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [BIGINT] - [13]
+2023-01-30 00:15:59.734 DEBUG 19668 --- [http-nio-7706-exec-3] org.hibernate.SQL                        : 
+    select
+        nextval ('transaction_id_seq')
+2023-01-30 00:15:59.738 DEBUG 19668 --- [http-nio-7706-exec-3] org.hibernate.SQL                        : 
+    insert 
+    into
+        transaction
+        (merchant_uuid, payer_id, product_uuid, status, timestamp, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2023-01-30 00:15:59.740 TRACE 19668 --- [http-nio-7706-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [12345678-1234-1234-1234-123456789012]
+2023-01-30 00:15:59.740 TRACE 19668 --- [http-nio-7706-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - []
+2023-01-30 00:15:59.740 TRACE 19668 --- [http-nio-7706-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [4806831433]
+2023-01-30 00:15:59.741 TRACE 19668 --- [http-nio-7706-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [FAILED]
+2023-01-30 00:15:59.741 TRACE 19668 --- [http-nio-7706-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [TIMESTAMP] - [Mon Jan 30 00:15:59 CET 2023]
+2023-01-30 00:15:59.741 TRACE 19668 --- [http-nio-7706-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [BIGINT] - [14]
+2023-01-30 00:16:01.678 DEBUG 19668 --- [http-nio-7706-exec-4] org.hibernate.SQL                        : 
+    select
+        nextval ('transaction_id_seq')
+2023-01-30 00:16:01.681 DEBUG 19668 --- [http-nio-7706-exec-4] org.hibernate.SQL                        : 
+    insert 
+    into
+        transaction
+        (merchant_uuid, payer_id, product_uuid, status, timestamp, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2023-01-30 00:16:01.681 TRACE 19668 --- [http-nio-7706-exec-4] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [12345678-1234-1234-1234-123456789012]
+2023-01-30 00:16:01.681 TRACE 19668 --- [http-nio-7706-exec-4] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - []
+2023-01-30 00:16:01.682 TRACE 19668 --- [http-nio-7706-exec-4] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [4806831433]
+2023-01-30 00:16:01.682 TRACE 19668 --- [http-nio-7706-exec-4] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [PENDING]
+2023-01-30 00:16:01.682 TRACE 19668 --- [http-nio-7706-exec-4] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [TIMESTAMP] - [Mon Jan 30 00:16:01 CET 2023]
+2023-01-30 00:16:01.682 TRACE 19668 --- [http-nio-7706-exec-4] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [BIGINT] - [15]
+2023-01-30 00:16:01.853 DEBUG 19668 --- [http-nio-7706-exec-5] org.hibernate.SQL                        : 
+    select
+        nextval ('transaction_id_seq')
+2023-01-30 00:16:01.855 DEBUG 19668 --- [http-nio-7706-exec-5] org.hibernate.SQL                        : 
+    insert 
+    into
+        transaction
+        (merchant_uuid, payer_id, product_uuid, status, timestamp, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2023-01-30 00:16:01.855 TRACE 19668 --- [http-nio-7706-exec-5] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [12345678-1234-1234-1234-123456789012]
+2023-01-30 00:16:01.855 TRACE 19668 --- [http-nio-7706-exec-5] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - []
+2023-01-30 00:16:01.856 TRACE 19668 --- [http-nio-7706-exec-5] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [4806831433]
+2023-01-30 00:16:01.856 TRACE 19668 --- [http-nio-7706-exec-5] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [FAILED]
+2023-01-30 00:16:01.856 TRACE 19668 --- [http-nio-7706-exec-5] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [TIMESTAMP] - [Mon Jan 30 00:16:01 CET 2023]
+2023-01-30 00:16:01.856 TRACE 19668 --- [http-nio-7706-exec-5] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [BIGINT] - [16]
+2023-01-30 00:16:11.085 DEBUG 19668 --- [http-nio-7706-exec-6] org.hibernate.SQL                        : 
+    select
+        merchant0_.merchant_id as merchant1_0_,
+        merchant0_.email as email2_0_,
+        merchant0_.merchant_paypal_id as merchant3_0_,
+        merchant0_.merchant_uuid as merchant4_0_ 
+    from
+        merchant merchant0_ 
+    where
+        merchant0_.merchant_uuid=?
+2023-01-30 00:16:11.086 TRACE 19668 --- [http-nio-7706-exec-6] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [12345678-1234-1234-1234-123456789012]
+2023-01-30 00:16:12.823 DEBUG 19668 --- [http-nio-7706-exec-7] org.hibernate.SQL                        : 
+    select
+        nextval ('transaction_id_seq')
+2023-01-30 00:16:12.827 DEBUG 19668 --- [http-nio-7706-exec-7] org.hibernate.SQL                        : 
+    insert 
+    into
+        transaction
+        (merchant_uuid, payer_id, product_uuid, status, timestamp, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2023-01-30 00:16:12.827 TRACE 19668 --- [http-nio-7706-exec-7] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [12345678-1234-1234-1234-123456789012]
+2023-01-30 00:16:12.828 TRACE 19668 --- [http-nio-7706-exec-7] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - []
+2023-01-30 00:16:12.828 TRACE 19668 --- [http-nio-7706-exec-7] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [4806831433]
+2023-01-30 00:16:12.828 TRACE 19668 --- [http-nio-7706-exec-7] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [PENDING]
+2023-01-30 00:16:12.829 TRACE 19668 --- [http-nio-7706-exec-7] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [TIMESTAMP] - [Mon Jan 30 00:16:12 CET 2023]
+2023-01-30 00:16:12.829 TRACE 19668 --- [http-nio-7706-exec-7] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [BIGINT] - [17]
+2023-01-30 00:16:31.565 DEBUG 19668 --- [http-nio-7706-exec-8] org.hibernate.SQL                        : 
+    select
+        nextval ('transaction_id_seq')
+2023-01-30 00:16:31.566 DEBUG 19668 --- [http-nio-7706-exec-8] org.hibernate.SQL                        : 
+    insert 
+    into
+        transaction
+        (merchant_uuid, payer_id, product_uuid, status, timestamp, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2023-01-30 00:16:31.572 TRACE 19668 --- [http-nio-7706-exec-8] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [12345678-1234-1234-1234-123456789012]
+2023-01-30 00:16:31.572 TRACE 19668 --- [http-nio-7706-exec-8] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - []
+2023-01-30 00:16:31.573 TRACE 19668 --- [http-nio-7706-exec-8] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [4806831433]
+2023-01-30 00:16:31.573 TRACE 19668 --- [http-nio-7706-exec-8] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [PENDING]
+2023-01-30 00:16:31.573 TRACE 19668 --- [http-nio-7706-exec-8] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [TIMESTAMP] - [Mon Jan 30 00:16:31 CET 2023]
+2023-01-30 00:16:31.573 TRACE 19668 --- [http-nio-7706-exec-8] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [BIGINT] - [18]
+2023-01-30 00:17:16.922 DEBUG 19668 --- [http-nio-7706-exec-9] org.hibernate.SQL                        : 
+    select
+        merchant0_.merchant_id as merchant1_0_,
+        merchant0_.email as email2_0_,
+        merchant0_.merchant_paypal_id as merchant3_0_,
+        merchant0_.merchant_uuid as merchant4_0_ 
+    from
+        merchant merchant0_ 
+    where
+        merchant0_.merchant_uuid=?
+2023-01-30 00:17:16.925 TRACE 19668 --- [http-nio-7706-exec-9] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [12345678-1234-1234-1234-123456789012]
+2023-01-30 00:17:19.193 DEBUG 19668 --- [http-nio-7706-exec-10] org.hibernate.SQL                        : 
+    select
+        nextval ('transaction_id_seq')
+2023-01-30 00:17:19.199 DEBUG 19668 --- [http-nio-7706-exec-10] org.hibernate.SQL                        : 
+    insert 
+    into
+        transaction
+        (merchant_uuid, payer_id, product_uuid, status, timestamp, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2023-01-30 00:17:19.199 TRACE 19668 --- [http-nio-7706-exec-10] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [12345678-1234-1234-1234-123456789012]
+2023-01-30 00:17:19.199 TRACE 19668 --- [http-nio-7706-exec-10] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - []
+2023-01-30 00:17:19.199 TRACE 19668 --- [http-nio-7706-exec-10] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [4806831433]
+2023-01-30 00:17:19.204 TRACE 19668 --- [http-nio-7706-exec-10] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [PENDING]
+2023-01-30 00:17:19.204 TRACE 19668 --- [http-nio-7706-exec-10] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [TIMESTAMP] - [Mon Jan 30 00:17:19 CET 2023]
+2023-01-30 00:17:19.204 TRACE 19668 --- [http-nio-7706-exec-10] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [BIGINT] - [19]
+2023-01-30 00:17:19.477 DEBUG 19668 --- [http-nio-7706-exec-2] org.hibernate.SQL                        : 
+    select
+        nextval ('transaction_id_seq')
+2023-01-30 00:17:19.485 DEBUG 19668 --- [http-nio-7706-exec-2] org.hibernate.SQL                        : 
+    insert 
+    into
+        transaction
+        (merchant_uuid, payer_id, product_uuid, status, timestamp, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2023-01-30 00:17:19.485 TRACE 19668 --- [http-nio-7706-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [12345678-1234-1234-1234-123456789012]
+2023-01-30 00:17:19.486 TRACE 19668 --- [http-nio-7706-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - []
+2023-01-30 00:17:19.486 TRACE 19668 --- [http-nio-7706-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [4806831433]
+2023-01-30 00:17:19.495 TRACE 19668 --- [http-nio-7706-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [FAILED]
+2023-01-30 00:17:19.495 TRACE 19668 --- [http-nio-7706-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [TIMESTAMP] - [Mon Jan 30 00:17:19 CET 2023]
+2023-01-30 00:17:19.496 TRACE 19668 --- [http-nio-7706-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [BIGINT] - [20]
+2023-01-30 00:17:28.558 DEBUG 19668 --- [http-nio-7706-exec-1] org.hibernate.SQL                        : 
+    select
+        merchant0_.merchant_id as merchant1_0_,
+        merchant0_.email as email2_0_,
+        merchant0_.merchant_paypal_id as merchant3_0_,
+        merchant0_.merchant_uuid as merchant4_0_ 
+    from
+        merchant merchant0_ 
+    where
+        merchant0_.merchant_uuid=?
+2023-01-30 00:17:28.570 TRACE 19668 --- [http-nio-7706-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [12345678-1234-1234-1234-123456789012]
+2023-01-30 00:17:30.487 DEBUG 19668 --- [http-nio-7706-exec-3] org.hibernate.SQL                        : 
+    select
+        nextval ('transaction_id_seq')
+2023-01-30 00:17:30.493 DEBUG 19668 --- [http-nio-7706-exec-3] org.hibernate.SQL                        : 
+    insert 
+    into
+        transaction
+        (merchant_uuid, payer_id, product_uuid, status, timestamp, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2023-01-30 00:17:30.493 TRACE 19668 --- [http-nio-7706-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [12345678-1234-1234-1234-123456789012]
+2023-01-30 00:17:30.495 TRACE 19668 --- [http-nio-7706-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - []
+2023-01-30 00:17:30.496 TRACE 19668 --- [http-nio-7706-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [4806831433]
+2023-01-30 00:17:30.496 TRACE 19668 --- [http-nio-7706-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [PENDING]
+2023-01-30 00:17:30.496 TRACE 19668 --- [http-nio-7706-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [TIMESTAMP] - [Mon Jan 30 00:17:30 CET 2023]
+2023-01-30 00:17:30.496 TRACE 19668 --- [http-nio-7706-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [BIGINT] - [21]
+2023-01-30 00:17:54.603  INFO 19668 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 00:17:56.804 DEBUG 19668 --- [http-nio-7706-exec-4] org.hibernate.SQL                        : 
+    select
+        transactio0_.id as id1_2_,
+        transactio0_.merchant_uuid as merchant2_2_,
+        transactio0_.payer_id as payer_id3_2_,
+        transactio0_.product_uuid as product_4_2_,
+        transactio0_.status as status5_2_,
+        transactio0_.timestamp as timestam6_2_ 
+    from
+        transaction transactio0_ 
+    where
+        transactio0_.merchant_uuid=? 
+        and transactio0_.product_uuid=?
+2023-01-30 00:17:56.809 TRACE 19668 --- [http-nio-7706-exec-4] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [12345678-1234-1234-1234-123456789012]
+2023-01-30 00:17:56.810 TRACE 19668 --- [http-nio-7706-exec-4] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [4806831433]
+2023-01-30 00:17:56.843 ERROR 19668 --- [http-nio-7706-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.IncorrectResultSizeDataAccessException: query did not return a unique result: 12; nested exception is javax.persistence.NonUniqueResultException: query did not return a unique result: 12] with root cause
 
-com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:876) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101) ~[eureka-client-1.10.17.jar:1.10.17]
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:577) ~[na:na]
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[na:na]
-	at java.base/java.lang.Thread.run(Thread.java:1589) ~[na:na]
+javax.persistence.NonUniqueResultException: query did not return a unique result: 12
+	at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:128) ~[hibernate-core-5.6.14.Final.jar:5.6.14.Final]
+	at org.hibernate.query.internal.AbstractProducedQuery.getSingleResult(AbstractProducedQuery.java:1672) ~[hibernate-core-5.6.14.Final.jar:5.6.14.Final]
+	at org.hibernate.query.criteria.internal.compile.CriteriaQueryTypeQueryAdapter.getSingleResult(CriteriaQueryTypeQueryAdapter.java:111) ~[hibernate-core-5.6.14.Final.jar:5.6.14.Final]
+	at jdk.internal.reflect.GeneratedMethodAccessor36.invoke(Unknown Source) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$DeferredQueryInvocationHandler.invoke(SharedEntityManagerCreator.java:406) ~[spring-orm-5.3.24.jar:5.3.24]
+	at jdk.proxy2/jdk.proxy2.$Proxy178.getSingleResult(Unknown Source) ~[na:na]
+	at org.springframework.data.jpa.repository.query.JpaQueryExecution$SingleEntityExecution.doExecute(JpaQueryExecution.java:198) ~[spring-data-jpa-2.7.6.jar:2.7.6]
+	at org.springframework.data.jpa.repository.query.JpaQueryExecution.execute(JpaQueryExecution.java:90) ~[spring-data-jpa-2.7.6.jar:2.7.6]
+	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.doExecute(AbstractJpaQuery.java:156) ~[spring-data-jpa-2.7.6.jar:2.7.6]
+	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.execute(AbstractJpaQuery.java:144) ~[spring-data-jpa-2.7.6.jar:2.7.6]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:137) ~[spring-data-commons-2.7.6.jar:2.7.6]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:121) ~[spring-data-commons-2.7.6.jar:2.7.6]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:160) ~[spring-data-commons-2.7.6.jar:2.7.6]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:139) ~[spring-data-commons-2.7.6.jar:2.7.6]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.24.jar:5.3.24]
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:81) ~[spring-data-commons-2.7.6.jar:2.7.6]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.24.jar:5.3.24]
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123) ~[spring-tx-5.3.24.jar:5.3.24]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388) ~[spring-tx-5.3.24.jar:5.3.24]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-5.3.24.jar:5.3.24]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.24.jar:5.3.24]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137) ~[spring-tx-5.3.24.jar:5.3.24]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.24.jar:5.3.24]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:145) ~[spring-data-jpa-2.7.6.jar:2.7.6]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.24.jar:5.3.24]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-5.3.24.jar:5.3.24]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.24.jar:5.3.24]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215) ~[spring-aop-5.3.24.jar:5.3.24]
+	at jdk.proxy2/jdk.proxy2.$Proxy135.findByMerchantUuidAndProductUuid(Unknown Source) ~[na:na]
+	at com.example.paypalservice.service.implementations.TransactionServiceImpl.updateTransaction(TransactionServiceImpl.java:31) ~[classes/:na]
+	at com.example.paypalservice.controller.PaypalController.updateTransaction(PaypalController.java:42) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.24.jar:5.3.24]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.24.jar:5.3.24]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.24.jar:5.3.24]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.24.jar:5.3.24]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.24.jar:5.3.24]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.24.jar:5.3.24]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1071) ~[spring-webmvc-5.3.24.jar:5.3.24]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:964) ~[spring-webmvc-5.3.24.jar:5.3.24]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.24.jar:5.3.24]
+	at org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:920) ~[spring-webmvc-5.3.24.jar:5.3.24]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:699) ~[tomcat-embed-core-9.0.70.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.24.jar:5.3.24]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:779) ~[tomcat-embed-core-9.0.70.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.70.jar:9.0.70]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.24.jar:5.3.24]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.24.jar:5.3.24]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.24.jar:5.3.24]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.24.jar:5.3.24]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96) ~[spring-boot-actuator-2.7.7-20221222.092404-18.jar:2.7.7-SNAPSHOT]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.24.jar:5.3.24]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.24.jar:5.3.24]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.24.jar:5.3.24]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:177) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:891) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1784) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.70.jar:9.0.70]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
 
-2022-12-20 01:18:21.545  WARN 1764 --- [DiscoveryClient-InstanceInfoReplicator-0] c.n.discovery.InstanceInfoReplicator     : There was a problem with the instance info replicator
-
-com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:876) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101) ~[eureka-client-1.10.17.jar:1.10.17]
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:577) ~[na:na]
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[na:na]
-	at java.base/java.lang.Thread.run(Thread.java:1589) ~[na:na]
-
-2022-12-20 01:18:21.613  INFO 1764 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2022-12-20 01:18:21.637  INFO 1764 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
-2022-12-20 01:18:21.661 DEBUG 1764 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : 
+2023-01-30 00:22:54.616  INFO 19668 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 00:27:54.667  INFO 19668 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 00:31:47.768  INFO 19668 --- [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application PAYPAL-SERVICE with eureka with status DOWN
+2023-01-30 00:31:47.770  INFO 19668 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1675035107770, current=DOWN, previous=UP]
+2023-01-30 00:31:47.772  INFO 19668 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_PAYPAL-SERVICE/DESKTOP-4HG5T0S:paypal-service:7706: registering service...
+2023-01-30 00:31:47.872  INFO 19668 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_PAYPAL-SERVICE/DESKTOP-4HG5T0S:paypal-service:7706 - registration status: 204
+2023-01-30 00:31:48.371  INFO 19668 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-01-30 00:31:48.420  INFO 19668 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2023-01-30 00:31:48.447 DEBUG 19668 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : 
     
     drop table if exists merchant cascade
-2022-12-20 01:18:21.723 DEBUG 1764 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : 
+2023-01-30 00:31:48.487 DEBUG 19668 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : 
     
     drop table if exists subscription_plan cascade
-2022-12-20 01:18:21.737 DEBUG 1764 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : 
+2023-01-30 00:31:48.490 DEBUG 19668 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : 
     
     drop table if exists transaction cascade
-2022-12-20 01:18:21.750 DEBUG 1764 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : 
+2023-01-30 00:31:48.495 DEBUG 19668 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : 
     
     drop sequence if exists merchant_id_seq
-2022-12-20 01:18:21.757 DEBUG 1764 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : 
+2023-01-30 00:31:48.497 DEBUG 19668 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : 
     
     drop sequence if exists plan_id_seq
-2022-12-20 01:18:21.764 DEBUG 1764 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : 
+2023-01-30 00:31:48.498 DEBUG 19668 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : 
     
     drop sequence if exists transaction_id_seq
-2022-12-20 01:18:21.814  INFO 1764 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2022-12-20 01:18:21.867  INFO 1764 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2022-12-20 01:18:21.888  INFO 1764 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
-2022-12-20 01:18:24.919  INFO 1764 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
-2022-12-20 01:18:24.952  INFO 1764 --- [SpringApplicationShutdownHook] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=java.net.ConnectException: Connection refused: no further information stacktrace=com.sun.jersey.api.client.ClientHandlerException: java.net.ConnectException: Connection refused: no further information
-	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187)
-	at com.sun.jersey.api.client.filter.GZIPContentEncodingFilter.handle(GZIPContentEncodingFilter.java:123)
-	at com.netflix.discovery.EurekaIdentityHeaderFilter.handle(EurekaIdentityHeaderFilter.java:27)
-	at com.sun.jersey.api.client.Client.handle(Client.java:652)
-	at com.sun.jersey.api.client.WebResource.handle(WebResource.java:682)
-	at com.sun.jersey.api.client.WebResource.access$200(WebResource.java:74)
-	at com.sun.jersey.api.client.WebResource$Builder.delete(WebResource.java:591)
-	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.cancel(AbstractJerseyEurekaHttpClient.java:77)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
-	at com.netflix.discovery.shared.transport.decorator.MetricsCollectingEurekaHttpClient.execute(MetricsCollectingEurekaHttpClient.java:73)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
-	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
-	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
-	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:972)
-	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:948)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:389)
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:347)
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:177)
-	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:197)
-	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:190)
-	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:390)
-	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:136)
-	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:213)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:587)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:559)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1163)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:520)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1156)
-	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1106)
-	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1075)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:174)
-	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1021)
-	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145)
-	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
-	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114)
-	at java.base/java.lang.Thread.run(Thread.java:1589)
-Caused by: java.net.ConnectException: Connection refused: no further information
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
-	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:535)
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:585)
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
-	at java.base/java.net.Socket.connect(Socket.java:666)
-	at org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:121)
-	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:180)
-	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144)
-	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:134)
-	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:605)
-	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:440)
-	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:835)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:118)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
-	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173)
-	... 45 more
-
-2022-12-20 01:18:24.954  WARN 1764 --- [SpringApplicationShutdownHook] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: java.net.ConnectException: Connection refused: no further information
-2022-12-20 01:18:24.958 ERROR 1764 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_PAYPAL-SERVICE/DESKTOP-0AUJCS8:paypal-service:7706 - de-registration failedCannot execute request on any known server
-
-com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:972) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:948) ~[eureka-client-1.10.17.jar:1.10.17]
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:578) ~[na:na]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:389) ~[spring-beans-5.3.24.jar:5.3.24]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:347) ~[spring-beans-5.3.24.jar:5.3.24]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:177) ~[spring-beans-5.3.24.jar:5.3.24]
-	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:197) ~[spring-beans-5.3.24.jar:5.3.24]
-	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:190) ~[spring-beans-5.3.24.jar:5.3.24]
-	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:390) ~[spring-cloud-context-3.1.5.jar:3.1.5]
-	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:136) ~[spring-cloud-context-3.1.5.jar:3.1.5]
-	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:213) ~[spring-beans-5.3.24.jar:5.3.24]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:587) ~[spring-beans-5.3.24.jar:5.3.24]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:559) ~[spring-beans-5.3.24.jar:5.3.24]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1163) ~[spring-beans-5.3.24.jar:5.3.24]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:520) ~[spring-beans-5.3.24.jar:5.3.24]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1156) ~[spring-beans-5.3.24.jar:5.3.24]
-	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1106) ~[spring-context-5.3.24.jar:5.3.24]
-	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1075) ~[spring-context-5.3.24.jar:5.3.24]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:174) ~[spring-boot-2.7.7-20221212.130126-11.jar:2.7.7-SNAPSHOT]
-	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1021) ~[spring-context-5.3.24.jar:5.3.24]
-	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145) ~[spring-boot-2.7.7-20221212.130126-11.jar:2.7.7-SNAPSHOT]
-	at java.base/java.lang.Iterable.forEach(Iterable.java:75) ~[na:na]
-	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114) ~[spring-boot-2.7.7-20221212.130126-11.jar:2.7.7-SNAPSHOT]
-	at java.base/java.lang.Thread.run(Thread.java:1589) ~[na:na]
-
-2022-12-20 01:18:25.067  INFO 1764 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
-2022-12-20 17:58:12.649  INFO 29964 --- [main] c.e.p.PaypalServiceApplication           : Starting PaypalServiceApplication using Java 19.0.1 on DESKTOP-0AUJCS8 with PID 29964 (C:\GIT\UPP_i_SEP_UDD\employment-agency\PaymentService\paypal-service\target\classes started by Nemanja in C:\GIT\UPP_i_SEP_UDD\employment-agency\PaymentService\paypal-service)
-2022-12-20 17:58:12.691  INFO 29964 --- [main] c.e.p.PaypalServiceApplication           : No active profile set, falling back to 1 default profile: "default"
-2022-12-20 17:58:17.257  INFO 29964 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-12-20 17:58:18.048  INFO 29964 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 753 ms. Found 3 JPA repository interfaces.
-2022-12-20 17:58:19.112  INFO 29964 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=9bc62221-0b81-34a6-9f8f-3317c38b1f6c
-2022-12-20 17:58:21.606  INFO 29964 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7706 (http)
-2022-12-20 17:58:21.655  INFO 29964 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-12-20 17:58:21.657  INFO 29964 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.69]
-2022-12-20 17:58:22.774  INFO 29964 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-12-20 17:58:22.777  INFO 29964 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 9800 ms
-2022-12-20 17:58:25.382  INFO 29964 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-12-20 17:58:25.946  INFO 29964 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.14.Final
-2022-12-20 17:58:27.222  INFO 29964 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-12-20 17:58:27.750  INFO 29964 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2022-12-20 17:58:28.417  INFO 29964 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2022-12-20 17:58:28.502  INFO 29964 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
-2022-12-20 17:58:31.807 DEBUG 29964 --- [main] org.hibernate.SQL                        : 
+2023-01-30 00:31:48.549  INFO 19668 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-01-30 00:31:48.619  INFO 19668 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-01-30 00:31:48.635  INFO 19668 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2023-01-30 00:31:51.651  INFO 19668 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2023-01-30 00:31:51.679  INFO 19668 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_PAYPAL-SERVICE/DESKTOP-4HG5T0S:paypal-service:7706 - deregister  status: 200
+2023-01-30 00:31:51.741  INFO 19668 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2023-01-30 00:32:21.205  INFO 14036 --- [main] c.e.p.PaypalServiceApplication           : Starting PaypalServiceApplication using Java 17.0.2 on DESKTOP-4HG5T0S with PID 14036 (C:\Users\Brankovic\Desktop\employment-agency\PaymentService\paypal-service\target\classes started by Brankovic in C:\Users\Brankovic\Desktop\employment-agency\PaymentService\paypal-service)
+2023-01-30 00:32:21.212  INFO 14036 --- [main] c.e.p.PaypalServiceApplication           : No active profile set, falling back to 1 default profile: "default"
+2023-01-30 00:32:23.275  INFO 14036 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-30 00:32:23.614  INFO 14036 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 309 ms. Found 3 JPA repository interfaces.
+2023-01-30 00:32:24.072  INFO 14036 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=16332dea-eeb8-3bad-b6e5-27e9770c9dc9
+2023-01-30 00:32:24.980  INFO 14036 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7706 (http)
+2023-01-30 00:32:25.008  INFO 14036 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-01-30 00:32:25.009  INFO 14036 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.70]
+2023-01-30 00:32:25.288  INFO 14036 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-01-30 00:32:25.289  INFO 14036 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3941 ms
+2023-01-30 00:32:26.037  INFO 14036 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-30 00:32:26.308  INFO 14036 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.14.Final
+2023-01-30 00:32:26.623  INFO 14036 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-01-30 00:32:26.990  INFO 14036 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-01-30 00:32:27.376  INFO 14036 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-01-30 00:32:27.435  INFO 14036 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2023-01-30 00:32:28.886 DEBUG 14036 --- [main] org.hibernate.SQL                        : 
     
     drop table if exists merchant cascade
-2022-12-20 17:58:31.820  WARN 29964 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2022-12-20 17:58:31.821  WARN 29964 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "merchant" does not exist, skipping
-2022-12-20 17:58:31.823 DEBUG 29964 --- [main] org.hibernate.SQL                        : 
+2023-01-30 00:32:28.891  WARN 14036 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-01-30 00:32:28.892  WARN 14036 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "merchant" does not exist, skipping
+2023-01-30 00:32:28.892 DEBUG 14036 --- [main] org.hibernate.SQL                        : 
     
     drop table if exists subscription_plan cascade
-2022-12-20 17:58:31.826  WARN 29964 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2022-12-20 17:58:31.826  WARN 29964 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "subscription_plan" does not exist, skipping
-2022-12-20 17:58:31.827 DEBUG 29964 --- [main] org.hibernate.SQL                        : 
+2023-01-30 00:32:28.893  WARN 14036 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-01-30 00:32:28.893  WARN 14036 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "subscription_plan" does not exist, skipping
+2023-01-30 00:32:28.893 DEBUG 14036 --- [main] org.hibernate.SQL                        : 
     
     drop table if exists transaction cascade
-2022-12-20 17:58:31.828  WARN 29964 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2022-12-20 17:58:31.829  WARN 29964 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "transaction" does not exist, skipping
-2022-12-20 17:58:31.830 DEBUG 29964 --- [main] org.hibernate.SQL                        : 
+2023-01-30 00:32:28.894  WARN 14036 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-01-30 00:32:28.894  WARN 14036 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "transaction" does not exist, skipping
+2023-01-30 00:32:28.894 DEBUG 14036 --- [main] org.hibernate.SQL                        : 
     
     drop sequence if exists merchant_id_seq
-2022-12-20 17:58:31.832  WARN 29964 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2022-12-20 17:58:31.833  WARN 29964 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "merchant_id_seq" does not exist, skipping
-2022-12-20 17:58:31.833 DEBUG 29964 --- [main] org.hibernate.SQL                        : 
+2023-01-30 00:32:28.895  WARN 14036 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-01-30 00:32:28.895  WARN 14036 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "merchant_id_seq" does not exist, skipping
+2023-01-30 00:32:28.896 DEBUG 14036 --- [main] org.hibernate.SQL                        : 
     
     drop sequence if exists plan_id_seq
-2022-12-20 17:58:31.835  WARN 29964 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2022-12-20 17:58:31.836  WARN 29964 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "plan_id_seq" does not exist, skipping
-2022-12-20 17:58:31.836 DEBUG 29964 --- [main] org.hibernate.SQL                        : 
+2023-01-30 00:32:28.898  WARN 14036 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-01-30 00:32:28.898  WARN 14036 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "plan_id_seq" does not exist, skipping
+2023-01-30 00:32:28.898 DEBUG 14036 --- [main] org.hibernate.SQL                        : 
     
     drop sequence if exists transaction_id_seq
-2022-12-20 17:58:31.838  WARN 29964 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2022-12-20 17:58:31.838  WARN 29964 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "transaction_id_seq" does not exist, skipping
-2022-12-20 17:58:31.846 DEBUG 29964 --- [main] org.hibernate.SQL                        : create sequence merchant_id_seq start 1 increment 1
-2022-12-20 17:58:31.888 DEBUG 29964 --- [main] org.hibernate.SQL                        : create sequence plan_id_seq start 1 increment 1
-2022-12-20 17:58:31.895 DEBUG 29964 --- [main] org.hibernate.SQL                        : create sequence transaction_id_seq start 1 increment 1
-2022-12-20 17:58:31.903 DEBUG 29964 --- [main] org.hibernate.SQL                        : 
+2023-01-30 00:32:28.899  WARN 14036 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-01-30 00:32:28.900  WARN 14036 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "transaction_id_seq" does not exist, skipping
+2023-01-30 00:32:28.903 DEBUG 14036 --- [main] org.hibernate.SQL                        : create sequence merchant_id_seq start 1 increment 1
+2023-01-30 00:32:28.916 DEBUG 14036 --- [main] org.hibernate.SQL                        : create sequence plan_id_seq start 1 increment 1
+2023-01-30 00:32:28.918 DEBUG 14036 --- [main] org.hibernate.SQL                        : create sequence transaction_id_seq start 1 increment 1
+2023-01-30 00:32:28.922 DEBUG 14036 --- [main] org.hibernate.SQL                        : 
     
     create table merchant (
        merchant_id int8 not null,
@@ -337,7 +699,7 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
         merchant_uuid varchar(255),
         primary key (merchant_id)
     )
-2022-12-20 17:58:32.076 DEBUG 29964 --- [main] org.hibernate.SQL                        : 
+2023-01-30 00:32:28.942 DEBUG 14036 --- [main] org.hibernate.SQL                        : 
     
     create table subscription_plan (
        id int8 not null,
@@ -346,7 +708,7 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
         product_id int8,
         primary key (id)
     )
-2022-12-20 17:58:32.090 DEBUG 29964 --- [main] org.hibernate.SQL                        : 
+2023-01-30 00:32:28.952 DEBUG 14036 --- [main] org.hibernate.SQL                        : 
     
     create table transaction (
        id int8 not null,
@@ -357,74 +719,223 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
         timestamp timestamp,
         primary key (id)
     )
-2022-12-20 17:58:32.130  INFO 29964 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-12-20 17:58:32.169  INFO 29964 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-12-20 17:58:37.611  INFO 29964 --- [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses Jersey
-2022-12-20 17:58:38.302  WARN 29964 --- [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2022-12-20 17:58:38.350  INFO 29964 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
-2022-12-20 17:58:38.475  INFO 29964 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2022-12-20 17:58:39.027  INFO 29964 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2022-12-20 17:58:39.800  INFO 29964 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
-2022-12-20 17:58:39.802  INFO 29964 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
-2022-12-20 17:58:40.725  INFO 29964 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
-2022-12-20 17:58:40.726  INFO 29964 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
-2022-12-20 17:58:41.799  INFO 29964 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-20 17:58:41.895  INFO 29964 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2022-12-20 17:58:41.897  INFO 29964 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2022-12-20 17:58:41.898  INFO 29964 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2022-12-20 17:58:41.899  INFO 29964 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2022-12-20 17:58:41.900  INFO 29964 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2022-12-20 17:58:41.900  INFO 29964 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
-2022-12-20 17:58:41.900  INFO 29964 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2022-12-20 17:58:42.773  INFO 29964 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2022-12-20 17:58:42.784  INFO 29964 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
-2022-12-20 17:58:42.793  INFO 29964 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
-2022-12-20 17:58:42.808  INFO 29964 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1671555522803 with initial instances count: 1
-2022-12-20 17:58:42.816  INFO 29964 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application PAYPAL-SERVICE with eureka with status UP
-2022-12-20 17:58:42.820  INFO 29964 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1671555522820, current=UP, previous=STARTING]
-2022-12-20 17:58:42.825  INFO 29964 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_PAYPAL-SERVICE/DESKTOP-0AUJCS8:paypal-service:7706: registering service...
-2022-12-20 17:58:42.936  INFO 29964 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_PAYPAL-SERVICE/DESKTOP-0AUJCS8:paypal-service:7706 - registration status: 204
-2022-12-20 17:58:42.965  INFO 29964 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7706 (http) with context path ''
-2022-12-20 17:58:42.967  INFO 29964 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 7706
-2022-12-20 17:58:43.469  INFO 29964 --- [main] c.e.p.PaypalServiceApplication           : Started PaypalServiceApplication in 33.316 seconds (JVM running for 36.927)
-2022-12-20 18:03:41.907  INFO 29964 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-20 18:08:41.919  INFO 29964 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-20 18:13:41.937  INFO 29964 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-20 18:18:41.950  INFO 29964 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-20 18:23:41.963  INFO 29964 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-20 18:28:41.978  INFO 29964 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-20 18:33:41.987  INFO 29964 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-20 18:38:41.998  INFO 29964 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-20 18:43:42.011  INFO 29964 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-20 18:48:42.019  INFO 29964 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-20 18:53:42.030  INFO 29964 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-20 18:58:42.042  INFO 29964 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-20 19:03:42.059  INFO 29964 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-20 19:08:42.077  INFO 29964 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-20 19:13:42.093  INFO 29964 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-20 19:18:42.112  INFO 29964 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-20 19:23:40.191  INFO 29964 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-20 19:28:40.209  INFO 29964 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-20 19:33:40.212  INFO 29964 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-20 19:38:40.233  INFO 29964 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-20 19:43:40.554  INFO 29964 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-20 19:47:34.631  INFO 29964 --- [http-nio-7706-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-12-20 19:47:34.636  INFO 29964 --- [http-nio-7706-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-12-20 19:47:34.859  INFO 29964 --- [http-nio-7706-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 188 ms
-2022-12-20 19:47:36.173 DEBUG 29964 --- [http-nio-7706-exec-1] org.hibernate.SQL                        : 
+2023-01-30 00:32:28.966  INFO 14036 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-30 00:32:28.981  INFO 14036 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-30 00:32:32.083  INFO 14036 --- [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses Jersey
+2023-01-30 00:32:32.196  WARN 14036 --- [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-01-30 00:32:32.224  INFO 14036 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-01-30 00:32:32.328  INFO 14036 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2023-01-30 00:32:32.497  INFO 14036 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2023-01-30 00:32:32.813  INFO 14036 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2023-01-30 00:32:32.813  INFO 14036 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2023-01-30 00:32:33.065  INFO 14036 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2023-01-30 00:32:33.066  INFO 14036 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2023-01-30 00:32:33.520  INFO 14036 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 00:32:33.638  INFO 14036 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2023-01-30 00:32:33.640  INFO 14036 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2023-01-30 00:32:33.640  INFO 14036 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2023-01-30 00:32:33.641  INFO 14036 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2023-01-30 00:32:33.658  INFO 14036 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2023-01-30 00:32:33.658  INFO 14036 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2023-01-30 00:32:33.659  INFO 14036 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2023-01-30 00:32:33.975  INFO 14036 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2023-01-30 00:32:33.980  INFO 14036 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2023-01-30 00:32:33.988  INFO 14036 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2023-01-30 00:32:33.995  INFO 14036 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1675035153992 with initial instances count: 2
+2023-01-30 00:32:34.002  INFO 14036 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application PAYPAL-SERVICE with eureka with status UP
+2023-01-30 00:32:34.004  INFO 14036 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1675035154004, current=UP, previous=STARTING]
+2023-01-30 00:32:34.008  INFO 14036 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_PAYPAL-SERVICE/DESKTOP-4HG5T0S:paypal-service:7706: registering service...
+2023-01-30 00:32:34.044  INFO 14036 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_PAYPAL-SERVICE/DESKTOP-4HG5T0S:paypal-service:7706 - registration status: 204
+2023-01-30 00:32:34.072  INFO 14036 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7706 (http) with context path ''
+2023-01-30 00:32:34.072  INFO 14036 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 7706
+2023-01-30 00:32:34.294  INFO 14036 --- [main] c.e.p.PaypalServiceApplication           : Started PaypalServiceApplication in 14.494 seconds (JVM running for 19.662)
+2023-01-30 00:32:48.788  INFO 14036 --- [http-nio-7706-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-01-30 00:32:48.789  INFO 14036 --- [http-nio-7706-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-01-30 00:32:48.792  INFO 14036 --- [http-nio-7706-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2023-01-30 00:32:49.079 DEBUG 14036 --- [http-nio-7706-exec-1] org.hibernate.SQL                        : 
     select
-        merchant0_.merchant_id as merchant1_0_0_,
-        merchant0_.email as email2_0_0_,
-        merchant0_.merchant_paypal_id as merchant3_0_0_,
-        merchant0_.merchant_uuid as merchant4_0_0_ 
+        merchant0_.merchant_id as merchant1_0_,
+        merchant0_.email as email2_0_,
+        merchant0_.merchant_paypal_id as merchant3_0_,
+        merchant0_.merchant_uuid as merchant4_0_ 
     from
         merchant merchant0_ 
     where
-        merchant0_.merchant_id=?
-2022-12-20 19:47:36.236 TRACE 29964 --- [http-nio-7706-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [BIGINT] - [1]
-2022-12-20 19:48:40.724  INFO 29964 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-20 19:53:40.744  INFO 29964 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-20 19:58:40.758  INFO 29964 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-20 20:03:40.766  INFO 29964 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-20 20:08:40.782  INFO 29964 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-12-20 20:13:40.825  INFO 29964 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+        merchant0_.merchant_uuid=?
+2023-01-30 00:32:49.085 TRACE 14036 --- [http-nio-7706-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [12345678-1234-1234-1234-123456789012]
+2023-01-30 00:32:52.783 DEBUG 14036 --- [http-nio-7706-exec-2] org.hibernate.SQL                        : 
+    select
+        nextval ('transaction_id_seq')
+2023-01-30 00:32:54.451 DEBUG 14036 --- [http-nio-7706-exec-2] org.hibernate.SQL                        : 
+    insert 
+    into
+        transaction
+        (merchant_uuid, payer_id, product_uuid, status, timestamp, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2023-01-30 00:32:54.452 TRACE 14036 --- [http-nio-7706-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [12345678-1234-1234-1234-123456789012]
+2023-01-30 00:32:54.452 TRACE 14036 --- [http-nio-7706-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - []
+2023-01-30 00:32:54.453 TRACE 14036 --- [http-nio-7706-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [4806831433]
+2023-01-30 00:32:54.453 TRACE 14036 --- [http-nio-7706-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [PENDING]
+2023-01-30 00:32:54.454 TRACE 14036 --- [http-nio-7706-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [TIMESTAMP] - [Mon Jan 30 00:32:52 CET 2023]
+2023-01-30 00:32:54.454 TRACE 14036 --- [http-nio-7706-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [BIGINT] - [1]
+2023-01-30 00:33:11.994 DEBUG 14036 --- [http-nio-7706-exec-3] org.hibernate.SQL                        : 
+    select
+        transactio0_.id as id1_2_,
+        transactio0_.merchant_uuid as merchant2_2_,
+        transactio0_.payer_id as payer_id3_2_,
+        transactio0_.product_uuid as product_4_2_,
+        transactio0_.status as status5_2_,
+        transactio0_.timestamp as timestam6_2_ 
+    from
+        transaction transactio0_ 
+    where
+        transactio0_.merchant_uuid=? 
+        and transactio0_.product_uuid=?
+2023-01-30 00:33:11.996 TRACE 14036 --- [http-nio-7706-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [12345678-1234-1234-1234-123456789012]
+2023-01-30 00:33:11.996 TRACE 14036 --- [http-nio-7706-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [4806831433]
+2023-01-30 00:33:12.026 DEBUG 14036 --- [http-nio-7706-exec-3] org.hibernate.SQL                        : 
+    select
+        transactio0_.id as id1_2_0_,
+        transactio0_.merchant_uuid as merchant2_2_0_,
+        transactio0_.payer_id as payer_id3_2_0_,
+        transactio0_.product_uuid as product_4_2_0_,
+        transactio0_.status as status5_2_0_,
+        transactio0_.timestamp as timestam6_2_0_ 
+    from
+        transaction transactio0_ 
+    where
+        transactio0_.id=?
+2023-01-30 00:33:12.026 TRACE 14036 --- [http-nio-7706-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [BIGINT] - [1]
+2023-01-30 00:33:12.030 DEBUG 14036 --- [http-nio-7706-exec-3] org.hibernate.SQL                        : 
+    update
+        transaction 
+    set
+        merchant_uuid=?,
+        payer_id=?,
+        product_uuid=?,
+        status=?,
+        timestamp=? 
+    where
+        id=?
+2023-01-30 00:33:12.031 TRACE 14036 --- [http-nio-7706-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [12345678-1234-1234-1234-123456789012]
+2023-01-30 00:33:12.031 TRACE 14036 --- [http-nio-7706-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - []
+2023-01-30 00:33:12.031 TRACE 14036 --- [http-nio-7706-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [4806831433]
+2023-01-30 00:33:12.031 TRACE 14036 --- [http-nio-7706-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [SUCCESS]
+2023-01-30 00:33:12.031 TRACE 14036 --- [http-nio-7706-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [TIMESTAMP] - [Mon Jan 30 00:33:11 CET 2023]
+2023-01-30 00:33:12.031 TRACE 14036 --- [http-nio-7706-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [BIGINT] - [1]
+2023-01-30 00:33:49.190 DEBUG 14036 --- [http-nio-7706-exec-5] org.hibernate.SQL                        : 
+    select
+        merchant0_.merchant_id as merchant1_0_,
+        merchant0_.email as email2_0_,
+        merchant0_.merchant_paypal_id as merchant3_0_,
+        merchant0_.merchant_uuid as merchant4_0_ 
+    from
+        merchant merchant0_ 
+    where
+        merchant0_.merchant_uuid=?
+2023-01-30 00:33:49.193 TRACE 14036 --- [http-nio-7706-exec-5] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [undefined]
+2023-01-30 00:33:52.103 DEBUG 14036 --- [http-nio-7706-exec-4] org.hibernate.SQL                        : 
+    select
+        nextval ('transaction_id_seq')
+2023-01-30 00:33:52.106 DEBUG 14036 --- [http-nio-7706-exec-4] org.hibernate.SQL                        : 
+    insert 
+    into
+        transaction
+        (merchant_uuid, payer_id, product_uuid, status, timestamp, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2023-01-30 00:33:52.106 TRACE 14036 --- [http-nio-7706-exec-4] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [null]
+2023-01-30 00:33:52.106 TRACE 14036 --- [http-nio-7706-exec-4] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - []
+2023-01-30 00:33:52.106 TRACE 14036 --- [http-nio-7706-exec-4] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [null]
+2023-01-30 00:33:52.106 TRACE 14036 --- [http-nio-7706-exec-4] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [PENDING]
+2023-01-30 00:33:52.107 TRACE 14036 --- [http-nio-7706-exec-4] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [TIMESTAMP] - [Mon Jan 30 00:33:52 CET 2023]
+2023-01-30 00:33:52.107 TRACE 14036 --- [http-nio-7706-exec-4] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [BIGINT] - [2]
+2023-01-30 00:33:53.360 DEBUG 14036 --- [http-nio-7706-exec-6] org.hibernate.SQL                        : 
+    select
+        nextval ('transaction_id_seq')
+2023-01-30 00:33:53.362 DEBUG 14036 --- [http-nio-7706-exec-6] org.hibernate.SQL                        : 
+    insert 
+    into
+        transaction
+        (merchant_uuid, payer_id, product_uuid, status, timestamp, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2023-01-30 00:33:53.363 TRACE 14036 --- [http-nio-7706-exec-6] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [null]
+2023-01-30 00:33:53.363 TRACE 14036 --- [http-nio-7706-exec-6] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - []
+2023-01-30 00:33:53.363 TRACE 14036 --- [http-nio-7706-exec-6] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [null]
+2023-01-30 00:33:53.364 TRACE 14036 --- [http-nio-7706-exec-6] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [FAILED]
+2023-01-30 00:33:53.365 TRACE 14036 --- [http-nio-7706-exec-6] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [TIMESTAMP] - [Mon Jan 30 00:33:53 CET 2023]
+2023-01-30 00:33:53.365 TRACE 14036 --- [http-nio-7706-exec-6] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [BIGINT] - [3]
+2023-01-30 00:34:22.278 DEBUG 14036 --- [http-nio-7706-exec-7] org.hibernate.SQL                        : 
+    select
+        merchant0_.merchant_id as merchant1_0_,
+        merchant0_.email as email2_0_,
+        merchant0_.merchant_paypal_id as merchant3_0_,
+        merchant0_.merchant_uuid as merchant4_0_ 
+    from
+        merchant merchant0_ 
+    where
+        merchant0_.merchant_uuid=?
+2023-01-30 00:34:22.284 TRACE 14036 --- [http-nio-7706-exec-7] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [12345678-1234-1234-1234-123456789012]
+2023-01-30 00:34:26.785 DEBUG 14036 --- [http-nio-7706-exec-8] org.hibernate.SQL                        : 
+    select
+        nextval ('transaction_id_seq')
+2023-01-30 00:34:26.787 DEBUG 14036 --- [http-nio-7706-exec-8] org.hibernate.SQL                        : 
+    insert 
+    into
+        transaction
+        (merchant_uuid, payer_id, product_uuid, status, timestamp, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2023-01-30 00:34:26.788 TRACE 14036 --- [http-nio-7706-exec-8] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [12345678-1234-1234-1234-123456789012]
+2023-01-30 00:34:26.789 TRACE 14036 --- [http-nio-7706-exec-8] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - []
+2023-01-30 00:34:26.789 TRACE 14036 --- [http-nio-7706-exec-8] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [2930392666]
+2023-01-30 00:34:26.789 TRACE 14036 --- [http-nio-7706-exec-8] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [PENDING]
+2023-01-30 00:34:26.790 TRACE 14036 --- [http-nio-7706-exec-8] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [TIMESTAMP] - [Mon Jan 30 00:34:26 CET 2023]
+2023-01-30 00:34:26.790 TRACE 14036 --- [http-nio-7706-exec-8] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [BIGINT] - [4]
+2023-01-30 00:34:38.566 DEBUG 14036 --- [http-nio-7706-exec-9] org.hibernate.SQL                        : 
+    select
+        transactio0_.id as id1_2_,
+        transactio0_.merchant_uuid as merchant2_2_,
+        transactio0_.payer_id as payer_id3_2_,
+        transactio0_.product_uuid as product_4_2_,
+        transactio0_.status as status5_2_,
+        transactio0_.timestamp as timestam6_2_ 
+    from
+        transaction transactio0_ 
+    where
+        transactio0_.merchant_uuid=? 
+        and transactio0_.product_uuid=?
+2023-01-30 00:34:38.569 TRACE 14036 --- [http-nio-7706-exec-9] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [12345678-1234-1234-1234-123456789012]
+2023-01-30 00:34:38.569 TRACE 14036 --- [http-nio-7706-exec-9] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [2930392666]
+2023-01-30 00:34:38.572 DEBUG 14036 --- [http-nio-7706-exec-9] org.hibernate.SQL                        : 
+    select
+        transactio0_.id as id1_2_0_,
+        transactio0_.merchant_uuid as merchant2_2_0_,
+        transactio0_.payer_id as payer_id3_2_0_,
+        transactio0_.product_uuid as product_4_2_0_,
+        transactio0_.status as status5_2_0_,
+        transactio0_.timestamp as timestam6_2_0_ 
+    from
+        transaction transactio0_ 
+    where
+        transactio0_.id=?
+2023-01-30 00:34:38.573 TRACE 14036 --- [http-nio-7706-exec-9] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [BIGINT] - [4]
+2023-01-30 00:34:38.576 DEBUG 14036 --- [http-nio-7706-exec-9] org.hibernate.SQL                        : 
+    update
+        transaction 
+    set
+        merchant_uuid=?,
+        payer_id=?,
+        product_uuid=?,
+        status=?,
+        timestamp=? 
+    where
+        id=?
+2023-01-30 00:34:38.577 TRACE 14036 --- [http-nio-7706-exec-9] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [12345678-1234-1234-1234-123456789012]
+2023-01-30 00:34:38.577 TRACE 14036 --- [http-nio-7706-exec-9] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - []
+2023-01-30 00:34:38.577 TRACE 14036 --- [http-nio-7706-exec-9] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [2930392666]
+2023-01-30 00:34:38.577 TRACE 14036 --- [http-nio-7706-exec-9] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [SUCCESS]
+2023-01-30 00:34:38.578 TRACE 14036 --- [http-nio-7706-exec-9] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [TIMESTAMP] - [Mon Jan 30 00:34:38 CET 2023]
+2023-01-30 00:34:38.578 TRACE 14036 --- [http-nio-7706-exec-9] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [BIGINT] - [4]

@@ -84,6 +84,10 @@ public class PaymentServiceImpl implements PaymentService {
             log.error("Payment with id " + paymentExecutionRequest.paymentId + " not found.");
             throw new PaymentNotFoundException("Payment with id " + paymentExecutionRequest.paymentId + " not found.");
         }
+        if (payment.getStatus().equals(PaymentStatus.SUCCESSFUL)) {
+            log.error("Payment with id " + paymentExecutionRequest.paymentId + " already completed.");
+            throw new PaymentAlreadyCompleted("Payment with id " + paymentExecutionRequest.paymentId + " already completed.");
+        }
         String encryptedIssuerPan = Encryptor.encrypt(paymentExecutionRequest.pan);
         String encryptedAcquirerPan = Encryptor.encrypt(payment.getMerchantPan());
         var buyerCreditCard = creditCardRepository.findByPan(Hasher.hashPAN(paymentExecutionRequest.pan));
@@ -91,7 +95,7 @@ public class PaymentServiceImpl implements PaymentService {
             log.info("Buyer credit card with pan " + encryptedIssuerPan + " not found.");
             return sendPccRequest(paymentExecutionRequest);
         }
-        var merchantCreditCard = creditCardRepository.findByPan(Hasher.hashPAN(payment.getMerchantPan()));
+        var merchantCreditCard = creditCardRepository.findByPan(payment.getMerchantPan());
         if (merchantCreditCard == null) {
             log.error("Merchant credit card with pan " + encryptedAcquirerPan + " not found.");
             payment.setStatus(PaymentStatus.FAILED);
@@ -238,7 +242,7 @@ public class PaymentServiceImpl implements PaymentService {
     }
 
     private Boolean validateCreditCard(PaymentExecutionRequest paymentExecutionRequest, CreditCard creditCard) {
-        var isSecurityCodeValid = paymentExecutionRequest.securityCode.equals(Hasher.hashPAN(creditCard.securityCode));
+        var isSecurityCodeValid = Hasher.hashPAN(paymentExecutionRequest.securityCode).equals(creditCard.securityCode);
         var isCardExpired = creditCard.validThru.before(new Date());
         return isSecurityCodeValid && !isCardExpired;
     }

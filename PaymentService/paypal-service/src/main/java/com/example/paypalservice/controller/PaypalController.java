@@ -27,9 +27,9 @@ public class PaypalController {
         this.subscriptionPlanService = subscriptionPlanService;
     }
 
-    @GetMapping("/merchant/{merchantId}")
-    public ResponseEntity<MerchantResponseDTO> getMerchant(@PathVariable Long merchantId) {
-        return ResponseEntity.ok(paypalService.getMerchant(merchantId));
+    @GetMapping("/merchant/{merchantUuid}")
+    public ResponseEntity<MerchantResponseDTO> getMerchant(@PathVariable String merchantUuid) {
+        return ResponseEntity.ok(paypalService.getMerchant(merchantUuid));
     }
 
     @PostMapping("/transaction")
@@ -38,8 +38,8 @@ public class PaypalController {
     }
 
     @PutMapping("/transaction")
-    public void updateTransaction(@RequestBody TransactionRequestDTO transaction) {
-        transactionService.updateTransaction(transaction);
+    public String updateTransaction(@RequestBody TransactionRequestDTO transaction) {
+        return transactionService.updateTransaction(transaction);
     }
 
     @PostMapping("/plan/{merchantId}/{productId}/{planPaypalId}")
