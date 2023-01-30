@@ -18,7 +18,7 @@ public class SubscriptionPlan {
     private Long id;
 
     @Column
-    private Long merchantId;
+    private String merchantUuid;
 
     @Column
     private Long productId;
@@ -26,8 +26,8 @@ public class SubscriptionPlan {
     @Column
     private String planPaypalId;
 
-    public SubscriptionPlan(Long merchantId, Long productId, String planPaypalId) {
-        this.merchantId = merchantId;
+    public SubscriptionPlan(String merchantUuid, Long productId, String planPaypalId) {
+        this.merchantUuid = merchantUuid;
         this.productId = productId;
         this.planPaypalId = planPaypalId;
     }

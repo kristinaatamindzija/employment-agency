@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface SubscriptionPlanRepository extends JpaRepository<SubscriptionPlan, Long> {
-    SubscriptionPlan findByMerchantIdAndProductId(Long merchantId, Long productId);
+    SubscriptionPlan findByMerchantUuidAndProductId(String merchantUuid, Long productId);
 
 }

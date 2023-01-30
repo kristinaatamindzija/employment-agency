@@ -1,17 +1,34 @@
 <template>
     <div class="container">
         <div class="row">
-            <div class="col"></div>
-            <div class="col">
-                <br><br><br>
-                <div ref="paypal"></div>
-                <b-card v-if="bankCard" style="margin-top: 2em" overlay
-                    img-src="https://cdn0.erstegroup.com/gemlip/v1/dam/3C6faUk1iFLX1inEfBjsiW3UZuVA/rs/ebs/www_erstebank_rs/stanovnistvo/kartice/w1200_0_0_0_0_0_m_1475164656805.kreditne_kartice_crna.jpg"
-                    img-alt="Card Image" text-variant="white">
-                    <b-button @click="payWithBankCard()" variant="primary">Bank card</b-button>
-                </b-card>
-            </div>
-            <div class="col"></div>
+            <div class="col-lg-3 col-md-2"></div>
+            <div class="col-lg-7 col-md-8 login-box" >
+					<div class="forma container">
+                        <h2 class="login-title">Order summary: </h2><br>
+                        <label style="float: center; padding-left: 10%;">Order id: {{this.orderUuid}}</label>
+                        <label style="float: right; padding-right: 15%;"><b>{{this.order.value}} {{this.order.currencyCode}}</b></label><br>
+                        <label style="float: center; padding-left: 10%;">Shipping</label>
+                        <label style="float: right; padding-right: 15%;"><b><i>Free</i></b></label><hr>
+                        <label style="float: center; padding-left: 10%;">Total</label>
+                        <label style="float: right; padding-right: 15%;"><b>{{this.order.value}} {{this.order.currencyCode}}</b></label><br><br><br>
+
+
+						<div class="col-lg-12 login-title">Choose payment method <BIconCash class="login-pay" style="color: turquoise;"></BIconCash> </div>
+                        <div class="row">
+                            <div class="col"></div>
+                                <div class="col">
+                                    <br><br><br>
+                                    <div ref="paypal"></div>
+                                    <button v-if="bankCard" @click="payWithBankCard()" class="button is-link" style="width:100%; margin-bottom: 5px;"><BIconWalletFill style="margin-right:3px"></BIconWalletFill> Bank card</button>
+                                    <button class="button is-info" style="width:100%; margin-bottom: 5px;"><BIconCurrencyBitcoin style="margin-right:3px"></BIconCurrencyBitcoin> Pay with crypto</button>
+                                    <button class="button is-light" style="width:100%; margin-bottom: 5px;"><img src="@/assets/qr-code.png" style="margin-right:3px"> Pay with QR code</button>
+                                    <button class="button is-dark" @click="redirectSubscribe()" style="width:100%; margin-bottom: 15%;">Paypal Subscribe</button>
+                                </div>
+
+                                <div class="col"></div>
+                            </div>
+					</div>
+			</div>
         </div>
     </div>
 </template>
@@ -29,6 +46,7 @@ export default {
             username: "",
             orderUuid: this.$route.query.merchantOrderId,
             merchantUuid: this.$route.query.merchantUuid,
+            productId: this.$route.query.productId,
             order: {
                 currencyCode: "USD",
                 value: this.$route.query.amount,
@@ -52,7 +70,7 @@ export default {
                 this.createButton();
             }).catch(error => {
                 console.log(error);
-            })
+            });
         },
         createButton() {
             const script = document.createElement("script");
@@ -61,34 +79,32 @@ export default {
             script.addEventListener("load", this.initPaypal);
             document.body.appendChild(script);
         },
-
         initPaypal() {
-            const currencyCode = this.order.currencyCode
-            const value = this.order.value
-            const description = this.order.description
-            const merchantId = this.merchant.merchantId
-            const email = this.merchant.email
-
-            const payerId = ""
-            const merchantUuid = this.merchantUuid
-            const productUuid = this.orderUuid
+            const currencyCode = this.order.currencyCode;
+            const value = this.order.value;
+            const description = this.order.description;
+            const merchantId = this.merchant.merchantId;
+            const email = this.merchant.email;
+            const payerId = "";
+            const merchantUuid = this.merchantUuid;
+            const productUuid = this.orderUuid;
 
             window.paypal.Buttons({
                 style: {
-                    label: 'buynow'
+                    label: "buynow"
                 },
                 createOrder: (data, actions) => {
                     return actions.order.create({
                         purchase_units: [
                             {
-                                ...description != null ? 'description' : description,
+                                ...description != null ? "description" : description,
                                 amount: {
                                     currency_code: currencyCode,
                                     value: value
                                 },
-                                ...merchantId != null || email != null ? 'payee' : {
-                                    ...merchantId != null ? 'merchant_id' : merchantId,
-                                    ...email != null ? 'email_address' : email
+                                ...merchantId != null || email != null ? "payee" : {
+                                    ...merchantId != null ? "merchant_id" : merchantId,
+                                    ...email != null ? "email_address" : email
                                 },
                             }
                         ]
@@ -101,12 +117,12 @@ export default {
                         merchantUuid: merchantUuid,
                         productUuid: productUuid,
                         payerId: payerId,
-                    }
+                    };
                     PaypalService.createTransaction(transaction).then(response => {
                         console.log(response.data);
                     }).catch(error => {
                         console.log(error);
-                    })
+                    });
                 },
                 onApprove: async (data, actions) => {
                     const order = await actions.order.capture();
@@ -117,15 +133,14 @@ export default {
                         merchantUuid: merchantUuid,
                         productUuid: productUuid,
                         payerId: order.payer.payer_id,
-                    }
-                    Swal.fire('Success!', 'Transaction completed!', 'success')
+                    };
+                    Swal.fire("Success!", "Transaction completed!", "success");
                     PaypalService.updateTransaction(transaction).then(response => {
                         console.log(response.data);
-                        window.location.replace(response.data)
+                        window.location.replace(response.data);
                     }).catch(error => {
                         console.log(error);
-                    })
-
+                    });
                 },
                 onError: err => {
                     console.log(err);
@@ -135,22 +150,25 @@ export default {
                         merchantUuid: merchantUuid,
                         productUuid: productUuid,
                         payerId: payerId,
-                    }
+                    };
                     PaypalService.createTransaction(transaction).then(response => {
                         console.log(response.data);
                     }).catch(error => {
                         console.log(error);
-                    })
-                    Swal.fire('Error!', 'Transaction not completed!', 'error')
+                    });
+                    Swal.fire("Error!", "Transaction not completed!", "error");
                 }
             }).render(this.$refs.paypal);
         },
 
-        payWithBankCard(){
-            PaymentService.startPayment(this.$route.query.merchantUuid, this.$route.query.merchantOrderId, this.$route.query.amount)
+        payWithBankCard() {
+            PaymentService.startPayment(this.$route.query.merchantUuid, this.$route.query.merchantOrderId, this.$route.query.amount);
+        },
+        redirectSubscribe(){
+            this.$router.push({path:"/subscription", query: {merchantUuid: this.$route.query.merchantUuid, orderUuid: this.$route.query.merchantOrderId, productId:this.$route.query.productId, amount: this.$route.query.amount}});
         }
+
     },
-    components: {}
 }
 
 </script>

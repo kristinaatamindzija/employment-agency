@@ -42,14 +42,14 @@ public class PaypalController {
         return transactionService.updateTransaction(transaction);
     }
 
-    @PostMapping("/plan/{merchantId}/{productId}/{planPaypalId}")
-    public void createSubscriptionPlan(@PathVariable Long merchantId, @PathVariable Long productId, @PathVariable String planPaypalId) {
-        subscriptionPlanService.createSubscriptionPlan(merchantId, productId, planPaypalId);
+    @PostMapping("/plan/{merchantUuid}/{productId}/{planPaypalId}")
+    public void createSubscriptionPlan(@PathVariable String merchantUuid, @PathVariable Long productId, @PathVariable String planPaypalId) {
+        subscriptionPlanService.createSubscriptionPlan(merchantUuid, productId, planPaypalId);
     }
 
-    @GetMapping("/plan/{merchantId}/{productId}")
-    public String getSubscriptionPlanId(@PathVariable Long merchantId, @PathVariable Long productId) {
-        return subscriptionPlanService.getSubscriptionPlanId(merchantId, productId);
+    @GetMapping("/plan/{merchantUuid}/{productId}")
+    public String getSubscriptionPlanId(@PathVariable String merchantUuid, @PathVariable Long productId) {
+        return subscriptionPlanService.getSubscriptionPlanId(merchantUuid, productId);
     }
 
 }

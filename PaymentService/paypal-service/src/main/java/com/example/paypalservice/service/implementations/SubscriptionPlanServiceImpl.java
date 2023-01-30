@@ -15,12 +15,12 @@ public class SubscriptionPlanServiceImpl implements SubscriptionPlanService {
     }
 
     @Override
-    public void createSubscriptionPlan(Long merchantId, Long productId, String planPaypalId) {
-        subscriptionPlanRepository.save(new SubscriptionPlan(merchantId, productId, planPaypalId));
+    public void createSubscriptionPlan(String merchantUuid, Long productId, String planPaypalId) {
+        subscriptionPlanRepository.save(new SubscriptionPlan(merchantUuid, productId, planPaypalId));
     }
 
     @Override
-    public String getSubscriptionPlanId(Long merchantId, Long productId) {
-        return subscriptionPlanRepository.findByMerchantIdAndProductId(merchantId, productId).getPlanPaypalId();
+    public String getSubscriptionPlanId(String merchantUuid, Long productId) {
+        return subscriptionPlanRepository.findByMerchantUuidAndProductId(merchantUuid, productId).getPlanPaypalId();
     }
 }

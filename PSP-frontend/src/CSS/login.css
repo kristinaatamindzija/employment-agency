@@ -16,6 +16,15 @@
     -webkit-text-fill-color: transparent;
 }
 
+.login-pay {
+    height: 45px;
+    font-size: 50px;
+    color: linear-gradient(to bottom left, #27EF9F, #0DB8DE);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .login-title {
     margin-top: 15px;
     text-align: center;

@@ -7,7 +7,6 @@
 
 <script>
 
-import UserService from "../services/UserService";
 import PaypalService from "@/services/PaypalService";
 import Swal from 'sweetalert2'
 
@@ -16,23 +15,18 @@ export default {
     data() {
         return {
             isExpired: false,
-            username: "",
             planId: "P-82T63888Y87914132MOPPK7Y",
-            merchantId: 1,  //hardkodovano, ovo ce se dobavljati sa bonite, kao i productId
-            productId: 1
+            merchantUuid: this.$route.query.merchantUuid,
+            productId: this.$route.query.productId,
+            orderUuid: this.$route.query.orderUuid,
         };
     },
     mounted() {
-        this.isExpired = UserService.isExpired();
-        console.log(this.isExpired);
-        if (!this.isExpired) {
-            this.username = UserService.getUsername();
-        }
         this.getPlanId();
     },
     methods: {
         getPlanId(){
-            PaypalService.getPlanId(this.merchantId, this.productId).then(response => {
+            PaypalService.getPlanId(this.merchantUuid, this.productId).then(response => {
                 console.log(response.data);
                 this.planId = response.data;
                 this.createButton();
@@ -64,11 +58,26 @@ export default {
                 },
                 onApprove: async (data, actions) => {
                     console.log(actions.subscription.get())
-                    Swal.fire( 'Success!', 'You are subscribed!', 'success' )
+                    const order = await actions.subscription.get();
+                    console.log(order)
+                    Swal.fire( 'Success!', 'You are subscribed!', 'success')
+                    let transaction = {
+                        status: "SUCCESS",
+                        timestamp: new Date(),
+                        merchantUuid: this.merchantUuid,
+                        productUuid: this.orderUuid,
+                        payerId: order.subscriber.payer_id,
+                    };
+                    PaypalService.updateTransaction(transaction).then(response => {
+                        console.log(response.data);
+                        window.location.replace(response.data);
+                    }).catch(error => {
+                        console.log(error);
+                    });
                 },
                 onError: err => {
                     console.log(err);
-                    Swal.fire( 'Error!', 'Error occured!', 'error' )
+                    Swal.fire( 'Error!', 'Error occured!', 'error')
                 }
             }).render(this.$refs.paypal);
         }
