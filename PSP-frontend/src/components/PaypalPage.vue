@@ -21,7 +21,7 @@
                                     <div ref="paypal"></div>
                                     <button v-if="bankCard" @click="payWithBankCard()" class="button is-link" style="width:100%; margin-bottom: 5px;"><BIconWalletFill style="margin-right:3px"></BIconWalletFill> Bank card</button>
                                     <button class="button is-info" style="width:100%; margin-bottom: 5px;"><BIconCurrencyBitcoin style="margin-right:3px"></BIconCurrencyBitcoin> Pay with crypto</button>
-                                    <button class="button is-light" style="width:100%; margin-bottom: 5px;"><img src="@/assets/qr-code.png" style="margin-right:3px"> Pay with QR code</button>
+                                    <button class="button is-light" @click="qrCode()" style="width:100%; margin-bottom: 5px;"><img src="@/assets/qr-code.png" style="margin-right:3px"> Pay with QR code</button>
                                     <button class="button is-dark" @click="redirectSubscribe()" style="width:100%; margin-bottom: 15%;">Paypal Subscribe</button>
                                 </div>
 
@@ -38,6 +38,7 @@
 import Swal from 'sweetalert2'
 import PaypalService from "@/services/PaypalService";
 import PaymentService from "@/services/PaymentService";
+import { Buffer } from 'buffer';
 
 export default {
     name: "PaypalPage",
@@ -56,13 +57,25 @@ export default {
                 merchantId: "SQK683LFHNNTN",
                 email: "sb-msi0x23501552@business.example.com"
             },
-            bankCard: true
+            bankCard: true,
+            payeeName: "Test",
+            payeeAccountNumber: "123456789",
         };
     },
     mounted() {
         this.getMerchant();
+        this.getAccountCredentials();
     },
     methods: {
+        getAccountCredentials(){
+            PaymentService.getAccountCredentials(this.merchantUuid).then(response => {
+                this.payeeName = response.data.name;
+                this.payeeAccountNumber = response.data.accountNumber;
+
+            }).catch(error => {
+                console.log(error);
+            });
+        },
         getMerchant() {
             PaypalService.getMerchant(this.merchantUuid).then(response => {
                 this.merchant.merchantId = response.data.merchantPaypalId;
@@ -166,6 +179,78 @@ export default {
         },
         redirectSubscribe(){
             this.$router.push({path:"/subscription", query: {merchantUuid: this.$route.query.merchantUuid, orderUuid: this.$route.query.merchantOrderId, productId:this.$route.query.productId, amount: this.$route.query.amount}});
+        },
+
+        async qrCode() {
+            const { value: formValues } = await Swal.fire({
+                title: 'Fill in the fields',
+                html:
+                    '<input id="swal-input1" placeholder="Data on the payer" class="swal2-input">' +
+                    '<input id="swal-input2" placeholder="Payment purpose" class="swal2-input">'+
+                    '<input id="swal-input3" placeholder="Reference credit number" class="swal2-input">',
+                focusConfirm: false,
+                preConfirm: () => {
+                    return [
+                    document.getElementById('swal-input1').value,
+                    document.getElementById('swal-input2').value,
+                    document.getElementById('swal-input3').value
+                    ]
+                }
+                })
+
+                if (formValues) {
+                    let dto={
+                    K: "PR",
+                    V: "01",
+                    C: "1",
+                    R: this.payeeAccountNumber,
+                    N: this.payeeName,
+                    I: "RSD"+120*this.$route.query.amount+",00",
+                    P: formValues[0],
+                    SF: "189",
+                    S: formValues[1],
+                    RO: "00"+ formValues[2],
+                }
+
+                PaymentService.generateQrCode(dto).then(response => {
+                    console.log(response.data);
+                    let base64ImageString = Buffer.from(response.data, 'binary').toString('base64')
+
+                    Swal.fire({
+                        title: 'QR Code',
+                        showCancelButton: true,
+                        confirmButtonText: 'Scan',
+                        html: `<img src="data:image/png;base64,${base64ImageString}">`,
+                        imageWidth: 150,
+                        imageHeight: 150,
+                        imageAlt: 'Custom image',
+                    }).then((e)=>{
+                        if(e.isConfirmed){
+                            var binaryImage = atob(base64ImageString);
+                            var arrayBuffer = new ArrayBuffer(binaryImage.length);
+                            var uint8Array = new Uint8Array(arrayBuffer);
+                            for (var i = 0; i < binaryImage.length; i++) {
+                            uint8Array[i] = binaryImage.charCodeAt(i);
+                            }
+                            var file = new File([uint8Array], 'qrcode.png', { type: 'image/png' });
+                            var formData = new FormData();
+                            formData.append('file', file);
+
+                            PaymentService.validateQrCode(formData).then(response => {
+                                Swal.fire({
+                                title: 'Scan the QR code',
+                                text: response.data.t,
+                            })
+                            })                
+                        }
+                        console.log(e)}
+                        )
+                }).catch(error => {
+                    console.log(error);
+                });
+               
+
+                }
         }
 
     },

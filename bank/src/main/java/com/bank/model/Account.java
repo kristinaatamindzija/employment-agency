@@ -40,5 +40,8 @@ public class Account {
 
     @Column(unique = true, columnDefinition = "VARCHAR(32) DEFAULT '00000000000000000000000000000000'")
     public String merchantId;
+
+    @Column
+    public String accountNumber;
 }
 

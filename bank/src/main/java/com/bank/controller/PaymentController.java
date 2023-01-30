@@ -66,5 +66,10 @@ public class PaymentController {
         return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
     }
 
+    @GetMapping("/bankCredentials/{merchantUuid}")
+    public ResponseEntity<BankCredentials> getBankCredentials(@PathVariable String merchantUuid) {
+        return ResponseEntity.ok(paymentService.getBankCredentials(merchantUuid));
+    }
+
 
 }

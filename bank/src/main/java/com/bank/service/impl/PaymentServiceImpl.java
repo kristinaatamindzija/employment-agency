@@ -210,6 +210,16 @@ public class PaymentServiceImpl implements PaymentService {
     }
 
     @Override
+    public BankCredentials getBankCredentials(String merchantUuid) {
+        var merchant = accountRepository.findByMerchantId(merchantUuid);
+        if (merchant == null) {
+            log.error("Merchant with uuid " + merchantUuid + " not found.");
+            throw new MerchantNotFoundException("Merchant with provided uuid not found.");
+        }
+        return new BankCredentials(merchant.getName()+" "+merchant.getSurname(), merchant.getAccountNumber());
+    }
+
+    @Override
     public PccResponse processPccRequest(PccRequest pccRequest) {
         Payment payment = new Payment(pccRequest.paymentId, pccRequest.amount, pccRequest.pan);
         paymentRepository.save(payment);

@@ -58,6 +58,9 @@ public class WebShop {
     @Column(name = "error_url")
     private String errorUrl;
 
+    @Column
+    private String bankUrl;
+
     public WebShop(String username, String password, String currency) {
         this.username = username;
         this.password = password;

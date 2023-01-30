@@ -1,5 +1,6 @@
 package com.bankservice.service;
 
+import com.bankservice.dto.BankCredentials;
 import com.bankservice.dto.ProcessedPaymentRequest;
 import com.bankservice.dto.StartPaymentRequest;
 import com.bankservice.dto.StartPaymentResponse;
@@ -11,4 +12,6 @@ public interface PaymentService{
     void updatePaymentData(ProcessedPaymentRequest processedPaymentRequest);
 
     StartPaymentResponse startPayment(StartPaymentRequest request);
+
+    BankCredentials getBankCredentials(String merchantUuid);
 }

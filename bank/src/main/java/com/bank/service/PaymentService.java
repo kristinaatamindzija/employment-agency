@@ -10,4 +10,5 @@ public interface PaymentService {
     PccResponse processPccRequest(PccRequest pccRequest);
     PaymentExecutionResponse sendPccRequest(PaymentExecutionRequest paymentExecutionRequest);
     void paymentResult(PccResponse pccResponse);
+    BankCredentials getBankCredentials(String merchantUuid);
 }

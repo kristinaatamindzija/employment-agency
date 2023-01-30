@@ -11,4 +11,5 @@ public class MerchantDataResponse {
     public String successUrl;
     public String failUrl;
     public String errorUrl;
+    public String bankUrl;
 }

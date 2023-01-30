@@ -1,17 +1,11 @@
 package com.bankservice.controller;
 
-import com.bankservice.dto.PaymentRequest;
-import com.bankservice.dto.ProcessedPaymentRequest;
-import com.bankservice.dto.StartPaymentRequest;
-import com.bankservice.dto.StartPaymentResponse;
+import com.bankservice.dto.*;
 import com.bankservice.model.Payment;
 import com.bankservice.service.PaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 
@@ -35,4 +29,8 @@ public class PaymentController {
         paymentService.updatePaymentData(processedPaymentRequest);
     }
 
+    @GetMapping("/bankAccount/{merchantUuid}")
+    public ResponseEntity<BankCredentials> getPaymentByBankAccount(@PathVariable String merchantUuid) {
+        return ResponseEntity.ok(paymentService.getBankCredentials(merchantUuid));
+    }
 }

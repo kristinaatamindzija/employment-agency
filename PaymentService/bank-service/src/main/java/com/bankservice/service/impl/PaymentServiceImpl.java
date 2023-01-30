@@ -10,6 +10,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.Date;
 import java.util.concurrent.ThreadLocalRandom;
@@ -51,6 +52,14 @@ public class PaymentServiceImpl implements PaymentService {
         log.info("Payment with database ID {} updated with generated PaymentID {}",
                 payment.getId(), payment.getPaymentId());
         return paymentResponse;
+    }
+
+    @Override
+    public BankCredentials getBankCredentials(String merchantUuid) {
+        AuthServiceResponse authServiceResponse = authServiceFeignClient.getMerchantData(merchantUuid);
+        RestTemplate restTemplate = new RestTemplate();
+        ResponseEntity<BankCredentials> response = restTemplate.getForEntity(authServiceResponse.bankUrl + "/payment/bankCredentials/" + authServiceResponse.merchantId, BankCredentials.class);
+        return response.getBody();
     }
 
     @Override
