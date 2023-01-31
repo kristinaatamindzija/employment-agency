@@ -17,10 +17,10 @@ class PaymentService {
             merchantPassword: payment?.merchantPassword
         })
     }
-    startPayment(merchantUuid, merchantOrderId, amount) {
+    startPayment(merchantUuid, merchantOrderId, amount, qr) {
         axios.post(`${process.env.VUE_APP_API_GATEWAY}/bank-service/payment`, {
             amount,
-            qr: false,
+            qr: qr,
             merchantUuid,
             merchantOrderId
         })
@@ -45,6 +45,14 @@ class PaymentService {
 
     getAccountCredentials(merchantUuid) {
         return axios.get(`${process.env.VUE_APP_API_GATEWAY}/bank-service/payment/bankAccount/${merchantUuid}`)
+    }
+
+    createQrTransaction(transaction){
+        return axios.post(`${process.env.VUE_APP_API_GATEWAY}/bank-service/payment/transaction`, transaction);
+    }
+
+    updateQrTransaction(transaction){
+        return axios.put(`${process.env.VUE_APP_API_GATEWAY}/bank-service/payment/transaction`, transaction);
     }
 }
 

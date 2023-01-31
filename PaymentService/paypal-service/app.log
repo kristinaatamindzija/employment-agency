@@ -939,3 +939,157 @@ javax.persistence.NonUniqueResultException: query did not return a unique result
 2023-01-30 00:34:38.577 TRACE 14036 --- [http-nio-7706-exec-9] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [SUCCESS]
 2023-01-30 00:34:38.578 TRACE 14036 --- [http-nio-7706-exec-9] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [TIMESTAMP] - [Mon Jan 30 00:34:38 CET 2023]
 2023-01-30 00:34:38.578 TRACE 14036 --- [http-nio-7706-exec-9] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [BIGINT] - [4]
+2023-01-31 17:34:06.871  INFO 13284 --- [main] c.e.p.PaypalServiceApplication           : Starting PaypalServiceApplication using Java 17.0.2 on DESKTOP-4HG5T0S with PID 13284 (C:\Users\Brankovic\Desktop\employment-agency\PaymentService\paypal-service\target\classes started by Brankovic in C:\Users\Brankovic\Desktop\employment-agency\PaymentService\paypal-service)
+2023-01-31 17:34:06.889  INFO 13284 --- [main] c.e.p.PaypalServiceApplication           : No active profile set, falling back to 1 default profile: "default"
+2023-01-31 17:34:10.946  INFO 13284 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-31 17:34:11.839  INFO 13284 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 852 ms. Found 3 JPA repository interfaces.
+2023-01-31 17:34:12.972  INFO 13284 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=16332dea-eeb8-3bad-b6e5-27e9770c9dc9
+2023-01-31 17:34:15.267  INFO 13284 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7706 (http)
+2023-01-31 17:34:15.337  INFO 13284 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-01-31 17:34:15.338  INFO 13284 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.70]
+2023-01-31 17:34:16.308  INFO 13284 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-01-31 17:34:16.310  INFO 13284 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 9270 ms
+2023-01-31 17:34:17.945  INFO 13284 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-31 17:34:18.410  INFO 13284 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.14.Final
+2023-01-31 17:34:19.196  INFO 13284 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-01-31 17:34:19.580  INFO 13284 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-01-31 17:34:20.433  INFO 13284 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-01-31 17:34:20.466  INFO 13284 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2023-01-31 17:34:23.109 DEBUG 13284 --- [main] org.hibernate.SQL                        : 
+    
+    drop table if exists merchant cascade
+2023-01-31 17:34:23.188  WARN 13284 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-01-31 17:34:23.189  WARN 13284 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "merchant" does not exist, skipping
+2023-01-31 17:34:23.189 DEBUG 13284 --- [main] org.hibernate.SQL                        : 
+    
+    drop table if exists subscription_plan cascade
+2023-01-31 17:34:23.191  WARN 13284 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-01-31 17:34:23.192  WARN 13284 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "subscription_plan" does not exist, skipping
+2023-01-31 17:34:23.192 DEBUG 13284 --- [main] org.hibernate.SQL                        : 
+    
+    drop table if exists transaction cascade
+2023-01-31 17:34:23.193  WARN 13284 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-01-31 17:34:23.193  WARN 13284 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "transaction" does not exist, skipping
+2023-01-31 17:34:23.195 DEBUG 13284 --- [main] org.hibernate.SQL                        : 
+    
+    drop sequence if exists merchant_id_seq
+2023-01-31 17:34:23.197  WARN 13284 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-01-31 17:34:23.197  WARN 13284 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "merchant_id_seq" does not exist, skipping
+2023-01-31 17:34:23.197 DEBUG 13284 --- [main] org.hibernate.SQL                        : 
+    
+    drop sequence if exists plan_id_seq
+2023-01-31 17:34:23.198  WARN 13284 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-01-31 17:34:23.198  WARN 13284 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "plan_id_seq" does not exist, skipping
+2023-01-31 17:34:23.198 DEBUG 13284 --- [main] org.hibernate.SQL                        : 
+    
+    drop sequence if exists transaction_id_seq
+2023-01-31 17:34:23.199  WARN 13284 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-01-31 17:34:23.200  WARN 13284 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "transaction_id_seq" does not exist, skipping
+2023-01-31 17:34:23.203 DEBUG 13284 --- [main] org.hibernate.SQL                        : create sequence merchant_id_seq start 1 increment 1
+2023-01-31 17:34:23.232 DEBUG 13284 --- [main] org.hibernate.SQL                        : create sequence plan_id_seq start 1 increment 1
+2023-01-31 17:34:23.236 DEBUG 13284 --- [main] org.hibernate.SQL                        : create sequence transaction_id_seq start 1 increment 1
+2023-01-31 17:34:23.239 DEBUG 13284 --- [main] org.hibernate.SQL                        : 
+    
+    create table merchant (
+       merchant_id int8 not null,
+        email varchar(255),
+        merchant_paypal_id varchar(255),
+        merchant_uuid varchar(255),
+        primary key (merchant_id)
+    )
+2023-01-31 17:34:23.261 DEBUG 13284 --- [main] org.hibernate.SQL                        : 
+    
+    create table subscription_plan (
+       id int8 not null,
+        merchant_uuid varchar(255),
+        plan_paypal_id varchar(255),
+        product_id int8,
+        primary key (id)
+    )
+2023-01-31 17:34:23.273 DEBUG 13284 --- [main] org.hibernate.SQL                        : 
+    
+    create table transaction (
+       id int8 not null,
+        merchant_uuid varchar(255),
+        payer_id varchar(255),
+        product_uuid varchar(255),
+        status varchar(255),
+        timestamp timestamp,
+        primary key (id)
+    )
+2023-01-31 17:34:23.283  INFO 13284 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-31 17:34:23.294  INFO 13284 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-31 17:34:30.556  INFO 13284 --- [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses Jersey
+2023-01-31 17:34:30.859  WARN 13284 --- [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-01-31 17:34:30.873  INFO 13284 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-01-31 17:34:30.916  INFO 13284 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2023-01-31 17:34:31.197  INFO 13284 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2023-01-31 17:34:31.792  INFO 13284 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2023-01-31 17:34:31.793  INFO 13284 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2023-01-31 17:34:32.206  INFO 13284 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2023-01-31 17:34:32.206  INFO 13284 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2023-01-31 17:34:32.713  INFO 13284 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-31 17:34:32.761  INFO 13284 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2023-01-31 17:34:32.762  INFO 13284 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2023-01-31 17:34:32.762  INFO 13284 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2023-01-31 17:34:32.763  INFO 13284 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2023-01-31 17:34:32.783  INFO 13284 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2023-01-31 17:34:32.784  INFO 13284 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2023-01-31 17:34:32.784  INFO 13284 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2023-01-31 17:34:33.301  INFO 13284 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2023-01-31 17:34:33.312  INFO 13284 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2023-01-31 17:34:33.318  INFO 13284 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2023-01-31 17:34:33.350  INFO 13284 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1675182873339 with initial instances count: 1
+2023-01-31 17:34:33.353  INFO 13284 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application PAYPAL-SERVICE with eureka with status UP
+2023-01-31 17:34:33.358  INFO 13284 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1675182873358, current=UP, previous=STARTING]
+2023-01-31 17:34:33.366  INFO 13284 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_PAYPAL-SERVICE/DESKTOP-4HG5T0S:paypal-service:7706: registering service...
+2023-01-31 17:34:33.407  INFO 13284 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_PAYPAL-SERVICE/DESKTOP-4HG5T0S:paypal-service:7706 - registration status: 204
+2023-01-31 17:34:33.455  INFO 13284 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7706 (http) with context path ''
+2023-01-31 17:34:33.456  INFO 13284 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 7706
+2023-01-31 17:34:33.918  INFO 13284 --- [main] c.e.p.PaypalServiceApplication           : Started PaypalServiceApplication in 28.738 seconds (JVM running for 37.642)
+2023-01-31 17:39:32.808  INFO 13284 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-31 17:44:32.827  INFO 13284 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-31 17:49:32.833  INFO 13284 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-31 17:50:30.139  INFO 13284 --- [http-nio-7706-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-01-31 17:50:30.147  INFO 13284 --- [http-nio-7706-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-01-31 17:50:30.813  INFO 13284 --- [http-nio-7706-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 665 ms
+2023-01-31 17:50:31.887 DEBUG 13284 --- [http-nio-7706-exec-1] org.hibernate.SQL                        : 
+    select
+        merchant0_.merchant_id as merchant1_0_,
+        merchant0_.email as email2_0_,
+        merchant0_.merchant_paypal_id as merchant3_0_,
+        merchant0_.merchant_uuid as merchant4_0_ 
+    from
+        merchant merchant0_ 
+    where
+        merchant0_.merchant_uuid=?
+2023-01-31 17:50:31.931 TRACE 13284 --- [http-nio-7706-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [12345678-1234-1234-1234-123456789012]
+2023-01-31 17:54:32.837  INFO 13284 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-31 17:59:32.844  INFO 13284 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-31 18:04:32.867  INFO 13284 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-31 18:09:32.872  INFO 13284 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-31 18:14:32.885  INFO 13284 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-31 18:19:32.896  INFO 13284 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-31 18:24:32.904  INFO 13284 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-31 18:29:32.908  INFO 13284 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-31 18:34:32.935  INFO 13284 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-31 18:39:32.946  INFO 13284 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-31 18:44:32.951  INFO 13284 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-31 18:49:32.956  INFO 13284 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-31 18:54:32.969  INFO 13284 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-31 18:59:32.981  INFO 13284 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-31 19:04:32.988  INFO 13284 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-31 19:07:32.306 DEBUG 13284 --- [http-nio-7706-exec-3] org.hibernate.SQL                        : 
+    select
+        merchant0_.merchant_id as merchant1_0_,
+        merchant0_.email as email2_0_,
+        merchant0_.merchant_paypal_id as merchant3_0_,
+        merchant0_.merchant_uuid as merchant4_0_ 
+    from
+        merchant merchant0_ 
+    where
+        merchant0_.merchant_uuid=?
+2023-01-31 19:07:32.318 TRACE 13284 --- [http-nio-7706-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [12345678-1234-1234-1234-123456789012]
+2023-01-31 19:09:32.997  INFO 13284 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-31 19:14:33.014  INFO 13284 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-31 19:19:33.017  INFO 13284 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration

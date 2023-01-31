@@ -11,6 +11,8 @@ import Vuelidate from 'vuelidate'
 import VueRouter from 'vue-router'
 
 import CardPage from '@/components/CardPage'
+import QrPage from '@/components/QrPage'
+
 
 import { BootstrapVue, IconsPlugin, FormPlugin, FormDatepickerPlugin, ToastPlugin } from 'bootstrap-vue'
 
@@ -34,6 +36,14 @@ const routes = [
     path: '/card/:id',
     name: 'card-page',
     component: CardPage,
+    children: [
+
+    ],
+  },
+    {
+    path: '/qr/:id',
+    name: 'qr-page',
+    component: QrPage,
     children: [
 
     ],

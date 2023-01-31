@@ -67,3 +67,372 @@
     where
         paymentmet0_.web_shop_id=?
 2023-01-30 00:34:38.608 TRACE 14332 --- [http-nio-7702-exec-7] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [BIGINT] - [1]
+2023-01-31 17:33:40.285  INFO 2260 --- [main] com.authservice.AuthServiceApplication   : Starting AuthServiceApplication using Java 17.0.2 on DESKTOP-4HG5T0S with PID 2260 (C:\Users\Brankovic\Desktop\employment-agency\PaymentService\auth-service\target\classes started by Brankovic in C:\Users\Brankovic\Desktop\employment-agency\PaymentService\auth-service)
+2023-01-31 17:33:40.288 DEBUG 2260 --- [main] com.authservice.AuthServiceApplication   : Running with Spring Boot v2.7.2, Spring v5.3.22
+2023-01-31 17:33:40.289  INFO 2260 --- [main] com.authservice.AuthServiceApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-01-31 17:33:41.502  INFO 2260 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-31 17:33:41.794  INFO 2260 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 276 ms. Found 2 JPA repository interfaces.
+2023-01-31 17:33:42.241  INFO 2260 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=ad675a66-f8a6-3c3e-bb9e-7dea83af7244
+2023-01-31 17:33:42.456  INFO 2260 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@74170687' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-01-31 17:33:42.463  INFO 2260 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-01-31 17:33:43.065  INFO 2260 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7702 (http)
+2023-01-31 17:33:43.084  INFO 2260 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-01-31 17:33:43.085  INFO 2260 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-01-31 17:33:43.527  INFO 2260 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-01-31 17:33:43.528  INFO 2260 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3159 ms
+2023-01-31 17:33:44.003  INFO 2260 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-31 17:33:44.102  INFO 2260 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.10.Final
+2023-01-31 17:33:44.435  INFO 2260 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-01-31 17:33:44.627  INFO 2260 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-01-31 17:33:44.978  INFO 2260 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-01-31 17:33:45.009  INFO 2260 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2023-01-31 17:33:46.688 DEBUG 2260 --- [main] org.hibernate.SQL                        : 
+    
+    alter table if exists web_shop_payment_method 
+       drop constraint if exists FKl5ppvd04166bexq5dwf2ybt4t
+2023-01-31 17:33:46.706  WARN 2260 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-01-31 17:33:46.706  WARN 2260 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "web_shop_payment_method" does not exist, skipping
+2023-01-31 17:33:46.706 DEBUG 2260 --- [main] org.hibernate.SQL                        : 
+    
+    alter table if exists web_shop_payment_method 
+       drop constraint if exists FKbi0o4ykh2bn0twbmkhqyp2t4s
+2023-01-31 17:33:46.707  WARN 2260 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-01-31 17:33:46.707  WARN 2260 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "web_shop_payment_method" does not exist, skipping
+2023-01-31 17:33:46.708 DEBUG 2260 --- [main] org.hibernate.SQL                        : 
+    
+    drop table if exists payment_method cascade
+2023-01-31 17:33:46.711  WARN 2260 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-01-31 17:33:46.711  WARN 2260 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "payment_method" does not exist, skipping
+2023-01-31 17:33:46.712 DEBUG 2260 --- [main] org.hibernate.SQL                        : 
+    
+    drop table if exists web_shop_payment_method cascade
+2023-01-31 17:33:46.712  WARN 2260 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-01-31 17:33:46.712  WARN 2260 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "web_shop_payment_method" does not exist, skipping
+2023-01-31 17:33:46.712 DEBUG 2260 --- [main] org.hibernate.SQL                        : 
+    
+    drop table if exists web_shop cascade
+2023-01-31 17:33:46.713  WARN 2260 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-01-31 17:33:46.714  WARN 2260 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "web_shop" does not exist, skipping
+2023-01-31 17:33:46.714 DEBUG 2260 --- [main] org.hibernate.SQL                        : 
+    
+    drop sequence if exists payment_method_id_seq
+2023-01-31 17:33:46.714  WARN 2260 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-01-31 17:33:46.714  WARN 2260 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "payment_method_id_seq" does not exist, skipping
+2023-01-31 17:33:46.715 DEBUG 2260 --- [main] org.hibernate.SQL                        : 
+    
+    drop sequence if exists web_shop_id_seq
+2023-01-31 17:33:46.715  WARN 2260 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-01-31 17:33:46.715  WARN 2260 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "web_shop_id_seq" does not exist, skipping
+2023-01-31 17:33:46.718 DEBUG 2260 --- [main] org.hibernate.SQL                        : create sequence payment_method_id_seq start 1 increment 1
+2023-01-31 17:33:46.760 DEBUG 2260 --- [main] org.hibernate.SQL                        : create sequence web_shop_id_seq start 1 increment 1
+2023-01-31 17:33:46.766 DEBUG 2260 --- [main] org.hibernate.SQL                        : 
+    
+    create table payment_method (
+       id int8 not null,
+        name varchar(255),
+        primary key (id)
+    )
+2023-01-31 17:33:46.792 DEBUG 2260 --- [main] org.hibernate.SQL                        : 
+    
+    create table web_shop_payment_method (
+       web_shop_id int8 not null,
+        payment_method_id int8 not null,
+        primary key (web_shop_id, payment_method_id)
+    )
+2023-01-31 17:33:46.798 DEBUG 2260 --- [main] org.hibernate.SQL                        : 
+    
+    create table web_shop (
+       id int8 not null,
+        bank_url varchar(255),
+        currency varchar(255),
+        error_url varchar(255),
+        fail_url varchar(255),
+        merchant_id varchar(255),
+        merchant_password varchar(255),
+        merchant_uuid varchar(255),
+        password varchar(255),
+        success_url varchar(255),
+        username varchar(255),
+        primary key (id)
+    )
+2023-01-31 17:33:46.813 DEBUG 2260 --- [main] org.hibernate.SQL                        : 
+    
+    alter table if exists payment_method 
+       add constraint UK_ai10u6l9urufl9pidfuhnmmcj unique (name)
+2023-01-31 17:33:46.819 DEBUG 2260 --- [main] org.hibernate.SQL                        : 
+    
+    alter table if exists web_shop 
+       add constraint UK_6lhpfrii9qxuyys8u4a05aokw unique (username)
+2023-01-31 17:33:46.823 DEBUG 2260 --- [main] org.hibernate.SQL                        : 
+    
+    alter table if exists web_shop_payment_method 
+       add constraint FKl5ppvd04166bexq5dwf2ybt4t 
+       foreign key (payment_method_id) 
+       references payment_method
+2023-01-31 17:33:46.842 DEBUG 2260 --- [main] org.hibernate.SQL                        : 
+    
+    alter table if exists web_shop_payment_method 
+       add constraint FKbi0o4ykh2bn0twbmkhqyp2t4s 
+       foreign key (web_shop_id) 
+       references web_shop
+2023-01-31 17:33:46.850  INFO 2260 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-31 17:33:46.861  INFO 2260 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-31 17:33:52.524  INFO 2260 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will not secure Ant [pattern='/auth/login', POST]
+2023-01-31 17:33:52.526  INFO 2260 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will not secure Ant [pattern='/auth/addPaymentMethod', POST]
+2023-01-31 17:33:52.527  INFO 2260 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will not secure Ant [pattern='/auth/deletePaymentMethod', POST]
+2023-01-31 17:33:52.527  INFO 2260 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will not secure Ant [pattern='/', GET]
+2023-01-31 17:33:52.527  INFO 2260 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will not secure Ant [pattern='/webjars/**', GET]
+2023-01-31 17:33:52.528  INFO 2260 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will not secure Ant [pattern='/*.html', GET]
+2023-01-31 17:33:52.529  INFO 2260 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will not secure Ant [pattern='favicon.ico', GET]
+2023-01-31 17:33:52.529  INFO 2260 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will not secure Ant [pattern='/**/*.html', GET]
+2023-01-31 17:33:52.529  INFO 2260 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will not secure Ant [pattern='/**/*.css', GET]
+2023-01-31 17:33:52.529  INFO 2260 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will not secure Ant [pattern='/**/*.js', GET]
+2023-01-31 17:33:52.589  INFO 2260 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@14af57c3, org.springframework.security.web.context.SecurityContextPersistenceFilter@21fa19e4, org.springframework.security.web.header.HeaderWriterFilter@4c1fed69, org.springframework.web.filter.CorsFilter@795949fb, org.springframework.security.web.authentication.logout.LogoutFilter@209d0037, com.authservice.security.TokenAuthFilter@2aeb3f3b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@36a8ebca, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6c056020, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@281028ce, org.springframework.security.web.session.SessionManagementFilter@4198921f, org.springframework.security.web.access.ExceptionTranslationFilter@23adbd6b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@67eabe02]
+2023-01-31 17:33:52.873  INFO 2260 --- [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2023-01-31 17:33:53.189  WARN 2260 --- [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-01-31 17:33:53.236  INFO 2260 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2023-01-31 17:33:53.548  INFO 2260 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2023-01-31 17:33:53.558  INFO 2260 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-31 17:33:53.613  INFO 2260 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2023-01-31 17:33:53.614  INFO 2260 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2023-01-31 17:33:53.614  INFO 2260 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2023-01-31 17:33:53.614  INFO 2260 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2023-01-31 17:33:53.614  INFO 2260 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2023-01-31 17:33:53.615  INFO 2260 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2023-01-31 17:33:53.615  INFO 2260 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2023-01-31 17:33:54.431  INFO 2260 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2023-01-31 17:33:54.446  INFO 2260 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2023-01-31 17:33:54.450  INFO 2260 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2023-01-31 17:33:54.464  INFO 2260 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1675182834460 with initial instances count: 0
+2023-01-31 17:33:54.476  INFO 2260 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application AUTH-SERVICE with eureka with status UP
+2023-01-31 17:33:54.477  INFO 2260 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1675182834477, current=UP, previous=STARTING]
+2023-01-31 17:33:54.540  INFO 2260 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-SERVICE/DESKTOP-4HG5T0S:auth-service:7702: registering service...
+2023-01-31 17:33:54.753  INFO 2260 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7702 (http) with context path ''
+2023-01-31 17:33:54.755  INFO 2260 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 7702
+2023-01-31 17:33:54.847  INFO 2260 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-SERVICE/DESKTOP-4HG5T0S:auth-service:7702 - registration status: 204
+2023-01-31 17:33:54.866  INFO 2260 --- [main] com.authservice.AuthServiceApplication   : Started AuthServiceApplication in 15.677 seconds (JVM running for 20.398)
+2023-01-31 17:34:25.132  INFO 2260 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2023-01-31 17:34:25.193  INFO 2260 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2023-01-31 17:34:25.193  INFO 2260 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2023-01-31 17:34:25.196  INFO 2260 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2023-01-31 17:34:25.197  INFO 2260 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2023-01-31 17:34:25.197  INFO 2260 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2023-01-31 17:34:25.197  INFO 2260 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2023-01-31 17:34:25.417  INFO 2260 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2023-01-31 17:38:53.633  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-31 17:43:53.650  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-31 17:48:53.662  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-31 17:50:32.738  INFO 2260 --- [http-nio-7702-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-01-31 17:50:32.743  INFO 2260 --- [http-nio-7702-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-01-31 17:50:33.808  INFO 2260 --- [http-nio-7702-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1064 ms
+2023-01-31 17:50:38.023 DEBUG 2260 --- [http-nio-7702-exec-1] org.hibernate.SQL                        : 
+    select
+        webshop0_.id as id1_2_,
+        webshop0_.bank_url as bank_url2_2_,
+        webshop0_.currency as currency3_2_,
+        webshop0_.error_url as error_ur4_2_,
+        webshop0_.fail_url as fail_url5_2_,
+        webshop0_.merchant_id as merchant6_2_,
+        webshop0_.merchant_password as merchant7_2_,
+        webshop0_.merchant_uuid as merchant8_2_,
+        webshop0_.password as password9_2_,
+        webshop0_.success_url as success10_2_,
+        webshop0_.username as usernam11_2_ 
+    from
+        web_shop webshop0_ 
+    where
+        webshop0_.merchant_uuid=?
+2023-01-31 17:50:38.103 TRACE 2260 --- [http-nio-7702-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [12345678-1234-1234-1234-123456789012]
+2023-01-31 17:50:38.227 DEBUG 2260 --- [http-nio-7702-exec-1] org.hibernate.SQL                        : 
+    select
+        paymentmet0_.web_shop_id as web_shop1_1_0_,
+        paymentmet0_.payment_method_id as payment_2_1_0_,
+        paymentmet1_.id as id1_0_1_,
+        paymentmet1_.name as name2_0_1_ 
+    from
+        web_shop_payment_method paymentmet0_ 
+    inner join
+        payment_method paymentmet1_ 
+            on paymentmet0_.payment_method_id=paymentmet1_.id 
+    where
+        paymentmet0_.web_shop_id=?
+2023-01-31 17:50:38.228 TRACE 2260 --- [http-nio-7702-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [BIGINT] - [1]
+2023-01-31 17:53:53.675  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-31 17:58:53.676  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-31 18:03:53.693  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-31 18:08:53.708  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-31 18:13:53.724  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-31 18:18:53.741  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-31 18:23:53.752  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-31 18:28:53.800  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-31 18:33:53.812  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-31 18:38:53.820  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-31 18:43:53.830  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-31 18:48:53.843  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-31 18:53:53.849  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-31 18:58:53.863  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-31 19:03:53.866  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-31 19:07:32.497 DEBUG 2260 --- [http-nio-7702-exec-3] org.hibernate.SQL                        : 
+    select
+        webshop0_.id as id1_2_,
+        webshop0_.bank_url as bank_url2_2_,
+        webshop0_.currency as currency3_2_,
+        webshop0_.error_url as error_ur4_2_,
+        webshop0_.fail_url as fail_url5_2_,
+        webshop0_.merchant_id as merchant6_2_,
+        webshop0_.merchant_password as merchant7_2_,
+        webshop0_.merchant_uuid as merchant8_2_,
+        webshop0_.password as password9_2_,
+        webshop0_.success_url as success10_2_,
+        webshop0_.username as usernam11_2_ 
+    from
+        web_shop webshop0_ 
+    where
+        webshop0_.merchant_uuid=?
+2023-01-31 19:07:32.507 TRACE 2260 --- [http-nio-7702-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [12345678-1234-1234-1234-123456789012]
+2023-01-31 19:07:32.546 DEBUG 2260 --- [http-nio-7702-exec-3] org.hibernate.SQL                        : 
+    select
+        paymentmet0_.web_shop_id as web_shop1_1_0_,
+        paymentmet0_.payment_method_id as payment_2_1_0_,
+        paymentmet1_.id as id1_0_1_,
+        paymentmet1_.name as name2_0_1_ 
+    from
+        web_shop_payment_method paymentmet0_ 
+    inner join
+        payment_method paymentmet1_ 
+            on paymentmet0_.payment_method_id=paymentmet1_.id 
+    where
+        paymentmet0_.web_shop_id=?
+2023-01-31 19:07:32.549 TRACE 2260 --- [http-nio-7702-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [BIGINT] - [1]
+2023-01-31 19:07:35.137 DEBUG 2260 --- [http-nio-7702-exec-4] org.hibernate.SQL                        : 
+    select
+        webshop0_.id as id1_2_,
+        webshop0_.bank_url as bank_url2_2_,
+        webshop0_.currency as currency3_2_,
+        webshop0_.error_url as error_ur4_2_,
+        webshop0_.fail_url as fail_url5_2_,
+        webshop0_.merchant_id as merchant6_2_,
+        webshop0_.merchant_password as merchant7_2_,
+        webshop0_.merchant_uuid as merchant8_2_,
+        webshop0_.password as password9_2_,
+        webshop0_.success_url as success10_2_,
+        webshop0_.username as usernam11_2_ 
+    from
+        web_shop webshop0_ 
+    where
+        webshop0_.merchant_uuid=?
+2023-01-31 19:07:35.138 TRACE 2260 --- [http-nio-7702-exec-4] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [12345678-1234-1234-1234-123456789012]
+2023-01-31 19:07:35.143 DEBUG 2260 --- [http-nio-7702-exec-4] org.hibernate.SQL                        : 
+    select
+        paymentmet0_.web_shop_id as web_shop1_1_0_,
+        paymentmet0_.payment_method_id as payment_2_1_0_,
+        paymentmet1_.id as id1_0_1_,
+        paymentmet1_.name as name2_0_1_ 
+    from
+        web_shop_payment_method paymentmet0_ 
+    inner join
+        payment_method paymentmet1_ 
+            on paymentmet0_.payment_method_id=paymentmet1_.id 
+    where
+        paymentmet0_.web_shop_id=?
+2023-01-31 19:07:35.143 TRACE 2260 --- [http-nio-7702-exec-4] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [BIGINT] - [1]
+2023-01-31 19:08:53.882  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-31 19:13:53.896  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-31 19:18:53.908  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-31 19:21:02.424 DEBUG 2260 --- [http-nio-7702-exec-6] org.hibernate.SQL                        : 
+    select
+        webshop0_.id as id1_2_,
+        webshop0_.bank_url as bank_url2_2_,
+        webshop0_.currency as currency3_2_,
+        webshop0_.error_url as error_ur4_2_,
+        webshop0_.fail_url as fail_url5_2_,
+        webshop0_.merchant_id as merchant6_2_,
+        webshop0_.merchant_password as merchant7_2_,
+        webshop0_.merchant_uuid as merchant8_2_,
+        webshop0_.password as password9_2_,
+        webshop0_.success_url as success10_2_,
+        webshop0_.username as usernam11_2_ 
+    from
+        web_shop webshop0_ 
+    where
+        webshop0_.merchant_uuid=?
+2023-01-31 19:21:02.428 TRACE 2260 --- [http-nio-7702-exec-6] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [12345678-1234-1234-1234-123456789012]
+2023-01-31 19:21:02.431 DEBUG 2260 --- [http-nio-7702-exec-6] org.hibernate.SQL                        : 
+    select
+        paymentmet0_.web_shop_id as web_shop1_1_0_,
+        paymentmet0_.payment_method_id as payment_2_1_0_,
+        paymentmet1_.id as id1_0_1_,
+        paymentmet1_.name as name2_0_1_ 
+    from
+        web_shop_payment_method paymentmet0_ 
+    inner join
+        payment_method paymentmet1_ 
+            on paymentmet0_.payment_method_id=paymentmet1_.id 
+    where
+        paymentmet0_.web_shop_id=?
+2023-01-31 19:21:02.431 TRACE 2260 --- [http-nio-7702-exec-6] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [BIGINT] - [1]
+2023-01-31 19:21:21.758 DEBUG 2260 --- [http-nio-7702-exec-7] org.hibernate.SQL                        : 
+    select
+        webshop0_.id as id1_2_,
+        webshop0_.bank_url as bank_url2_2_,
+        webshop0_.currency as currency3_2_,
+        webshop0_.error_url as error_ur4_2_,
+        webshop0_.fail_url as fail_url5_2_,
+        webshop0_.merchant_id as merchant6_2_,
+        webshop0_.merchant_password as merchant7_2_,
+        webshop0_.merchant_uuid as merchant8_2_,
+        webshop0_.password as password9_2_,
+        webshop0_.success_url as success10_2_,
+        webshop0_.username as usernam11_2_ 
+    from
+        web_shop webshop0_ 
+    where
+        webshop0_.merchant_uuid=?
+2023-01-31 19:21:21.760 TRACE 2260 --- [http-nio-7702-exec-7] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [12345678-1234-1234-1234-123456789012]
+2023-01-31 19:21:21.761 DEBUG 2260 --- [http-nio-7702-exec-7] org.hibernate.SQL                        : 
+    select
+        paymentmet0_.web_shop_id as web_shop1_1_0_,
+        paymentmet0_.payment_method_id as payment_2_1_0_,
+        paymentmet1_.id as id1_0_1_,
+        paymentmet1_.name as name2_0_1_ 
+    from
+        web_shop_payment_method paymentmet0_ 
+    inner join
+        payment_method paymentmet1_ 
+            on paymentmet0_.payment_method_id=paymentmet1_.id 
+    where
+        paymentmet0_.web_shop_id=?
+2023-01-31 19:21:21.762 TRACE 2260 --- [http-nio-7702-exec-7] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [BIGINT] - [1]
+2023-01-31 19:21:55.372 DEBUG 2260 --- [http-nio-7702-exec-8] org.hibernate.SQL                        : 
+    select
+        webshop0_.id as id1_2_,
+        webshop0_.bank_url as bank_url2_2_,
+        webshop0_.currency as currency3_2_,
+        webshop0_.error_url as error_ur4_2_,
+        webshop0_.fail_url as fail_url5_2_,
+        webshop0_.merchant_id as merchant6_2_,
+        webshop0_.merchant_password as merchant7_2_,
+        webshop0_.merchant_uuid as merchant8_2_,
+        webshop0_.password as password9_2_,
+        webshop0_.success_url as success10_2_,
+        webshop0_.username as usernam11_2_ 
+    from
+        web_shop webshop0_ 
+    where
+        webshop0_.merchant_uuid=?
+2023-01-31 19:21:55.388 TRACE 2260 --- [http-nio-7702-exec-8] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [12345678-1234-1234-1234-123456789012]
+2023-01-31 19:21:55.392 DEBUG 2260 --- [http-nio-7702-exec-8] org.hibernate.SQL                        : 
+    select
+        paymentmet0_.web_shop_id as web_shop1_1_0_,
+        paymentmet0_.payment_method_id as payment_2_1_0_,
+        paymentmet1_.id as id1_0_1_,
+        paymentmet1_.name as name2_0_1_ 
+    from
+        web_shop_payment_method paymentmet0_ 
+    inner join
+        payment_method paymentmet1_ 
+            on paymentmet0_.payment_method_id=paymentmet1_.id 
+    where
+        paymentmet0_.web_shop_id=?
+2023-01-31 19:21:55.392 TRACE 2260 --- [http-nio-7702-exec-8] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [BIGINT] - [1]
+2023-01-31 19:23:53.918  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
