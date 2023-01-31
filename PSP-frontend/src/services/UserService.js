@@ -75,6 +75,10 @@ class UserService{
             title: text
         })
     }
+
+    getMerchant(merchantId){
+        return axios.get(`${process.env.VUE_APP_API_GATEWAY}/auth/merchantData/${merchantId}`);
+    }
 }
 
 export default new UserService()

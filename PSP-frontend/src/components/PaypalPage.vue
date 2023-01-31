@@ -2,33 +2,46 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-3 col-md-2"></div>
-            <div class="col-lg-7 col-md-8 login-box" >
-					<div class="forma container">
-                        <h2 class="login-title">Order summary: </h2><br>
-                        <label style="float: center; padding-left: 10%;">Order id: {{this.orderUuid}}</label>
-                        <label style="float: right; padding-right: 15%;"><b>{{this.order.value}} {{this.order.currencyCode}}</b></label><br>
-                        <label style="float: center; padding-left: 10%;">Shipping</label>
-                        <label style="float: right; padding-right: 15%;"><b><i>Free</i></b></label><hr>
-                        <label style="float: center; padding-left: 10%;">Total</label>
-                        <label style="float: right; padding-right: 15%;"><b>{{this.order.value}} {{this.order.currencyCode}}</b></label><br><br><br>
+            <div class="col-lg-7 col-md-8 login-box">
+                <div class="forma container">
+                    <h2 class="login-title">Order summary: </h2><br>
+                    <label style="float: center; padding-left: 10%;">Order id: {{ this.orderUuid }}</label>
+                    <label style="float: right; padding-right: 15%;"><b>{{ this.order.value }}
+                            {{ this.order.currencyCode }}</b></label><br>
+                    <label style="float: center; padding-left: 10%;">Shipping</label>
+                    <label style="float: right; padding-right: 15%;"><b><i>Free</i></b></label>
+                    <hr>
+                    <label style="float: center; padding-left: 10%;">Total</label>
+                    <label style="float: right; padding-right: 15%;"><b>{{ this.order.value }}
+                            {{ this.order.currencyCode }}</b></label><br><br><br>
 
 
-						<div class="col-lg-12 login-title">Choose payment method <BIconCash class="login-pay" style="color: turquoise;"></BIconCash> </div>
-                        <div class="row">
-                            <div class="col"></div>
-                                <div class="col">
-                                    <br><br><br>
-                                    <div ref="paypal"></div>
-                                    <button v-if="bankCard" @click="payWithBankCard()" class="button is-link" style="width:100%; margin-bottom: 5px;"><BIconWalletFill style="margin-right:3px"></BIconWalletFill> Bank card</button>
-                                    <button class="button is-info" style="width:100%; margin-bottom: 5px;"><BIconCurrencyBitcoin style="margin-right:3px"></BIconCurrencyBitcoin> Pay with crypto</button>
-                                    <button class="button is-light" @click="qrCode()" style="width:100%; margin-bottom: 5px;"><img src="@/assets/qr-code.png" style="margin-right:3px"> Pay with QR code</button>
-                                    <button class="button is-dark" @click="redirectSubscribe()" style="width:100%; margin-bottom: 15%;">Paypal Subscribe</button>
-                                </div>
+                    <div class="col-lg-12 login-title">Choose payment method <BIconCash class="login-pay"
+                            style="color: turquoise;"></BIconCash>
+                    </div>
+                    <div class="row">
+                        <div class="col"></div>
+                        <div class="col">
+                            <br><br><br>
+                            <div ref="paypal"></div>
+                            <button v-if="bankCard" @click="payWithBankCard()" class="button is-link"
+                                style="width:100%; margin-bottom: 5px;">
+                                <BIconWalletFill style="margin-right:3px"></BIconWalletFill> Bank card
+                            </button>
+                            <button class="button is-info" style="width:100%; margin-bottom: 5px;"
+                                @click="payWithCrypto()">
+                                <BIconCurrencyBitcoin style="margin-right:3px"></BIconCurrencyBitcoin> Pay with crypto
+                            </button>
+                            <button class="button is-light" style="width:100%; margin-bottom: 5px;"><img
+                                    src="@/assets/qr-code.png" style="margin-right:3px"> Pay with QR code</button>
+                            <button class="button is-dark" @click="redirectSubscribe()"
+                                style="width:100%; margin-bottom: 15%;">Paypal Subscribe</button>
+                        </div>
 
-                                <div class="col"></div>
-                            </div>
-					</div>
-			</div>
+                        <div class="col"></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -38,6 +51,7 @@
 import Swal from 'sweetalert2'
 import PaypalService from "@/services/PaypalService";
 import PaymentService from "@/services/PaymentService";
+import UserService from '@/services/UserService';
 import { Buffer } from 'buffer';
 
 export default {
@@ -55,7 +69,9 @@ export default {
             },
             merchant: {
                 merchantId: "SQK683LFHNNTN",
-                email: "sb-msi0x23501552@business.example.com"
+                email: "sb-msi0x23501552@business.example.com",
+                successUrl: "",
+                errorUrl: ""
             },
             bankCard: true,
             payeeName: "Test",
@@ -63,11 +79,12 @@ export default {
         };
     },
     mounted() {
+        this.getPaypalMerchant();
         this.getMerchant();
         this.getAccountCredentials();
     },
     methods: {
-        getAccountCredentials(){
+        getAccountCredentials() {
             PaymentService.getAccountCredentials(this.merchantUuid).then(response => {
                 this.payeeName = response.data.name;
                 this.payeeAccountNumber = response.data.accountNumber;
@@ -76,11 +93,19 @@ export default {
                 console.log(error);
             });
         },
-        getMerchant() {
+        getPaypalMerchant() {
             PaypalService.getMerchant(this.merchantUuid).then(response => {
                 this.merchant.merchantId = response.data.merchantPaypalId;
                 this.merchant.email = response.data.email;
                 this.createButton();
+            }).catch(error => {
+                console.log(error);
+            });
+        },
+        getMerchant(){
+            UserService.getMerchant(this.merchantUuid).then(response => {
+                this.merchant.successUrl = response.data.successUrl
+                this.merchant.errorUrl = response.data.errorUrl
             }).catch(error => {
                 console.log(error);
             });
@@ -177,8 +202,8 @@ export default {
         payWithBankCard() {
             PaymentService.startPayment(this.$route.query.merchantUuid, this.$route.query.merchantOrderId, this.$route.query.amount);
         },
-        redirectSubscribe(){
-            this.$router.push({path:"/subscription", query: {merchantUuid: this.$route.query.merchantUuid, orderUuid: this.$route.query.merchantOrderId, productId:this.$route.query.productId, amount: this.$route.query.amount}});
+        redirectSubscribe() {
+            this.$router.push({ path: "/subscription", query: { merchantUuid: this.$route.query.merchantUuid, orderUuid: this.$route.query.merchantOrderId, productId: this.$route.query.productId, amount: this.$route.query.amount } });
         },
 
         async qrCode() {
@@ -186,30 +211,30 @@ export default {
                 title: 'Fill in the fields',
                 html:
                     '<input id="swal-input1" placeholder="Data on the payer" class="swal2-input">' +
-                    '<input id="swal-input2" placeholder="Payment purpose" class="swal2-input">'+
+                    '<input id="swal-input2" placeholder="Payment purpose" class="swal2-input">' +
                     '<input id="swal-input3" placeholder="Reference credit number" class="swal2-input">',
                 focusConfirm: false,
                 preConfirm: () => {
                     return [
-                    document.getElementById('swal-input1').value,
-                    document.getElementById('swal-input2').value,
-                    document.getElementById('swal-input3').value
+                        document.getElementById('swal-input1').value,
+                        document.getElementById('swal-input2').value,
+                        document.getElementById('swal-input3').value
                     ]
                 }
-                })
+            })
 
-                if (formValues) {
-                    let dto={
+            if (formValues) {
+                let dto = {
                     K: "PR",
                     V: "01",
                     C: "1",
                     R: this.payeeAccountNumber,
                     N: this.payeeName,
-                    I: "RSD"+120*this.$route.query.amount+",00",
+                    I: "RSD" + 120 * this.$route.query.amount + ",00",
                     P: formValues[0],
                     SF: "189",
                     S: formValues[1],
-                    RO: "00"+ formValues[2],
+                    RO: "00" + formValues[2],
                 }
 
                 PaymentService.generateQrCode(dto).then(response => {
@@ -224,13 +249,13 @@ export default {
                         imageWidth: 150,
                         imageHeight: 150,
                         imageAlt: 'Custom image',
-                    }).then((e)=>{
-                        if(e.isConfirmed){
+                    }).then((e) => {
+                        if (e.isConfirmed) {
                             var binaryImage = atob(base64ImageString);
                             var arrayBuffer = new ArrayBuffer(binaryImage.length);
                             var uint8Array = new Uint8Array(arrayBuffer);
                             for (var i = 0; i < binaryImage.length; i++) {
-                            uint8Array[i] = binaryImage.charCodeAt(i);
+                                uint8Array[i] = binaryImage.charCodeAt(i);
                             }
                             var file = new File([uint8Array], 'qrcode.png', { type: 'image/png' });
                             var formData = new FormData();
@@ -238,22 +263,43 @@ export default {
 
                             PaymentService.validateQrCode(formData).then(response => {
                                 Swal.fire({
-                                title: 'Scan the QR code',
-                                text: response.data.t,
+                                    title: 'Scan the QR code',
+                                    text: response.data.t,
+                                })
                             })
-                            })                
                         }
-                        console.log(e)}
-                        )
+                        console.log(e)
+                    }
+                    )
                 }).catch(error => {
                     console.log(error);
                 });
-               
 
-                }
+
+            }
+
+        },
+        payWithCrypto() {
+            const paymentInfo = {
+                title: 'Crypto payment',
+                priceAmount: '10',
+                priceCurrency: 'EUR',
+                receiveCurrency: 'DO_NOT_CONVERT',
+                callbackUrl: 'https://7931-178-221-134-201.eu.ngrok.io/crypto/update-payment',
+                successUrl: `${this.merchant.successUrl}/${this.$route.query.merchantOrderId}`,
+                cancelUrl: `${this.merchant.errorUrl}/${this.$route.query.merchantOrderId}`,
+                orderId: this.$route.query.merchantOrderId,
+                description: '',
+                merchantUuid: this.$route.query.merchantUuid
+            }
+            PaymentService.payWithCrypto(paymentInfo)
+                .then((response) => {
+                    console.log(response)
+                    window.location.replace(response.data.payment_url)
+                })
+                .catch(error => console.log(error))
         }
-
-    },
+    }
 }
 
 </script>

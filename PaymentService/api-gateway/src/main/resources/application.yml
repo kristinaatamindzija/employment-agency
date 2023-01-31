@@ -32,6 +32,12 @@ spring:
             - Path=/paypal/**
           filters:
             - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
+        - id: cryptoModules
+          uri: http://localhost:7707/
+          predicates:
+            - Path=/crypto/**
+          filters:
+            - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
       globalcors:
         corsConfigurations:
           '[/**]':
