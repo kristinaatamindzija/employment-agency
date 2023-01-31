@@ -46,13 +46,21 @@ class PaymentService {
     getAccountCredentials(merchantUuid) {
         return axios.get(`${process.env.VUE_APP_API_GATEWAY}/bank-service/payment/bankAccount/${merchantUuid}`)
     }
-
-    createQrTransaction(transaction){
-        return axios.post(`${process.env.VUE_APP_API_GATEWAY}/bank-service/payment/transaction`, transaction);
-    }
-
-    updateQrTransaction(transaction){
-        return axios.put(`${process.env.VUE_APP_API_GATEWAY}/bank-service/payment/transaction`, transaction);
+    
+    payWithCrypto(paymentInfo) {
+        return axios.post(`${process.env.VUE_APP_API_GATEWAY}/crypto/pay`, {
+            title: paymentInfo.title,
+            priceAmount: paymentInfo.priceAmount,
+            priceCurrency: paymentInfo.priceCurrency,
+            receiveCurrency: 'DO_NOT_CONVERT',
+            callbackUrl: paymentInfo.callbackUrl,
+            successUrl: paymentInfo.successUrl,
+            cancelUrl: paymentInfo.cancelUrl,
+            orderId: paymentInfo.orderId,
+            description: paymentInfo.description,
+            merchantUuid: paymentInfo.merchantUuid
+        })
+        
     }
 }
 

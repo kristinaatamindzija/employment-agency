@@ -2,33 +2,46 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-3 col-md-2"></div>
-            <div class="col-lg-7 col-md-8 login-box" >
-					<div class="forma container">
-                        <h2 class="login-title">Order summary: </h2><br>
-                        <label style="float: center; padding-left: 10%;">Order id: {{this.orderUuid}}</label>
-                        <label style="float: right; padding-right: 15%;"><b>{{this.order.value}} {{this.order.currencyCode}}</b></label><br>
-                        <label style="float: center; padding-left: 10%;">Shipping</label>
-                        <label style="float: right; padding-right: 15%;"><b><i>Free</i></b></label><hr>
-                        <label style="float: center; padding-left: 10%;">Total</label>
-                        <label style="float: right; padding-right: 15%;"><b>{{this.order.value}} {{this.order.currencyCode}}</b></label><br><br><br>
+            <div class="col-lg-7 col-md-8 login-box">
+                <div class="forma container">
+                    <h2 class="login-title">Order summary: </h2><br>
+                    <label style="float: center; padding-left: 10%;">Order id: {{ this.orderUuid }}</label>
+                    <label style="float: right; padding-right: 15%;"><b>{{ this.order.value }}
+                            {{ this.order.currencyCode }}</b></label><br>
+                    <label style="float: center; padding-left: 10%;">Shipping</label>
+                    <label style="float: right; padding-right: 15%;"><b><i>Free</i></b></label>
+                    <hr>
+                    <label style="float: center; padding-left: 10%;">Total</label>
+                    <label style="float: right; padding-right: 15%;"><b>{{ this.order.value }}
+                            {{ this.order.currencyCode }}</b></label><br><br><br>
 
 
-						<div class="col-lg-12 login-title">Choose payment method <BIconCash class="login-pay" style="color: turquoise;"></BIconCash> </div>
-                        <div class="row">
-                            <div class="col"></div>
-                                <div class="col">
-                                    <br><br><br>
-                                    <div ref="paypal"></div>
-                                    <button v-if="bankCard" @click="payWithBankCard()" class="button is-link" style="width:100%; margin-bottom: 5px;"><BIconWalletFill style="margin-right:3px"></BIconWalletFill> Bank card</button>
-                                    <button class="button is-info" style="width:100%; margin-bottom: 5px;"><BIconCurrencyBitcoin style="margin-right:3px"></BIconCurrencyBitcoin> Pay with crypto</button>
-                                    <button class="button is-light" @click="qrCode()" style="width:100%; margin-bottom: 5px;"><img src="@/assets/qr-code.png" style="margin-right:3px"> Pay with QR code</button>
-                                    <button class="button is-dark" @click="redirectSubscribe()" style="width:100%; margin-bottom: 15%;">Paypal Subscribe</button>
-                                </div>
+                    <div class="col-lg-12 login-title">Choose payment method <BIconCash class="login-pay"
+                            style="color: turquoise;"></BIconCash>
+                    </div>
+                    <div class="row">
+                        <div class="col"></div>
+                        <div class="col">
+                            <br><br><br>
+                            <div ref="paypal"></div>
+                            <button v-if="bankCard" @click="payWithBankCard()" class="button is-link"
+                                style="width:100%; margin-bottom: 5px;">
+                                <BIconWalletFill style="margin-right:3px"></BIconWalletFill> Bank card
+                            </button>
+                            <button class="button is-info" style="width:100%; margin-bottom: 5px;"
+                                @click="payWithCrypto()">
+                                <BIconCurrencyBitcoin style="margin-right:3px"></BIconCurrencyBitcoin> Pay with crypto
+                            </button>
+                            <button class="button is-light" style="width:100%; margin-bottom: 5px;"><img
+                                    src="@/assets/qr-code.png" style="margin-right:3px"> Pay with QR code</button>
+                            <button class="button is-dark" @click="redirectSubscribe()"
+                                style="width:100%; margin-bottom: 15%;">Paypal Subscribe</button>
+                        </div>
 
-                                <div class="col"></div>
-                            </div>
-					</div>
-			</div>
+                        <div class="col"></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -54,7 +67,9 @@ export default {
             },
             merchant: {
                 merchantId: "SQK683LFHNNTN",
-                email: "sb-msi0x23501552@business.example.com"
+                email: "sb-msi0x23501552@business.example.com",
+                successUrl: "",
+                errorUrl: ""
             },
             bankCard: true,
             payeeName: "Test",
@@ -62,11 +77,12 @@ export default {
         };
     },
     mounted() {
+        this.getPaypalMerchant();
         this.getMerchant();
         this.getAccountCredentials();
     },
     methods: {
-        getAccountCredentials(){
+        getAccountCredentials() {
             PaymentService.getAccountCredentials(this.merchantUuid).then(response => {
                 this.payeeName = response.data.name;
                 this.payeeAccountNumber = response.data.accountNumber;
@@ -75,11 +91,19 @@ export default {
                 console.log(error);
             });
         },
-        getMerchant() {
+        getPaypalMerchant() {
             PaypalService.getMerchant(this.merchantUuid).then(response => {
                 this.merchant.merchantId = response.data.merchantPaypalId;
                 this.merchant.email = response.data.email;
                 this.createButton();
+            }).catch(error => {
+                console.log(error);
+            });
+        },
+        getMerchant(){
+            UserService.getMerchant(this.merchantUuid).then(response => {
+                this.merchant.successUrl = response.data.successUrl
+                this.merchant.errorUrl = response.data.errorUrl
             }).catch(error => {
                 console.log(error);
             });
@@ -176,15 +200,14 @@ export default {
         payWithBankCard() {
             PaymentService.startPayment(this.$route.query.merchantUuid, this.$route.query.merchantOrderId, this.$route.query.amount, false);
         },
-        redirectSubscribe(){
-            this.$router.push({path:"/subscription", query: {merchantUuid: this.$route.query.merchantUuid, orderUuid: this.$route.query.merchantOrderId, productId:this.$route.query.productId, amount: this.$route.query.amount}});
+        redirectSubscribe() {
+            this.$router.push({ path: "/subscription", query: { merchantUuid: this.$route.query.merchantUuid, orderUuid: this.$route.query.merchantOrderId, productId: this.$route.query.productId, amount: this.$route.query.amount } });
         },
 
         async qrCode() {
             PaymentService.startPayment(this.$route.query.merchantUuid, this.$route.query.merchantOrderId, this.$route.query.amount, true);
         }
-
-    },
+    }
 }
 
 </script>
