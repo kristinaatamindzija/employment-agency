@@ -18,4 +18,5 @@ public class CryptoPaymentDTO {
     public String orderId;
     public String description;
     public String merchantUuid;
+    public String bitcoinApiToken;
 }

@@ -14,6 +14,5 @@ public class PaymentMethodDTO {
     public String merchantUuid;
     public String merchantId;
     public String merchantPassword;
-    //public String PaypalUsername;
-    //public String BitcoinWalletId;
+    public String bitcoinApiToken;
 }

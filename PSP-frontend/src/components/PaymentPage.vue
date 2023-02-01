@@ -30,32 +30,42 @@
             </div>
             <div class="col"></div>
         </div>
-        <b-modal id="modal-bank-card" v-model="showBankCardModal" no-close-on-backdrop hide-backdrop
+        <b-modal id="modal-bank-card" v-model="showBankCardModal" no-close-on-backdrop hide-backdrop hide-header-close
             @ok="saveBankCard()" @cancel="bankCard = !bankCard" title="Bank card">
             <b-form-group id="input-group-2" label="Merchant id:" label-for="input-2">
                 <b-form-input id="input-2" v-model="formBankCard.merchantId" required></b-form-input>
             </b-form-group>
-            <b-form-group id="input-group-2" label="Merchant password:" type="password" label-for="input-2">
-                <b-form-input id="input-2" v-model="formBankCard.merchantPassword" required></b-form-input>
+            <b-form-group id="input-group-2" label="Merchant password:" label-for="input-2">
+                <b-form-input id="input-2" v-model="formBankCard.merchantPassword" type=password
+                    required></b-form-input>
             </b-form-group>
         </b-modal>
-        <b-modal id="modal-qr-code" v-model="showQrCodeModal" no-close-on-backdrop hide-backdrop @ok="saveQrCode()"
-            @cancel="qrCode = !qrCode" title="QR code">
-            <p class="my-4">Hello from modal!</p>
+        <b-modal id="modal-qr-code" v-model="showQrCodeModal" no-close-on-backdrop hide-backdrop hide-header-close
+            @ok="saveQrCode()" @cancel="qrCode = !qrCode" title="QR code">
+            <p class="my-4">Add QR code payment?</p>
         </b-modal>
-        <b-modal id="modal-paypal" v-model="showPayPalModal" no-close-on-backdrop hide-backdrop @ok="savePayPal()"
-            @cancel="payPal = !payPal" title="PayPal">
-            <p class="my-4">Hello from modal!</p>
+        <b-modal id="modal-paypal" v-model="showPayPalModal" no-close-on-backdrop hide-backdrop hide-header-close
+            @ok="savePayPal()" @cancel="payPal = !payPal" title="PayPal">
+            <b-form-group id="input-group-3" label="Merchant paypal id:" label-for="input-3">
+                <b-form-input id="input-3" v-model="formPaypalCard.merchantPaypalId" required></b-form-input>
+            </b-form-group>
+            <b-form-group id="input-group-3" label="Email:" label-for="input-3">
+                <b-form-input id="input-3" v-model="formPaypalCard.email" type=email
+                    required></b-form-input>
+            </b-form-group>
         </b-modal>
-        <b-modal id="modal-bitcoin" v-model="showBitcoinModal" no-close-on-backdrop hide-backdrop @ok="saveBitcoin()"
-            @cancel="bitcoin = !bitcoin" title="Bitcoin">
-            <p class="my-4">Hello from modal!</p>
+        <b-modal id="modal-bitcoin" v-model="showBitcoinModal" no-close-on-backdrop hide-backdrop hide-header-close
+            @ok="saveBitcoin()" @cancel="bitcoin = !bitcoin" title="Bitcoin">
+            <b-form-group id="input-group-4" label="Bitcoin API token:" label-for="input-4">
+                <b-form-input id="input-4" v-model="formBitcoinCard.token" required></b-form-input>
+            </b-form-group>
         </b-modal>
     </div>
 </template>
 
 <script>
 import { store } from "@/main";
+import PaypalService from "@/services/PaypalService";
 import PaymentService from "../services/PaymentService"
 export default {
     name: "PaymentPage",
@@ -73,6 +83,13 @@ export default {
             formBankCard: {
                 merchantId: "",
                 merchantPassword: ""
+            },
+            formPaypalCard: {
+                merchantPaypalId: "",
+                email: ""
+            },
+            formBitcoinCard: {
+                token: ""
             }
         };
     },
@@ -103,18 +120,53 @@ export default {
                     merchantId: "",
                     merchantPassword: ""
                 })
-                this.webShop.paymentMethods = this.webShop.paymentMethods?.filter((e)=> e.id !== 1)
+                this.webShop.paymentMethods = this.webShop.paymentMethods?.filter((e) => e.id !== 1)
                 store.commit("setWebShop", this.webShop)
+                this.deleteQrCode();
+                this.qrCode = false;
             }
         },
         setShowQrCodeModal() {
-            this.showQrCodeModal = true
+            if (this.bankCard == true) {
+                if (this.qrCode == true) {
+                    this.showQrCodeModal = true
+                    return
+                } else {
+                    this.deleteQrCode();
+                    return
+                }
+            }
+            this.qrCode = false;
         },
         setShowPayPalModal() {
-            this.showPayPalModal = true
+            if (this.payPal == true) {
+                this.showPayPalModal = true
+            } else {
+                PaypalService.deletePayPal(this.webShop?.merchantUuid)
+                PaymentService.deletePayment({
+                    paymentMethodId: 3,
+                    merchantUuid: this.webShop?.merchantUuid,
+                    merchantId: "",
+                    merchantPassword: ""
+                })
+                this.webShop.paymentMethods = this.webShop.paymentMethods?.filter((e) => e.id !== 3)
+                store.commit("setWebShop", this.webShop)
+            }
         },
         setShowBitcoinModal() {
-            this.showBitcoinModal = true
+            if (this.bitcoin == true) {
+                this.showBitcoinModal = true
+            } else {
+                PaymentService.deletePayment({
+                    paymentMethodId: 4,
+                    merchantUuid: this.webShop?.merchantUuid,
+                    bitcoinApiToken: '',
+                    merchantId: "",
+                    merchantPassword: ""
+                })
+                this.webShop.paymentMethods = this.webShop.paymentMethods?.filter((e) => e.id !== 4)
+                store.commit("setWebShop", this.webShop)
+            }
         },
         saveBankCard() {
             PaymentService.addPayment({
@@ -123,18 +175,54 @@ export default {
                 merchantId: this.formBankCard?.merchantId,
                 merchantPassword: this.formBankCard?.merchantPassword
             })
-            this.webShop.paymentMethods?.push({id: 1, name: 'bank-card'})
-            console.log(this.webShop)
+            this.webShop.paymentMethods?.push({ id: 1, name: 'bank-card' })
             store.commit("setWebShop", this.webShop)
         },
         saveQrCode() {
-
+            PaymentService.addPayment({
+                paymentMethodId: 2,
+                merchantUuid: this.webShop?.merchantUuid,
+                merchantId: '',
+                merchantPassword: ''
+            })
+            this.webShop.paymentMethods?.push({ id: 2, name: 'qr-code' })
+            store.commit("setWebShop", this.webShop)
         },
         savePayPal() {
-
+            PaymentService.addPayment({
+                paymentMethodId: 3,
+                merchantUuid: this.webShop?.merchantUuid,
+                merchantId: "",
+                merchantPassword: ""
+            })
+            PaypalService.addPayPal({
+                merchantUuid: this.webShop?.merchantUuid,
+                merchantPaypalId: this.formPaypalCard?.merchantPaypalId,
+                email: this.formPaypalCard?.email
+            })
+            this.webShop.paymentMethods?.push({ id: 3, name: 'paypal' })
+            store.commit("setWebShop", this.webShop)
         },
         saveBitcoin() {
-
+            PaymentService.addPayment({
+                paymentMethodId: 4,
+                merchantUuid: this.webShop?.merchantUuid,
+                bitcoinApiToken: this.formBitcoinCard?.token,
+                merchantId: '',
+                merchantPassword: ''
+            })
+            this.webShop.paymentMethods?.push({ id: 4, name: 'bitcoin' })
+            store.commit("setWebShop", this.webShop)
+        },
+        deleteQrCode() {
+            PaymentService.deletePayment({
+                paymentMethodId: 2,
+                merchantUuid: this.webShop?.merchantUuid,
+                merchantId: "",
+                merchantPassword: ""
+            })
+            this.webShop.paymentMethods = this.webShop.paymentMethods?.filter((e) => e.id !== 2)
+            store.commit("setWebShop", this.webShop)
         }
     },
     components: {}

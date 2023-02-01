@@ -1,5 +1,6 @@
 package com.example.paypalservice.controller;
 
+import com.example.paypalservice.dto.MerchantDTO;
 import com.example.paypalservice.dto.MerchantResponseDTO;
 import com.example.paypalservice.dto.TransactionRequestDTO;
 import com.example.paypalservice.model.StatusTransaction;
@@ -7,6 +8,7 @@ import com.example.paypalservice.model.Transaction;
 import com.example.paypalservice.service.PaypalService;
 import com.example.paypalservice.service.SubscriptionPlanService;
 import com.example.paypalservice.service.TransactionService;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -51,5 +53,18 @@ public class PaypalController {
     public String getSubscriptionPlanId(@PathVariable String merchantUuid, @PathVariable Long productId) {
         return subscriptionPlanService.getSubscriptionPlanId(merchantUuid, productId);
     }
+
+    @PostMapping("/addPayPal")
+    public ResponseEntity<?> addPaymentMethod(@RequestBody MerchantDTO merchantDTO) {
+        paypalService.addPayPal(merchantDTO);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @DeleteMapping("/deletePayPal/{merchantUuid}")
+    public ResponseEntity<?> deletePaymentMethod(@PathVariable String merchantUuid) {
+        paypalService.deletePayPal(merchantUuid);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
 
 }

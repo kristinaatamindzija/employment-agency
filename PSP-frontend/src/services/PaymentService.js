@@ -6,7 +6,8 @@ class PaymentService {
             paymentMethodId: payment?.paymentMethodId,
             merchantUuid: payment?.merchantUuid,
             merchantId: payment?.merchantId,
-            merchantPassword: payment?.merchantPassword
+            merchantPassword: payment?.merchantPassword,
+            bitcoinApiToken: payment?.bitcoinApiToken
         })
     }
     deletePayment(payment) {
@@ -14,7 +15,8 @@ class PaymentService {
             paymentMethodId: payment?.paymentMethodId,
             merchantUuid: payment?.merchantUuid,
             merchantId: payment?.merchantId,
-            merchantPassword: payment?.merchantPassword
+            merchantPassword: payment?.merchantPassword,
+            bitcoinApiToken: payment?.bitcoinApiToken
         })
     }
     startPayment(merchantUuid, merchantOrderId, amount, qr) {
@@ -58,7 +60,8 @@ class PaymentService {
             cancelUrl: paymentInfo.cancelUrl,
             orderId: paymentInfo.orderId,
             description: paymentInfo.description,
-            merchantUuid: paymentInfo.merchantUuid
+            merchantUuid: paymentInfo.merchantUuid,
+            bitcoinApiToken: paymentInfo.bitcoinApiToken
         })
         
     }

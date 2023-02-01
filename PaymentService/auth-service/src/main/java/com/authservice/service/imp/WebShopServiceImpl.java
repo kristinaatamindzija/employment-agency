@@ -74,20 +74,15 @@ public class WebShopServiceImpl implements WebShopService {
         });
         paymentMethods.add(paymentMethod);
         switch (Math.toIntExact(paymentMethodDTO.getPaymentMethodId())) {
-            case 1:
-            case 2: {
+            case 1: {
                 webShop.setMerchantId(paymentMethodDTO.getMerchantId());
                 webShop.setMerchantPassword(paymentMethodDTO.getMerchantPassword());
                 break;
             }
-//            case 3: {
-//                webShop.setPaypalUsername(paymentMethodDTO.getPaypalUsername());
-//                break;
-//            }
-//            case 4: {
-//                webShop.setBitcoinWalletId(paymentMethodDTO.getBitcoinWalletId());
-//                break;
-//            }
+            case 4: {
+                webShop.setBitcoinApiToken(paymentMethodDTO.getBitcoinApiToken());
+                break;
+            }
 
         }
         webShopRepository.save(webShop);
@@ -104,20 +99,15 @@ public class WebShopServiceImpl implements WebShopService {
             throw new RuntimeException("Payment method not found");
         merchantPaymentMethods.removeIf(method -> method.getId().equals(paymentMethod.getId()));
         switch (Math.toIntExact(paymentMethodDTO.getPaymentMethodId())) {
-            case 1:
-            case 2: {
+            case 1: {
                 webShop.setMerchantId(null);
                 webShop.setMerchantPassword(null);
                 break;
             }
-//            case 3: {
-//                webShop.setPaypalUsername(null);
-//                break;
-//            }
-//            case 4: {
-//                webShop.setBitcoinWalletId(null);
-//                break;
-//            }
+            case 4: {
+                webShop.setBitcoinApiToken(null);
+                break;
+            }
 
         }
         webShopRepository.save(webShop);
@@ -128,8 +118,9 @@ public class WebShopServiceImpl implements WebShopService {
     public MerchantDataResponse getMerchantData(String merchantUuid) {
         WebShop webShop = webShopRepository.findByMerchantUuid(merchantUuid);
         if(webShop == null) throw new UsernameNotFoundException("WebShop not found");
-        return new MerchantDataResponse(webShop.getMerchantId(), webShop.getMerchantPassword(),
-                webShop.getSuccessUrl(), webShop.getFailUrl(), webShop.getErrorUrl(), webShop.getBankUrl());
+        return new MerchantDataResponse(webShop.getMerchantId(), "",
+                webShop.getSuccessUrl(), webShop.getFailUrl(), webShop.getErrorUrl(), webShop.getBankUrl(),
+                webShop.getPaymentMethods(), webShop.getBitcoinApiToken());
     }
 
     @Override

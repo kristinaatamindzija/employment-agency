@@ -41,6 +41,9 @@ public class WebShop {
     @Column(name = "merchant_password")
     private String merchantPassword;
 
+    @Column(name = "bitcoin_api_token")
+    private String bitcoinApiToken;
+
     @ManyToMany(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER)
     @JoinTable(
             name = "web_shop_payment_method",

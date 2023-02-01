@@ -23,18 +23,18 @@
                         <div class="col"></div>
                         <div class="col">
                             <br><br><br>
-                            <div ref="paypal"></div>
+                            <div v-if="paypal" ref="paypal"></div>
                             <button v-if="bankCard" @click="payWithBankCard()" class="button is-link"
                                 style="width:100%; margin-bottom: 5px;">
                                 <BIconWalletFill style="margin-right:3px"></BIconWalletFill> Bank card
                             </button>
-                            <button class="button is-info" style="width:100%; margin-bottom: 5px;"
+                            <button v-if="bitcoin" class="button is-info" style="width:100%; margin-bottom: 5px;"
                                 @click="payWithCrypto()">
                                 <BIconCurrencyBitcoin style="margin-right:3px"></BIconCurrencyBitcoin> Pay with crypto
                             </button>
-                            <button class="button is-light" style="width:100%; margin-bottom: 5px;"><img
+                            <button v-if="qrcode" class="button is-light" style="width:100%; margin-bottom: 5px;"><img
                                     src="@/assets/qr-code.png" style="margin-right:3px"> Pay with QR code</button>
-                            <button class="button is-dark" @click="redirectSubscribe()"
+                            <button v-if="paypal" class="button is-dark" @click="redirectSubscribe()"
                                 style="width:100%; margin-bottom: 15%;">Paypal Subscribe</button>
                         </div>
 
@@ -51,6 +51,7 @@
 import Swal from 'sweetalert2'
 import PaypalService from "@/services/PaypalService";
 import PaymentService from "@/services/PaymentService";
+import UserService from '@/services/UserService';
 
 export default {
     name: "PaypalPage",
@@ -71,7 +72,12 @@ export default {
                 successUrl: "",
                 errorUrl: ""
             },
-            bankCard: true,
+            bankCard: false,
+            qrcode: false,
+            paypal: false,
+            bitcoin: false,
+            paymenyMethods: [],
+            bitcoinApiToken: '',
             payeeName: "Test",
             payeeAccountNumber: "123456789",
         };
@@ -100,10 +106,24 @@ export default {
                 console.log(error);
             });
         },
-        getMerchant(){
+        getMerchant() {
             UserService.getMerchant(this.merchantUuid).then(response => {
                 this.merchant.successUrl = response.data.successUrl
                 this.merchant.errorUrl = response.data.errorUrl
+                this.paymenyMethods = response.data.paymentMethods
+                this.bitcoinApiToken = response.data.bitcoinApiToken
+                if (this.paymenyMethods.find(e => e.id === 1)) {
+                    this.bankCard = true
+                }
+                if (this.paymenyMethods.find(e => e.id === 2)) {
+                    this.qrcode = true
+                }
+                if (this.paymenyMethods.find(e => e.id === 3)) {
+                    this.paypal = true
+                }
+                if (this.paymenyMethods.find(e => e.id === 4)) {
+                    this.bitcoin = true
+                }
             }).catch(error => {
                 console.log(error);
             });
@@ -196,16 +216,36 @@ export default {
                 }
             }).render(this.$refs.paypal);
         },
-
         payWithBankCard() {
             PaymentService.startPayment(this.$route.query.merchantUuid, this.$route.query.merchantOrderId, this.$route.query.amount, false);
         },
         redirectSubscribe() {
             this.$router.push({ path: "/subscription", query: { merchantUuid: this.$route.query.merchantUuid, orderUuid: this.$route.query.merchantOrderId, productId: this.$route.query.productId, amount: this.$route.query.amount } });
         },
-
         async qrCode() {
             PaymentService.startPayment(this.$route.query.merchantUuid, this.$route.query.merchantOrderId, this.$route.query.amount, true);
+        },
+        payWithCrypto() {
+            const paymentInfo = {
+                title: 'Crypto payment',
+                priceAmount: '10',
+                priceCurrency: 'EUR',
+                receiveCurrency: 'DO_NOT_CONVERT',
+                callbackUrl: 'https://7f9c-109-93-235-85.eu.ngrok.io/crypto/update-payment',
+                successUrl: `${this.merchant.successUrl}/${this.$route.query.merchantOrderId}`,
+                cancelUrl: `${this.merchant.errorUrl}/${this.$route.query.merchantOrderId}`,
+                orderId: this.$route.query.merchantOrderId,
+                description: '',
+                merchantUuid: this.$route.query.merchantUuid,
+                bitcoinApiToken: this.bitcoinApiToken
+
+            }
+            PaymentService.payWithCrypto(paymentInfo)
+                .then((response) => {
+                    console.log(response)
+                    window.location.replace(response.data.payment_url)
+                })
+                .catch(error => console.log(error))
         }
     }
 }
