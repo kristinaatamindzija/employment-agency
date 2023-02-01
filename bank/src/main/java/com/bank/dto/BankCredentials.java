@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class BankCredentials {
+    public String merchantId;
     public String name;
     public String accountNumber;
 }

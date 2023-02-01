@@ -90,7 +90,8 @@ public class PaymentServiceImpl implements PaymentService {
         }
         String encryptedIssuerPan = Encryptor.encrypt(paymentExecutionRequest.pan);
         String encryptedAcquirerPan = Encryptor.encrypt(payment.getMerchantPan());
-        var buyerCreditCard = creditCardRepository.findByPan(Hasher.hashPAN(paymentExecutionRequest.pan));
+        var buyerCreditCard = creditCardRepository.findByPan(paymentExecutionRequest.qr ?
+                paymentExecutionRequest.pan : Hasher.hashPAN(paymentExecutionRequest.pan));
         if (buyerCreditCard == null) {
             log.info("Buyer credit card with pan " + encryptedIssuerPan + " not found.");
             return sendPccRequest(paymentExecutionRequest);
@@ -216,7 +217,7 @@ public class PaymentServiceImpl implements PaymentService {
             log.error("Merchant with uuid " + merchantUuid + " not found.");
             throw new MerchantNotFoundException("Merchant with provided uuid not found.");
         }
-        return new BankCredentials(merchant.getName()+" "+merchant.getSurname(), merchant.getAccountNumber());
+        return new BankCredentials(merchant.getMerchantId(), merchant.getName()+" "+merchant.getSurname(), merchant.getAccountNumber());
     }
 
     @Override
@@ -252,7 +253,8 @@ public class PaymentServiceImpl implements PaymentService {
     }
 
     private Boolean validateCreditCard(PaymentExecutionRequest paymentExecutionRequest, CreditCard creditCard) {
-        var isSecurityCodeValid = Hasher.hashPAN(paymentExecutionRequest.securityCode).equals(creditCard.securityCode);
+        var isSecurityCodeValid = paymentExecutionRequest.qr ? paymentExecutionRequest.securityCode.equals(creditCard.securityCode)
+                : Hasher.hashPAN(paymentExecutionRequest.securityCode).equals(creditCard.securityCode);
         var isCardExpired = creditCard.validThru.before(new Date());
         return isSecurityCodeValid && !isCardExpired;
     }

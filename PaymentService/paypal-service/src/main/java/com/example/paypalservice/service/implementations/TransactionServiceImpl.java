@@ -21,18 +21,22 @@ public class TransactionServiceImpl implements TransactionService {
 
     @Override
     public void createTransaction(TransactionRequestDTO transactionDto) {
-        Transaction transaction = new Transaction(transactionDto.getStatus(), transactionDto.getTimestamp(),
+        Transaction transaction = transactionRepository.findByMerchantUuidAndProductUuid(transactionDto.getMerchantUuid(), transactionDto.getProductUuid());
+        if(transaction != null) {
+            throw new RuntimeException("Transaction already exists");
+        }
+        Transaction newTransaction = new Transaction(transactionDto.getStatus(), transactionDto.getTimestamp(),
                 transactionDto.getMerchantUuid(), transactionDto.getProductUuid(), transactionDto.getPayerId());
-        transactionRepository.save(transaction);
+        transactionRepository.save(newTransaction);
     }
 
     @Override
     public String updateTransaction(TransactionRequestDTO transactionDto) {
-        //promeniti ovaj find da bude unikatan. npr neki id
         Transaction transaction = transactionRepository.findByMerchantUuidAndProductUuid(transactionDto.getMerchantUuid(), transactionDto.getProductUuid());
         assert transaction != null;
         transaction.setStatus(transactionDto.getStatus());
         transaction.setTimestamp(transactionDto.getTimestamp());
+        transaction.setPayerId(transactionDto.getPayerId());
         transactionRepository.save(transaction);
 
         AuthServiceResponse authServiceResponse = authServiceFeignClient.getMerchantData(transactionDto.getMerchantUuid());

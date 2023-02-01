@@ -14,15 +14,19 @@ class QrService {
     }
 
     getAccountCredentials(merchantUuid) {
-        return axios.get(`${process.env.VUE_APP_API_GATEWAY}/bank-service/payment/bankAccount/${merchantUuid}`)
+        return axios.get(`${process.env.VUE_APP_BANK}/payment/bankCredentials/${merchantUuid}`)
     }
 
     createQrTransaction(transaction){
-        return axios.post(`${process.env.VUE_APP_API_GATEWAY}/bank-service/payment/transaction`, transaction);
+        return axios.post(`${process.env.VUE_APP_BANK}/payment/transaction`, transaction);
+    }
+
+    executeQrTransaction(transaction){
+        return axios.post(`${process.env.VUE_APP_BANK}/payment/executeQr`, transaction);
     }
 
     updateQrTransaction(transaction){
-        return axios.put(`${process.env.VUE_APP_API_GATEWAY}/bank-service/payment/transaction`, transaction);
+        return axios.put(`${process.env.VUE_APP_BANK}/payment/transaction`, transaction);
     }
 }
 

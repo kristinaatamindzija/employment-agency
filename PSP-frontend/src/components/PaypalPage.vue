@@ -32,7 +32,7 @@
                                 @click="payWithCrypto()">
                                 <BIconCurrencyBitcoin style="margin-right:3px"></BIconCurrencyBitcoin> Pay with crypto
                             </button>
-                            <button v-if="qrcode" class="button is-light" style="width:100%; margin-bottom: 5px;"><img
+                            <button v-if="qrcode" @click="qrCode()" class="button is-light" style="width:100%; margin-bottom: 5px;"><img
                                     src="@/assets/qr-code.png" style="margin-right:3px"> Pay with QR code</button>
                             <button v-if="paypal" class="button is-dark" @click="redirectSubscribe()"
                                 style="width:100%; margin-bottom: 15%;">Paypal Subscribe</button>
@@ -51,19 +51,20 @@
 import Swal from 'sweetalert2'
 import PaypalService from "@/services/PaypalService";
 import PaymentService from "@/services/PaymentService";
-import UserService from '@/services/UserService';
+import UserService from "@/services/UserService"
+import jwtDecode from 'jwt-decode';
 
 export default {
     name: "PaypalPage",
     data() {
         return {
-            username: "",
-            orderUuid: this.$route.query.merchantOrderId,
-            merchantUuid: this.$route.query.merchantUuid,
-            productId: this.$route.query.productId,
+            decodedToken: "",
+            orderUuid: "",
+            merchantUuid: "",
+            productId: 0,
             order: {
                 currencyCode: "USD",
-                value: this.$route.query.amount,
+                value: 0.0,
                 description: "Test"
             },
             merchant: {
@@ -83,6 +84,13 @@ export default {
         };
     },
     mounted() {
+        const token = this.$route.query.token;
+        const decoded = jwtDecode(token);
+        this.decodedToken = decoded;
+        this.orderUuid = decoded.merchantOrderId;
+        this.merchantUuid = decoded.merchantUuid;
+        this.productId = decoded.productId;
+        this.order.value = decoded.amount;
         this.getPaypalMerchant();
         this.getMerchant();
         this.getAccountCredentials();
@@ -198,16 +206,15 @@ export default {
                         console.log(error);
                     });
                 },
-                onError: err => {
-                    console.log(err);
+                onError: () => {
                     let transaction = {
                         status: "FAILED",
                         timestamp: new Date(),
                         merchantUuid: merchantUuid,
                         productUuid: productUuid,
-                        payerId: payerId,
+                        payerId: "",
                     };
-                    PaypalService.createTransaction(transaction).then(response => {
+                    PaypalService.updateTransaction(transaction).then(response => {
                         console.log(response.data);
                     }).catch(error => {
                         console.log(error);
@@ -217,13 +224,13 @@ export default {
             }).render(this.$refs.paypal);
         },
         payWithBankCard() {
-            PaymentService.startPayment(this.$route.query.merchantUuid, this.$route.query.merchantOrderId, this.$route.query.amount, false);
+            PaymentService.startPayment(this.merchantUuid, this.orderUuid, this.order.value, false);
         },
         redirectSubscribe() {
-            this.$router.push({ path: "/subscription", query: { merchantUuid: this.$route.query.merchantUuid, orderUuid: this.$route.query.merchantOrderId, productId: this.$route.query.productId, amount: this.$route.query.amount } });
+            this.$router.push({ path: "/subscription", query: { merchantUuid: this.merchantUuid, orderUuid: this.orderUuid, productId: this.productId, amount: this.order.value } });
         },
         async qrCode() {
-            PaymentService.startPayment(this.$route.query.merchantUuid, this.$route.query.merchantOrderId, this.$route.query.amount, true);
+            PaymentService.startPayment(this.merchantUuid, this.orderUuid, this.order.value, true, this.$route.query.token);
         },
         payWithCrypto() {
             const paymentInfo = {

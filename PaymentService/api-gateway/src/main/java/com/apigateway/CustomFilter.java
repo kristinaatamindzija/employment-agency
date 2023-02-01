@@ -31,6 +31,9 @@ public class CustomFilter implements GlobalFilter {
         detectServiceFilter(request.getURI().toString());
         return chain.filter(exchange).then(Mono.fromRunnable(()-> {
             ServerHttpResponse response =  exchange.getResponse();
+            response.getCookies().forEach((name, cookie) -> {
+                log.info("Response cookie: {}={}", name, cookie.get(0).getValue());
+            });
             int statusCode = Objects.requireNonNull(response.getStatusCode()).value();
             log.info("Outgoing response from IP: {}, User-Agent: {}, URI: {}, Method: {}, Authorization: {}, Status Code: {}",
                     ipAddress, userAgent, requestURI, method, authorization, statusCode);

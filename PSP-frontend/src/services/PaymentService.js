@@ -19,16 +19,18 @@ class PaymentService {
             bitcoinApiToken: payment?.bitcoinApiToken
         })
     }
-    startPayment(merchantUuid, merchantOrderId, amount, qr) {
+    startPayment(merchantUuid, merchantOrderId, amount, qr, token) {
         axios.post(`${process.env.VUE_APP_API_GATEWAY}/bank-service/payment`, {
             amount,
             qr: qr,
             merchantUuid,
             merchantOrderId
+        }, {
+            headers: {Authorization: `Bearer ${token}`},
         })
             .then((response) => {
                 console.log(response)
-                window.location.href = response.data.paymentUrl
+                window.location.href = `${response.data.paymentUrl}?token=${token}` 
             })
             .catch(error => console.log(error))
     }

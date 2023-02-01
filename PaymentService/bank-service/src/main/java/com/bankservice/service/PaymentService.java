@@ -11,7 +11,7 @@ public interface PaymentService{
 
     void updatePaymentData(ProcessedPaymentRequest processedPaymentRequest);
 
-    StartPaymentResponse startPayment(StartPaymentRequest request);
+    StartPaymentResponse startPayment(String token, StartPaymentRequest request);
 
     BankCredentials getBankCredentials(String merchantUuid);
 }

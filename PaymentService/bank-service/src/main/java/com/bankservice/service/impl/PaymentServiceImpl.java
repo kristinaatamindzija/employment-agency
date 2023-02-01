@@ -6,6 +6,8 @@ import com.bankservice.feign.BankFeignClient;
 import com.bankservice.model.Payment;
 import com.bankservice.repository.PaymentRepository;
 import com.bankservice.service.PaymentService;
+import com.bankservice.utils.TokenUtils;
+import io.jsonwebtoken.Claims;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -13,6 +15,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.ThreadLocalRandom;
 
 @Service
@@ -25,15 +29,18 @@ public class PaymentServiceImpl implements PaymentService {
 
     private final BankFeignClient bankFeignClient;
 
+    private final TokenUtils tokenUtils;
+
     @Autowired
-    public PaymentServiceImpl(PaymentRepository paymentRepository, AuthServiceFeignClient authServiceFeignClient, BankFeignClient bankFeignClient) {
+    public PaymentServiceImpl(PaymentRepository paymentRepository, AuthServiceFeignClient authServiceFeignClient, BankFeignClient bankFeignClient, TokenUtils tokenUtils) {
         this.paymentRepository = paymentRepository;
         this.authServiceFeignClient = authServiceFeignClient;
         this.bankFeignClient = bankFeignClient;
+        this.tokenUtils = tokenUtils;
     }
 
     @Override
-    public StartPaymentResponse startPayment(StartPaymentRequest startPaymentRequest) {
+    public StartPaymentResponse startPayment(String token, StartPaymentRequest startPaymentRequest) {
         Payment payment = new Payment(startPaymentRequest.merchantUuid, startPaymentRequest.merchantOrderId, startPaymentRequest.amount);
         paymentRepository.save(payment);
         log.info("Payment started | Merchant UUID: {}, Merchant Order ID: {}", payment.merchantUuid, payment.merchantOrderId);
@@ -44,13 +51,23 @@ public class PaymentServiceImpl implements PaymentService {
                 authServiceResponse.successUrl + "/" + payment.merchantOrderId,
                 authServiceResponse.failUrl  + "/" +  payment.merchantOrderId,
                 authServiceResponse.errorUrl + "/" + payment.merchantOrderId, startPaymentRequest.qr);
-        StartPaymentResponse paymentResponse = bankFeignClient.startPayment(paymentStartRequest);
+        StartPaymentResponse paymentResponse = bankFeignClient.startPayment(token, paymentStartRequest);
         log.info("Payment response received from Bank Service | Payment ID: {}, Payment URL: {}",
                 paymentResponse.paymentId, paymentResponse.paymentUrl);
         payment.setPaymentId(paymentResponse.paymentId);
         paymentRepository.save(payment);
         log.info("Payment with database ID {} updated with generated PaymentID {}",
                 payment.getId(), payment.getPaymentId());
+        if(!paymentStartRequest.qr || token == null) {
+            return paymentResponse;
+        }
+        Map<String, Object> newClaims = new HashMap<>();
+        Claims claims = tokenUtils.getAllClaimsFromToken(token.replace("Bearer ", ""));
+        for(String key : claims.keySet()) {
+            newClaims.put(key, claims.get(key));
+        }
+        newClaims.put("merchantId", authServiceResponse.merchantId);
+        paymentResponse.paymentUrl = paymentResponse.paymentUrl + "?token=" + tokenUtils.generateToken("", newClaims);
         return paymentResponse;
     }
 

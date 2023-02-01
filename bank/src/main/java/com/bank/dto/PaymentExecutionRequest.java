@@ -25,11 +25,13 @@ public class PaymentExecutionRequest {
 
     public Long paymentId;
 
+    public boolean qr;
+
     @Override
     public String toString() {
         return "ExecutePaymentRequest(pan='" + pan + "', securityCode='" + securityCode +
                 "', cardHolderName='" + cardHolderName + "', validThru=" + validThru +
-                ", paymentId='" + paymentId + "')";
+                ", paymentId='" + paymentId + " qr='" + qr + "')";
     }
 }
 
