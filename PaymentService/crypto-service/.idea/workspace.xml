@@ -5,24 +5,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99e72e06-7d19-466d-bf75-b86423d04ce3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../paypal-service/src/main/java/com/example/paypalservice/dto/MerchantDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP-frontend/src/components/PaymentPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../PSP-frontend/src/components/PaymentPage.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auth-service/src/main/java/com/authservice/security/Encryptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bank-service/src/main/java/com/bankservice/config/CustomFeignConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bank-service/src/main/java/com/bankservice/security/Encryptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cryptoservice/crypto/config/RequestLoggingInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cryptoservice/crypto/config/WebConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cryptoservice/crypto/config/WebSecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cryptoservice/crypto/security/Encryptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../paypal-service/src/main/java/com/example/paypalservice/config/RequestLoggingInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../paypal-service/src/main/java/com/example/paypalservice/config/WebConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../paypal-service/src/main/java/com/example/paypalservice/security/Encryptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pcc/src/main/java/com/pcc/config/RequestLoggingInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pcc/src/main/java/com/pcc/config/WebConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pcc/src/main/java/com/pcc/security/Encryptor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../PSP-frontend/src/components/PaypalPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../PSP-frontend/src/components/PaypalPage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP-frontend/src/services/PaymentService.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../PSP-frontend/src/services/PaymentService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PSP-frontend/src/services/PaypalService.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../PSP-frontend/src/services/PaypalService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../api-gateway/app.log" beforeDir="false" afterPath="$PROJECT_DIR$/../api-gateway/app.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api-gateway/src/main/java/com/apigateway/CustomFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../api-gateway/src/main/java/com/apigateway/CustomFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../api-gateway/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../auth-service/app.log" beforeDir="false" afterPath="$PROJECT_DIR$/../auth-service/app.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../auth-service/src/main/java/com/authservice/dto/MerchantDataResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../auth-service/src/main/java/com/authservice/dto/MerchantDataResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../auth-service/src/main/java/com/authservice/dto/PaymentMethodDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../auth-service/src/main/java/com/authservice/dto/PaymentMethodDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../auth-service/src/main/java/com/authservice/model/WebShop.java" beforeDir="false" afterPath="$PROJECT_DIR$/../auth-service/src/main/java/com/authservice/model/WebShop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auth-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../auth-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auth-service/src/main/java/com/authservice/config/RequestLoggingInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/../auth-service/src/main/java/com/authservice/config/RequestLoggingInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auth-service/src/main/java/com/authservice/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../auth-service/src/main/java/com/authservice/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auth-service/src/main/java/com/authservice/service/imp/PaymentMethodServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../auth-service/src/main/java/com/authservice/service/imp/PaymentMethodServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../auth-service/src/main/java/com/authservice/service/imp/WebShopServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../auth-service/src/main/java/com/authservice/service/imp/WebShopServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../auth-service/src/main/resources/data-postgres.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../auth-service/src/main/resources/data-postgres.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bank-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../bank-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bank-service/src/main/java/com/bankservice/config/RequestLoggingInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/../bank-service/src/main/java/com/bankservice/config/RequestLoggingInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bank-service/src/main/java/com/bankservice/feign/BankFeignClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/../bank-service/src/main/java/com/bankservice/feign/BankFeignClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bank-service/src/main/java/com/bankservice/service/impl/PaymentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../bank-service/src/main/java/com/bankservice/service/impl/PaymentServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cryptoservice/crypto/dto/CryptoPaymentDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cryptoservice/crypto/dto/CryptoPaymentDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../paypal-service/app.log" beforeDir="false" afterPath="$PROJECT_DIR$/../paypal-service/app.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../paypal-service/src/main/java/com/example/paypalservice/controller/PaypalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../paypal-service/src/main/java/com/example/paypalservice/controller/PaypalController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../paypal-service/src/main/java/com/example/paypalservice/service/PaypalService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../paypal-service/src/main/java/com/example/paypalservice/service/PaypalService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cryptoservice/crypto/service/impl/PaymentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cryptoservice/crypto/service/impl/PaymentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../paypal-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../paypal-service/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../paypal-service/src/main/java/com/example/paypalservice/service/implementations/PaypalServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../paypal-service/src/main/java/com/example/paypalservice/service/implementations/PaypalServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../paypal-service/src/main/java/com/example/paypalservice/service/implementations/SubscriptionPlanServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../paypal-service/src/main/java/com/example/paypalservice/service/implementations/SubscriptionPlanServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../paypal-service/src/main/java/com/example/paypalservice/service/implementations/TransactionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../paypal-service/src/main/java/com/example/paypalservice/service/implementations/TransactionServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pcc/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../pcc/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pcc/src/main/java/com/pcc/service/PaymentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../pcc/src/main/java/com/pcc/service/PaymentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bank/src/main/java/com/bank/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../bank/src/main/java/com/bank/config/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bank/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../bank/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,19 +81,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "go.import.settings.migrated": "true",
+    "last_opened_file_path": "C:/Users/Imbiamba/Documents/GitHub/employment-agency/PaymentService/crypto-service",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\GIT\UPP_i_SEP_UDD\employment-agency\PaymentService\crypto-service\src\main\java\com\cryptoservice\crypto\dto" />
       <recent name="C:\GIT\UPP_i_SEP_UDD\employment-agency\PaymentService\crypto-service\src\main\java\com\cryptoservice\crypto\contoller" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.cryptoservice.crypto.config" />
+      <recent name="com.cryptoservice.crypto.security" />
+    </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.CryptoApplication">
     <configuration name="CryptoApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.cryptoservice.crypto.CryptoApplication" />
       <module name="crypto" />
@@ -100,6 +138,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CryptoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="crypto-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.cryptoservice.crypto.CryptoApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.CryptoApplication" />
@@ -114,8 +159,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1675162407835</updated>
+      <workItem from="1675299269365" duration="6779000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -127,5 +176,8 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VgoProject">
+    <settings-migrated>true</settings-migrated>
   </component>
 </project>

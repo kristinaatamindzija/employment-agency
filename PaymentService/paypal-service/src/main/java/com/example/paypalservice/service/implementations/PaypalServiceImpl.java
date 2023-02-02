@@ -5,9 +5,11 @@ import com.example.paypalservice.dto.MerchantResponseDTO;
 import com.example.paypalservice.model.Merchant;
 import com.example.paypalservice.repository.MerchantRepository;
 import com.example.paypalservice.service.PaypalService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 @Service
+@Slf4j
 public class PaypalServiceImpl implements PaypalService {
 
     private final MerchantRepository merchantRepository;
@@ -28,6 +30,7 @@ public class PaypalServiceImpl implements PaypalService {
         merchant.setMerchantPaypalId(merchantDTO.getMerchantPaypalId());
         merchant.setEmail(merchantDTO.getEmail());
         merchantRepository.save(merchant);
+        log.info("Merchant with uuid: " + merchantDTO.getMerchantUuid() + " added paypal account");
     }
 
     @Override
@@ -37,5 +40,6 @@ public class PaypalServiceImpl implements PaypalService {
         merchant.setMerchantPaypalId(null);
         merchant.setEmail(null);
         merchantRepository.save(merchant);
+        log.info("Merchant with uuid: " + merchantUuid + " deleted paypal account");
     }
 }

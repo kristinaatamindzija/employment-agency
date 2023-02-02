@@ -38,13 +38,19 @@ spring:
             - Path=/crypto/**
           filters:
             - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
+        - id: nginxModules
+          uri: https://localhost:7750/
+          predicates:
+            - Path=/**
+          filters:
+            - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
       globalcors:
         corsConfigurations:
           '[/**]':
             allowedOrigins: "*"
             allowedMethods: "*"
             allowedHeaders: "*"
-
+            exposedHeaders: "X-Forwarded-For"
 eureka:
   client:
     register-with-eureka: true

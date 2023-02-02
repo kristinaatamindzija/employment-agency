@@ -1,6 +1,6 @@
-package com.bankservice.config;
+package com.example.paypalservice.config;
 
-import com.bankservice.security.Encryptor;
+import com.example.paypalservice.security.Encryptor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.ModelAndView;

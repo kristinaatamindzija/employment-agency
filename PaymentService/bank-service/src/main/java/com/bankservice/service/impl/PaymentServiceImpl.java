@@ -76,6 +76,7 @@ public class PaymentServiceImpl implements PaymentService {
         AuthServiceResponse authServiceResponse = authServiceFeignClient.getMerchantData(merchantUuid);
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<BankCredentials> response = restTemplate.getForEntity(authServiceResponse.bankUrl + "/payment/bankCredentials/" + authServiceResponse.merchantId, BankCredentials.class);
+        log.info("Bank credentials received from Bank Service | Merchant ID: {}", authServiceResponse.merchantId);
         return response.getBody();
     }
 
@@ -88,14 +89,5 @@ public class PaymentServiceImpl implements PaymentService {
         paymentRepository.save(payment);
         log.info("Payment with database ID {} updated with Acquirer Order ID {}, Acquirer Timestamp {} and Status {}",
                 payment.getId(), payment.getAcquirerOrderId(), payment.getAcquirerTimestamp(), payment.getStatus());
-    }
-
-    private String generateMerchantOrderId() {
-        ThreadLocalRandom random = ThreadLocalRandom.current();
-        StringBuilder paymentId = new StringBuilder();
-        for (int i = 0; i < 10; i++) {
-            paymentId.append(random.nextInt(10));
-        }
-        return paymentId.toString();
     }
 }

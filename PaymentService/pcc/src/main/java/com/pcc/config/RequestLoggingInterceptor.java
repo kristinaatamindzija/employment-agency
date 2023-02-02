@@ -1,6 +1,6 @@
-package com.bankservice.config;
+package com.pcc.config;
 
-import com.bankservice.security.Encryptor;
+import com.pcc.security.Encryptor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.ModelAndView;
@@ -18,11 +18,10 @@ public class RequestLoggingInterceptor extends HandlerInterceptorAdapter {
                              Object handler) throws Exception {
         String ipAddress = Encryptor.encrypt(request.getRemoteAddr());
         String userAgent = request.getHeader("User-Agent");
-        String authorization = Encryptor.encrypt(request.getHeader("Authorization"));
         String requestURI = request.getRequestURI();
         String method = request.getMethod();
-        log.info("Incoming request from IP: {}, User-Agent: {}, URI: {}, Method: {}, Authorization: {}",
-                ipAddress, userAgent, requestURI, method, authorization);
+        log.info("Incoming request from IP: {}, User-Agent: {}, URI: {}, Method: {}",
+                ipAddress, userAgent, requestURI, method);
         return true;
     }
 
@@ -31,11 +30,10 @@ public class RequestLoggingInterceptor extends HandlerInterceptorAdapter {
                            Object handler, ModelAndView modelAndView) throws Exception {
         String ipAddress = Encryptor.encrypt(request.getRemoteAddr());
         String userAgent = request.getHeader("User-Agent");
-        String authorization = Encryptor.encrypt(request.getHeader("Authorization"));
         String requestURI = request.getRequestURI();
         String method = request.getMethod();
         int statusCode = response.getStatus();
-        log.info("Outgoing response from IP: {}, User-Agent: {}, URI: {}, Method: {}, Authorization: {}, Status Code: {}",
-                ipAddress, userAgent, requestURI, method, authorization, statusCode);
+        log.info("Outgoing response from IP: {}, User-Agent: {}, URI: {}, Method: {}, Status Code: {}",
+                ipAddress, userAgent, requestURI, method, statusCode);
     }
 }

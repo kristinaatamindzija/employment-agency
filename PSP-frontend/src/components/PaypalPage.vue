@@ -239,11 +239,11 @@ export default {
                 priceCurrency: 'EUR',
                 receiveCurrency: 'DO_NOT_CONVERT',
                 callbackUrl: 'https://7f9c-109-93-235-85.eu.ngrok.io/crypto/update-payment',
-                successUrl: `${this.merchant.successUrl}/${this.$route.query.merchantOrderId}`,
-                cancelUrl: `${this.merchant.errorUrl}/${this.$route.query.merchantOrderId}`,
-                orderId: this.$route.query.merchantOrderId,
+                successUrl: `${this.merchant.successUrl}/${this.orderUuid}`,
+                cancelUrl: `${this.merchant.errorUrl}/${this.orderUuid}`,
+                orderId: this.orderUuid,
                 description: '',
-                merchantUuid: this.$route.query.merchantUuid,
+                merchantUuid: this.merchantUuid,
                 bitcoinApiToken: this.bitcoinApiToken
 
             }

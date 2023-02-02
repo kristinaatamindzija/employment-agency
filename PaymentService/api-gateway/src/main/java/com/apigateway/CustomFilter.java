@@ -47,14 +47,11 @@ public class CustomFilter implements GlobalFilter {
         else if(uri.contains("/bank")) {
             log.info("REDIRECTING TO  -> Bank card service");
         }
-        else if(uri.contains("/qr")) {
-            log.info("REDIRECTING TO  -> QR code service");
-        }
         else if(uri.contains("/paypal")) {
             log.info("REDIRECTING TO  -> PayPal service");
         }
-        else if(uri.contains("/bitcoin")) {
-            log.info("REDIRECTING TO  -> Bitcoin service");
+        else if(uri.contains("/crypto")) {
+            log.info("REDIRECTING TO  -> Crypto service");
         }
         else if(uri.contains("/webshop")) {
             log.info("REDIRECTING TO  -> Web shop service");

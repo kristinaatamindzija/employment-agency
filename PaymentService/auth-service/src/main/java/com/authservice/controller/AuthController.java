@@ -6,7 +6,7 @@ import com.authservice.dto.PaymentMethodDTO;
 import com.authservice.dto.WebShopDTO;
 import com.authservice.model.WebShop;
 import com.authservice.service.WebShopService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -15,14 +15,20 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(value = "/auth", produces = MediaType.APPLICATION_JSON_VALUE)
+@Slf4j
 public class AuthController {
-    @Autowired
-    private WebShopService webShopService;
+
+    private final WebShopService webShopService;
+
+    public AuthController(WebShopService webShopService) {
+        this.webShopService = webShopService;
+    }
 
     @PostMapping("/register")
     public ResponseEntity<WebShop> register(@RequestBody WebShopDTO registrationDTO) {
         UserDetails existUser = this.webShopService.loadUserByUsername(registrationDTO.getUsername());
         if (existUser != null) {
+            log.error("User with username: " + registrationDTO.getUsername() + " already exists");
             throw new NullPointerException("Username already exists: " + registrationDTO.getUsername());
         }
         WebShop webShop = webShopService.register(registrationDTO.getUsername(), registrationDTO.getPassword(),
@@ -34,6 +40,7 @@ public class AuthController {
     public ResponseEntity<LoginResponseDTO> login(@RequestBody WebShopDTO loginDTO) {
         LoginResponseDTO response = webShopService.login(loginDTO);
         if (response == null) {
+            log.error("User with username: " + loginDTO.getUsername() + " does not exist");
             throw new NullPointerException("Invalid username or password");
         }
         return new ResponseEntity<>(response, HttpStatus.OK);

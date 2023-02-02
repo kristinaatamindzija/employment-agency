@@ -1,5 +1,6 @@
 package com.authservice.config;
 
+import com.authservice.security.Encryptor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.ModelAndView;
@@ -15,9 +16,9 @@ public class RequestLoggingInterceptor extends HandlerInterceptorAdapter {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response,
                              Object handler) throws Exception {
-        String ipAddress = request.getRemoteAddr();
+        String ipAddress = Encryptor.encrypt(request.getRemoteAddr());
         String userAgent = request.getHeader("User-Agent");
-        String authorization = request.getHeader("Authorization");
+        String authorization = Encryptor.encrypt(request.getHeader("Authorization"));
         String requestURI = request.getRequestURI();
         String method = request.getMethod();
         log.info("Incoming request from IP: {}, User-Agent: {}, URI: {}, Method: {}, Authorization: {}",
@@ -28,9 +29,9 @@ public class RequestLoggingInterceptor extends HandlerInterceptorAdapter {
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response,
                            Object handler, ModelAndView modelAndView) throws Exception {
-        String ipAddress = request.getRemoteAddr();
+        String ipAddress = Encryptor.encrypt(request.getRemoteAddr());
         String userAgent = request.getHeader("User-Agent");
-        String authorization = request.getHeader("Authorization");
+        String authorization = Encryptor.encrypt(request.getHeader("Authorization"));
         String requestURI = request.getRequestURI();
         String method = request.getMethod();
         int statusCode = response.getStatus();
