@@ -30,35 +30,46 @@
             </div>
             <div class="col"></div>
         </div>
+
         <b-modal id="modal-bank-card" v-model="showBankCardModal" no-close-on-backdrop hide-backdrop hide-header-close
-            @ok="saveBankCard()" @cancel="bankCard = !bankCard" title="Bank card">
-            <b-form-group id="input-group-2" label="Merchant id:" label-for="input-2">
-                <b-form-input id="input-2" v-model="formBankCard.merchantId" required></b-form-input>
+            @ok="handleOkBankCard" @cancel="bankCard = !bankCard" title="Bank card">
+            <b-form ref="form" @submit="saveBankCard()">
+            <b-form-group id="input-group-2" type="number" label="Merchant id:" label-for="input-2">
+                
+                <b-form-input id="input2-id" v-model="formBankCard.merchantId" required></b-form-input>
             </b-form-group>
             <b-form-group id="input-group-2" label="Merchant password:" label-for="input-2">
-                <b-form-input id="input-2" v-model="formBankCard.merchantPassword" type=password
+                <b-form-input id="input2-pass" v-model="formBankCard.merchantPassword" type=password
                     required></b-form-input>
             </b-form-group>
+            </b-form>
         </b-modal>
+
         <b-modal id="modal-qr-code" v-model="showQrCodeModal" no-close-on-backdrop hide-backdrop hide-header-close
             @ok="saveQrCode()" @cancel="qrCode = !qrCode" title="QR code">
             <p class="my-4">Add QR code payment?</p>
         </b-modal>
+
         <b-modal id="modal-paypal" v-model="showPayPalModal" no-close-on-backdrop hide-backdrop hide-header-close
-            @ok="savePayPal()" @cancel="payPal = !payPal" title="PayPal">
+            @ok="handleOkPaypal" @cancel="payPal = !payPal" title="PayPal">
+            <b-form ref="form1" @submit="savePayPal()">
             <b-form-group id="input-group-3" label="Merchant paypal id:" label-for="input-3">
-                <b-form-input id="input-3" v-model="formPaypalCard.merchantPaypalId" required></b-form-input>
+                <b-form-input id="input3-id" v-model="formPaypalCard.merchantPaypalId" required></b-form-input>
             </b-form-group>
             <b-form-group id="input-group-3" label="Email:" label-for="input-3">
-                <b-form-input id="input-3" v-model="formPaypalCard.email" type=email
+                <b-form-input id="input3-pass" v-model="formPaypalCard.email" type=email
                     required></b-form-input>
             </b-form-group>
+            </b-form>
         </b-modal>
+
         <b-modal id="modal-bitcoin" v-model="showBitcoinModal" no-close-on-backdrop hide-backdrop hide-header-close
-            @ok="saveBitcoin()" @cancel="bitcoin = !bitcoin" title="Bitcoin">
+            @ok="handleOkCrypto" @cancel="bitcoin = !bitcoin" title="Bitcoin">
+            <b-form ref="form2" @submit="saveBitcoin()">
             <b-form-group id="input-group-4" label="Bitcoin API token:" label-for="input-4">
-                <b-form-input id="input-4" v-model="formBitcoinCard.token" required></b-form-input>
+                <b-form-input id="input4-token" v-model="formBitcoinCard.token" required></b-form-input>
             </b-form-group>
+            </b-form>
         </b-modal>
     </div>
 </template>
@@ -66,6 +77,7 @@
 <script>
 import { store } from "@/main";
 import PaypalService from "@/services/PaypalService";
+import UserService from "@/services/UserService";
 import PaymentService from "../services/PaymentService"
 export default {
     name: "PaymentPage",
@@ -167,6 +179,30 @@ export default {
                 this.webShop.paymentMethods = this.webShop.paymentMethods?.filter((e) => e.id !== 4)
                 store.commit("setWebShop", this.webShop)
             }
+        },
+        handleOkBankCard(e) {
+            e.preventDefault();
+            if(document.getElementById("input2-id").value == "" || document.getElementById("input2-pass").value == ""){
+                UserService.swalError("Please fill all fields");
+                return;
+            }
+            this.saveBankCard()
+        },
+        handleOkPaypal(e) {
+            e.preventDefault();
+            if(document.getElementById("input3-id").value == "" || document.getElementById("input3-pass").value == ""){
+                UserService.swalError("Please fill all fields");
+                return;
+            }
+            this.savePaypal()
+        },
+        handleOkCrypto(e) {
+            e.preventDefault();
+            if(document.getElementById("input4-token").value == ""){
+                UserService.swalError("Please fill all fields");
+                return;
+            }
+            this.saveBitcoin()
         },
         saveBankCard() {
             PaymentService.addPayment({
